@@ -1,16 +1,12 @@
 <div class="main-page">
   {#each data as item}
-    <div class="domain-item">
-      <div class="title">
-        {#each item.title as title}
-          <span title="{ title.description }">{ title.text }</span>
-        {/each}
-      </div>
-    </div>
+    <DomainItem data={ item } />
   {/each}
 </div>
 
 <script lang="ts">
+import DomainItem from "$components/DomainItem.svelte";
+
 const data = [
   {
     title: [
@@ -53,28 +49,5 @@ const data = [
 .main-page {
   width: 100%;
   min-height: 100vh;
-
-  .domain-item {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 200px;
-
-    .title {
-      font-size: 4em;
-    }
-  }
-
-  @media (max-width: 700px) {
-    .domain-item {
-      height: 150px;
-
-      .title {
-        font-size: 3em;
-      }
-    }
-  }
 }
 </style>
