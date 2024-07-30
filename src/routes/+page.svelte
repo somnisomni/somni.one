@@ -36,7 +36,7 @@ const data = [
   },
   {
     title: [
-      { text: "miku", description: "you know who she is" },
+      { text: "miku", description: "you know who she is", forceColor: "#39C5BB" },
       { text: "." },
       { text: "party", description: "just one of available TLDs" },
     ],

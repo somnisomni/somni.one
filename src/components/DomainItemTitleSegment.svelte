@@ -7,7 +7,7 @@
 
   {#if seg.description}
     <span class="description"
-          style="color: { stc(seg.text) };">
+          style="color: { seg.forceColor ?? stc(seg.text) };">
       { seg.description }
     </span>
   {/if}
