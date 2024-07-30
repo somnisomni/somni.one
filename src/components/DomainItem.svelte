@@ -14,7 +14,6 @@ export let data: Record<string, any>;
 
 const underlineColors: (string | null)[] = [];
 for(const titleSeg of data.title) {
-  console.log(titleSeg);
   if(data.description) {
     underlineColors.push(stc(titleSeg.text));
   } else {
@@ -30,7 +29,7 @@ for(const titleSeg of data.title) {
   align-items: center;
   justify-content: center;
   width: 100%;
-  height: 200px;
+  height: calc(100vh / 3);
 
   .title {
     display: flex;
