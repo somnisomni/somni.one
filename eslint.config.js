@@ -61,6 +61,10 @@ export default [
       "@stylistic/space-before-blocks": ["error", "always"],
       "@stylistic/space-infix-ops": "error",
       "@stylistic/comma-dangle": ["error", "always-multiline"],
+      "@stylistic/member-delimiter-style": ["error", {
+        multiline: { delimiter: "semi", requireLast: true },
+        singleline: { delimiter: "semi", requireLast: true },
+      }],
     },
   },
   {

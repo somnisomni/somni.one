@@ -15,8 +15,9 @@
 
 <script lang="ts">
 import stc from "string-to-color";
+import type { IDomainItemTitleSegment } from "$lib/types";
 
-export let seg: Record<string, any>;
+export let seg: IDomainItemTitleSegment;
 
 $: hover = false;
 </script>

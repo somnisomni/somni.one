@@ -6,8 +6,9 @@
 
 <script lang="ts">
 import DomainItem from "$components/DomainItem.svelte";
+import type { IDomainItem } from "$lib/types";
 
-const data = [
+const data: IDomainItem[] = [
   {
     title: [
       { text: "somni", description: "my nickname" },
@@ -28,7 +29,7 @@ const data = [
   },
   {
     title: [
-      { text: "koharu", description: "one of my favorite character" },
+      { text: "koharu", description: "one of my favorite character", forceColor: "#DEA0AC" },
       { text: "." },
       { text: "dev", description: "my dev space" },
     ],

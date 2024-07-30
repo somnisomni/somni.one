@@ -7,19 +7,10 @@
 </section>
 
 <script lang="ts">
-import stc from "string-to-color";
+import type { IDomainItem } from "$lib/types";
 import DomainItemTitleSegment from "./DomainItemTitleSegment.svelte";
 
-export let data: Record<string, any>;
-
-const underlineColors: (string | null)[] = [];
-for(const titleSeg of data.title) {
-  if(data.description) {
-    underlineColors.push(stc(titleSeg.text));
-  } else {
-    underlineColors.push(null);
-  }
-}
+export let data: IDomainItem;
 </script>
 
 <style lang="scss">
