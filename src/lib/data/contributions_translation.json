@@ -1,0 +1,227 @@
+[
+  {
+    "id": "utm",
+    "title": "UTM",
+    "repositoryUrl": "https://github.com/utmapp/UTM",
+    "category": "app-macos",
+    "langFrom": "en",
+    "langTo": "ko",
+    "platform": "github-contribution",
+    "githubPullRequests": [
+      6995
+    ]
+  },
+  {
+    "id": "files",
+    "title": "Files",
+    "repositoryUrl": "https://github.com/files-community/Files",
+    "category": "app-windows",
+    "langFrom": "en",
+    "langTo": "ko",
+    "platform": "github-contribution",
+    "githubPullRequests": [
+      8541
+    ]
+  },
+  {
+    "id": "yuzutalk",
+    "title": "YuzuTalk",
+    "repositoryUrl": "https://github.com/YuzuTalk/translation",
+    "category": "website",
+    "langFrom": "ja",
+    "langTo": "ko",
+    "platform": "github-contribution",
+    "githubPullRequests": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ]
+  },
+  {
+    "id": "priconne-quest-helper",
+    "title": "Princess Connect! Re:Dive - Quest Helper",
+    "repositoryUrl": "https://github.com/Expugn/priconne-quest-helper",
+    "category": "website",
+    "langFrom": "en",
+    "langTo": [
+      "ko",
+      "ja"
+    ],
+    "platform": "github-contribution",
+    "githubPullRequests": [
+      3,
+      8,
+      9,
+      11,
+      17
+    ],
+    "directCommits": [
+      "1349c68c4cfd3ebf59eea3dae2e53d7ad6eacb55",
+      "ecc50d062803099601ebd526e1c24676c191c6fd",
+      "9378229c6790f8a1d15be507f695f8e71576fff5",
+      "a6ab55de0bee78dfd171c5959812d28a22b69570",
+      "20e586302cc144982bbdeff9a2cef34713f91d05",
+      "cb4e6d5d7fe8d39970eade67405deaa161d93f28",
+      "a8b4ebb543e0fdec2841d7ded317fdc6abdfcee9",
+      "c8934f7fe95cd405df50e31b56207fd502e039d3",
+      "674cad47accd104f5b0dfbc40949dcdf1bd80b40",
+      "c79c810220fbba509a131484f68230e0cd5369d7"
+    ]
+  },
+  {
+    "id": "xposed-anrc",
+    "title": "ANRC (Xposed 모듈)",
+    "repositoryUrl": "https://github.com/wDCat/ANRC",
+    "category": "app-android",
+    "langFrom": "en",
+    "langTo": "ko",
+    "platform": "github-contribution",
+    "githubPullRequests": [
+      49
+    ]
+  },
+  {
+    "id": "discord-rembot",
+    "title": "Rem V2 (Discord 봇)",
+    "repositoryUrl": "https://github.com/rem-bot-industries/rem-v2",
+    "category": "app-other",
+    "langFrom": "en",
+    "langTo": "ko",
+    "platform": "github-contribution",
+    "githubPullRequests": [
+      80,
+      84
+    ]
+  },
+  {
+    "id": "xposed-wifi-password",
+    "title": "WiFi Password Viewer (Xposed 모듈)",
+    "repositoryUrl": "https://github.com/CzBiX/wifi-password-android",
+    "category": "app-android",
+    "langFrom": "en",
+    "langTo": "ko",
+    "platform": "github-contribution",
+    "githubPullRequests": [
+      5
+    ]
+  },
+  {
+    "id": "phpsysinfo",
+    "title": "phpSysInfo",
+    "repositoryUrl": "https://github.com/phpsysinfo/phpsysinfo",
+    "category": "app-webapp",
+    "langFrom": "en",
+    "langTo": "ko",
+    "platform": "github-contribution",
+    "githubPullRequests": [
+      144,
+      285
+    ]
+  },
+  {
+    "id": "xposed-youtube-background-playback",
+    "title": "YouTube Background Playback (Xposed 모듈)",
+    "repositoryUrl": "https://github.com/pylerSM/YouTubeBackgroundPlayback",
+    "category": "app-android",
+    "langFrom": "en",
+    "langTo": "ko",
+    "platform": "github-contribution",
+    "githubPullRequests": [
+      38
+    ]
+  },
+  {
+    "id": "xposed-fix-lollipop-memory-leak",
+    "title": "Fix Lollipop Memory Leak (Xposed 모듈)",
+    "repositoryUrl": "https://github.com/tonyp/FixLollipopMemoryLeak",
+    "category": "app-android",
+    "langFrom": "en",
+    "langTo": "ko",
+    "platform": "github-contribution",
+    "githubPullRequests": [
+      4
+    ]
+  },
+  {
+    "id": "inventorytweaks-homepage",
+    "title": "Inventory Tweaks 홈페이지",
+    "repositoryUrl": "https://github.com/Inventory-Tweaks/inventory-tweaks",
+    "category": "website",
+    "langFrom": "en",
+    "langTo": "ko",
+    "platform": "github-contribution",
+    "githubPullRequests": [
+      229
+    ]
+  },
+  {
+    "id": "xposed-app-ops",
+    "title": "App Ops (Xposed 모듈)",
+    "repositoryUrl": "https://github.com/jclehner/AppOpsXposed",
+    "category": "app-android",
+    "langFrom": "en",
+    "langTo": "ko",
+    "platform": "github-contribution",
+    "githubPullRequests": [
+      2
+    ]
+  },
+  {
+    "id": "xposed-app-settings",
+    "title": "App Settings (Xposed 모듈)",
+    "repositoryUrl": "https://github.com/rovo89/XposedAppSettings",
+    "category": "app-android",
+    "langFrom": "en",
+    "langTo": "ko",
+    "platform": "github-contribution",
+    "githubPullRequests": [
+      34
+    ]
+  },
+  {
+    "id": "xposed-gravitybox",
+    "title": "GravityBox (Xposed 모듈)",
+    "repositoryUrl": "https://github.com/GravityBox/GravityBox",
+    "category": "app-android",
+    "langFrom": "en",
+    "langTo": "ko",
+    "platform": "github-contribution",
+    "githubPullRequests": [
+      277,
+      282,
+      283,
+      314,
+      315,
+      331,
+      332,
+      586,
+      587,
+      590,
+      591,
+      988,
+      1326,
+      1327,
+      1328,
+      1341
+    ]
+  },
+  {
+    "id": "xposed-advanced-power-menu",
+    "title": "Advanced Power Menu (Xposed 모듈)",
+    "repositoryUrl": "https://github.com/kennethso168/AdvancedPowerMenu",
+    "category": "app-android",
+    "langFrom": "en",
+    "langTo": "ko",
+    "platform": "github-contribution",
+    "githubPullRequests": [
+      21,
+      22
+    ]
+  }
+]

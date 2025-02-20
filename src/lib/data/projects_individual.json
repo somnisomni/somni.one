@@ -1,0 +1,255 @@
+[
+  {
+    "id": "myboothmanager",
+    "title": "MyBoothManager",
+    "desc": "창작자들의 부스 운영을 돕는 부스 및 굿즈 관리 웹서비스",
+    "stacks": [
+      "Vuejs",
+      "Nestjs",
+      "TypeScript",
+      "SASS",
+      "MySQL",
+      "Podman"
+    ],
+    "yearFrom": 2023,
+    "yearTo": -1,
+    "status": "ONGOING",
+    "details": [
+      "[추가 예정]",
+      ""
+    ],
+    "repositoryUrl": "https://github.com/somnisomni/MyBoothManager",
+    "appUrl": "https://booth.koharu.dev"
+  },
+  {
+    "id": "trawler",
+    "title": "Trawler",
+    "desc": "트위터 계정의 트윗을 주기적으로 크롤링하여 데이터를 수집하는 서버 프로그램",
+    "stacks": [
+      "dot-NET",
+      "CSharp",
+      "Selenium",
+      "EntityFramework",
+      "MySQL",
+      "Podman"
+    ],
+    "yearFrom": 2023,
+    "yearTo": -1,
+    "status": "ONGOING",
+    "details": [
+      "[추가 예정]",
+      ""
+    ],
+    "repositoryUrl": "https://github.com/SDSkyKlouD/trawler-csharp"
+  },
+  {
+    "id": "twitter-account-data-crawler",
+    "title": "Twitter Account Data Crawler",
+    "desc": "트위터 계정의 프로필 데이터를 주기적으로 크롤링하는 서버 프로그램",
+    "stacks": [
+      "Python",
+      "Selenium",
+      "MySQL",
+      "Podman"
+    ],
+    "yearFrom": 2023,
+    "yearTo": 2023,
+    "status": "DISCONTINUED",
+    "details": [
+      "[추가 예정]",
+      ""
+    ],
+    "repositoryUrl": "https://github.com/somnisomni/twitter-account-data-crawler"
+  },
+  {
+    "id": "ghostodon",
+    "title": "Ghostodon",
+    "desc": "Ghost 블로그에서 글 발행 시 Mastodon 계정에 자동으로 포스팅해주는 간단한 서버 프로그램",
+    "stacks": [
+      "Nodejs",
+      "TypeScript",
+      "Podman"
+    ],
+    "yearFrom": 2023,
+    "yearTo": 2023,
+    "status": "COMPLETED",
+    "details": [
+      "[추가 예정]",
+      ""
+    ],
+    "repositoryUrl": "https://github.com/somnisomni/ghostodon"
+  },
+  {
+    "id": "twiper",
+    "title": "Twiper",
+    "desc": "직접 트위터 개발자 앱을 등록하여 사용하는 '트윗 청소기'",
+    "stacks": [
+      "Nodejs",
+      "TypeScript",
+      "Twitter"
+    ],
+    "yearFrom": 2022,
+    "yearTo": 2022,
+    "status": "DISCONTINUED",
+    "details": [
+      "❌ <a href='https://twitter.com/TwitterDev/status/1621026986784337922'>트위터 API 전면 유료화</a>로 인한 개발 중단",
+      "2020년에 개발했던 <a href='https://github.com/SDSkyKlouD/twitter-pwa-archive-cleaner'>twitter-pwa-archive-cleaner</a>의 리뉴얼 격의 토이 프로젝트.",
+      "'트윗 청소' 기능을 유료로 제공하는 제3자 서비스의 대안으로서 개발 중.",
+      "CLI 프로그램의 형태로, 명령줄에서 명령어/파라미터를 파싱하는 기능을 직접 구현.",
+      "이 프로그램을 사용하기 위해선 사용자가 직접 트위터 개발자 앱을 등록해야하며, 이후 과정(계정 로그인 등)은 프로그램에 구현되어 있음.",
+      "트위터 계정의 트윗 아카이브 데이터를 사용하여 계정 내 트윗을 API를 통해 삭제."
+    ],
+    "repositoryUrl": "https://github.com/somnisomni/Twiper",
+    "appUrl": "https://github.com/somnisomni/Twiper/releases"
+  },
+  {
+    "id": "mollufier",
+    "title": "몰?루파이어",
+    "desc": "한국어 형태소 분석기<small>(<a href='https://github.com/bab2min/Kiwi'>Kiwi</a>)</small>를 활용하여 문장을 '몰?루화' 해주는 웹 앱",
+    "stacks": [
+      "Vuejs",
+      "TypeScript",
+      "SASS",
+      "Python",
+      "Podman"
+    ],
+    "yearFrom": 2021,
+    "yearTo": 2022,
+    "status": "MAINTAINING",
+    "details": [
+      "모바일 게임 &lt;<a href='https://bluearchive.nexon.com/'>블루 아카이브</a>&gt;의 유명한 밈인 '<a href='https://coconut-emoji.tistory.com/49'>몰?루<a/>'에서 영감을 얻어 만든 토이 프로젝트.",
+      "실제 인게임 UI와 유사하게 디자인함.",
+      "Python Flask 백엔드 ↔ Vue 프론트엔드 간 REST API 형태로 통신하도록 설계함.",
+      "배포를 간단히 하기 위해 Dockerfile 생성, 개인 서버에서 컨테이너를 빌드하여 배포<small>(Podman 사용)</small> 중."
+    ],
+    "repositoryUrl": "https://github.com/somnisomni/mollufier",
+    "appUrl": "https://app.somni.one/mollufier/"
+  },
+  {
+    "id": "siina",
+    "title": "Siina",
+    "desc": "다중 오실레이터 및 마스터 앰프 ADSR을 지원하는 간단한 피아노(신디사이저) 웹 앱",
+    "stacks": [
+      "HTML5",
+      "CSS3",
+      "JavaScript"
+    ],
+    "yearFrom": 2020,
+    "yearTo": 2021,
+    "status": "COMPLETED",
+    "details": [
+      "군 복무 기간의 무료함을 달래기 위해 군 인트라넷 컴퓨터 상에서 개발했던 토이 프로젝트.",
+      "프레임워크를 사용하지 않고 순수 JavaScript로 개발.",
+      "로컬 환경에서 메인 HTML 파일을 브라우저에서 여는 것만으로도 모든 기능을 사용할 수 있도록 개발 (Frontend-only App).",
+      "키보드로 건반을 연주하기 위해 FL Studio와 유사한 키 매핑 설정.",
+      "WebAudio API를 활용하여 다중 오실레이터 기능 구현 및 ADSR 모사.",
+      "'사운드폰트' 시스템: 사용자가 설정한 값들을 프리셋처럼 LocalStorage에 저장하고, JSON 형태로 가져오기/내보내기 가능."
+    ],
+    "repositoryUrl": "https://github.com/somnisomni/siina",
+    "appUrl": "https://somnisomni.github.io/siina/siina.html"
+  },
+  {
+    "id": "dust-on-me",
+    "title": "dust.on.me",
+    "desc": "미세먼지 상태를 매 시간 포스팅하고 명령어에 따라 인터렉션하는 트위터 봇",
+    "stacks": [
+      "Nodejs",
+      "JavaScript",
+      "Twitter"
+    ],
+    "yearFrom": 2019,
+    "yearTo": 2019,
+    "status": "COMPLETED",
+    "details": [
+      "미세먼지 이슈가 한창 부상할 즈음, 기존 미세먼지 상태 포스팅 봇의 기능에 더해 멘션의 명령어<small>(시/도별 조회 등)</small>에 따라 반응하는 트위터 봇을 만들고자 하였음.",
+      "<a href='https://www.data.go.kr/data/15073861/openapi.do'>한국환경공단<small>(에어코리아)</small> 대기오염정보 OpenAPI</a>를 사용.",
+      "1시간마다 OpenAPI로부터 데이터를 조회해 트위터 봇 계정에 트윗 게시.",
+      "봇 계정을 멘션한 트윗에서 첫 번째 단어를 명령어로 인식하고 파싱, 명령어에 알맞는 결과를 답글로 게시."
+    ],
+    "repositoryUrl": "https://github.com/SDSkyKlouD/dust-on-me"
+  },
+  {
+    "id": "unikod",
+    "title": "Unikod",
+    "desc": "로마자<small>(라틴 알파벳)</small>를 유사 유니코드 글리프로 스타일링/난독화해주는 라이브러리",
+    "stacks": [
+      "dot-NET",
+      "CSharp"
+    ],
+    "yearFrom": 2019,
+    "yearTo": 2019,
+    "status": "DISCONTINUED",
+    "details": [
+      "QuiqCompose의 부가 기능으로 활용하기 위한 .NET Standard 라이브러리 형태로 개발함.",
+      "로마자와 유사한 유니코드 글리프를 모아 글리프 셋을 만들었고, 입력 문자열에서 지정한 글리프 셋으로 개별 문자 대치.",
+      "글리프 셋에 상관 없이 입력 문자열을 일반 문자로 변환(normalize)하는 기능 또한 구현.",
+      "로마자에 더해 숫자의 스타일링/난독화도 지원.",
+      "<a href='https://www.nuget.org/'>NuGet</a>에 시험적으로 개발 빌드를 업로드하였지만, 사용을 권장하지 않음."
+    ],
+    "repositoryUrl": "https://github.com/SDSkyKlouD/Unikod",
+    "appUrl": "https://www.nuget.org/packages/Unikod"
+  },
+  {
+    "id": "quiqcompose",
+    "title": "QuiqCompose",
+    "desc": "타임라인 표시 없이 빠른 글 작성에 집중한 SNS<small>(트위터)</small> 글 작성 프로그램",
+    "stacks": [
+      "dot-NET",
+      "CSharp",
+      "WPF",
+      "Twitter"
+    ],
+    "yearFrom": 2018,
+    "yearTo": 2019,
+    "status": "COMPLETED",
+    "details": [
+      "트위터 타임라인 로딩으로 웹사이트가 느려지고 증가되는 데이터 소비량이 아까워서 개발했던 토이 프로젝트.",
+      "WPF의 주력 디자인 패턴인 MVVM 패턴으로 개발하고자 하였음.",
+      "업데이트 확인, 트윗 작성 수 기록 등을 위한 백엔드 서버를 구축하였음. <span style='opacity: 0.5'>백엔드 관련 소스 코드 및 데이터는 유실됨.</span>",
+      "클로즈드 소스로 개발하다가 개발 중단과 함께 소스 코드 공개."
+    ],
+    "repositoryUrl": "https://github.com/SDSkyKlouD/QuiqCompose-OSS-WPF",
+    "appUrl": "https://github.com/SDSkyKlouD/QuiqCompose-OSS-WPF/releases"
+  },
+  {
+    "id": "apimiku-twitterbot",
+    "title": "아피미쿠 이미지 트위터 봇",
+    "desc": "<a href='https://piapro.jp/t/KPU3'>아피미쿠<sup>あぴミク</sup></a>의 MMD 이미지 작품을 주기적으로 공유(게시)하는 트위터 봇",
+    "stacks": [
+      "Nodejs",
+      "JavaScript",
+      "Twitter"
+    ],
+    "yearFrom": 2018,
+    "yearTo": 2018,
+    "status": "COMPLETED",
+    "details": [
+      "<a href='https://sites.google.com/view/evpvp/'>MikuMikuDance</a>에서 사용할 수 있는 모델 중 하나인 \"아피미쿠<sup>あぴミク</sup>\"를 사용해 만든 이미지를 <a href='https://www.pixiv.net/'>픽시브</a>, <a href='https://seiga.nicovideo.jp/'>니코니코정화</a>에서 랜덤으로 찾아 그 링크를 트윗으로 공유하는 간단한 봇.",
+      "R-18 및 NSFW와 관련된 태그 및 계정은 블랙리스트에 등록하여 그러한 작품의 공유를 최대한 방지하도록 함.",
+      "픽시브는 검색 쿼리의 pagination count가 존재하여 그 범위 내에서 페이지를 랜덤 선택할 수 있었지만, 니코니코정화는 그렇지 않아 검색 결과의 1페이지부터 순차적으로 공유하고 페이지 오프셋을 파일로 저장, 봇 재시작 시 오프셋 파일을 활용함."
+    ],
+    "repositoryUrl": "https://github.com/SDSkyKlouD/apimiku-twitterbot"
+  },
+  {
+    "id": "portal-still-alive-web",
+    "title": "웹으로 만든 'Still Alive'",
+    "desc": "Portal™ 게임의 아웃트로<small>('Still Alive')</small>를 HTML, CSS, JavaScript(jQuery)로 구현한 웹페이지",
+    "stacks": [
+      "HTML5",
+      "CSS3",
+      "JavaScript",
+      "jQuery"
+    ],
+    "yearFrom": 2017,
+    "yearTo": 2017,
+    "status": "COMPLETED",
+    "details": [
+      "Portal™ 게임 출시 10주년을 기념하여 제작한 웹페이지.",
+      "한 글자씩 표시, 터미널 커서, 아스키 아트 전환 등 게임 내 모든 효과를 JavaScript로 직접 구현.",
+      "<a href='https://github.com/SDSkyKlouD/still-alive-web/blob/master/dev_data/credits.txt'>실제 Portal™ 게임 리소스 데이터</a>를 참고하며 글자 표시 및 전환 효과 등의 타이밍 조정.",
+      "<s>소스가 공개되어 있지만</s> 이스터 에그를 추가함."
+    ],
+    "repositoryUrl": "https://github.com/SDSkyKlouD/still-alive-web",
+    "appUrl": "https://sdskykloud.github.io/still-alive-web/"
+  }
+]
