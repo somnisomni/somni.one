@@ -3,6 +3,5 @@
 </main>
 
 <script lang="ts">
-import "minireset.css/minireset.sass";
-import "$styles/main.scss";
+import "$/app.css";
 </script>

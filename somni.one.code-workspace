@@ -1,0 +1,44 @@
+{
+	"folders": [
+		{
+			"name": "somni.one",
+			"path": "."
+		}
+	],
+	"settings": {
+		"svelte.enable-ts-plugin": true,
+		"svelte.plugin.svelte.defaultScriptLanguage": "ts",
+		"js/ts.implicitProjectConfig.experimentalDecorators": true,
+		"i18n-ally.keystyle": "nested",
+		"i18n-ally.localesPaths": [
+			"src/lib/locales/strings"
+		],
+		"files.associations": {
+			"*.css": "tailwindcss"
+		},
+		"editor.quickSuggestions": {
+			"strings": "on"
+		},
+		"tailwindCSS.includeLanguages": {
+			"svelte": "svelte"
+		},
+		"css.lint.unknownAtRules": "ignore"
+	},
+	"extensions": {
+		"recommendations": [
+			"svelte.svelte-vscode"
+		],
+		"unwantedRecommendations": [
+			"Vue.volar",
+			"ms-dotnettools.vscode-dotnet-runtime",
+			"ms-dotnettools.csharp",
+			"ms-dotnettools.csdevkit",
+			"ms-dotnettools.vscodeintellicode-csharp",
+			"ms-vscode.cpptools-extension-pack",
+			"ms-vscode.cpptools",
+			"ms-python.python",
+			"ms-python.vscode-pylance",
+			"ms-python.debugpy"
+		]
+	}
+}
