@@ -12,10 +12,10 @@
 </section>
 
 <script lang="ts">
-import type { IDomainItem } from "$lib/types";
+import type { DomainItemData } from "$lib/types";
 import DomainItemTitleSegment from "./DomainItemTitleSegment.svelte";
 
-export let data: IDomainItem;
+export let data: DomainItemData;
 
 const transformThreshold = 0.1;
 let root: HTMLElement | null = null;

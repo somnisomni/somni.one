@@ -15,9 +15,9 @@
 
 <script lang="ts">
 import stc from "string-to-color";
-import type { IDomainItemTitleSegment } from "$lib/types";
+import type { DomainItemTitleSegmentData } from "$lib/types";
 
-export let seg: IDomainItemTitleSegment;
+export let seg: DomainItemTitleSegmentData;
 
 $: hover = false;
 </script>

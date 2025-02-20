@@ -1,15 +1,15 @@
-export interface IDomainItemTitleSegment {
+export interface DomainItemTitleSegmentData {
   text: string;
   description?: string;
   forceColor?: string;
 }
 
-export interface IDomainItem {
-  title: IDomainItemTitleSegment[];
+export interface DomainItemData {
+  title: DomainItemTitleSegmentData[];
   href: string;
-  subdomains?: ISubdomainItem[];
+  subdomains?: SubdomainItemData[];
 }
 
-export interface ISubdomainItem extends Omit<IDomainItem, "title"> {
+export interface SubdomainItemData extends Omit<DomainItemData, "title"> {
   title: string;
 }

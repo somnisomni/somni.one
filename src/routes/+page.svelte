@@ -6,9 +6,9 @@
 
 <script lang="ts">
 import DomainItem from "$components/DomainItem.svelte";
-import type { IDomainItem } from "$lib/types";
+import type { DomainItemData } from "$lib/types";
 
-const data: IDomainItem[] = [
+const data: DomainItemData[] = [
   {
     title: [
       { text: "somni", description: "my nickname" },
