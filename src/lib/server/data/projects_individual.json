@@ -1,5 +1,26 @@
 [
   {
+    "id": "trawler",
+    "title": "Trawler",
+    "desc": "<span class='text-zinc-500'>[프로젝트 재작성]</span> 트위터 계정의 프로필 데이터를 주기적으로 크롤링하는 서버 프로그램",
+    "stacks": [
+      "dot-NET",
+      "CSharp",
+      "Selenium",
+      "EntityFramework",
+      "MySQL",
+      "Podman"
+    ],
+    "yearFrom": 2024,
+    "yearTo": -1,
+    "status": "ONGOING",
+    "details": [
+      "[추가 예정]",
+      ""
+    ],
+    "repositoryUrl": "https://github.com/SDSkyKlouD/trawler-csharp"
+  },
+  {
     "id": "myboothmanager",
     "title": "MyBoothManager",
     "desc": "창작자들의 부스 운영을 돕는 부스 및 굿즈 관리 웹서비스",
@@ -20,27 +41,6 @@
     ],
     "repositoryUrl": "https://github.com/somnisomni/MyBoothManager",
     "appUrl": "https://booth.koharu.dev"
-  },
-  {
-    "id": "trawler",
-    "title": "Trawler",
-    "desc": "<span class='text-zinc-500'>[프로젝트 재작성]</span> 트위터 계정의 프로필 데이터를 주기적으로 크롤링하는 서버 프로그램",
-    "stacks": [
-      "dot-NET",
-      "CSharp",
-      "Selenium",
-      "EntityFramework",
-      "MySQL",
-      "Podman"
-    ],
-    "yearFrom": 2023,
-    "yearTo": -1,
-    "status": "ONGOING",
-    "details": [
-      "[추가 예정]",
-      ""
-    ],
-    "repositoryUrl": "https://github.com/SDSkyKlouD/trawler-csharp"
   },
   {
     "id": "twitter-account-data-crawler",
