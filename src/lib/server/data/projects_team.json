@@ -27,7 +27,7 @@
     "teamName": "TEAM GOYUKKURI",
     "charge": "팀장, 프론트엔드(웹) 개발",
     "stacks": [
-      "Vuejs",
+      "VuedotJS",
       "TypeScript",
       "SASS"
     ],
@@ -49,7 +49,7 @@
     "teamName": "미니프로젝트 40팀",
     "charge": "프론트엔드(웹) 개발",
     "stacks": [
-      "Vuejs",
+      "VuedotJS",
       "TypeScript",
       "SASS"
     ],
@@ -73,7 +73,7 @@
     "teamName": "YD(연등)",
     "charge": "프론트엔드(웹) 개발",
     "stacks": [
-      "Vuejs",
+      "VuedotJS",
       "Vuetify",
       "TypeScript",
       "SASS"
