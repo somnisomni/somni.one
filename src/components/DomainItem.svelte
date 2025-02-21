@@ -1,8 +1,8 @@
 <section class="domain-item"
          bind:this="{ root }"
-         on:pointerenter={ () => pointerEntered = true }
-         on:pointerleave={ () => pointerEntered = false }
-         on:pointermove={ onPointerMove }>
+         onpointerenter={ () => pointerEntered = true }
+         onpointerleave={ () => pointerEntered = false }
+         onpointermove={ onPointerMove }>
   <div class="title"
        style={ transformStyle }>
     {#each data.title as title}
@@ -15,35 +15,39 @@
 import type { DomainItemData } from "$lib/types";
 import DomainItemTitleSegment from "./DomainItemTitleSegment.svelte";
 
-export let data: DomainItemData;
+const { data }: { data: DomainItemData } = $props();
 
 const transformThreshold = 0.1;
 let root: HTMLElement | null = null;
-let pointerEntered = false;
-let transformX = 0.0;
-let transformY = 0.0;
-let transformStyle = "";
-$: {
+let pointerEntered = $state(false);
+let transformX = $state(0.0);
+let transformY = $state(0.0);
+let transformStyle = $state("");
+
+$effect(() => {
   if(!pointerEntered) {
     transformX = 0.0;
+    transformY = 0.0;
   }
 
-  transformStyle = `transform: translate3d(${transformX}%, ${transformY}%, 0.000001px)`;
-}
+  transformStyle = `transform: translate3d(${transformX}px, ${transformY}px, 0.000001px)`;
+});
 
 function onPointerMove(event: PointerEvent) {
   if(!pointerEntered || !root) return;
 
   const parentCenterX = root.getBoundingClientRect().width / 2;
+  const parentLeftX = root.getBoundingClientRect().left;
   const parentCenterY = root.getBoundingClientRect().height / 2;
+  const parentTopY = root.getBoundingClientRect().top;
 
   requestAnimationFrame(() => {
     const { clientX, clientY } = event;
-    const deltaXRatio = (parentCenterX - clientX) / parentCenterX;
-    const deltaYRatio = (parentCenterY - clientY) / parentCenterY;
+    const deltaXRatio = (parentCenterX + parentLeftX) - clientX;
+    const deltaYRatio = (parentCenterY + parentTopY) - clientY;
 
-    transformX = deltaXRatio * transformThreshold * -100;
-    transformY = deltaYRatio * transformThreshold * -100;
+    transformX = -deltaXRatio * transformThreshold;
+    transformY = -deltaYRatio * transformThreshold;
   });
 }
 </script>
