@@ -6,10 +6,15 @@
     <MeDataYearRange from={item.yearFrom}
                      to={item.yearTo} />
   {/snippet}
+
+  {#each item.stacks as stack}
+    <MeDataStackIcon icon={stack} />
+  {/each}
 </MeDataItemBase>
 
 <script lang="ts">
 import MeDataItemBase from "$/components/me/MeDataItemBase.svelte";
+import MeDataStackIcon from "$/components/me/MeDataStackIcon.svelte";
 import MeDataStatusChip from "$/components/me/MeDataStatusChip.svelte";
 import MeDataYearRange from "$/components/me/MeDataYearRange.svelte";
 import type { MeProjectTeamData } from "$/lib/typings/me-data";
