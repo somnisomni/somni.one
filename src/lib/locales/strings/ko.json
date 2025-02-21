@@ -1,0 +1,12 @@
+{
+  "me": {
+    "common": {
+      "status": {
+        "ongoing": "진행 중",
+        "maintaining": "유지보수 중",
+        "completed": "완료",
+        "discontinued": "개발 중단"
+      }
+    }
+  }
+}

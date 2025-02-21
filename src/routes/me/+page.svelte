@@ -2,7 +2,7 @@
   <h1>개인 프로젝트</h1>
 
   {#each data.projectsIndividual as item}
-    <p>{item.title}</p>
+    <MeDataItemProjectIndividual item={item} />
   {/each}
 </section>
 
@@ -10,7 +10,7 @@
   <h1>팀 프로젝트</h1>
 
   {#each data.projectsTeam as item}
-    <p>{item.title}</p>
+    <MeDataItemProjectTeam item={item} />
   {/each}
 </section>
 
@@ -18,7 +18,7 @@
   <h1>오픈 소스 프로젝트 기여</h1>
 
   {#each data.contribOpenSource as item}
-    <p>{item.title}</p>
+    <MeDataItemContribOpenSource item={item} />
   {/each}
 </section>
 
@@ -26,11 +26,15 @@
   <h1>번역 기여</h1>
 
   {#each data.contribTranslation as item}
-    <p>{item.title}</p>
+    <MeDataItemContribTranslation item={item} />
   {/each}
 </section>
 
 <script lang="ts">
+import MeDataItemContribOpenSource from "$/components/me/MeDataItemContribOpenSource.svelte";
+import MeDataItemContribTranslation from "$/components/me/MeDataItemContribTranslation.svelte";
+import MeDataItemProjectIndividual from "$/components/me/MeDataItemProjectIndividual.svelte";
+import MeDataItemProjectTeam from "$/components/me/MeDataItemProjectTeam.svelte";
 import type { PageProps } from "./$types";
 
 const { data }: PageProps = $props();

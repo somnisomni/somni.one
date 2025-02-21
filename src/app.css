@@ -12,6 +12,8 @@
 
 /* Global styles */
 body, html {
+  @apply text-zinc-800;
+
   box-sizing: border-box;
   margin: 0;
   padding: 0;

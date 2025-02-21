@@ -1,21 +1,21 @@
-interface MeDataBase {
+export interface MeDataBase {
   id: string;
   title: string;
   desc?: string;
 }
 
-interface MeProjectDataBase extends MeDataBase {
+export interface MeProjectDataBase extends MeDataBase {
   stacks: string[];
   yearFrom: number;
   yearTo?: number;
   details: string[];
-  status: "ONGOING" | "MAINTAINING" | "COMPLETED" | "DISCONTINUED" | string;
+  status: "ONGOING" | "MAINTAINING" | "COMPLETED" | "DISCONTINUED";
   repositoryUrl?: string;
   pageUrl?: string;
   appUrl?: string;
 }
 
-interface MeContributionDataBase extends MeDataBase {
+export interface MeContributionDataBase extends MeDataBase {
   repositoryUrl: string;
 }
 
@@ -32,7 +32,7 @@ export interface MeContributionTranslationData extends MeContributionDataBase {
   category: string;
   langFrom: string | string[];
   langTo: string | string[];
-  platform: "github" | "crowdin" | "weblate" | string;
+  platform: "github" | "crowdin" | "weblate";
   githubPullRequests?: number[];
   directCommits?: string[];
 }

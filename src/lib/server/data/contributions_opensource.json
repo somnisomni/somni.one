@@ -52,17 +52,6 @@
     ]
   },
   {
-    "id": "nyong-studio",
-    "title": "뇽 스튜디오",
-    "repositoryUrl": "https://github.com/O-Kreator/nyong-studio",
-    "contributions": [
-      {
-        "desc": "코드 상에서 이메일 주소 난독화",
-        "pullRequest": 1
-      }
-    ]
-  },
-  {
     "id": "priconne-quest-helper",
     "title": "Princess Connect! Re:Dive - Quest Helper",
     "repositoryUrl": "https://github.com/Expugn/priconne-quest-helper",

@@ -24,7 +24,7 @@
   {
     "id": "trawler",
     "title": "Trawler",
-    "desc": "트위터 계정의 트윗을 주기적으로 크롤링하여 데이터를 수집하는 서버 프로그램",
+    "desc": "<span class='text-zinc-500'>[프로젝트 재작성]</span> 트위터 계정의 프로필 데이터를 주기적으로 크롤링하는 서버 프로그램",
     "stacks": [
       "dot-NET",
       "CSharp",
@@ -128,7 +128,7 @@
   {
     "id": "siina",
     "title": "Siina",
-    "desc": "다중 오실레이터 및 마스터 앰프 ADSR을 지원하는 간단한 피아노(신디사이저) 웹 앱",
+    "desc": "다중 오실레이터 및 마스터 앰프 ADSR을 지원하는 간단한 피아노 웹 앱",
     "stacks": [
       "HTML5",
       "CSS3",
@@ -151,7 +151,7 @@
   {
     "id": "dust-on-me",
     "title": "dust.on.me",
-    "desc": "미세먼지 상태를 매 시간 포스팅하고 명령어에 따라 인터렉션하는 트위터 봇",
+    "desc": "미세먼지 상태를 매 시간 포스팅하고 명령어 트윗에 따라 인터렉션하는 트위터 봇",
     "stacks": [
       "Nodejs",
       "JavaScript",
@@ -214,7 +214,7 @@
   {
     "id": "apimiku-twitterbot",
     "title": "아피미쿠 이미지 트위터 봇",
-    "desc": "<a href='https://piapro.jp/t/KPU3'>아피미쿠<sup>あぴミク</sup></a>의 MMD 이미지 작품을 주기적으로 공유(게시)하는 트위터 봇",
+    "desc": "<a href='https://piapro.jp/t/KPU3'>아피미쿠<sup>あぴミク</sup></a>의 MMD 이미지 작품을 주기적으로 공유하는 트위터 봇",
     "stacks": [
       "Nodejs",
       "JavaScript",
