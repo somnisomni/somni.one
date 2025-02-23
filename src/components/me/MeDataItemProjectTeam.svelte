@@ -8,22 +8,16 @@
   {/snippet}
 
   {#each item.stacks as stack}
-    <MeDataStackIcon icon={stack} />
+    <MeDataStackIcon stack={stack} />
   {/each}
 </MeDataItemBase>
 
 <script lang="ts">
 import MeDataItemBase from "$/components/me/MeDataItemBase.svelte";
-import MeDataStackIcon from "$/components/me/MeDataStackIcon.svelte";
+import MeDataStackIcon from "$/components/me/MeDataStackItem.svelte";
 import MeDataStatusChip from "$/components/me/MeDataStatusChip.svelte";
 import MeDataYearRange from "$/components/me/MeDataYearRange.svelte";
 import type { MeProjectTeamData } from "$/lib/typings/me-data";
 
 const { item }: { item: MeProjectTeamData } = $props();
-
-const yearRangeString = $derived(
-  item.yearFrom === item.yearTo
-    ? item.yearFrom.toString()
-    : `${item.yearFrom} ~ ${item.yearTo && item.yearTo > 0 ? item.yearTo : ""}`,
-);
 </script>

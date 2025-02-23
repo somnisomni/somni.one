@@ -7,8 +7,8 @@
     "teamName": "8팀 - 잘 자요, 꼬마 아가씨",
     "charge": "팀장, 리드 프로그래머 (TD), 테크니컬 사운드 디자이너",
     "stacks": [
-      "Unity",
-      "CSharp",
+      "UNITY",
+      "CSHARP",
       "FMOD"
     ],
     "yearFrom": 2024,
@@ -27,8 +27,8 @@
     "teamName": "TEAM GOYUKKURI",
     "charge": "팀장, 프론트엔드(웹) 개발",
     "stacks": [
-      "VuedotJS",
-      "TypeScript",
+      "VUEJS",
+      "TYPESCRIPT",
       "SASS"
     ],
     "yearFrom": 2022,
@@ -49,15 +49,16 @@
     "teamName": "미니프로젝트 40팀",
     "charge": "프론트엔드(웹) 개발",
     "stacks": [
-      "VuedotJS",
-      "TypeScript",
+      "VUEJS",
+      "TYPESCRIPT",
       "SASS"
     ],
     "yearFrom": 2022,
     "yearTo": 2022,
     "status": "COMPLETED",
     "details": [
-      "[추가 예정]"
+      "[추가 예정]",
+      ""
     ],
     "prizes": [
       "SW마에스트로 연수생 투표 - 3위"
@@ -73,9 +74,9 @@
     "teamName": "YD(연등)",
     "charge": "프론트엔드(웹) 개발",
     "stacks": [
-      "VuedotJS",
-      "Vuetify",
-      "TypeScript",
+      "VUEJS",
+      "VUETIFY",
+      "TYPESCRIPT",
       "SASS"
     ],
     "yearFrom": 2021,
@@ -83,8 +84,7 @@
     "status": "COMPLETED",
     "details": [
       "[추가 예정]",
-      "",
-      "🏆 정보통신진흥원장상 수상"
+      ""
     ],
     "prizes": [
       "정보통신진흥원장상"
@@ -100,8 +100,8 @@
     "teamName": "발전1반 3팀",
     "charge": "게임 프로그래밍",
     "stacks": [
-      "Unity",
-      "JavaScript"
+      "UNITY",
+      "JAVASCRIPT"
     ],
     "yearFrom": 2013,
     "yearTo": 2013,

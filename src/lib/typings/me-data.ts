@@ -1,3 +1,5 @@
+import type { TechStack } from "$/lib/utils/tech-stacks";
+
 export interface MeDataBase {
   id: string;
   title: string;
@@ -5,7 +7,7 @@ export interface MeDataBase {
 }
 
 export interface MeProjectDataBase extends MeDataBase {
-  stacks: string[];
+  stacks: TechStack[];
   yearFrom: number;
   yearTo?: number;
   details: string[];

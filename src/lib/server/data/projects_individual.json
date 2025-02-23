@@ -4,12 +4,12 @@
     "title": "Trawler",
     "desc": "<span class='text-zinc-500'>[프로젝트 재작성]</span> 트위터 계정의 프로필 데이터를 주기적으로 크롤링하는 서버 프로그램",
     "stacks": [
-      "dotNET",
-      "CSharp",
-      "Selenium",
-      "EntityFramework",
-      "MySQL",
-      "Podman"
+      "DOTNET",
+      "CSHARP",
+      "SELENIUM",
+      "ENTITYFRAMEWORKCORE",
+      "MYSQL",
+      "PODMAN"
     ],
     "yearFrom": 2024,
     "yearTo": -1,
@@ -25,13 +25,14 @@
     "title": "MyBoothManager",
     "desc": "창작자들의 부스 운영을 돕는 부스 및 굿즈 관리 웹서비스",
     "stacks": [
-      "VuedotJS",
-      "Vuetify",
-      "Nestjs",
-      "TypeScript",
+      "VUEJS",
+      "VUETIFY",
+      "NESTJS",
+      "SEQUELIZE",
+      "TYPESCRIPT",
       "SASS",
-      "MySQL",
-      "Podman"
+      "MYSQL",
+      "PODMAN"
     ],
     "yearFrom": 2023,
     "yearTo": -1,
@@ -48,10 +49,10 @@
     "title": "Twitter Account Data Crawler",
     "desc": "트위터 계정의 프로필 데이터를 주기적으로 크롤링하는 서버 프로그램",
     "stacks": [
-      "Python",
-      "Selenium",
-      "MySQL",
-      "Podman"
+      "PYTHON",
+      "SELENIUM",
+      "MYSQL",
+      "PODMAN"
     ],
     "yearFrom": 2023,
     "yearTo": 2023,
@@ -67,9 +68,9 @@
     "title": "Ghostodon",
     "desc": "Ghost 블로그에서 글 발행 시 Mastodon 계정에 자동으로 포스팅해주는 간단한 서버 프로그램",
     "stacks": [
-      "NodedotJS",
-      "TypeScript",
-      "Podman"
+      "NODEJS",
+      "TYPESCRIPT",
+      "PODMAN"
     ],
     "yearFrom": 2023,
     "yearTo": 2023,
@@ -85,8 +86,8 @@
     "title": "Twiper",
     "desc": "직접 트위터 개발자 앱을 등록하여 사용하는 '트윗 청소기'",
     "stacks": [
-      "NodedotJS",
-      "TypeScript",
+      "NODEJS",
+      "TYPESCRIPT",
       "X"
     ],
     "yearFrom": 2022,
@@ -108,11 +109,11 @@
     "title": "몰?루파이어",
     "desc": "한국어 형태소 분석기<small>(<a href='https://github.com/bab2min/Kiwi'>Kiwi</a>)</small>를 활용하여 문장을 '몰?루화' 해주는 웹 앱",
     "stacks": [
-      "VuedotJS",
-      "TypeScript",
+      "VUEJS",
+      "TYPESCRIPT",
       "SASS",
-      "Python",
-      "Podman"
+      "PYTHON",
+      "PODMAN"
     ],
     "yearFrom": 2021,
     "yearTo": 2022,
@@ -133,7 +134,7 @@
     "stacks": [
       "HTML5",
       "CSS3",
-      "JavaScript"
+      "JAVASCRIPT"
     ],
     "yearFrom": 2020,
     "yearTo": 2021,
@@ -154,8 +155,8 @@
     "title": "dust.on.me",
     "desc": "미세먼지 상태를 매 시간 포스팅하고 명령어 트윗에 따라 인터렉션하는 트위터 봇",
     "stacks": [
-      "NodedotJS",
-      "JavaScript",
+      "NODEJS",
+      "JAVASCRIPT",
       "X"
     ],
     "yearFrom": 2019,
@@ -174,8 +175,8 @@
     "title": "Unikod",
     "desc": "로마자<small>(라틴 알파벳)</small>를 유사 유니코드 글리프로 스타일링/난독화해주는 라이브러리",
     "stacks": [
-      "dotnet",
-      "CSharp"
+      "DOTNET",
+      "CSHARP"
     ],
     "yearFrom": 2019,
     "yearTo": 2019,
@@ -195,8 +196,8 @@
     "title": "QuiqCompose",
     "desc": "타임라인 표시 없이 빠른 글 작성에 집중한 SNS<small>(트위터)</small> 글 작성 프로그램",
     "stacks": [
-      "dotnet",
-      "CSharp",
+      "DOTNET",
+      "CSHARP",
       "WPF",
       "X"
     ],
@@ -217,8 +218,8 @@
     "title": "아피미쿠 이미지 트위터 봇",
     "desc": "<a href='https://piapro.jp/t/KPU3'>아피미쿠<sup>あぴミク</sup></a>의 MMD 이미지 작품을 주기적으로 공유하는 트위터 봇",
     "stacks": [
-      "NodedotJS",
-      "JavaScript",
+      "NODEJS",
+      "JAVASCRIPT",
       "X"
     ],
     "yearFrom": 2018,
@@ -238,8 +239,8 @@
     "stacks": [
       "HTML5",
       "CSS3",
-      "JavaScript",
-      "jQuery"
+      "JAVASCRIPT",
+      "JQUERY"
     ],
     "yearFrom": 2017,
     "yearTo": 2017,
@@ -258,8 +259,8 @@
     "title": "Simple Random Thing Generator",
     "desc": "이것저것 랜덤한 무언가를 생성하는 안드로이드 앱",
     "stacks": [
-      "Android",
-      "Java"
+      "ANDROID",
+      "JAVA"
     ],
     "yearFrom": 2011,
     "yearTo": 2012,
@@ -276,9 +277,9 @@
     "title": "KUMI",
     "desc": "Minecraft 게임용 통합 모드 설치기",
     "stacks": [
-      "dotNET",
-      "VisualBasicdotNET",
-      "Minecraft"
+      "DOTNET",
+      "VISUALBASIC_NET",
+      "MINECRAFT"
     ],
     "yearFrom": 2011,
     "yearTo": 2012,
