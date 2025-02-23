@@ -2,7 +2,7 @@
   {
     "id": "trawler",
     "title": "Trawler",
-    "desc": "<span class='text-zinc-500'>[프로젝트 재작성]</span> 트위터 계정의 프로필 데이터를 주기적으로 크롤링하는 서버 프로그램",
+    "desc": "<span class='text-zinc-400'>[프로젝트 재작성]</span> 트위터 계정의 프로필 데이터를 주기적으로 크롤링하는 서버 프로그램",
     "stacks": [
       "DOTNET",
       "CSHARP",

@@ -43,7 +43,7 @@
   {
     "id": "swm-mini-sosikmadang",
     "title": "소食마당",
-    "desc": "<span class='text-zinc-500'>[미니프로젝트]</span> 소마센터 근처의 맛집들의 정보를 보여주고, 리뷰와 별점을 남기고 공유할 수 있는 공간🍖",
+    "desc": "<span class='text-zinc-400'>[미니프로젝트]</span> 소마센터 근처의 맛집들의 정보를 보여주고, 리뷰와 별점을 남기고 공유할 수 있는 공간🍖",
     "association": "SW마에스트로 13기",
     "teamName": "미니프로젝트 40팀",
     "charge": "프론트엔드(웹) 개발",
