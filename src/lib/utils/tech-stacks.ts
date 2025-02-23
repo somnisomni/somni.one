@@ -33,6 +33,7 @@ export enum TechStack {
   VUEJS = "VUEJS",
   VUETIFY = "VUETIFY",
   SVELTE = "SVELTE",
+  SVELTEKIT = "SVELTEKIT",
   TAILWINDCSS = "TAILWINDCSS",
   SASS = "SASS",
   JQUERY = "JQUERY",
@@ -161,6 +162,11 @@ const stackData: Record<TechStack, TechStackData> = {
   },
   [TechStack.SVELTE]: {
     title: siSvelte.title,
+    svg: siSvelte.svg,
+    colorHex: siSvelte.hex,
+  },
+  [TechStack.SVELTEKIT]: {
+    title: `${siSvelte.title} (SvelteKit)`,
     svg: siSvelte.svg,
     colorHex: siSvelte.hex,
   },
