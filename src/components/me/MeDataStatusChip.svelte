@@ -17,7 +17,7 @@ const statusBgColorMap: Record<MeProjectDataBase["status"], string> = {
 </script>
 
 <style scoped>
-@reference "$/app.css";
+@reference "$/styles/app.css";
 
 .item-data-status-chip {
   @apply inline-block

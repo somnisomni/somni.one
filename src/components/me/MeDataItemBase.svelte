@@ -22,7 +22,7 @@ const {
 </script>
 
 <style scoped>
-@reference "$/app.css";
+@reference "$/styles/app.css";
 
 .data-item {
   @apply p-4

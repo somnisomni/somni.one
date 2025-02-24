@@ -11,6 +11,8 @@
 }
 
 /* Global styles */
+@import "./transition.css";
+
 body, html {
   @apply text-zinc-800;
 

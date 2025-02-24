@@ -12,7 +12,7 @@ const stackData = $derived(getTechStackData(stack));
 </script>
 
 <style scoped>
-@reference "$/app.css";
+@reference "$/styles/app.css";
 
 .data-item-stack-item {
   @apply inline-block

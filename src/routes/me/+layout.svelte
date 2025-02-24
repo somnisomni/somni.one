@@ -28,7 +28,7 @@ $effect(() => {
 
     if(activeTabElement) {
       const activeTabLeft = activeTabElement.offsetLeft - 50;
-      console.log(activeTabLeft);
+
       tabListElement.scroll({
         left: activeTabLeft,
         behavior: "smooth",
@@ -39,7 +39,7 @@ $effect(() => {
 </script>
 
 <style>
-@reference "$/app.css";
+@reference "$/styles/app.css";
 
 #me-tab-nav {
   @apply relative py-4;
@@ -74,7 +74,20 @@ $effect(() => {
 }
 
 #me-tab-list > li {
-  @apply font-thin mx-4 sm:mx-6 shrink-0 opacity-50;
+  @apply relative shrink-0 font-thin mx-2 sm:mx-4 px-2 opacity-50;
+
+  transition-property: font-weight, opacity;
+  transition-duration: var(--duration-long);
+  transition-timing-function: var(--ease-out-extreme);
+}
+
+#me-tab-list > li::before {
+  @apply absolute block left-0 right-0 -bottom-1
+         h-1 rounded-full bg-sky-300;
+
+  content: "";
+  transform: scaleX(0);
+  transition: transform var(--duration-long) var(--ease-out-extreme);
 }
 
 #me-tab-list > li:first-child { @apply ml-8; }
@@ -82,5 +95,9 @@ $effect(() => {
 
 #me-tab-list > li.active {
   @apply font-medium opacity-100;
+}
+
+#me-tab-list > li.active::before {
+  transform: scaleX(1);
 }
 </style>

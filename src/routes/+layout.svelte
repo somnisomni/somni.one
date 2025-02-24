@@ -3,7 +3,7 @@
 </main>
 
 <script lang="ts">
-import "$/app.css";
+import "$/styles/app.css";
 import type { LayoutProps } from "./$types";
 
 const { children }: LayoutProps = $props();

@@ -5,8 +5,8 @@
 </div>
 
 <script lang="ts">
-import DomainItem from "$components/DomainItem.svelte";
 import type { DomainItemData } from "$lib/types";
+import DomainItem from "$components/DomainItem.svelte";
 
 const data: DomainItemData[] = [
   {
