@@ -7,6 +7,19 @@
         "discontinued": "開発中断",
         "completed": "完了"
       }
+    },
+    "nav": {
+      "individualProjects": "個人プロジェクト",
+      "openSourceContributions": "オープンソース貢献",
+      "teamProjects": "チームプロジェクト",
+      "translationContributions": "翻訳貢献"
+    },
+    "contrib": {
+      "translation": {
+        "weblate": {
+          "proof": "Weblateで翻訳履歴を探す"
+        }
+      }
     }
   }
 }

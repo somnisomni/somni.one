@@ -13,6 +13,13 @@
       "openSourceContributions": "Open Source Contributions",
       "teamProjects": "Team Projects",
       "translationContributions": "Translation Contributions"
+    },
+    "contrib": {
+      "translation": {
+        "weblate": {
+          "proof": "Search translation history on Weblate"
+        }
+      }
     }
   }
 }

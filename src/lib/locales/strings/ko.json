@@ -13,6 +13,13 @@
       "teamProjects": "팀 프로젝트",
       "openSourceContributions": "오픈 소스 기여",
       "translationContributions": "번역 기여"
+    },
+    "contrib": {
+      "translation": {
+        "weblate": {
+          "proof": "Weblate 번역 기록 검색 페이지"
+        }
+      }
     }
   }
 }
