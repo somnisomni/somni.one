@@ -1,5 +1,5 @@
 <span class="data-item-stack-item"
-      style="fill: #{stackData?.colorHex}"
+      style:fill={stackData?.colorHex ? `#${stackData.colorHex}` : undefined}
       title="{stackData?.title}">
   {@html stackData?.svg}
 </span>
@@ -7,8 +7,8 @@
 <script lang="ts">
 import { getTechStackData, type TechStack } from "$/lib/utils/tech-stacks";
 
-const { stack }: { stack: TechStack } = $props();
-const stackData = $derived(getTechStackData(stack));
+const { stack }: { stack?: TechStack } = $props();
+const stackData = $derived(stack ? getTechStackData(stack) : null);
 </script>
 
 <style scoped>
