@@ -31,8 +31,9 @@
 		"vite": "^6.1.1"
 	},
 	"dependencies": {
+		"octokit": "^4.1.2",
 		"simple-icons": "^14.7.0",
-		"svelte-i18n": "^4.0.1",
-		"string-to-color": "^2.2.2"
+		"string-to-color": "^2.2.2",
+		"svelte-i18n": "^4.0.1"
 	}
 }

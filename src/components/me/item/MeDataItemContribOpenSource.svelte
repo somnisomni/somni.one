@@ -2,14 +2,16 @@
                 item={item}>
   <ul>
     {#each item.contributions as contribution}
-      <li>
+      <li class="mb-2">
         {#if contribution.pullRequest}
-          <a>#{contribution.pullRequest}</a>
+          <MeDataGitHubPullRequestItem repositoryUrl={item.repositoryUrl}
+                                       pullRequestNumber={contribution.pullRequest} />
         {:else if contribution.directCommit}
-          <a>hash {contribution.directCommit}</a>
+          <MeDataGitHubCommitItem repositoryUrl={item.repositoryUrl}
+                                  commitHash={contribution.directCommit} />
         {/if}
 
-        <span>: {contribution.desc}</span>
+        <div class="text-sm ml-4">→ {contribution.desc}</div>
       </li>
     {/each}
   </ul>
@@ -17,6 +19,8 @@
 
 <script lang="ts">
 import MeDataItemBase from "$/components/me/item/base/MeDataItemBase.svelte";
+import MeDataGitHubCommitItem from "$/components/me/MeDataGitHubCommitItem.svelte";
+import MeDataGitHubPullRequestItem from "$/components/me/MeDataGitHubPullRequestItem.svelte";
 import type { MeContributionOpenSourceData } from "$/lib/typings/me-data";
 
 const { item }: { item: MeContributionOpenSourceData } = $props();
