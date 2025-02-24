@@ -7,6 +7,7 @@ import IconJava from "$assets/icons/tech-stack/java.svg?raw";
 import IconMinecraft from "$assets/icons/tech-stack/minecraft_alt.svg?raw";
 import IconVisualBasic from "$assets/icons/tech-stack/visualbasic.svg?raw";
 import IconXaml from "$assets/icons/tech-stack/xaml.svg?raw";
+import IconEntityFrameworkCore from "$assets/icons/tech-stack/entityframeworkcore.svg?raw";
 
 export enum TechStack {
   // Languages
@@ -154,8 +155,8 @@ const stackData: Record<TechStack, TechStackData> = {
   },
   [TechStack.ENTITYFRAMEWORKCORE]: {
     title: "Entity Framework Core",
-    svg: "",
-    colorHex: "",
+    svg: IconEntityFrameworkCore,
+    colorHex: "68217A",
   },
   [TechStack.SELENIUM]: {
     title: siSelenium.title,
