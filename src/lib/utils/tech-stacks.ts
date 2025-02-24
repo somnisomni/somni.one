@@ -2,6 +2,10 @@
 
 import { siAndroid, siCss3, siDotnet, siFmod, siHtml5, siJavascript, siJquery, siMysql, siNestjs, siNodedotjs, siNuxt, siPodman, siPython, siSass, siSelenium, siSequelize, siSvelte, siTailwindcss, siTypescript, siUnity, siVuedotjs, siVuetify, siX } from "simple-icons";
 import IconCSharp from "$assets/icons/tech-stack/csharp.svg?raw";
+import IconDotnetFramework from "$assets/icons/tech-stack/dotnet-framework.svg?raw";
+import IconJava from "$assets/icons/tech-stack/java.svg?raw";
+import IconMinecraft from "$assets/icons/tech-stack/minecraft_alt.svg?raw";
+import IconVisualBasic from "$assets/icons/tech-stack/visualbasic.svg?raw";
 import IconXaml from "$assets/icons/tech-stack/xaml.svg?raw";
 
 export enum TechStack {
@@ -17,7 +21,8 @@ export enum TechStack {
 
   // Platforms
   NODEJS = "NODEJS",
-  DOTNET = "DOTNET",
+  DOTNET_FRAMEWORK = "DOTNET_FRAMEWORK",
+  DOTNET_CORE = "DOTNET_CORE",
   ANDROID = "ANDROID",
   MINECRAFT = "MINECRAFT",
   X = "X",
@@ -78,8 +83,8 @@ const stackData: Record<TechStack, TechStackData> = {
   },
   [TechStack.JAVA]: {
     title: "Java",
-    svg: "",
-    colorHex: "",
+    svg: IconJava,
+    colorHex: "EA2D2E",
   },
   [TechStack.CSHARP]: {
     title: "C#",
@@ -88,8 +93,8 @@ const stackData: Record<TechStack, TechStackData> = {
   },
   [TechStack.VISUALBASIC_NET]: {
     title: "Visual Basic .NET",
-    svg: "",
-    colorHex: "",
+    svg: IconVisualBasic,
+    colorHex: "004E8C",
   },
   [TechStack.PYTHON]: {
     title: siPython.title,
@@ -103,8 +108,13 @@ const stackData: Record<TechStack, TechStackData> = {
     svg: siNodedotjs.svg,
     colorHex: siNodedotjs.hex,
   },
-  [TechStack.DOTNET]: {
-    title: siDotnet.title,
+  [TechStack.DOTNET_FRAMEWORK]: {
+    title: ".NET Framework",
+    svg: IconDotnetFramework,
+    colorHex: "1384C8",
+  },
+  [TechStack.DOTNET_CORE]: {
+    title: `${siDotnet.title} Core`,
     svg: siDotnet.svg,
     colorHex: siDotnet.hex,
   },
@@ -115,8 +125,8 @@ const stackData: Record<TechStack, TechStackData> = {
   },
   [TechStack.MINECRAFT]: {
     title: "Minecraft",
-    svg: "",
-    colorHex: "",
+    svg: IconMinecraft,
+    colorHex: "86BC48",
   },
   [TechStack.X]: {
     title: siX.title,

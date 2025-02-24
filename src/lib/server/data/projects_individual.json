@@ -4,7 +4,7 @@
     "title": "Trawler",
     "desc": "<span class='text-zinc-400'>[프로젝트 재작성]</span> 트위터 계정의 프로필 데이터를 주기적으로 크롤링하는 서버 프로그램",
     "stacks": [
-      "DOTNET",
+      "DOTNET_CORE",
       "CSHARP",
       "SELENIUM",
       "ENTITYFRAMEWORKCORE",
@@ -176,7 +176,7 @@
     "title": "Unikod",
     "desc": "로마자<small>(라틴 알파벳)</small>를 유사 유니코드 글리프로 스타일링/난독화해주는 라이브러리",
     "stacks": [
-      "DOTNET",
+      "DOTNET_CORE",
       "CSHARP"
     ],
     "yearFrom": 2019,
@@ -197,7 +197,7 @@
     "title": "QuiqCompose",
     "desc": "타임라인 표시 없이 빠른 글 작성에 집중한 SNS<small>(트위터)</small> 글 작성 프로그램",
     "stacks": [
-      "DOTNET",
+      "DOTNET_FRAMEWORK",
       "CSHARP",
       "WPF",
       "X"
@@ -278,7 +278,7 @@
     "title": "KUMI",
     "desc": "Minecraft 게임용 통합 모드 설치기",
     "stacks": [
-      "DOTNET",
+      "DOTNET_FRAMEWORK",
       "VISUALBASIC_NET",
       "MINECRAFT"
     ],
