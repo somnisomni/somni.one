@@ -15,7 +15,7 @@
 </MeDataItemBase>
 
 <script lang="ts">
-import MeDataItemBase from "$/components/me/base/MeDataItemBase.svelte";
+import MeDataItemBase from "$/components/me/item/base/MeDataItemBase.svelte";
 import MeDataStackItem from "$/components/me/MeDataStackItem.svelte";
 import MeDataStatusChip from "$/components/me/MeDataStatusChip.svelte";
 import MeDataYearRange from "$/components/me/MeDataYearRange.svelte";

@@ -4,7 +4,7 @@
 </MeDataItemProjectBase>
 
 <script lang="ts">
-import MeDataItemProjectBase from "$/components/me/base/MeDataItemProjectBase.svelte";
+import MeDataItemProjectBase from "$/components/me/item/base/MeDataItemProjectBase.svelte";
 import type { MeProjectTeamData } from "$/lib/typings/me-data";
 
 const { item }: { item: MeProjectTeamData } = $props();
