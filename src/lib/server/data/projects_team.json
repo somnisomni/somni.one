@@ -27,8 +27,8 @@
     "teamName": "TEAM GOYUKKURI",
     "charge": "팀장, 프론트엔드(웹) 개발",
     "stacks": [
-      "VUEJS",
       "TYPESCRIPT",
+      "VUEJS",
       "SASS"
     ],
     "yearFrom": 2022,
@@ -48,8 +48,8 @@
     "teamName": "미니프로젝트 40팀",
     "charge": "프론트엔드(웹) 개발",
     "stacks": [
-      "VUEJS",
       "TYPESCRIPT",
+      "VUEJS",
       "SASS"
     ],
     "yearFrom": 2022,
@@ -73,9 +73,9 @@
     "teamName": "YD(연등)",
     "charge": "프론트엔드(웹) 개발",
     "stacks": [
+      "TYPESCRIPT",
       "VUEJS",
       "VUETIFY",
-      "TYPESCRIPT",
       "SASS"
     ],
     "yearFrom": 2021,

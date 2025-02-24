@@ -1,6 +1,6 @@
 /* eslint-disable import-x/exports-last */
 
-import { siAndroid, siCss3, siDotnet, siFmod, siHtml5, siJavascript, siJquery, siMysql, siNestjs, siNodedotjs, siPodman, siPython, siSass, siSelenium, siSequelize, siSvelte, siTailwindcss, siTypescript, siUnity, siVuedotjs, siVuetify, siX } from "simple-icons";
+import { siAndroid, siCss3, siDotnet, siFmod, siHtml5, siJavascript, siJquery, siMysql, siNestjs, siNodedotjs, siNuxt, siPodman, siPython, siSass, siSelenium, siSequelize, siSvelte, siTailwindcss, siTypescript, siUnity, siVuedotjs, siVuetify, siX } from "simple-icons";
 import IconCSharp from "$assets/icons/tech-stack/csharp.svg?raw";
 import IconXaml from "$assets/icons/tech-stack/xaml.svg?raw";
 
@@ -27,7 +27,7 @@ export enum TechStack {
 
   // Backend Libraries & Server Management
   PODMAN = "PODMAN",
-  SEQUELILZE = "SEQUELILZE",
+  SEQUELIZE = "SEQUELIZE",
   ENTITYFRAMEWORKCORE = "ENTITYFRAMEWORKCORE",
   SELENIUM = "SELENIUM",
   NESTJS = "NESTJS",
@@ -35,6 +35,7 @@ export enum TechStack {
   // Frontend Libraries
   VUEJS = "VUEJS",
   VUETIFY = "VUETIFY",
+  NUXT = "NUXT",
   SVELTE = "SVELTE",
   SVELTEKIT = "SVELTEKIT",
   TAILWINDCSS = "TAILWINDCSS",
@@ -83,7 +84,7 @@ const stackData: Record<TechStack, TechStackData> = {
   [TechStack.CSHARP]: {
     title: "C#",
     svg: IconCSharp,
-    colorHex: "A179DC",
+    colorHex: "9B4F96",
   },
   [TechStack.VISUALBASIC_NET]: {
     title: "Visual Basic .NET",
@@ -136,7 +137,7 @@ const stackData: Record<TechStack, TechStackData> = {
     svg: siPodman.svg,
     colorHex: siPodman.hex,
   },
-  [TechStack.SEQUELILZE]: {
+  [TechStack.SEQUELIZE]: {
     title: siSequelize.title,
     svg: siSequelize.svg,
     colorHex: siSequelize.hex,
@@ -167,6 +168,11 @@ const stackData: Record<TechStack, TechStackData> = {
     title: siVuetify.title,
     svg: siVuetify.svg,
     colorHex: siVuetify.hex,
+  },
+  [TechStack.NUXT]: {
+    title: siNuxt.title,
+    svg: siNuxt.svg,
+    colorHex: siNuxt.hex,
   },
   [TechStack.SVELTE]: {
     title: siSvelte.title,

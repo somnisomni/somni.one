@@ -25,12 +25,13 @@
     "title": "MyBoothManager",
     "desc": "창작자들의 부스 운영을 돕는 부스 및 굿즈 관리 웹서비스",
     "stacks": [
+      "TYPESCRIPT",
       "VUEJS",
       "VUETIFY",
+      "NUXT",
+      "SASS",
       "NESTJS",
       "SEQUELIZE",
-      "TYPESCRIPT",
-      "SASS",
       "MYSQL",
       "PODMAN"
     ],
@@ -109,8 +110,8 @@
     "title": "몰?루파이어",
     "desc": "한국어 형태소 분석기<small>(<a href='https://github.com/bab2min/Kiwi'>Kiwi</a>)</small>를 활용하여 문장을 '몰?루화' 해주는 웹 앱",
     "stacks": [
-      "VUEJS",
       "TYPESCRIPT",
+      "VUEJS",
       "SASS",
       "PYTHON",
       "PODMAN"
