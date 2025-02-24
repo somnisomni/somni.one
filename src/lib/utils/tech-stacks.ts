@@ -1,6 +1,6 @@
 /* eslint-disable import-x/exports-last */
 
-import { siAndroid, siCss3, siDotnet, siFmod, siHtml5, siJavascript, siJquery, siMysql, siNestjs, siPodman, siPython, siSass, siSelenium, siSequelize, siSvelte, siTailwindcss, siTypescript, siUnity, siVuedotjs, siVuetify, siX } from "simple-icons";
+import { siAndroid, siCss3, siDotnet, siFmod, siHtml5, siJavascript, siJquery, siMysql, siNestjs, siNodedotjs, siPodman, siPython, siSass, siSelenium, siSequelize, siSvelte, siTailwindcss, siTypescript, siUnity, siVuedotjs, siVuetify, siX } from "simple-icons";
 
 export enum TechStack {
   // Languages
@@ -14,6 +14,7 @@ export enum TechStack {
   PYTHON = "PYTHON",
 
   // Platforms
+  NODEJS = "NODEJS",
   DOTNET = "DOTNET",
   ANDROID = "ANDROID",
   MINECRAFT = "MINECRAFT",
@@ -94,6 +95,11 @@ const stackData: Record<TechStack, TechStackData> = {
   },
 
   // Platforms
+  [TechStack.NODEJS]: {
+    title: "Node.js",
+    svg: siNodedotjs.svg,
+    colorHex: siNodedotjs.hex,
+  },
   [TechStack.DOTNET]: {
     title: siDotnet.title,
     svg: siDotnet.svg,
@@ -205,5 +211,16 @@ const stackData: Record<TechStack, TechStackData> = {
 };
 
 export function getTechStackData(stack: TechStack): TechStackData {
-  return stackData[stack];
+  const stackDataCopy = { ...stackData[stack] };
+
+  // Fix color (white -> black)
+  if(stackDataCopy.colorHex) {
+    stackDataCopy.colorHex = stackDataCopy.colorHex.replace("#", "").toUpperCase();
+
+    if(stackDataCopy.colorHex === "FFFFFF") {
+      stackDataCopy.colorHex = "000000";
+    }
+  }
+
+  return stackDataCopy;
 }
