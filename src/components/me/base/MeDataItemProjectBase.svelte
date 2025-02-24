@@ -7,9 +7,11 @@
                      to={item.yearTo} />
   {/snippet}
 
-  {#each item.stacks as stack}
-    <MeDataStackItem stack={stack} />
-  {/each}
+  <div class="data-item-stacks">
+    {#each item.stacks as stack}
+      <MeDataStackItem stack={stack} />
+    {/each}
+  </div>
 </MeDataItemBase>
 
 <script lang="ts">
