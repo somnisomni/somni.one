@@ -42,10 +42,7 @@ $effect(() => {
 @reference "$/styles/app.css";
 
 #me-tab-nav {
-  @apply relative py-4;
-
-  --tab-nav-height: 6rem;
-  height: var(--tab-nav-height);
+  @apply relative py-4 h-18 sm:h-24;
 }
 
 #me-tab-nav::after {
@@ -63,7 +60,7 @@ $effect(() => {
 
 #me-tab-list {
   @apply flex flex-row justify-start items-center
-         relative h-full text-4xl;
+         relative h-full text-2xl sm:text-4xl;
 
   overflow-x: overlay;
   overflow-y: hidden;
