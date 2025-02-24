@@ -11,7 +11,7 @@
     "nav": {
       "individualProjects": "개인 프로젝트",
       "teamProjects": "팀 프로젝트",
-      "openSourceContributions": "오픈 소스 프로젝트 기여",
+      "openSourceContributions": "오픈 소스 기여",
       "translationContributions": "번역 기여"
     }
   }
