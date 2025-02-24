@@ -5,7 +5,7 @@
 </section>
 
 <script lang="ts">
-import MeDataItemContribOpenSource from "$/components/me/MeDataItemContribOpenSource.svelte";
+import MeDataItemContribOpenSource from "$/components/me/item/MeDataItemContribOpenSource.svelte";
 import type { PageProps } from "./$types";
 
 const { data }: PageProps = $props();

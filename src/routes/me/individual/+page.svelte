@@ -5,7 +5,7 @@
 </section>
 
 <script lang="ts">
-import MeDataItemProjectIndividual from "$/components/me/MeDataItemProjectIndividual.svelte";
+import MeDataItemProjectIndividual from "$/components/me/item/MeDataItemProjectIndividual.svelte";
 import type { PageProps } from "./$types";
 
 const { data }: PageProps = $props();
