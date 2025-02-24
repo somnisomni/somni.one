@@ -1,9 +1,10 @@
 <nav id="me-tab-nav">
-  <ul id="me-tab-list">
-    <li class:active={page.route.id?.endsWith("individual")}><a href="/me/individual">{$_("me.nav.individualProjects")}</a></li>
-    <li class:active={page.route.id?.endsWith("team")}><a href="/me/team">{$_("me.nav.teamProjects")}</a></li>
-    <li class:active={page.route.id?.endsWith("opensource")}><a href="/me/opensource">{$_("me.nav.openSourceContributions")}</a></li>
-    <li class:active={page.route.id?.endsWith("translation")}><a href="/me/translation">{$_("me.nav.translationContributions")}</a></li>
+  <ul bind:this={tabListElement}
+      id="me-tab-list">
+    <li class:active={pageRouteId?.endsWith("individual")}><a href="/me/individual">{$_("me.nav.individualProjects")}</a></li>
+    <li class:active={pageRouteId?.endsWith("team")}><a href="/me/team">{$_("me.nav.teamProjects")}</a></li>
+    <li class:active={pageRouteId?.endsWith("opensource")}><a href="/me/opensource">{$_("me.nav.openSourceContributions")}</a></li>
+    <li class:active={pageRouteId?.endsWith("translation")}><a href="/me/translation">{$_("me.nav.translationContributions")}</a></li>
   </ul>
 </nav>
 
@@ -17,6 +18,24 @@ import { _ } from "svelte-i18n";
 import type { LayoutProps } from "./$types";
 
 const { children }: LayoutProps = $props();
+
+let tabListElement!: HTMLElement;
+let pageRouteId = $derived(page.route.id);
+
+$effect(() => {
+  if(pageRouteId && tabListElement) {
+    const activeTabElement: HTMLElement | null = tabListElement.querySelector("li.active");
+
+    if(activeTabElement) {
+      const activeTabLeft = activeTabElement.offsetLeft - 50;
+      console.log(activeTabLeft);
+      tabListElement.scroll({
+        left: activeTabLeft,
+        behavior: "smooth",
+      });
+    }
+  }
+});
 </script>
 
 <style>
