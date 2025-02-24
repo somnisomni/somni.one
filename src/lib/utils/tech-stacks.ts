@@ -1,6 +1,8 @@
 /* eslint-disable import-x/exports-last */
 
 import { siAndroid, siCss3, siDotnet, siFmod, siHtml5, siJavascript, siJquery, siMysql, siNestjs, siNodedotjs, siPodman, siPython, siSass, siSelenium, siSequelize, siSvelte, siTailwindcss, siTypescript, siUnity, siVuedotjs, siVuetify, siX } from "simple-icons";
+import IconCSharp from "$assets/icons/tech-stack/csharp.svg?raw";
+import IconXaml from "$assets/icons/tech-stack/xaml.svg?raw";
 
 export enum TechStack {
   // Languages
@@ -80,8 +82,8 @@ const stackData: Record<TechStack, TechStackData> = {
   },
   [TechStack.CSHARP]: {
     title: "C#",
-    svg: "",
-    colorHex: "",
+    svg: IconCSharp,
+    colorHex: "A179DC",
   },
   [TechStack.VISUALBASIC_NET]: {
     title: "Visual Basic .NET",
@@ -193,8 +195,8 @@ const stackData: Record<TechStack, TechStackData> = {
   },
   [TechStack.WPF]: {
     title: "Windows Presentation Foundation",
-    svg: "",
-    colorHex: "",
+    svg: IconXaml,
+    colorHex: "6BB3F5",
   },
 
   // Game Engines & Audio Engines
