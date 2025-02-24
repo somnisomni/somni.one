@@ -19,6 +19,7 @@ export interface MeProjectDataBase extends MeDataBase {
 
 export interface MeContributionDataBase extends MeDataBase {
   repositoryUrl: string;
+  proofUrl?: string;
 }
 
 export type MeProjectIndividualData = MeProjectDataBase;

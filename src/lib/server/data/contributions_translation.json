@@ -1,5 +1,15 @@
 [
   {
+    "id": "openwrt",
+    "title": "OpenWrt",
+    "repositoryUrl": "https://github.com/openwrt/openwrt",
+    "proofUrl": "https://hosted.weblate.org/search/openwrt/?q=changed_by%3Asomni",
+    "category": "operating-system",
+    "platform": "weblate",
+    "langFrom": "en",
+    "langTo": "ko"
+  },
+  {
     "id": "utm",
     "title": "UTM",
     "repositoryUrl": "https://github.com/utmapp/UTM",
