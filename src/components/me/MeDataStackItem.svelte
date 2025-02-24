@@ -16,6 +16,10 @@ const stackData = $derived(stack ? getTechStackData(stack) : null);
 
 .data-item-stack-item {
   @apply inline-block
-         w-6 h-6;
+         w-6 h-6 mr-1;
+}
+
+:global(.data-item-stack-item svg) {
+  @apply !w-full !h-full;
 }
 </style>

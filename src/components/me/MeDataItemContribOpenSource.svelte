@@ -16,7 +16,7 @@
 </MeDataItemBase>
 
 <script lang="ts">
-import MeDataItemBase from "$/components/me/MeDataItemBase.svelte";
+import MeDataItemBase from "$/components/me/base/MeDataItemBase.svelte";
 import type { MeContributionOpenSourceData } from "$/lib/typings/me-data";
 
 const { item }: { item: MeContributionOpenSourceData } = $props();

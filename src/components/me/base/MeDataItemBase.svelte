@@ -1,9 +1,11 @@
-<article id={`${idPrefix}-${item.id}`}
+<article id="{idPrefix}-{item.id}"
          class="data-item">
   <div class="data-item-title-area">
     <h2 class="data-item-title">{item.title}</h2>
+
     {@render nextToTitle?.()}
   </div>
+
   <summary class="data-item-desc">{@html item.desc}</summary>
 
   {@render children?.()}
