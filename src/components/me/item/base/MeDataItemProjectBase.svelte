@@ -7,13 +7,21 @@
       <MeDataYearRange from={item.yearFrom}
                        to={item.yearTo} />
     </div>
+
+    {@render nextToTitleSub?.()}
   {/snippet}
+
+  {@render beforeStacks?.()}
 
   <div class="data-item-stacks">
     {#each item.stacks as stack}
       <MeDataStackItem stack={stack} />
     {/each}
   </div>
+
+  {@render afterStacks?.()}
+
+  {@render children?.()}
 </MeDataItemBase>
 
 <script lang="ts">
@@ -26,9 +34,12 @@ import MeDataItemBase from "$/components/me/item/base/MeDataItemBase.svelte";
 
 const {
   children,
+  nextToTitle: nextToTitleSub,
+  beforeStacks,
+  afterStacks,
   idTargetPrefix,
   item,
-}: { children?: Snippet, idTargetPrefix: string, item: MeProjectDataBase } = $props();
+}: { children?: Snippet, nextToTitle?: Snippet, beforeStacks?: Snippet, afterStacks?: Snippet, idTargetPrefix: string, item: MeProjectDataBase } = $props();
 </script>
 
 <style scoped>
@@ -36,7 +47,7 @@ const {
 
 .data-item-extra {
   @apply flex flex-row items-center justify-start
-         max-sm:mt-2 *:mx-1;
+         ml-2 max-sm:my-2 *:mx-1;
 }
 
 .data-item-stacks {

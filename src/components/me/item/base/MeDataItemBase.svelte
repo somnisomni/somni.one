@@ -47,17 +47,13 @@ const {
   transform: translateY(-0.25rem);
 }
 
-.data-item > * {
-  @apply block my-2;
+.data-item, .data-item .data-item-content {
+  @apply *:block *:my-2;
 }
 
 .data-item .data-item-title-area {
   @apply flex flex-col sm:flex-row items-center justify-start
          text-center sm:text-start;
-}
-
-:global(.data-item .data-item-title-area > *) {
-  @apply mr-2;
 }
 
 .data-item .data-item-title {
