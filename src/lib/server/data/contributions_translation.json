@@ -233,5 +233,15 @@
       21,
       22
     ]
+  },
+  {
+    "id": "ubuntu-budgie",
+    "title": "Ubuntu Budgie",
+    "repositoryUrl": "",
+    "proofUrl": "https://app.transifex.com/user/profile/SDSkyKlouD/",
+    "category": "operating-system",
+    "langFrom": "en",
+    "langTo": ["ko", "ja"],
+    "platform": "transifex"
   }
 ]

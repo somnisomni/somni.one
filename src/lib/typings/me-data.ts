@@ -35,7 +35,7 @@ export interface MeContributionTranslationData extends MeContributionDataBase {
   category: string;
   langFrom: string | string[];
   langTo: string | string[];
-  platform: "github" | "crowdin" | "weblate";
+  platform: "github" | "crowdin" | "weblate" | "transifex";
   githubPullRequests?: number[];
   directCommits?: string[];
 }

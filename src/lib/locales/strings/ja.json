@@ -18,6 +18,9 @@
       "translation": {
         "weblate": {
           "proof": "Weblateで翻訳履歴を探す"
+        },
+        "transifex": {
+          "proof": "Transifexプロフィールページ"
         }
       }
     }

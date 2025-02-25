@@ -8,5 +8,4 @@ export default {
       sans: [ "\"Pretendard Variable\"", "Pretendard", "\"Noto Sans CJK KR\"", "\"Noto Sans KR\"", "\"Noto Sans\"", ...defaultTheme.fontFamily.sans ],
     },
   },
-  plugins: [],
 };

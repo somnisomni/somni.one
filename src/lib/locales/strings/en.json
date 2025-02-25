@@ -18,6 +18,9 @@
       "translation": {
         "weblate": {
           "proof": "Search translation history on Weblate"
+        },
+        "transifex": {
+          "proof": "My profile page on Transifex"
         }
       }
     }
