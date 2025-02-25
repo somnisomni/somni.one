@@ -1,6 +1,6 @@
 <a href={prData?.url ?? prPseudoUrl}
    class="inline-block *:mr-1">
-  <span class="float-left !mr-2 w-6 h-6">{@html siGithub.svg}</span>
+  <span class="float-left !mr-2 w-5 h-5">{@html siGithub.svg}</span>
   <span>PR <span class="font-mono font-medium">#{pullRequestNumber}</span></span>
 
   {#if prData}
