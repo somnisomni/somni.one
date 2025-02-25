@@ -41,6 +41,10 @@ export const GET: RequestHandler = async (request) => {
     url: data.html_url,
     title: data.title,
     state: data.merged ? "merged" : data.state,
+    changes: {
+      additions: data.additions,
+      deletions: data.deletions,
+    },
     createdAt: data.created_at,
     doneAt: data.merged_at ?? data.closed_at,
   };
