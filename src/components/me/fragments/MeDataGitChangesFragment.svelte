@@ -1,4 +1,4 @@
-<span class="opacity-50">
+<span class="font-mono text-xs opacity-50">
   {#if changes.additions}
     <span class="text-green-500">+{changes.additions}</span>
   {/if}
