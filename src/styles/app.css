@@ -1,17 +1,15 @@
 /* Font family - Pretendard */
 @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@latest/dist/web/variable/pretendardvariable-dynamic-subset.min.css");
 
-/* Tailwind CSS */
+/* Tailwind CSS & Dependencies */
 @import "tailwindcss";
+@import "./transition.css";
 
 @theme {
   --font-sans:
     "Pretendard Variable", "Pretendard JP", "Pretendard", "Noto Sans CJK KR", "Noto Sans KR", "Noto Sans",
     ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
-
-/* Global styles */
-@import "./transition.css";
 
 body, html {
   @apply text-zinc-800;
