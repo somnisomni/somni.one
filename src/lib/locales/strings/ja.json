@@ -12,7 +12,8 @@
       "individualProjects": "個人プロジェクト",
       "openSourceContributions": "オープンソース貢献",
       "teamProjects": "チームプロジェクト",
-      "translationContributions": "翻訳貢献"
+      "translationContributions": "翻訳貢献",
+      "certifications": "資格"
     },
     "contrib": {
       "translation": {

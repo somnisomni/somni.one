@@ -1,0 +1,82 @@
+[
+  {
+    "id": "jlpt",
+    "title": "일본어능력시험 <small>(JLPT)</small>",
+    "type": "language",
+    "subCertifications": [
+      {
+        "title": "N2",
+        "certificationYear": 2021
+      },
+      {
+        "title": "N3",
+        "certificationYear": 2018
+      }
+    ]
+  },
+  {
+    "id": "hrdk-craftsman-automatic-equipment",
+    "title": "자동화설비기능사 <small>(생산자동화기능사)</small>",
+    "certificationYear": 2016,
+    "type": "tech-skill"
+  },
+  {
+    "id": "hrdk-craftsman-computer-aided-mechanical-drawing",
+    "title": "전산응용기계제도기능사",
+    "certificationYear": 2017,
+    "type": "tech-skill"
+  },
+  {
+    "id": "hrdk-craftsman-elevator",
+    "title": "승강기기능사",
+    "certificationYear": 2018,
+    "type": "tech-skill"
+  },
+  {
+    "id": "hrdk-craftsman-electronics",
+    "title": "전자기능사",
+    "certificationYear": 2018,
+    "type": "tech-skill"
+  },
+  {
+    "id": "hrdk-craftsman-electronic-cad",
+    "title": "전자캐드기능사",
+    "certificationYear": 2018,
+    "type": "tech-skill"
+  },
+  {
+    "id": "hrdk-information-processing",
+    "title": "정보처리기능사",
+    "certificationYear": 2018,
+    "type": "tech-skill"
+  },
+  {
+    "id": "kait-linux-master-grade2",
+    "title": "리눅스마스터 2급",
+    "certificationYear": 2021,
+    "type": "tech-skill"
+  },
+  {
+    "id": "kait-diat",
+    "title": "DIAT",
+    "type": "tech-skill",
+    "subCertifications": [
+      {
+        "title": "DIAT 정보통신상식",
+        "certificationYear": 2011
+      },
+      {
+        "title": "DIAT 인터넷정보검색",
+        "certificationYear": 2011
+      },
+      {
+        "title": "DIAT 스프레드시트",
+        "certificationYear": 2011
+      },
+      {
+        "title": "DIAT 워드프로세서",
+        "certificationYear": 2011
+      }
+    ]
+  }
+]

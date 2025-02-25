@@ -47,7 +47,7 @@ const {
 
 .data-item-extra {
   @apply flex flex-row items-center justify-start
-         ml-2 max-sm:my-2 *:mx-1;
+         !mr-0 max-sm:my-2 *:mx-1;
 }
 
 .data-item-stacks {

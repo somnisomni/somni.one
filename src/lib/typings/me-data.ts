@@ -47,3 +47,12 @@ export interface MeContributionOpenSourceData extends MeContributionDataBase {
     directCommit?: string;
   }>;
 }
+
+export interface MeCertificationData extends MeDataBase {
+  type: "language" | "tech-skill";
+  certificationYear?: number;
+  subCertifications: Array<{
+    title: string;
+    certificationYear: number;
+  }>;
+}
