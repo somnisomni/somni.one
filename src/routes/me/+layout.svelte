@@ -1,6 +1,6 @@
 <nav id="navigation">
   <a href="/"
-     class="inline-block"
+     class="inline-block transition-transform hover:-translate-x-1/12"
      title={$_("common.nav.back")}>
     <img src={faArrowLeft}
          alt={$_("common.nav.back")}
