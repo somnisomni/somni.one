@@ -79,7 +79,7 @@ $effect(() => {
 }
 
 #me-tab-list > li::before {
-  @apply absolute block left-0 right-0 -bottom-2
+  @apply absolute block left-0 right-0 -bottom-1 sm:-bottom-2
          h-1 rounded-full bg-sky-300;
 
   content: "";
