@@ -13,7 +13,8 @@
       "openSourceContributions": "オープンソース貢献",
       "teamProjects": "チームプロジェクト",
       "translationContributions": "翻訳貢献",
-      "certifications": "資格"
+      "certifications": "資格",
+      "title": "個人履歴"
     },
     "contrib": {
       "translation": {
@@ -24,6 +25,11 @@
           "proof": "Transifexプロフィールページ"
         }
       }
+    }
+  },
+  "common": {
+    "nav": {
+      "back": "戻る"
     }
   }
 }

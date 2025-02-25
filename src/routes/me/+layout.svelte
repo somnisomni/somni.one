@@ -1,3 +1,16 @@
+<nav id="navigation">
+  <a href="/"
+     class="inline-block"
+     title={$_("common.nav.back")}>
+    <img src={faArrowLeft}
+         alt={$_("common.nav.back")}
+         class="p-3 w-12 h-12" />
+  </a>
+
+  <span class="text-2xl font-bold">somni</span>
+  <span class="text-2xl font-thin">{$_("me.nav.title")}</span>
+</nav>
+
 <nav id="me-tab-nav">
   <ul bind:this={tabListElement}
       id="me-tab-list">
@@ -14,9 +27,10 @@
 </div>
 
 <script lang="ts">
+import type { LayoutProps } from "./$types";
 import { page } from "$app/state";
 import { _ } from "svelte-i18n";
-import type { LayoutProps } from "./$types";
+import faArrowLeft from "$/assets/icons/ui/fa-arrow-left.svg";
 
 const { children }: LayoutProps = $props();
 
@@ -42,8 +56,13 @@ $effect(() => {
 <style>
 @reference "$/styles/app.css";
 
+#navigation {
+  @apply relative flex flex-row items-center
+         p-2 h-16 *:mr-2;
+}
+
 #me-tab-nav {
-  @apply relative py-4 h-18 sm:h-24;
+  @apply relative py-2 h-16 sm:h-24;
 }
 
 #me-tab-nav::after {

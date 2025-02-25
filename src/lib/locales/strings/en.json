@@ -13,7 +13,8 @@
       "openSourceContributions": "Open Source Contributions",
       "teamProjects": "Team Projects",
       "translationContributions": "Translation Contributions",
-      "certifications": "Certifications"
+      "certifications": "Certifications",
+      "title": "Personal Record"
     },
     "contrib": {
       "translation": {
@@ -24,6 +25,11 @@
           "proof": "My profile page on Transifex"
         }
       }
+    }
+  },
+  "common": {
+    "nav": {
+      "back": "Back"
     }
   }
 }
