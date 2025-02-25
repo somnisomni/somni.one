@@ -17,12 +17,12 @@
 </MeDataItemBase>
 
 <script lang="ts">
-import MeDataItemBase from "$/components/me/item/base/MeDataItemBase.svelte";
-import MeDataStackItem from "$/components/me/MeDataStackItem.svelte";
-import MeDataStatusChip from "$/components/me/MeDataStatusChip.svelte";
-import MeDataYearRange from "$/components/me/MeDataYearRange.svelte";
-import type { MeProjectDataBase } from "$/lib/typings/me-data";
 import type { Snippet } from "svelte";
+import type { MeProjectDataBase } from "$/lib/typings/me-data";
+import MeDataStackItem from "$/components/me/fragments/MeDataStackItem.svelte";
+import MeDataStatusChip from "$/components/me/fragments/MeDataStatusChip.svelte";
+import MeDataYearRange from "$/components/me/fragments/MeDataYearRange.svelte";
+import MeDataItemBase from "$/components/me/item/base/MeDataItemBase.svelte";
 
 const {
   children,

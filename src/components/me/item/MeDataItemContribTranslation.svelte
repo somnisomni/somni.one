@@ -5,7 +5,7 @@
       {#each item.githubPullRequests ?? [] as pullRequest}
         <li>
           <MeDataGitHubPullRequestItem repositoryUrl={item.repositoryUrl}
-                                      pullRequestNumber={pullRequest} />
+                                       pullRequestNumber={pullRequest} />
         </li>
       {/each}
 
@@ -32,8 +32,8 @@
 
 <script lang="ts">
 import MeDataItemBase from "$/components/me/item/base/MeDataItemBase.svelte";
-import MeDataGitHubCommitItem from "$/components/me/MeDataGitHubCommitItem.svelte";
-import MeDataGitHubPullRequestItem from "$/components/me/MeDataGitHubPullRequestItem.svelte";
+import MeDataGitHubCommitItem from "$/components/me/fragments/MeDataGitHubCommitItem.svelte";
+import MeDataGitHubPullRequestItem from "$/components/me/fragments/MeDataGitHubPullRequestItem.svelte";
 import type { MeContributionTranslationData } from "$/lib/typings/me-data";
 import { _ } from "svelte-i18n";
 import { siWeblate } from "simple-icons";

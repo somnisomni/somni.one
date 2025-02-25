@@ -19,8 +19,8 @@
 
 <script lang="ts">
 import MeDataItemBase from "$/components/me/item/base/MeDataItemBase.svelte";
-import MeDataGitHubCommitItem from "$/components/me/MeDataGitHubCommitItem.svelte";
-import MeDataGitHubPullRequestItem from "$/components/me/MeDataGitHubPullRequestItem.svelte";
+import MeDataGitHubCommitItem from "$/components/me/fragments/MeDataGitHubCommitItem.svelte";
+import MeDataGitHubPullRequestItem from "$/components/me/fragments/MeDataGitHubPullRequestItem.svelte";
 import type { MeContributionOpenSourceData } from "$/lib/typings/me-data";
 
 const { item }: { item: MeContributionOpenSourceData } = $props();
