@@ -57,8 +57,14 @@
     "type": "tech-skill"
   },
   {
+    "id": "korcham-computer-specialist-grade2",
+    "title": "컴퓨터활용능력 2급",
+    "certificationYear": 2013,
+    "type": "tech-skill"
+  },
+  {
     "id": "kait-diat",
-    "title": "DIAT",
+    "title": "디지털정보활용능력 <small>(DIAT)</small>",
     "type": "tech-skill",
     "subCertifications": [
       {
@@ -76,6 +82,21 @@
       {
         "title": "DIAT 워드프로세서",
         "certificationYear": 2011
+      }
+    ]
+  },
+  {
+    "id": "kpc-itq",
+    "title": "정보기술자격 <small>(ITQ)</small>",
+    "type": "tech-skill",
+    "subCertifications": [
+      {
+        "title": "ITQ 아래한글 <small>(A등급)</small>",
+        "certificationYear": 2009
+      },
+      {
+        "title": "ITQ 한글파워포인트 <small>(A등급)</small>",
+        "certificationYear": 2010
       }
     ]
   }

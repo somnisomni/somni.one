@@ -9,7 +9,7 @@
 
   {#if item.subCertifications}
     {#each item.subCertifications as subCert}
-      <p>{subCert.title} - {subCert.certificationYear}</p>
+      <p>{@html subCert.title} - {subCert.certificationYear}</p>
     {/each}
   {/if}
 </MeDataItemBase>
