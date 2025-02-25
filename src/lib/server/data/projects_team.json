@@ -1,5 +1,24 @@
 [
   {
+    "id": "ck-graduation-game",
+    "title": "(진행 중 졸업작품 프로젝트)",
+    "desc": "[추가 예정]",
+    "association": "청강문화산업대학교 3학년 졸업작",
+    "teamName": "팀 경로당",
+    "charge": "게임 프로그래머",
+    "stacks": [
+      "UNITY",
+      "CSHARP"
+    ],
+    "yearFrom": 2025,
+    "yearTo": 2025,
+    "status": "ONGOING",
+    "details": [
+      "[추가 예정]",
+      ""
+    ]
+  },
+  {
     "id": "ck-semester-littlewitchrita",
     "title": "꼬마 마녀 리타",
     "desc": "[추가 예정]",
