@@ -6,6 +6,7 @@ export default {
   theme: {
     fontFamily: {
       sans: [ "\"Pretendard Variable\"", "Pretendard", "\"Noto Sans CJK KR\"", "\"Noto Sans KR\"", "\"Noto Sans\"", ...defaultTheme.fontFamily.sans ],
+      mono: [ "D2Coding", "\"Noto Sans Mono CJK KR\"", "\"Noto Sans Mono KR\"", "\"Noto Sans Mono\"", ...defaultTheme.fontFamily.mono ],
     },
   },
 };
