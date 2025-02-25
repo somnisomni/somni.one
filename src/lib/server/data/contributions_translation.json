@@ -86,7 +86,7 @@
   },
   {
     "id": "xposed-anrc",
-    "title": "ANRC (Xposed 모듈)",
+    "title": "ANRC <small>(Xposed 모듈)</small>",
     "repositoryUrl": "https://github.com/wDCat/ANRC",
     "category": "app-android",
     "langFrom": "en",
@@ -98,7 +98,7 @@
   },
   {
     "id": "discord-rembot",
-    "title": "Rem V2 (Discord 봇)",
+    "title": "Rem V2 <small>(Discord 봇)</small>",
     "repositoryUrl": "https://github.com/rem-bot-industries/rem-v2",
     "category": "app-other",
     "langFrom": "en",
@@ -111,7 +111,7 @@
   },
   {
     "id": "xposed-wifi-password",
-    "title": "WiFi Password Viewer (Xposed 모듈)",
+    "title": "WiFi Password Viewer <small>(Xposed 모듈)</small>",
     "repositoryUrl": "https://github.com/CzBiX/wifi-password-android",
     "category": "app-android",
     "langFrom": "en",
@@ -136,7 +136,7 @@
   },
   {
     "id": "xposed-youtube-background-playback",
-    "title": "YouTube Background Playback (Xposed 모듈)",
+    "title": "YouTube Background Playback <small>(Xposed 모듈)</small>",
     "repositoryUrl": "https://github.com/pylerSM/YouTubeBackgroundPlayback",
     "category": "app-android",
     "langFrom": "en",
@@ -148,7 +148,7 @@
   },
   {
     "id": "xposed-fix-lollipop-memory-leak",
-    "title": "Fix Lollipop Memory Leak (Xposed 모듈)",
+    "title": "Fix Lollipop Memory Leak <small>(Xposed 모듈)</small>",
     "repositoryUrl": "https://github.com/tonyp/FixLollipopMemoryLeak",
     "category": "app-android",
     "langFrom": "en",
@@ -172,7 +172,7 @@
   },
   {
     "id": "xposed-app-ops",
-    "title": "App Ops (Xposed 모듈)",
+    "title": "App Ops <small>(Xposed 모듈)</small>",
     "repositoryUrl": "https://github.com/jclehner/AppOpsXposed",
     "category": "app-android",
     "langFrom": "en",
@@ -184,7 +184,7 @@
   },
   {
     "id": "xposed-app-settings",
-    "title": "App Settings (Xposed 모듈)",
+    "title": "App Settings <small>(Xposed 모듈)</small>",
     "repositoryUrl": "https://github.com/rovo89/XposedAppSettings",
     "category": "app-android",
     "langFrom": "en",
@@ -196,7 +196,7 @@
   },
   {
     "id": "xposed-gravitybox",
-    "title": "GravityBox (Xposed 모듈)",
+    "title": "GravityBox <small>(Xposed 모듈)</small>",
     "repositoryUrl": "https://github.com/GravityBox/GravityBox",
     "category": "app-android",
     "langFrom": "en",
@@ -223,7 +223,7 @@
   },
   {
     "id": "xposed-advanced-power-menu",
-    "title": "Advanced Power Menu (Xposed 모듈)",
+    "title": "Advanced Power Menu <small>(Xposed 모듈)</small>",
     "repositoryUrl": "https://github.com/kennethso168/AdvancedPowerMenu",
     "category": "app-android",
     "langFrom": "en",
