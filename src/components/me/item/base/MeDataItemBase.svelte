@@ -44,7 +44,7 @@ const {
   @apply shadow-lg;
 
   border-color: var(--color);
-  transform: translateY(-0.5rem);
+  transform: translateY(-0.25rem);
 }
 
 .data-item > * {
@@ -52,7 +52,8 @@ const {
 }
 
 .data-item .data-item-title-area {
-  @apply flex items-center justify-start;
+  @apply flex flex-col sm:flex-row items-center justify-start
+         text-center sm:text-start;
 }
 
 :global(.data-item .data-item-title-area > *) {
@@ -60,10 +61,10 @@ const {
 }
 
 .data-item .data-item-title {
-  @apply text-2xl;
+  @apply text-2xl font-medium;
 }
 
 .data-item .data-item-desc {
-  @apply block;
+  @apply block my-4;
 }
 </style>

@@ -1,10 +1,12 @@
 <MeDataItemBase idPrefix="project-{idTargetPrefix}"
                 item={item}>
   {#snippet nextToTitle()}
-    <MeDataStatusChip status={item.status} />
+    <div class="data-item-extra">
+      <MeDataStatusChip status={item.status} />
 
-    <MeDataYearRange from={item.yearFrom}
-                     to={item.yearTo} />
+      <MeDataYearRange from={item.yearFrom}
+                       to={item.yearTo} />
+    </div>
   {/snippet}
 
   <div class="data-item-stacks">
@@ -28,3 +30,16 @@ const {
   item,
 }: { children?: Snippet, idTargetPrefix: string, item: MeProjectDataBase } = $props();
 </script>
+
+<style scoped>
+@reference "$/styles/app.css";
+
+.data-item-extra {
+  @apply flex flex-row items-center justify-start
+         max-sm:mt-2 *:mx-1;
+}
+
+.data-item-stacks {
+  @apply my-2 max-sm:text-center;
+}
+</style>
