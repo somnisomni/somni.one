@@ -31,7 +31,7 @@ const {
 @reference "$/styles/app.css";
 
 .data-item {
-  @apply px-4 sm:px-8 py-2 sm:py-6 m-2 sm:m-6 max-sm:my-6
+  @apply px-4 sm:px-8 py-2 sm:py-6 m-2 sm:m-6 max-sm:my-4
          border-1 border-zinc-400 rounded-2xl shadow-md;
 
   transform: translateY(0.000001px);
