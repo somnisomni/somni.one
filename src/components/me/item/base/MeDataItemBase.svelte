@@ -2,16 +2,20 @@
          class="data-item"
          style:--color={stringToColor(`dark ${item.title}`)}>
   <div class="data-item-title-area">
-    <h2 class="data-item-title">{item.title}</h2>
+    <h2 class="data-item-title">{@html item.title}</h2>
 
     {@render nextToTitle?.()}
   </div>
 
-  <summary class="data-item-desc">{@html item.desc}</summary>
+  {#if item.desc}
+    <summary class="data-item-desc">{@html item.desc}</summary>
+  {/if}
 
-  <div class="data-item-content">
-    {@render children?.()}
-  </div>
+  {#if children}
+    <div class="data-item-content">
+      {@render children?.()}
+    </div>
+  {/if}
 </article>
 
 <script lang="ts">
@@ -53,7 +57,7 @@ const {
 
 .data-item .data-item-title-area {
   @apply flex flex-col sm:flex-row items-center justify-start
-         text-center sm:text-start;
+         text-center sm:text-start sm:*:mr-2;
 }
 
 .data-item .data-item-title {
