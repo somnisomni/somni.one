@@ -1,4 +1,4 @@
-<a href={prData?.url}
+<a href={prData?.url ?? prPseudoUrl}
    class="inline-block *:mr-1">
   <span class="float-left !mr-2 w-6 h-6">{@html siGithub.svg}</span>
   <span>PR <span class="font-mono font-medium">#{pullRequestNumber}</span></span>
@@ -19,6 +19,7 @@ import { onMount } from "svelte";
 const { repositoryUrl, pullRequestNumber }: { repositoryUrl: string, pullRequestNumber: number } = $props();
 
 let prData = $state<GitHubPullRequestData | null>(null);
+const prPseudoUrl = $derived(`${repositoryUrl}/pull/${pullRequestNumber}`);
 
 onMount(() => {
   if(prData) return;

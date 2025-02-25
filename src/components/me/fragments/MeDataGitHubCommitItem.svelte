@@ -1,4 +1,4 @@
-<a href={commitData?.url}
+<a href={commitData?.url ?? commitPseudoUrl}
    class="inline-block *:mr-1">
   <span class="float-left !mr-2 w-6 h-6">{@html siGithub.svg}</span>
   <span>Commit <span class="font-mono font-medium">{commitData?.commitHashShort ?? commitHash.slice(0, 7)}</span></span>
@@ -19,6 +19,7 @@ import { onMount } from "svelte";
 const { repositoryUrl, commitHash }: { repositoryUrl: string, commitHash: string } = $props();
 
 let commitData = $state<GitHubCommitData | null>(null);
+const commitPseudoUrl = $derived(`${repositoryUrl}/commit/${commitHash}`);
 
 onMount(() => {
   if(commitData) return;
