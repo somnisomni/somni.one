@@ -8,7 +8,7 @@
   </ul>
 </nav>
 
-<div>
+<div class="lg:max-w-3/4 mx-auto">
   {@render children()}
 </div>
 
