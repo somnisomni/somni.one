@@ -1,4 +1,4 @@
-<a href={prData?.url ?? prPseudoUrl}
+<a href={prData?.url}
    class="inline-block *:mr-1">
   <span class="float-left !mr-2 w-5 h-5">{@html siGithub.svg}</span>
   <span>PR <span class="font-mono font-medium">#{pullRequestNumber}</span></span>
@@ -12,19 +12,22 @@
 <script lang="ts">
 import MeDataGitChangesFragment from "$/components/me/fragments/MeDataGitChangesFragment.svelte";
 import { githubPullRequestDataStore } from "$/lib/stores/me.svelte";
-import type { GitHubPullRequestData } from "$/lib/typings/github";
+import { GitHubDataResponseType, type GitHubDataResponse, type GitHubPullRequestData } from "$/lib/typings/github";
+import type { MeDataType } from "$/lib/typings/me-data";
 import { siGithub } from "simple-icons";
 import { onMount } from "svelte";
 
-const { repositoryUrl, pullRequestNumber }: { repositoryUrl: string, pullRequestNumber: number } = $props();
+const { dataType, dataId, pullRequestNumber }: { dataType: MeDataType, dataId: string, pullRequestNumber: number } = $props();
 
 let prData = $state<GitHubPullRequestData | null>(null);
-const prPseudoUrl = $derived(`${repositoryUrl}/pull/${pullRequestNumber}`);
 
 onMount(() => {
   if(prData) return;
 
-  const apiUrl = `/me/api/github/pull-request?repositoryUrl=${repositoryUrl}&pullRequest=${pullRequestNumber}`;
+  const apiUrl = "/me/api/github"
+    + `?type=${dataType}`
+    + `&id=${dataId}`
+    + `&pr=${pullRequestNumber}`;
 
   if(apiUrl in githubPullRequestDataStore) {
     prData = githubPullRequestDataStore[apiUrl];
@@ -37,9 +40,10 @@ onMount(() => {
       "Content-Type": "application/json",
     },
   }).then(async (response) => {
-    if(response) {
-      prData = await response.json();
-      githubPullRequestDataStore[apiUrl] = prData!;
+    const data = await response.json() as GitHubDataResponse;
+
+    if(data && data.type === GitHubDataResponseType.PullRequest) {
+      githubPullRequestDataStore[apiUrl] = prData = data.data;
     }
   });
 });

@@ -4,14 +4,16 @@
     {#if item.platform === "github"}
       {#each item.githubPullRequests ?? [] as pullRequest}
         <li>
-          <MeDataGitHubPullRequestItem repositoryUrl={item.repositoryUrl}
+          <MeDataGitHubPullRequestItem dataType={MeDataType.CONTRIBUTION_TRANSLATION}
+                                       dataId={item.id}
                                        pullRequestNumber={pullRequest} />
         </li>
       {/each}
 
       {#each item.directCommits ?? [] as directCommit}
         <li>
-          <MeDataGitHubCommitItem repositoryUrl={item.repositoryUrl}
+          <MeDataGitHubCommitItem dataType={MeDataType.CONTRIBUTION_TRANSLATION}
+                                  dataId={item.id}
                                   commitHash={directCommit} />
         </li>
       {/each}
@@ -38,7 +40,7 @@
 import MeDataItemBase from "$/components/me/item/base/MeDataItemBase.svelte";
 import MeDataGitHubCommitItem from "$/components/me/fragments/MeDataGitHubCommitItem.svelte";
 import MeDataGitHubPullRequestItem from "$/components/me/fragments/MeDataGitHubPullRequestItem.svelte";
-import type { MeContributionTranslationData } from "$/lib/typings/me-data";
+import { MeDataType, type MeContributionTranslationData } from "$/lib/typings/me-data";
 import { _ } from "svelte-i18n";
 import { siTransifex, siWeblate } from "simple-icons";
 

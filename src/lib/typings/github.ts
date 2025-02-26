@@ -20,3 +20,19 @@ export interface GitHubPullRequestData {
   createdAt: string;
   doneAt: string | null;
 }
+
+export enum GitHubDataResponseType {
+  Commit = "commit",
+  PullRequest = "pull-request",
+}
+
+export type GitHubDataResponse = ({
+  type: GitHubDataResponseType.Commit;
+  data: GitHubCommitData;
+} | {
+  type: GitHubDataResponseType.PullRequest;
+  data: GitHubPullRequestData;
+}) | {
+  type: GitHubDataResponseType;
+  data: GitHubPullRequestData | GitHubCommitData;
+};

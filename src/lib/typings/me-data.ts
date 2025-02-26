@@ -1,24 +1,33 @@
 import type { TechStack } from "$/lib/utils/tech-stacks";
 
+export enum MeDataType {
+  PROJECT_INDIVIDUAL = "projects_individual",
+  PROJECT_TEAM = "projects_team",
+  CONTRIBUTION_TRANSLATION = "contributions_translation",
+  CONTRIBUTION_OPENSOURCE = "contributions_opensource",
+  CERTIFICATION = "certifications",
+}
+
 export interface MeDataBase {
   id: string;
   title: string;
   desc?: string;
+  repositoryUrl?: string;
 }
 
 export interface MeProjectDataBase extends MeDataBase {
+  repositoryUrl: string;  // mandatory
+
   stacks: TechStack[];
   yearFrom: number;
   yearTo?: number;
   details: string[];
   status: "ONGOING" | "MAINTAINING" | "COMPLETED" | "DISCONTINUED";
-  repositoryUrl?: string;
   pageUrl?: string;
   appUrl?: string;
 }
 
 export interface MeContributionDataBase extends MeDataBase {
-  repositoryUrl: string;
   proofUrl?: string;
 }
 
@@ -31,14 +40,18 @@ export interface MeProjectTeamData extends MeProjectDataBase {
   prizes?: string[];
 }
 
-export interface MeContributionTranslationData extends MeContributionDataBase {
-  category: string;
-  langFrom: string | string[];
-  langTo: string | string[];
-  platform: "github" | "crowdin" | "weblate" | "transifex";
-  githubPullRequests?: number[];
-  directCommits?: string[];
-}
+export type MeContributionTranslationData = MeContributionDataBase
+  & {
+    category: string;
+    langFrom: string | string[];
+    langTo: string | string[];
+  } & ({
+    platform: "github";
+    githubPullRequests: number[];
+    directCommits: string[];
+  } | {
+    platform: "crowdin" | "weblate" | "transifex";
+  });
 
 export interface MeContributionOpenSourceData extends MeContributionDataBase {
   contributions: Array<{
