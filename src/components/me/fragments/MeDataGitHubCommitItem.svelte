@@ -5,7 +5,7 @@
 
   {#if commitData}
     <MeDataGitChangesFragment changes={commitData.changes} />
-    <span class="text-zinc-400">{commitData.title}</span>
+    <span class="text-xs text-zinc-300">{commitData.title}</span>
   {/if}
 </a>
 
