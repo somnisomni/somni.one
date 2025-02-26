@@ -93,14 +93,12 @@ export const GET: RequestHandler = async (request) => {
   }
 
   /* Cache data */
-  const responseData: GitHubDataResponse = {
+  const responseData = {
     type: responseType,
     data: structedData,
-  };
+  } as GitHubDataResponse;
   cacheMap.set(cacheId, responseData);
-  if(responseData.type === GitHubDataResponseType.PullRequest) {
-    responseData.data;
-  }
+
   /* Response */
   return new Response(JSON.stringify(responseData), { status: 200 });
 };

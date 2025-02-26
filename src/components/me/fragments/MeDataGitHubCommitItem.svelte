@@ -11,7 +11,7 @@
 
 <script lang="ts">
 import MeDataGitChangesFragment from "$/components/me/fragments/MeDataGitChangesFragment.svelte";
-import { githubCommitDataStore } from "$/lib/stores/me.svelte";
+import { githubCommitDataStore, githubDataFetchQueue } from "$/lib/stores/me.svelte";
 import { GitHubDataResponseType, type GitHubCommitData, type GitHubDataResponse } from "$/lib/typings/github";
 import type { MeDataType } from "$/lib/typings/me-data";
 import { siGithub } from "simple-icons";
@@ -19,32 +19,30 @@ import { onMount } from "svelte";
 
 const { dataType, dataId, commitHash }: { dataType: MeDataType, dataId: string, commitHash: string } = $props();
 
-let commitData = $state<GitHubCommitData | null>(null);
+const apiUrl = $derived("/me/api/github"
+  + `?type=${dataType}`
+  + `&id=${dataId}`
+  + `&commit=${commitHash}`);
+const commitData = $derived(apiUrl in githubCommitDataStore ? githubCommitDataStore[apiUrl] : null);
 
 onMount(() => {
   if(commitData) return;
 
-  const apiUrl = "/me/api/github"
-    + `?type=${dataType}`
-    + `&id=${dataId}`
-    + `&commit=${commitHash}`;
+  githubDataFetchQueue.add(
+    apiUrl,
+    async () => await fetch(apiUrl, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    }),
+    async (response) => {
+      const data = await response.json() as GitHubDataResponse;
 
-  if(apiUrl in githubCommitDataStore) {
-    commitData = githubCommitDataStore[apiUrl];
-    return;
-  }
-
-  fetch(apiUrl, {
-    method: "GET",
-    headers: {
-      "Content-Type": "application/json",
-    },
-  }).then(async (response) => {
-    const data = await response.json() as GitHubDataResponse;
-
-    if(data && data.type === GitHubDataResponseType.Commit) {
-      githubCommitDataStore[apiUrl] = commitData = data.data;
+      if(data && data.type === GitHubDataResponseType.Commit) {
+        githubCommitDataStore[apiUrl] = data.data;
+      }
     }
-  });
+  );
 });
 </script>

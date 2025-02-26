@@ -11,7 +11,7 @@
 
 <script lang="ts">
 import MeDataGitChangesFragment from "$/components/me/fragments/MeDataGitChangesFragment.svelte";
-import { githubPullRequestDataStore } from "$/lib/stores/me.svelte";
+import { githubDataFetchQueue, githubPullRequestDataStore } from "$/lib/stores/me.svelte";
 import { GitHubDataResponseType, type GitHubDataResponse, type GitHubPullRequestData } from "$/lib/typings/github";
 import type { MeDataType } from "$/lib/typings/me-data";
 import { siGithub } from "simple-icons";
@@ -19,32 +19,30 @@ import { onMount } from "svelte";
 
 const { dataType, dataId, pullRequestNumber }: { dataType: MeDataType, dataId: string, pullRequestNumber: number } = $props();
 
-let prData = $state<GitHubPullRequestData | null>(null);
+const apiUrl = $derived("/me/api/github"
+  + `?type=${dataType}`
+  + `&id=${dataId}`
+  + `&pr=${pullRequestNumber}`);
+const prData = $derived(apiUrl in githubPullRequestDataStore ? githubPullRequestDataStore[apiUrl] : null);
 
 onMount(() => {
   if(prData) return;
 
-  const apiUrl = "/me/api/github"
-    + `?type=${dataType}`
-    + `&id=${dataId}`
-    + `&pr=${pullRequestNumber}`;
+  githubDataFetchQueue.add(
+    apiUrl,
+    async () => await fetch(apiUrl, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    }),
+    async (response) => {
+      const data = await response.json() as GitHubDataResponse;
 
-  if(apiUrl in githubPullRequestDataStore) {
-    prData = githubPullRequestDataStore[apiUrl];
-    return;
-  }
-
-  fetch(apiUrl, {
-    method: "GET",
-    headers: {
-      "Content-Type": "application/json",
-    },
-  }).then(async (response) => {
-    const data = await response.json() as GitHubDataResponse;
-
-    if(data && data.type === GitHubDataResponseType.PullRequest) {
-      githubPullRequestDataStore[apiUrl] = prData = data.data;
+      if(data && data.type === GitHubDataResponseType.PullRequest) {
+        githubPullRequestDataStore[apiUrl] = data.data;
+      }
     }
-  });
+  );
 });
 </script>
