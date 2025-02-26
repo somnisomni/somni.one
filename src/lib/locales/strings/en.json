@@ -30,6 +30,7 @@
   "common": {
     "nav": {
       "back": "Back"
-    }
+    },
+    "loading": "Loading…"
   }
 }

@@ -6,16 +6,19 @@
   {#if commitData}
     <MeDataGitChangesFragment changes={commitData.changes} />
     <span class="text-xs text-zinc-300">{commitData.title}</span>
+  {:else}
+    <span class="text-xs text-zinc-300">{$_("common.loading")}</span>
   {/if}
 </a>
 
 <script lang="ts">
+import type { MeDataType } from "$/lib/typings/me-data";
 import MeDataGitChangesFragment from "$/components/me/fragments/MeDataGitChangesFragment.svelte";
 import { githubCommitDataStore, githubDataFetchQueue } from "$/lib/stores/me.svelte";
-import { GitHubDataResponseType, type GitHubCommitData, type GitHubDataResponse } from "$/lib/typings/github";
-import type { MeDataType } from "$/lib/typings/me-data";
+import { GitHubDataResponseType, type GitHubDataResponse } from "$/lib/typings/github";
 import { siGithub } from "simple-icons";
 import { onMount } from "svelte";
+import { _ } from "svelte-i18n";
 
 const { dataType, dataId, commitHash }: { dataType: MeDataType, dataId: string, commitHash: string } = $props();
 
