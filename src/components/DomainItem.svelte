@@ -12,7 +12,7 @@
 </section>
 
 <script lang="ts">
-import type { DomainItemData } from "$lib/types";
+import type { DomainItemData } from "$lib/typings/domain-item";
 import DomainItemTitleSegment from "./DomainItemTitleSegment.svelte";
 
 const { data }: { data: DomainItemData } = $props();

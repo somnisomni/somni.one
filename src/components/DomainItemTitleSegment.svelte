@@ -14,7 +14,7 @@
 </span>
 
 <script lang="ts">
-import type { DomainItemTitleSegmentData } from "$lib/types";
+import type { DomainItemTitleSegmentData } from "$lib/typings/domain-item";
 import stc from "string-to-color";
 
 export let seg: DomainItemTitleSegmentData;
