@@ -1,20 +1,18 @@
 <MeDataItemBase idPrefix="contribution-translation"
                 item={item}>
   <ul>
-    {#if item.platform === "github"}
-      {#each item.githubPullRequests ?? [] as pullRequest}
+    {#if item.platform === "github" && item.contributions}
+      {#each item.contributions ?? [] as contribution}
         <li>
-          <MeDataGitHubPullRequestItem dataType={MeDataType.CONTRIBUTION_TRANSLATION}
-                                       dataId={item.id}
-                                       pullRequestNumber={pullRequest} />
-        </li>
-      {/each}
-
-      {#each item.directCommits ?? [] as directCommit}
-        <li>
-          <MeDataGitHubCommitItem dataType={MeDataType.CONTRIBUTION_TRANSLATION}
-                                  dataId={item.id}
-                                  commitHash={directCommit} />
+          {#if contribution.pullRequest}
+            <MeDataGitHubPullRequestItem dataType={MeDataType.CONTRIBUTION_TRANSLATION}
+                                         dataId={item.id}
+                                         pullRequestNumber={contribution.pullRequest} />
+          {:else if contribution.directCommit}
+            <MeDataGitHubCommitItem dataType={MeDataType.CONTRIBUTION_TRANSLATION}
+                                    dataId={item.id}
+                                    commitHash={contribution.directCommit} />
+          {/if}
         </li>
       {/each}
     {:else}

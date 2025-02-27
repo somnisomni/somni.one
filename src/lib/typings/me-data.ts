@@ -1,3 +1,4 @@
+import type { RequiredKeys } from "$/lib/typings/util";
 import type { TechStack } from "$/lib/utils/tech-stacks";
 
 export enum MeDataType {
@@ -15,9 +16,7 @@ export interface MeDataBase {
   repositoryUrl?: string;
 }
 
-export interface MeProjectDataBase extends MeDataBase {
-  repositoryUrl: string;  // mandatory
-
+export interface MeProjectDataBase extends RequiredKeys<MeDataBase, "repositoryUrl"> {
   stacks: TechStack[];
   yearFrom: number;
   yearTo?: number;
@@ -29,6 +28,11 @@ export interface MeProjectDataBase extends MeDataBase {
 
 export interface MeContributionDataBase extends MeDataBase {
   proofUrl?: string;
+  contributions?: Array<{
+    desc?: string;
+    pullRequest?: number;
+    directCommit?: string;
+  }>;
 }
 
 export type MeProjectIndividualData = MeProjectDataBase;
@@ -40,26 +44,14 @@ export interface MeProjectTeamData extends MeProjectDataBase {
   prizes?: string[];
 }
 
-export type MeContributionTranslationData = MeContributionDataBase
-  & {
-    category: string;
-    langFrom: string | string[];
-    langTo: string | string[];
-  } & ({
-    platform: "github";
-    githubPullRequests: number[];
-    directCommits: string[];
-  } | {
-    platform: "crowdin" | "weblate" | "transifex";
-  });
-
-export interface MeContributionOpenSourceData extends MeContributionDataBase {
-  contributions: Array<{
-    desc: string;
-    pullRequest?: number;
-    directCommit?: string;
-  }>;
+export interface MeContributionTranslationData extends MeContributionDataBase {
+  category: string;
+  langFrom: string | string[];
+  langTo: string | string[];
+  platform: "github" | "crowdin" | "weblate" | "transifex";
 }
+
+export type MeContributionOpenSourceData = RequiredKeys<MeContributionDataBase, "contributions">;
 
 export interface MeCertificationData extends MeDataBase {
   type: "language" | "tech-skill";
