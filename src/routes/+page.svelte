@@ -3,10 +3,10 @@
 <section id="headline">
   <div class="max-w-full">
     <h1 class="headline-text">
-      <p>somni</p>
-      <p>Turns Out,</p>
-      <p>I've Been</p>
-      <p>Keep <strong>Trying</strong>.</p>
+      <p class="font-mono">&gt; somni</p>
+      <p>Turns out,</p>
+      <p>I've been</p>
+      <p>keep <strong>TRYING</strong>.</p>
       <p class="user-typings">
         <span>
           <a bind:this={ additionalTypingsUrlAnchor }
