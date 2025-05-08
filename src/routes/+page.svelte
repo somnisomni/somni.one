@@ -4,9 +4,9 @@
   <div class="max-w-full">
     <h1 class="headline-text">
       <p class="font-mono">&gt; somni</p>
-      <p>Turns out,</p>
-      <p>I've been</p>
-      <p>keep <strong>TRYING</strong>.</p>
+      <p>{ $_("main.headline.line1") }</p>
+      <p>{ $_("main.headline.line2") }</p>
+      <p>{@html $_("main.headline.line3")}</p>
       <p class="user-typings">
         <span>
           <a bind:this={ additionalTypingsUrlAnchor }
@@ -27,6 +27,7 @@
 </section>
 
 <script lang="ts">
+import { _, locale } from "svelte-i18n";
 import { fade } from "svelte/transition";
 
 const typingUrlMap: Record<string, string> = {
@@ -52,12 +53,25 @@ const typingUrlMap: Record<string, string> = {
   "cv": "/me",
 };
 
+const typingActionMap: Record<string, () => void> = {
+  "english": () => locale.set("en"),
+  "en": () => locale.set("en"),
+
+  "korean": () => locale.set("ko"),
+  "ko": () => locale.set("ko"),
+
+  "japanese": () => locale.set("ja"),
+  "ja": () => locale.set("ja"),
+};
+
 let additionalTypings: string = $state("");
 let additionalTypingsHtml: string = $derived(additionalTypings.replace(/ /g, "&nbsp;"));
 let additionalTypingsUrl: string = $derived(
   additionalTypings.toLowerCase() in typingUrlMap
     ? typingUrlMap[additionalTypings.toLowerCase()]
-    : "");
+    : additionalTypings.toLowerCase() in typingActionMap
+      ? "#"
+      : "");
 let additionalTypingsUrlAnchor: HTMLAnchorElement | null = null;
 
 function onKeyDown(event: KeyboardEvent) {
@@ -66,8 +80,16 @@ function onKeyDown(event: KeyboardEvent) {
     additionalTypings += event.key;
   } else if(event.key === "Backspace") {
     additionalTypings = additionalTypings.slice(0, -1);
-  } else if(event.key === "Enter" && event.ctrlKey && additionalTypingsUrlAnchor) {
-    additionalTypingsUrlAnchor.click();
+  } else if(event.key === "Enter" && event.ctrlKey) {
+    if(additionalTypings.toLowerCase() in typingActionMap) {
+      typingActionMap[additionalTypings.toLowerCase()]();
+      additionalTypings = "";
+      return;
+    }
+
+    if(additionalTypingsUrlAnchor) {
+      additionalTypingsUrlAnchor.click();
+    }
   } else if(event.key === "Escape") {
     additionalTypings = "";
   }
@@ -89,7 +111,7 @@ section#headline .headline-text {
   @apply flex flex-col font-medium;
 
   font-size: 8rem;
-  line-height: 1.2;
+  line-height: 1.33;
 }
 
 section#headline .headline-text > :first-child,
@@ -100,7 +122,7 @@ section#headline .headline-text > :last-child {
   line-height: 3;
 }
 
-section#headline .headline-text strong {
+:global(section#headline .headline-text strong) {
   @apply font-black;
 }
 

@@ -32,5 +32,12 @@
       "back": "Back"
     },
     "loading": "Loading…"
+  },
+  "main": {
+    "headline": {
+      "line3": "keep <strong>TRYING</strong>.",
+      "line2": "I've been",
+      "line1": "Turns out,"
+    }
   }
 }
