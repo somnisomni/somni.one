@@ -12,7 +12,7 @@
 }
 
 body, html {
-  @apply text-zinc-800;
+  @apply bg-zinc-50 text-zinc-700;
 
   box-sizing: border-box;
   margin: 0;
