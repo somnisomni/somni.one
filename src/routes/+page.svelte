@@ -57,14 +57,13 @@ const typingUrlMap: Record<string, string> = {
   "blog": "https://log.somni.one",
   "log": "https://log.somni.one",
 
-  "me": "/me",
-  "portfolio": "/me",
-  "project": "/me",
-  "projects": "/me",
-  "work": "/me",
-  "works": "/me",
-  "resume": "/me",
-  "cv": "/me",
+  "portfolio": "/works",
+  "project": "/works",
+  "projects": "/works",
+  "work": "/works",
+  "works": "/works",
+  "resume": "/works",
+  "cv": "/works",
 };
 
 const typingActionMap: Record<string, () => void> = {

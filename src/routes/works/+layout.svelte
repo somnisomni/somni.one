@@ -14,11 +14,11 @@
 <nav id="me-tab-nav">
   <ul bind:this={tabListElement}
       id="me-tab-list">
-    <li class:active={pageRouteId?.endsWith("individual")}><a href="/me/individual">{$_("me.nav.individualProjects")}</a></li>
-    <li class:active={pageRouteId?.endsWith("team")}><a href="/me/team">{$_("me.nav.teamProjects")}</a></li>
-    <li class:active={pageRouteId?.endsWith("opensource")}><a href="/me/opensource">{$_("me.nav.openSourceContributions")}</a></li>
-    <li class:active={pageRouteId?.endsWith("translation")}><a href="/me/translation">{$_("me.nav.translationContributions")}</a></li>
-    <li class:active={pageRouteId?.endsWith("certification")}><a href="/me/certification">{$_("me.nav.certifications")}</a></li>
+    <li class:active={pageRouteId?.endsWith("individual")}><a href="/works/individual">{$_("me.nav.individualProjects")}</a></li>
+    <li class:active={pageRouteId?.endsWith("team")}><a href="/works/team">{$_("me.nav.teamProjects")}</a></li>
+    <li class:active={pageRouteId?.endsWith("opensource")}><a href="/works/opensource">{$_("me.nav.openSourceContributions")}</a></li>
+    <li class:active={pageRouteId?.endsWith("translation")}><a href="/works/translation">{$_("me.nav.translationContributions")}</a></li>
+    <li class:active={pageRouteId?.endsWith("certification")}><a href="/works/certification">{$_("me.nav.certifications")}</a></li>
   </ul>
 </nav>
 

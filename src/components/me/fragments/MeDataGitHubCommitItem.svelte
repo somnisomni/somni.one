@@ -22,7 +22,7 @@ import { _ } from "svelte-i18n";
 
 const { dataType, dataId, commitHash }: { dataType: MeDataType, dataId: string, commitHash: string } = $props();
 
-const apiUrl = $derived("/me/api/github"
+const apiUrl = $derived("/works/api/github"
   + `?type=${dataType}`
   + `&id=${dataId}`
   + `&commit=${commitHash}`);
