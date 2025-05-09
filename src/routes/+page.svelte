@@ -37,7 +37,7 @@
 <script lang="ts">
 import gsap from "gsap";
 import { onMount } from "svelte";
-import { _, locale } from "svelte-i18n";
+import { _, locale, waitLocale } from "svelte-i18n";
 import { fade } from "svelte/transition";
 import stringToColor from "string-to-color";
 
@@ -87,8 +87,9 @@ function changeLanguage(lang: string) {
     return;
   }
 
-  animateHeadline(() => {
-    locale.set(lang);
+  animateHeadline(async () => {
+    await locale.set(lang);
+    await waitLocale();
   });
 }
 
@@ -155,57 +156,66 @@ function animateTypeIn(targetElement: HTMLElement) {
   });
 }
 
-function animateHeadline(onCover: (() => void) | null = null, firstLoad = false) {
-  const headlineTimeline = gsap.timeline();
+async function animateHeadline(onCover: (() => void | Promise<void>) | null = null, firstLoad = false) {
+  const headlineOutTimeline = gsap.timeline({ paused: true });
+  const headlineInTimeline = gsap.timeline({ paused: true });
 
-  headlineTimeline.set(blendOverlay, {
-    scaleX: 0,
-    opacity: 1,
-    transformOrigin: "left",
-  });
+  // Out timeline setup
+  {
+    headlineOutTimeline.set(blendOverlay, {
+      scaleX: 0,
+      opacity: 1,
+      transformOrigin: "left",
+    });
 
-  if(!firstLoad) {
-    headlineTimeline
-      .to(headlineElement, {
+    if(!firstLoad) {
+      headlineOutTimeline.to(headlineElement, {
         opacity: 0,
         xPercent: 10,
         stagger: 0.1,
         ease: "power2.out",
-      })
-  } else {
-    headlineTimeline.set(headlineElement, {
-      opacity: 0,
-      xPercent: -10,
-    });
-  }
+      });
+    } else {
+      headlineOutTimeline.set(headlineElement, {
+        opacity: 0,
+        xPercent: -10,
+      });
+    }
 
-  headlineTimeline
-    .to(blendOverlay, {
+    headlineOutTimeline.to(blendOverlay, {
       scaleX: 1,
       transformOrigin: "left",
       ease: "power2.out",
     }, "<");
 
-  headlineTimeline.set(headlineElement, {
-    opacity: 0,
-    xPercent: -10,
-  });
+    headlineOutTimeline.set(headlineElement, {
+      opacity: 0,
+      xPercent: -10,
+    });
+  }
 
-  headlineTimeline.call(() => onCover?.());
+  // In timeline setup
+  {
+    headlineInTimeline
+      .to(blendOverlay, {
+        scaleX: 0,
+        transformOrigin: "right",
+        delay: 0.2,
+        ease: "power2.out",
+      })
+      .to(headlineElement, {
+        opacity: 1,
+        xPercent: 0,
+        stagger: 0.1,
+        ease: "power2.out",
+      }, "<");
+  }
 
-  headlineTimeline
-    .to(blendOverlay, {
-      scaleX: 0,
-      transformOrigin: "right",
-      delay: 0.2,
-      ease: "power2.out",
-    })
-    .to(headlineElement, {
-      opacity: 1,
-      xPercent: 0,
-      stagger: 0.1,
-      ease: "power2.out",
-    }, "<");
+  // Actual animation
+  headlineOutTimeline.play();
+  await headlineOutTimeline.then();
+  await onCover?.();
+  headlineInTimeline.play();
 }
 
 function textToColorHtml(text: string) {
