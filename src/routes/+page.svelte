@@ -16,7 +16,7 @@
           </a>
         </span><!--
 
-     --><span class="cursor ml-2">▏</span>
+     --><span class="cursor ml-0.5">▏</span>
         {#if additionalTypingsUrl }
           <span in:fade out:fade
                 class="user-typings-url-hint">Ctrl + Enter</span>
