@@ -48,6 +48,9 @@ const typingUrlMap: Record<string, string> = {
   "twitter": "https://twitter.com/somni_somni",
   "x": "https://twitter.com/somni_somni",
 
+  "bluesky": "https://bsky.app/profile/somni.one",
+  "bsky": "https://bsky.app/profile/somni.one",
+
   "github": "https://github.com/somnisomni",
   "git": "https://github.com/somnisomni",
 
