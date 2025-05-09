@@ -1,12 +1,15 @@
 <svelte:window on:keydown={ onKeyDown } />
 
+<div bind:this={ blendOverlay }
+     class="block w-full h-full top-0 right-0 left-0 bottom-0 mix-blend-difference fixed pointer-events-none bg-zinc-50"></div>
+
 <section id="headline">
   <div class="max-w-full">
     <h1 class="headline-text">
       <p class="font-mono">&gt; somni</p>
-      <p>{ $_("main.headline.line1") }</p>
-      <p>{ $_("main.headline.line2") }</p>
-      <p>{@html $_("main.headline.line3")}</p>
+      <p bind:this={ headlineElement[0] }>{ $_("main.headline.line1") }</p>
+      <p bind:this={ headlineElement[1] }>{ $_("main.headline.line2") }</p>
+      <p bind:this={ headlineElement[2] }>{@html $_("main.headline.line3")}</p>
       <p class="user-typings">
         <span>
           <a bind:this={ additionalTypingsUrlAnchor }
@@ -17,7 +20,7 @@
         </span><!--
 
      --><span class="cursor ml-0.5">▏</span>
-        {#if additionalTypingsUrl }
+        {#if additionalTypingsUrl}
           <span in:fade out:fade
                 class="user-typings-url-hint">Ctrl + Enter</span>
         {/if}
@@ -27,6 +30,8 @@
 </section>
 
 <script lang="ts">
+import gsap from "gsap";
+import { onMount } from "svelte";
 import { _, locale } from "svelte-i18n";
 import { fade } from "svelte/transition";
 
@@ -54,15 +59,31 @@ const typingUrlMap: Record<string, string> = {
 };
 
 const typingActionMap: Record<string, () => void> = {
-  "english": () => locale.set("en"),
-  "en": () => locale.set("en"),
+  "english": () => changeLanguage("en"),
+  "en": () => changeLanguage("en"),
+  "eng": () => changeLanguage("en"),
 
-  "korean": () => locale.set("ko"),
-  "ko": () => locale.set("ko"),
+  "korean": () => changeLanguage("ko"),
+  "ko": () => changeLanguage("ko"),
+  "kor": () => changeLanguage("ko"),
 
-  "japanese": () => locale.set("ja"),
-  "ja": () => locale.set("ja"),
+  "japanese": () => changeLanguage("ja"),
+  "ja": () => changeLanguage("ja"),
+  "jpn": () => changeLanguage("ja"),
 };
+
+function changeLanguage(lang: string) {
+  if(lang === $locale) {
+    return;
+  }
+
+  animateHeadline(() => {
+    locale.set(lang);
+  });
+}
+
+let blendOverlay: HTMLElement | null = null;
+let headlineElement: HTMLElement[] = [];
 
 let additionalTypings: string = $state("");
 let additionalTypingsHtml: string = $derived(additionalTypings.replace(/ /g, "&nbsp;"));
@@ -94,6 +115,62 @@ function onKeyDown(event: KeyboardEvent) {
     additionalTypings = "";
   }
 }
+
+onMount(() => {
+  animateHeadline(null, true);
+});
+
+function animateHeadline(onCover: (() => void) | null = null, firstLoad = false) {
+  const headlineTimeline = gsap.timeline();
+
+  headlineTimeline.set(blendOverlay, {
+    scaleX: 0,
+    transformOrigin: "left",
+  });
+
+  if(!firstLoad) {
+    headlineTimeline
+      .to(headlineElement, {
+        opacity: 0,
+        xPercent: 10,
+        stagger: 0.1,
+        ease: "power2.out",
+      })
+  } else {
+    headlineTimeline.set(headlineElement, {
+      opacity: 0,
+      xPercent: -10,
+    });
+  }
+
+  headlineTimeline
+    .to(blendOverlay, {
+      scaleX: 1,
+      transformOrigin: "left",
+      ease: "power2.out",
+    }, "<");
+
+  headlineTimeline.set(headlineElement, {
+    opacity: 0,
+    xPercent: -10,
+  });
+
+  headlineTimeline.call(() => onCover?.());
+
+  headlineTimeline
+    .to(blendOverlay, {
+      scaleX: 0,
+      transformOrigin: "right",
+      delay: 0.2,
+      ease: "power2.out",
+    })
+    .to(headlineElement, {
+      opacity: 1,
+      xPercent: 0,
+      stagger: 0.1,
+      ease: "power2.out",
+    }, "<");
+}
 </script>
 
 <style scoped>
@@ -107,14 +184,16 @@ section#headline {
   @apply flex-col items-start;
   @apply p-4
          sm:p-8
-         lg:p-16;
+         lg:p-12
+         xl:p-16;
 }
 
 section#headline .headline-text {
   @apply flex flex-col font-medium;
   @apply text-[3rem]
-         sm:text-[5rem]
-         lg:text-[8rem];
+         sm:text-[4rem]
+         lg:text-[6rem]
+         xl:text-[7rem];
 
   line-height: 1.33;
 }
