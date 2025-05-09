@@ -35,9 +35,10 @@
   },
   "main": {
     "headline": {
-      "line3": "keep <strong>TRYING</strong>.",
+      "line3": "keep <strong>{emphasize}</strong>.",
       "line2": "I've been",
-      "line1": "Turns out,"
+      "line1": "Turns out,",
+      "emphasize": "TRYING"
     }
   }
 }

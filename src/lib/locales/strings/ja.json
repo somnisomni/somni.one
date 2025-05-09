@@ -37,7 +37,8 @@
     "headline": {
       "line1": "振り返れば、",
       "line2": "何かをずっと",
-      "line3": "<strong>試み</strong>ていたんだ。"
+      "line3": "<strong>{emphasize}</strong>ていたんだ。",
+      "emphasize": "試み"
     }
   }
 }

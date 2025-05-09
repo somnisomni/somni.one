@@ -36,8 +36,9 @@
   "main": {
     "headline": {
       "line1": "돌이켜 보니,",
-      "line2": "무언가를 계속",
-      "line3": "<strong>시도</strong>하는 중."
+      "line2": "무언가에 계속",
+      "line3": "<strong>{emphasize}</strong>하는 중.",
+      "emphasize": "노력"
     }
   }
 }

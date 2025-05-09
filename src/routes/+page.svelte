@@ -1,21 +1,26 @@
-<svelte:window on:keydown={ onKeyDown } />
+<svelte:window onkeydown={ onKeyDown } />
 
 <div bind:this={ blendOverlay }
-     class="block w-full h-full top-0 right-0 left-0 bottom-0 mix-blend-difference fixed pointer-events-none bg-zinc-50"></div>
+     class="block w-full h-full top-0 right-0 left-0 bottom-0 mix-blend-difference fixed pointer-events-none bg-zinc-50 opacity-0"></div>
 
 <section id="headline">
   <div class="max-w-full">
     <h1 class="headline-text">
-      <p class="font-mono">&gt; somni</p>
+      <p class="font-mono font-light text-nowrap">
+        <span class="font-medium">&gt; somni &lt;</span>
+        <span style={ `color: ${stringToColor("web-dav")}` }>web-dev</span>
+        <span style={ `color: ${stringToColor("game-dev")}` }>game-dev</span>
+        <span style={ `color: ${stringToColor("translation")}` }>translation</span>
+      </p>
       <p bind:this={ headlineElement[0] }>{ $_("main.headline.line1") }</p>
       <p bind:this={ headlineElement[1] }>{ $_("main.headline.line2") }</p>
-      <p bind:this={ headlineElement[2] }>{@html $_("main.headline.line3")}</p>
-      <p class="user-typings">
+      <p bind:this={ headlineElement[2] }>{@html $_("main.headline.line3", { values: { emphasize: textToColorHtml($_("main.headline.emphasize")) }})}</p>
+      <p class="user-typings overflow-clip">
         <span>
           <a bind:this={ additionalTypingsUrlAnchor }
              class="user-typings-url"
              href={ additionalTypingsUrl }>
-            {@html additionalTypingsHtml}
+            <!-- Will be filled by typing -->
           </a>
         </span><!--
 
@@ -34,6 +39,7 @@ import gsap from "gsap";
 import { onMount } from "svelte";
 import { _, locale } from "svelte-i18n";
 import { fade } from "svelte/transition";
+import stringToColor from "string-to-color";
 
 const typingUrlMap: Record<string, string> = {
   "mail": "mailto:" + atob("bWU=") + "@" + atob("c29tbmkub25l"),
@@ -66,6 +72,8 @@ const typingActionMap: Record<string, () => void> = {
   "korean": () => changeLanguage("ko"),
   "ko": () => changeLanguage("ko"),
   "kor": () => changeLanguage("ko"),
+  "hangul": () => changeLanguage("ko"),
+  "hangeul": () => changeLanguage("ko"),
 
   "japanese": () => changeLanguage("ja"),
   "ja": () => changeLanguage("ja"),
@@ -86,7 +94,7 @@ let blendOverlay: HTMLElement | null = null;
 let headlineElement: HTMLElement[] = [];
 
 let additionalTypings: string = $state("");
-let additionalTypingsHtml: string = $derived(additionalTypings.replace(/ /g, "&nbsp;"));
+let additionalTypingsSpans: HTMLElement[] = $state([]);
 let additionalTypingsUrl: string = $derived(
   additionalTypings.toLowerCase() in typingUrlMap
     ? typingUrlMap[additionalTypings.toLowerCase()]
@@ -95,36 +103,62 @@ let additionalTypingsUrl: string = $derived(
       : "");
 let additionalTypingsUrlAnchor: HTMLAnchorElement | null = null;
 
+onMount(() => {
+  animateHeadline(null, true);
+});
+
 function onKeyDown(event: KeyboardEvent) {
-  if(event.key.match(/^[a-zA-Z0-9`!@#$%^&*,.;:'"<>(){}\[\]/\\ ]$/)
+  if(event.key.match(/^[a-zA-Z0-9`!@#$%^&*,.;:'"(){}\[\]/\\\-=_+ ]$/)
     && additionalTypings.length <= 20) {
+    const newSpan = document.createElement("span");
+    newSpan.innerHTML = event.key === " " ? "&nbsp;" : event.key;
+    newSpan.style.display = "inline-block";
+    additionalTypingsSpans.push(newSpan);
+    animateTypeIn(newSpan);
+
     additionalTypings += event.key;
   } else if(event.key === "Backspace") {
+    additionalTypingsSpans.pop();
+
     additionalTypings = additionalTypings.slice(0, -1);
   } else if(event.key === "Enter" && event.ctrlKey) {
     if(additionalTypings.toLowerCase() in typingActionMap) {
       typingActionMap[additionalTypings.toLowerCase()]();
-      additionalTypings = "";
-      return;
-    }
+      additionalTypingsSpans = [];
 
-    if(additionalTypingsUrlAnchor) {
+      additionalTypings = "";
+    } else if(additionalTypingsUrlAnchor) {
       additionalTypingsUrlAnchor.click();
     }
   } else if(event.key === "Escape") {
+    additionalTypingsSpans = [];
     additionalTypings = "";
+  }
+
+  if(additionalTypingsUrlAnchor) {
+    additionalTypingsUrlAnchor.replaceChildren(...additionalTypingsSpans);
   }
 }
 
-onMount(() => {
-  animateHeadline(null, true);
-});
+function animateTypeIn(targetElement: HTMLElement) {
+  gsap.set(targetElement, {
+    yPercent: 10,
+    opacity: 0,
+  });
+  gsap.to(targetElement, {
+    yPercent: 0,
+    opacity: 1,
+    duration: 0.25,
+    ease: "power2.out",
+  });
+}
 
 function animateHeadline(onCover: (() => void) | null = null, firstLoad = false) {
   const headlineTimeline = gsap.timeline();
 
   headlineTimeline.set(blendOverlay, {
     scaleX: 0,
+    opacity: 1,
     transformOrigin: "left",
   });
 
@@ -171,6 +205,11 @@ function animateHeadline(onCover: (() => void) | null = null, firstLoad = false)
       ease: "power2.out",
     }, "<");
 }
+
+function textToColorHtml(text: string) {
+  const color = stringToColor(`darken ${text}`);
+  return `<span style="color: ${color}">${text}</span>`;
+}
 </script>
 
 <style scoped>
@@ -202,7 +241,7 @@ section#headline .headline-text > :first-child,
 section#headline .headline-text > :last-child {
   @apply text-zinc-400;
 
-  font-size: 0.5em;
+  font-size: 0.4em;
   line-height: 3;
 }
 
@@ -218,7 +257,8 @@ section#headline a.user-typings-url[href=""] {
   @apply pointer-events-none;
 }
 
-section#headline a.user-typings-url:not([href=""]) {
+section#headline a.user-typings-url:not([href=""]),
+:global(section#headline a.user-typings-url:not([href=""]) > *) {
   @apply underline;
 }
 
