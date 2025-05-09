@@ -104,13 +104,18 @@ section {
 }
 
 section#headline {
-  @apply flex-col items-start p-8;
+  @apply flex-col items-start;
+  @apply p-4
+         sm:p-8
+         lg:p-16;
 }
 
 section#headline .headline-text {
   @apply flex flex-col font-medium;
+  @apply text-[3rem]
+         sm:text-[5rem]
+         lg:text-[8rem];
 
-  font-size: 8rem;
   line-height: 1.33;
 }
 
