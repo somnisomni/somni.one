@@ -1,24 +1,40 @@
 <ProgressBar class="text-sky-300" />
 
-<nav>
+<!-- <nav>
   <a href="/">Home</a>
   <a href="/links">Links</a>
   <a href="https://log.somni.one">Blog</a>
-</nav>
+</nav> -->
 
-<main>
-  {@render children()}
-</main>
+{#if loaded}
+  <main>
+    {@render children()}
+  </main>
+{:else}
+  <div>loading</div>
+{/if}
 
 <script lang="ts">
 import "$/styles/app.css";
+import "$lib/init";
+
 import { ProgressBar } from "@prgm/sveltekit-progress-bar";
 import type { LayoutProps } from "./$types";
+import { waitLocale } from "svelte-i18n";
+import { onMount } from "svelte";
+
+let loaded = $state(false);
 
 const { children }: LayoutProps = $props();
+
+onMount(async () => {
+  await waitLocale();
+
+  loaded = true;
+});
 </script>
 
-<style scoped>
+<!-- <style scoped>
 @reference "$/styles/app.css";
 
 nav {
@@ -28,4 +44,4 @@ nav {
 nav > a {
   @apply py-2 px-4 ml-4;
 }
-</style>
+</style> -->
