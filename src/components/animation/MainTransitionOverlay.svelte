@@ -29,7 +29,7 @@ export function slideIn(duration = 0.5) {
     })
     .to(dom, {
       xPercent: 0,
-      ease: "power2.out",
+      ease: "power2.in",
       duration,
     });
 
