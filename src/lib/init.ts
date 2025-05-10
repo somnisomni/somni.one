@@ -1,6 +1,7 @@
 import { gsap } from "gsap";
+import { ScrollSmoother } from "gsap/ScrollSmoother";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { SplitText } from "gsap/SplitText";
-import { TextPlugin } from "gsap/TextPlugin";
 
 // GSAP initialization
-gsap.registerPlugin(SplitText, TextPlugin);
+gsap.registerPlugin(SplitText, ScrollTrigger, ScrollSmoother);

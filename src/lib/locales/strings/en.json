@@ -39,6 +39,14 @@
       "line2": "I've been",
       "line1": "Turns out,",
       "emphasize": "TRYING"
+    },
+    "section": {
+      "game-dev": {
+        "title": "Diving into the familiar, but new."
+      },
+      "trivia": {
+        "title": "To be a 10x geek."
+      }
     }
   }
 }

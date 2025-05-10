@@ -39,6 +39,14 @@
       "line2": "무언가를 계속",
       "line3": "<strong>{emphasize}</strong>하는 중.",
       "emphasize": "시도"
+    },
+    "section": {
+      "game-dev": {
+        "title": "익숙하지만 새로운 분야에도 다이브 중."
+      },
+      "trivia": {
+        "title": "능력 있는 오타쿠가 목표."
+      }
     }
   }
 }
