@@ -57,7 +57,7 @@ onMount(async () => {
         stagger: 0.05,
       })
       .call(() => { loaded = true; }, [], "+=0.25")
-      .add(mainTransitionOverlay.slideOut(0.66));
+      .add(mainTransitionOverlay.slideOut(0.66), "+=0.1");
 
     await timeline.play().then();
   }
