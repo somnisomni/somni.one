@@ -26,7 +26,7 @@
      --><span class="cursor ml-0.5">▏</span>
         {#if additionalTypingsUrl}
           <span in:fade out:fade
-                class="user-typings-url-hint">Ctrl + Enter</span>
+                class="user-typings-url-hint">Ctrl + ⏎</span>
         {/if}
       </p>
     </h1>
@@ -253,7 +253,7 @@ section#headline .headline-text > :last-child {
 }
 
 section#headline .user-typings {
-  @apply break-all font-mono;
+  @apply flex items-center break-all font-mono;
 }
 
 section#headline a.user-typings-url[href=""] {
@@ -266,9 +266,9 @@ section#headline a.user-typings-url:not([href=""]),
 }
 
 section#headline .user-typings-url-hint {
-  @apply font-light opacity-50;
+  @apply font-sans font-light text-[0.4em] p-[0.6em] shadow-md rounded-full;
 
-  font-size: 0.5em;
+  line-height: 1;
 }
 
 section#headline .cursor {
