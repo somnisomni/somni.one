@@ -1,7 +1,6 @@
 <svelte:window onkeydown={ onKeyDown } />
 
-<div bind:this={ blendOverlay }
-     class="block w-full h-full top-0 right-0 left-0 bottom-0 mix-blend-difference fixed pointer-events-none bg-zinc-50 opacity-0"></div>
+<MainTransitionOverlay bind:this={ mainTransitionOverlay } />
 
 <section id="headline">
   <div class="max-w-full">
@@ -40,6 +39,7 @@ import { onMount } from "svelte";
 import { _, locale, waitLocale } from "svelte-i18n";
 import { fade } from "svelte/transition";
 import stringToColor from "string-to-color";
+import MainTransitionOverlay from "$/components/animation/MainTransitionOverlay.svelte";
 
 const typingUrlMap: Record<string, string> = {
   "mail": "mailto:" + atob("bWU=") + "@" + atob("c29tbmkub25l"),
@@ -93,7 +93,7 @@ function changeLanguage(lang: string) {
   });
 }
 
-let blendOverlay: HTMLElement | null = null;
+let mainTransitionOverlay: MainTransitionOverlay | null = null;
 let headlineElement: HTMLElement[] = [];
 
 let additionalTypings: string = $state("");
@@ -157,53 +157,44 @@ function animateTypeIn(targetElement: HTMLElement) {
 }
 
 async function animateHeadline(onCover: (() => void | Promise<void>) | null = null, firstLoad = false) {
+  if(!mainTransitionOverlay) {
+    return;
+  }
+
   const headlineOutTimeline = gsap.timeline({ paused: true });
   const headlineInTimeline = gsap.timeline({ paused: true });
 
   // Out timeline setup
   {
-    headlineOutTimeline.set(blendOverlay, {
-      scaleX: 0,
-      opacity: 1,
-      transformOrigin: "left",
-    });
-
     if(!firstLoad) {
+      headlineOutTimeline.add(mainTransitionOverlay.slideIn());
+
       headlineOutTimeline.to(headlineElement, {
         opacity: 0,
         xPercent: 10,
         stagger: 0.1,
         ease: "power2.out",
-      });
+      }, "<");
     } else {
       headlineOutTimeline.set(headlineElement, {
         opacity: 0,
         xPercent: -10,
       });
     }
+  }
 
-    headlineOutTimeline.to(blendOverlay, {
-      scaleX: 1,
-      transformOrigin: "left",
-      ease: "power2.out",
-    }, "<");
+  // In timeline setup
+  {
+    if(!firstLoad) {
+      headlineInTimeline.add(mainTransitionOverlay.slideOut());
+    }
 
     headlineOutTimeline.set(headlineElement, {
       opacity: 0,
       xPercent: -10,
     });
-  }
 
-  // In timeline setup
-  {
-    headlineInTimeline
-      .to(blendOverlay, {
-        scaleX: 0,
-        transformOrigin: "right",
-        delay: 0.2,
-        ease: "power2.out",
-      })
-      .to(headlineElement, {
+    headlineInTimeline.to(headlineElement, {
         opacity: 1,
         xPercent: 0,
         stagger: 0.1,
