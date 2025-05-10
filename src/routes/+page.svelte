@@ -51,7 +51,7 @@
       <h3 class="text-teal-500">web-dev</h3>
       <h2></h2>
 
-      <p class="jujeori">프론트엔드와 백엔드 모두 골고루. 양쪽 다 <b>TypeScript</b>를 기본적으로 사용하며, 주력 프론트엔드 프레임워크는 <b>Vue</b> 및 <b>Svelte</b> 입니다. 백엔드 프레임워크로 <b>NestJS</b>를 사용해 본 경험이 있습니다. <b>CSS</b>를 직접 작성할 수 있으며, <b>SCSS</b>를 선호합니다.</p>
+      <p class="jujeori">프론트엔드와 백엔드 모두 골고루 해보고 있습니다. <b>TypeScript</b>를 기본적으로 사용하며, 주력 프론트엔드 프레임워크는 <b>Vue</b> 및 <b>Svelte</b> 입니다. 백엔드 프레임워크로 <b>NestJS</b>를 사용해 본 경험이 있습니다. <b>CSS</b>를 직접 작성할 수 있으며, <b>SCSS</b>를 선호합니다.</p>
     </section>
 
     <section id="game-dev">
@@ -62,7 +62,7 @@
       <p class="jujeori">대학교에서 '1인분의 게임 프로그래머'가 되고자 하는 마음으로 학교 생활에 임해오고 있습니다. 어쩌면 그리 큰 목표처럼 보이진 않을 수 있지만, 시작이 늦은 저에게 있어 그 작은 목표가 의미하는 바는 매우 큽니다.</p>
       <p class="jujeori">현재 실력파 팀원들과 함께 "내 손으로 오브젝트를 살아 움직이게 만든다"는 성취감 속에서 졸업 프로젝트를 진행하고 있습니다.</p>
       <p class="jujeori"><br /></p>
-      <p class="jujeori">저는 <b>Unity</b>를 주력으로 다루고 있습니다. 게임에 적용되는 <b>적응형 사운드</b>에도 관심이 많으며, 사운드 미들웨어로는 <b>FMOD</b>를 주력으로 다루고 있습니다.</p>
+      <p class="jujeori">저는 <b>Unity</b>를 주력으로 다루고 있습니다. 게임에 적용되는 <b>적응형 사운드</b>에도 관심이 많으며, 사운드 미들웨어로는 <b>FMOD</b>를 주력으로 사용합니다.</p>
     </section>
 
     <section id="translation">
