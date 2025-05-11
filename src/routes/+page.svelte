@@ -51,7 +51,9 @@
       <h3 class="text-teal-500">web-dev</h3>
       <h2></h2>
 
-      <p class="jujeori">프론트엔드와 백엔드 모두 골고루 해보고 있습니다. <b>TypeScript</b>를 기본적으로 사용하며, 주력 프론트엔드 프레임워크는 <b>Vue</b> 및 <b>Svelte</b> 입니다. 백엔드 프레임워크로 <b>NestJS</b>를 사용해 본 경험이 있습니다. <b>CSS</b>를 직접 작성할 수 있으며, <b>SCSS</b>를 선호합니다.</p>
+      <p class="jujeori">플랫폼 독립적이라는 점에서 매력을 느끼고 제 주력 분야로 정했습니다.</p>
+      <p class="jujeori"><br /></p>
+      <p class="jujeori">프론트엔드와 백엔드 모두 골고루 해보고 있습니다. <IconText svg={ siTypescript.svg }><b>TypeScript</b></IconText>를 기본적으로 사용하며, 주력 프론트엔드 프레임워크는 <IconText svg={ siVuedotjs.svg }><b>Vue</b></IconText> 및 <IconText svg={ siSvelte.svg }><b>Svelte</b></IconText> 입니다. 백엔드 프레임워크로 <IconText svg={ siNestjs.svg }><b>NestJS</b></IconText>를 사용해 본 경험이 있습니다. <IconText svg={ siCss3.svg }><b>CSS</b></IconText>를 직접 작성할 수 있으며, <IconText svg={ siSass.svg }><b>SCSS</b></IconText>를 선호합니다.</p>
     </section>
 
     <section id="game-dev">
@@ -62,7 +64,7 @@
       <p class="jujeori">대학교에서 '1인분의 게임 프로그래머'가 되고자 하는 마음으로 학교 생활에 임해오고 있습니다. 어쩌면 그리 큰 목표처럼 보이진 않을 수 있지만, 시작이 늦은 저에게 있어 그 작은 목표가 의미하는 바는 매우 큽니다.</p>
       <p class="jujeori">현재 실력파 팀원들과 함께 "내 손으로 오브젝트를 살아 움직이게 만든다"는 성취감 속에서 졸업 프로젝트를 진행하고 있습니다.</p>
       <p class="jujeori"><br /></p>
-      <p class="jujeori">저는 <b>Unity</b>를 주력으로 다루고 있습니다. 게임에 적용되는 <b>적응형 사운드</b>에도 관심이 많으며, 사운드 미들웨어로는 <b>FMOD</b>를 주력으로 사용합니다.</p>
+      <p class="jujeori">저는 <IconText svg={ siUnity.svg }><b>Unity</b></IconText>를 주력으로 다루고 있습니다. 게임에 적용되는 <b>적응형 사운드</b>에도 관심이 많으며, 사운드 미들웨어로는 <IconText svg={ siFmod.svg }><b>FMOD</b></IconText>를 주력으로 사용합니다.</p>
     </section>
 
     <section id="translation">
@@ -75,11 +77,15 @@
       <h2>{ $_("main.section.trivia.title") }</h2>
 
       <p class="jujeori">어렸을 때 우연한 계기로 <b>피아노</b>를 배웠고, 피아노라는 악기에 매료되어 지금까지도 이따금씩 좋아하는 곡을 연습합니다. 사용하는 디지털 피아노는 <b>커즈와일 Ka E1</b>입니다.</p>
-      <p class="jujeori"><b>서브컬처</b>를 좋아합니다. 첫 서브컬처 입문은 <b>하츠네 미쿠</b>였고, 동시에 작곡에 대한 꿈도 가졌습니다. <s>작곡이 호락호락한 분야가 아닌 걸 느낀 후로는 꿈만 가지고 있습니다.</s> <b>FL Studio</b> 및 <b>하츠네 미쿠 V4X</b> 정품을 보유하고 있습니다. 좋아하는 미쿠 곡은 <b>livetune - Hand in Hand</b>, <b>DECO*27, kemu - SEKAI</b> 입니다.</p>
+      <p class="jujeori"><b>서브컬처</b>를 좋아합니다. 첫 서브컬처 입문은 <b>하츠네 미쿠</b>였고, 동시에 작곡에 대한 꿈도 가졌습니다. <s>작곡이 호락호락한 분야가 아닌 걸 느낀 후로는 꿈만 가지고 있습니다.</s> 좋아하는 미쿠 곡은 <b>livetune - Hand in Hand</b>, <b>DECO*27, kemu - SEKAI</b> 입니다.</p>
       <p class="jujeori"><b>서브컬처 모바일 게임</b>도 여럿 해보았고, 이런 게임의 스탭 롤에 제 이름이 들어가는 게 목표입니다. 현재 최애는 블루 아카이브의 <b>프라나</b>입니다.</p>
       <p class="jujeori">PC로는 주로 싱글 플레이어 위주의 게임을 합니다. 제 개인 Top 3는 <b>Red Dead Redemption 2</b>, <b>Oxygen Not Included</b>, <b>Fallout 4</b>입니다.</p>
       <p class="jujeori"><br /></p>
       <p class="jujeori">현실과 인터넷 어딘가에서 이러한 취미들을 열심히 향유하고 있습니다.</p>
+    </section>
+
+    <section id="links">
+      <h3 class="text-amber-600">links</h3>
     </section>
   </div>
 </div>
@@ -92,7 +98,8 @@ import { fade } from "svelte/transition";
 import stringToColor from "string-to-color";
 import MainTransitionOverlay from "$/components/animation/MainTransitionOverlay.svelte";
 import { ScrollSmoother } from "gsap/ScrollSmoother";
-import { SplitText } from "gsap/SplitText";
+import { siCss3, siFmod, siNestjs, siSass, siSvelte, siTypescript, siUnity, siVuedotjs } from "simple-icons";
+import IconText from "$/components/common/IconText.svelte";
 
 const typingUrlMap: Record<string, string> = {
   "mail": "mailto:" + atob("bWU=") + "@" + atob("c29tbmkub25l"),
@@ -313,11 +320,13 @@ nav#language-switcher .current {
 }
 
 section {
-  @apply flex flex-col w-full min-h-screen items-start justify-start;
+  @apply flex flex-col min-h-screen items-start justify-start;
   @apply p-4
          sm:p-8
          lg:p-12
          xl:p-16;
+  @apply w-full
+         xl:w-[75%];
 }
 
 section#headline {
@@ -380,7 +389,7 @@ section > h2 {
 }
 
 section > h3 {
-  @apply font-mono font-light text-nowrap;
+  @apply font-mono font-light text-nowrap lowercase;
   @apply text-[1rem]
          sm:text-[1.5rem];
 }
@@ -392,7 +401,8 @@ section > h3::before {
 section .jujeori {
   @apply font-light text-zinc-400 indent-2;
   @apply text-[1.2rem]
-         sm:text-[1.5rem];
+         sm:text-[1.33rem]
+         md:text-[1.5rem];
 
   line-height: 2;
 }
