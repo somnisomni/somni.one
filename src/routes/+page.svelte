@@ -331,6 +331,8 @@ section {
          sm:p-8
          lg:p-12
          xl:p-16;
+  @apply mb-8
+         lg:mb-16;
   @apply w-full
          xl:w-[75%];
 }
@@ -386,7 +388,7 @@ section#headline .cursor {
   animation: fadeInOut 1.5s cubic-bezier(0.5, 0, 0.5, 1) infinite;
 }
 
-section > h2 {
+section h2 {
   @apply font-extrabold my-8;
   @apply text-[2.5rem]
          sm:text-[3.5rem];
@@ -394,13 +396,13 @@ section > h2 {
   line-height: 1.2;
 }
 
-section > h3 {
+section h3 {
   @apply font-mono font-light text-nowrap lowercase;
   @apply text-[1rem]
          sm:text-[1.5rem];
 }
 
-section > h3::before {
+section h3::before {
   content: "> ";
 }
 
