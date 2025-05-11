@@ -48,7 +48,7 @@ export interface MeContributionTranslationData extends MeContributionDataBase {
   category: string;
   langFrom: string | string[];
   langTo: string | string[];
-  platform: "github" | "crowdin" | "weblate" | "transifex";
+  platform: "github" | "crowdin" | "weblate" | "transifex" | "direct";
 }
 
 export type MeContributionOpenSourceData = RequiredKeys<MeContributionDataBase, "contributions">;

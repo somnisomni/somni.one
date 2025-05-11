@@ -27,6 +27,8 @@
             <span class="float-left w-6 h-6"
                   style:fill="#{siTransifex.hex}">{@html siTransifex.svg}</span>
             <span>{$_("me.contrib.translation.transifex.proof")}</span>
+          {:else if item.platform === "direct"}
+            <span class="text-zinc-400">(이메일 등 비공개 수단으로 번역 제공)</span>
           {/if}
         </a>
       </li>

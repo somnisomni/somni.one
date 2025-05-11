@@ -241,5 +241,15 @@
     "langFrom": "en",
     "langTo": ["ko", "ja"],
     "platform": "transifex"
+  },
+  {
+    "id": "adm",
+    "title": "ADM <small>(Advanced Download Manager)</small>",
+    "repositoryUrl": "",
+    "proofUrl": "",
+    "category": "app-android",
+    "langFrom": "en",
+    "langTo": "ko",
+    "platform": "direct"
   }
 ]
