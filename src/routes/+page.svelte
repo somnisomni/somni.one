@@ -1,4 +1,5 @@
-<svelte:window onkeydown={ onKeyDown } />
+<svelte:window bind:scrollY={ windowScrollY }
+               onkeydown={ onKeyDown } />
 
 <MainTransitionOverlay bind:this={ mainTransitionOverlay } />
 
@@ -13,6 +14,15 @@
     {/each}
   </ul>
 </nav>
+
+{#if window && windowScrollY <= 100}
+  <div in:fade out:fade
+       class="fixed right-0 bottom-0 mx-4 my-2 flex flex-col items-center">
+    <div class="font-light text-[1em] capitalize tracking-[0.2em]">SCROLL</div>
+    <div bind:this={ scrollDownElement }
+         class="font-extralight fill-current w-[1.5em] h-[1.5em] m-[0.5em] mt-[0.25em]">{@html faChevronDown}</div>
+  </div>
+{/if}
 
 <div id="smooth-wrapper">
   <div id="smooth-content">
@@ -106,6 +116,7 @@ import MainTransitionOverlay from "$/components/animation/MainTransitionOverlay.
 import { ScrollSmoother } from "gsap/ScrollSmoother";
 import { siCss3, siFmod, siNestjs, siSass, siSvelte, siTypescript, siUnity, siVuedotjs } from "simple-icons";
 import IconText from "$/components/common/IconText.svelte";
+import faChevronDown from "$/assets/icons/ui/fa-chevron-down.svg?raw";
 
 const typingUrlMap: Record<string, string> = {
   "mail": "mailto:" + atob("bWU=") + "@" + atob("c29tbmkub25l"),
@@ -159,8 +170,9 @@ function changeLanguage(lang: string) {
   });
 }
 
-let mainTransitionOverlay: MainTransitionOverlay | null = null;
-let headlineElement: HTMLElement[] = [];
+let mainTransitionOverlay: MainTransitionOverlay | null = $state(null);
+let headlineElement: HTMLElement[] = $state([]);
+let scrollDownElement: HTMLElement | null = $state(null);
 
 let additionalTypings: string = $state("");
 let additionalTypingsSpans: HTMLElement[] = $state([]);
@@ -172,6 +184,8 @@ let additionalTypingsUrl: string = $derived(
       : "");
 let additionalTypingsUrlAnchor: HTMLAnchorElement | null = null;
 
+let windowScrollY: number = $state(0);
+
 onMount(() => {
   animateText(null, true);
 
@@ -181,6 +195,18 @@ onMount(() => {
     effects: true,
     autoResize: true,
   });
+});
+
+$effect(() => {
+  if(scrollDownElement) {
+    gsap.to(scrollDownElement, {
+      yPercent: 20,
+      yoyo: true,
+      repeat: -1,
+      duration: 2,
+      ease: "sine.inOut",
+    });
+  }
 });
 
 function onKeyDown(event: KeyboardEvent) {
