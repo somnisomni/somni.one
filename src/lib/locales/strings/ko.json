@@ -50,6 +50,24 @@
       "translation": {
         "title": "나만 잘 쓰기 아까웠기에."
       }
+    },
+    "links": {
+      "category": {
+        "programming": "프로그래밍 / 개발",
+        "social": "소셜 네트워크",
+        "misc": "기타",
+        "own": "소유 사이트 및 서비스"
+      },
+      "github": "GitHub",
+      "solvedac": "solved.ac (BOJ)",
+      "twitter": "Twitter (X)",
+      "bluesky": "Bluesky",
+      "discord": "Discord",
+      "steam": "Steam",
+      "monkeytype": "Monkeytype",
+      "keybase": "Keybase",
+      "blog": "솜니.로그 (블로그)",
+      "koharudev": "koharu.dev"
     }
   }
 }

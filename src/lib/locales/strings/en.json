@@ -50,6 +50,23 @@
       "translation": {
         "title": "Updated Korean (thanks @somnisomni)"
       }
+    },
+    "links": {
+      "bluesky": "Bluesky",
+      "discord": "Discord",
+      "github": "GitHub",
+      "monkeytype": "Monkeytype",
+      "solvedac": "solved.ac (BOJ)",
+      "steam": "Steam",
+      "twitter": "X (Twitter)",
+      "category": {
+        "misc": "Misc",
+        "programming": "Programming / Development",
+        "social": "Social Network",
+        "own": "Sites and services"
+      },
+      "blog": "somni.log (Blog)",
+      "koharudev": "koharu.dev"
     }
   }
 }

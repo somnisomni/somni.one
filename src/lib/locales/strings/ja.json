@@ -50,6 +50,23 @@
       "translation": {
         "title": "誰かは読みづらがるから。"
       }
+    },
+    "links": {
+      "bluesky": "Bluesky",
+      "discord": "Discord",
+      "github": "GitHub",
+      "monkeytype": "Monkeytype",
+      "solvedac": "solved.ac (BOJ)",
+      "steam": "Steam",
+      "twitter": "Twitter (X)",
+      "category": {
+        "misc": "その他",
+        "programming": "プログラミング",
+        "social": "ソーシャルネットワーク",
+        "own": "保有するサイトとサービス"
+      },
+      "blog": "somni.log (ブログ)",
+      "koharudev": "koharu.dev"
     }
   }
 }

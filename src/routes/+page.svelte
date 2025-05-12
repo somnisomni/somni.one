@@ -102,6 +102,20 @@
 
     <section id="links">
       <h3 class="text-amber-600">links</h3>
+
+      {#each data.linkData as category}
+        <div class="link-category">
+          <div class="link-category-title">● { $_(category.nameTextId) }</div>
+
+          <ul>
+            {#each category.links as link}
+              <li class="link">
+                <a href={ link.url }>{ $_(link.nameTextId) } ({ link.accountDisplayId })</a>
+              </li>
+            {/each}
+          </ul>
+        </div>
+      {/each}
     </section>
   </div>
 </div>
@@ -117,6 +131,7 @@ import { ScrollSmoother } from "gsap/ScrollSmoother";
 import { siCss3, siFmod, siNestjs, siSass, siSvelte, siTypescript, siUnity, siVuedotjs } from "simple-icons";
 import IconText from "$/components/common/IconText.svelte";
 import faChevronDown from "$/assets/icons/ui/fa-chevron-down.svg?raw";
+import type { PageProps } from "./$types";
 
 const typingUrlMap: Record<string, string> = {
   "mail": "mailto:" + atob("bWU=") + "@" + atob("c29tbmkub25l"),
@@ -185,6 +200,8 @@ let additionalTypingsUrl: string = $derived(
 let additionalTypingsUrlAnchor: HTMLAnchorElement | null = null;
 
 let windowScrollY: number = $state(0);
+
+const { data }: PageProps = $props();
 
 onMount(() => {
   animateText(null, true);
