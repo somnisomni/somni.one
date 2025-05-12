@@ -177,7 +177,7 @@ onMount(() => {
 
   ScrollSmoother.create({
     smooth: 0.5,
-    smoothTouch: 0.1,
+    smoothTouch: 0,
     effects: true,
     autoResize: true,
   });
