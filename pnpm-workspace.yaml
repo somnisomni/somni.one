@@ -1,0 +1,9 @@
+packages:
+  - projects/*
+
+catalog:
+  "@somni/eslint-config": "https://gitpkg.vercel.app/somnisomni/webdev-common/packages/eslint-config?main"
+  "eslint": "^9.27.0"
+  "@types/eslint": "^9.6.1"
+  "typescript": "^5.8.3"
+  "vite": "^6.3.5"

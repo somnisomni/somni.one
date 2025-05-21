@@ -1,8 +1,16 @@
 {
 	"folders": [
 		{
-			"name": "somni.one",
+			"name": "[Root]",
 			"path": "."
+		},
+		{
+			"name": "[Web]",
+			"path": "projects/web"
+		},
+		{
+			"name": "[Data Collector]",
+			"path": "projects/data-collector"
 		}
 	],
 	"settings": {

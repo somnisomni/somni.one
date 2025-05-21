@@ -1,0 +1,40 @@
+{
+	"name": "@somni.one/web",
+	"packageManager": "pnpm@10.11.0",
+	"private": true,
+	"type": "module",
+	"scripts": {
+		"dev": "vite dev",
+		"build": "vite build",
+		"preview": "vite preview",
+		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
+		"lint": "eslint ."
+	},
+	"devDependencies": {
+		"@somni/eslint-config": "catalog:",
+		"eslint": "catalog:",
+		"@types/eslint": "catalog:",
+		"typescript": "catalog:",
+		"vite": "catalog:",
+		"@sveltejs/adapter-auto": "^6.0.0",
+		"@sveltejs/kit": "^2.20.7",
+		"@sveltejs/vite-plugin-svelte": "^5.0.3",
+		"@tailwindcss/vite": "^4.1.4",
+		"autoprefixer": "^10.4.21",
+		"eslint-plugin-svelte": "^3.8.2",
+		"globals": "^16.0.0",
+		"postcss": "^8.5.3",
+		"svelte": "^5.28.2",
+		"svelte-check": "^4.1.6",
+		"tailwindcss": "^4.1.4"
+	},
+	"dependencies": {
+		"@prgm/sveltekit-progress-bar": "^3.0.2",
+		"gsap": "^3.13.0",
+		"octokit": "^5.0.2",
+		"simple-icons": "^14.12.3",
+		"string-to-color": "^2.2.2",
+		"svelte-i18n": "^4.0.1"
+	}
+}

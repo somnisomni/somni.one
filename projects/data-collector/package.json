@@ -1,0 +1,13 @@
+{
+  "name": "@somni.one/data-collector",
+  "packageManager": "pnpm@10.11.0",
+  "private": true,
+  "type": "module",
+  "devDependencies": {
+		"@somni/eslint-config": "catalog:",
+		"eslint": "catalog:",
+		"@types/eslint": "catalog:",
+		"typescript": "catalog:",
+    "wrangler": "^4.16.0"
+  }
+}
