@@ -3,7 +3,7 @@ import type { PageServerLoad } from "./$types";
 
 export const load: PageServerLoad = async () => {
   // Load data from JSON
-  const data = [ ...(await import("$lib/server/data/certifications.json")).default as MeCertificationData[] ];
+  const data = [ ...(await import("@somni.one/common/data/works/certifications.json")).default as MeCertificationData[] ];
 
   // Sort by certification year (or sub-certification year if no certification year)
   data.sort((a, b) => {

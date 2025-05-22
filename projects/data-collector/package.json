@@ -21,6 +21,7 @@
     "wrangler": "^4.16.0"
   },
   "dependencies": {
+		"@somni.one/common": "workspace:*",
     "@prisma/adapter-d1": "^6.8.2",
     "@prisma/client": "^6.8.2"
   }

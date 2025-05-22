@@ -5,6 +5,10 @@
 			"path": "."
 		},
 		{
+			"name": "[Common]",
+			"path": "projects/common"
+		},
+		{
 			"name": "[Web]",
 			"path": "projects/web"
 		},

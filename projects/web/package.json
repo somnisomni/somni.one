@@ -30,6 +30,7 @@
 		"tailwindcss": "^4.1.4"
 	},
 	"dependencies": {
+		"@somni.one/common": "workspace:*",
 		"@prgm/sveltekit-progress-bar": "^3.0.2",
 		"gsap": "^3.13.0",
 		"octokit": "^5.0.2",
