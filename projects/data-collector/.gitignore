@@ -14,3 +14,6 @@ Thumbs.db
 .env.*
 !.env.example
 !.env.test
+
+# Wrangler
+.wrangler

@@ -1,0 +1,20 @@
+{
+  "name": "somni-one-data",
+  "main": "src/index.ts",
+  "compatibility_date": "2025-05-22",
+  "compatibility_flags": [
+    "nodejs_compat"
+  ],
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "somni.one",
+      "database_id": "e49886f3-1731-454c-8b66-790f4ff69596"
+    }
+  ],
+  "triggers": {
+    "crons": [
+      "30 * * * *"
+    ]
+  }
+}

@@ -3,11 +3,25 @@
   "packageManager": "pnpm@10.11.0",
   "private": true,
   "type": "module",
+  "scripts": {
+    "build": "tsc --noEmit",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "dev": "wrangler dev",
+    "prisma:generate": "prisma generate"
+  },
   "devDependencies": {
-		"@somni/eslint-config": "catalog:",
-		"eslint": "catalog:",
-		"@types/eslint": "catalog:",
-		"typescript": "catalog:",
+    "@cloudflare/workers-types": "^4.20250522.0",
+    "@somni/eslint-config": "catalog:",
+    "@types/eslint": "catalog:",
+    "@types/node": "catalog:",
+    "eslint": "catalog:",
+    "typescript": "catalog:",
+    "prisma": "^6.8.2",
     "wrangler": "^4.16.0"
+  },
+  "dependencies": {
+    "@prisma/adapter-d1": "^6.8.2",
+    "@prisma/client": "^6.8.2"
   }
 }
