@@ -13,7 +13,14 @@ datasource db {
 
 model Data {
   id        Int       @id @default(autoincrement())
+  dataType  DataType  @default(Unknown)
   dataId    String    @unique
   data      String
   updatedAt DateTime  @updatedAt
+}
+
+enum DataType {
+  Unknown
+  GitHubCommit
+  GitHubPullRequest
 }
