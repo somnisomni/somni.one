@@ -27,6 +27,16 @@ export default {
   },
 
   async scheduled(controller: ScheduledController, env: CloudflareEnv, ctx: ExecutionContext) {
-    const db = Database.initialize(env.DB);
+    const adapter = new PrismaD1(env.DB);
+    const db = new PrismaClient({ adapter });
+
+    const testCollector = new GitHubCommitDataCollector("somnisomni", "somni.one", "8326d759f2c6525238623ddea94c9ca15343a7ea");
+    if(await testCollector.shouldRecollect(db)) {
+      console.log("need to collect");
+      console.log(await testCollector.collect(db));
+    } else {
+      console.log("no need to collect");
+      console.log(testCollector.getExisting(db));
+    }
   },
 };

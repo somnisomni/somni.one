@@ -11,8 +11,8 @@ export default class GitHubCommitDataCollector extends DataCollectorBase<GitHubC
     private readonly commitHash: string,
   ) { super(); }
 
-  public override readonly RecollectMinimumPeriod = 60 * 60 * 24; // 24 hours (1 day)
-  public override readonly DataType: DataType = DataType.GitHubCommit;
+  public override readonly recollectMinimumPeriod = 60 * 60 * 24; // 24 hours (1 day)
+  public override readonly dataType: DataType = DataType.GitHubCommit;
 
   protected override get dataId(): string {
     return `github-commit/${this.repositoryOwner}/${this.repositoryName}/${this.commitHash}`;
@@ -51,7 +51,7 @@ export default class GitHubCommitDataCollector extends DataCollectorBase<GitHubC
     try {
       const dbData = await db.data.create({
         data: {
-          dataType: this.DataType,
+          dataType: this.dataType,
           dataId: this.dataId,
           data: JSON.stringify(structedData),
         },

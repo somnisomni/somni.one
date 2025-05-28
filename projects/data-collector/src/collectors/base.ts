@@ -4,12 +4,12 @@ export default abstract class DataCollectorBase<TData> {
   /**
    * The minimum period (in seconds) before the next recollection is allowed.
    */
-  public abstract readonly RecollectMinimumPeriod: number;
+  public abstract readonly recollectMinimumPeriod: number;
 
   /**
    * The type of data being collected.
    */
-  public abstract readonly DataType: DataType;
+  public abstract readonly dataType: DataType;
 
   /**
    * The unique identifier for the data being collected.
@@ -26,7 +26,7 @@ export default abstract class DataCollectorBase<TData> {
     const existing = await db.data.findFirst({
       where: {
         ...where,
-        dataType: this.DataType,
+        dataType: this.dataType,
         dataId: this.dataId,
       },
     });
@@ -45,7 +45,7 @@ export default abstract class DataCollectorBase<TData> {
    */
   public async shouldRecollect(db: PrismaClient): Promise<boolean> {
     // Calculate the threshold date for recollection
-    const dateThresholdToRecollect = new Date(Date.now() - (this.RecollectMinimumPeriod * 1000));
+    const dateThresholdToRecollect = new Date(Date.now() - (this.recollectMinimumPeriod * 1000));
 
     // Try to get the existing data entry with conditions
     const existing = await this.getExisting(db, {
