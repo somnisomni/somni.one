@@ -8,7 +8,8 @@
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "dev": "wrangler dev",
-    "prisma:generate": "prisma generate"
+    "prisma:generate": "prisma generate",
+    "wrangler:deploy": "wrangler d1 migrations apply somni.one --remote && wrangler deploy --minify"
   },
   "devDependencies": {
     "@cloudflare/workers-types": "^4.20250620.0",

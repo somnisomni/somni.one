@@ -30,23 +30,5 @@ export default {
   async scheduled(controller: ScheduledController, env: CloudflareEnv, ctx: ExecutionContext) {
     const adapter = new PrismaD1(env.DB);
     const db = new PrismaClient({ adapter });
-
-    const testCollector = new GitHubCommitDataCollector("somnisomni", "somni.one", "8326d759f2c6525238623ddea94c9ca15343a7ea");
-    if(await testCollector.shouldRecollect(db)) {
-      console.log("need to collect");
-      console.log(await testCollector.collect(db));
-    } else {
-      console.log("no need to collect");
-      console.log(await testCollector.getExisting(db));
-    }
-
-    const testCollectorPr = new GitHubPullRequestDataCollector("openresty", "headers-more-nginx-module", 134);
-    if(await testCollectorPr.shouldRecollect(db)) {
-      console.log("need to collect PR");
-      console.log(await testCollectorPr.collect(db));
-    } else {
-      console.log("no need to collect PR");
-      console.log(await testCollectorPr.getExisting(db));
-    }
   },
 };
