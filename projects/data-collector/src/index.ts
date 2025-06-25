@@ -4,6 +4,7 @@ import type { ScheduledController, ExecutionContext, D1Database } from "@cloudfl
 import { PrismaD1 } from "@prisma/adapter-d1";
 import { PrismaClient } from "@prisma/client";
 import Const from "./const";
+import { handle } from "./routes";
 
 export interface CloudflareEnv {
   DB: D1Database;
@@ -20,9 +21,9 @@ export default {
           Location: Const.HomepageUrl,
         },
       });
+    } else {
+      return await handle(request);
     }
-
-    return new Response("Not Found", { status: 404 });
   },
 
   async scheduled(controller: ScheduledController, env: CloudflareEnv, ctx: ExecutionContext) {
