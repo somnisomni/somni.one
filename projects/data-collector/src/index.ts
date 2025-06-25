@@ -5,6 +5,7 @@ import { PrismaD1 } from "@prisma/adapter-d1";
 import { PrismaClient } from "@prisma/client";
 import GitHubCommitDataCollector from "./collectors/github-commit";
 import Const from "./const";
+import GitHubPullRequestDataCollector from "./collectors/github-pull-request";
 
 export interface CloudflareEnv {
   DB: D1Database;
@@ -37,6 +38,15 @@ export default {
     } else {
       console.log("no need to collect");
       console.log(await testCollector.getExisting(db));
+    }
+
+    const testCollectorPr = new GitHubPullRequestDataCollector("openresty", "headers-more-nginx-module", 134);
+    if(await testCollectorPr.shouldRecollect(db)) {
+      console.log("need to collect PR");
+      console.log(await testCollectorPr.collect(db));
+    } else {
+      console.log("no need to collect PR");
+      console.log(await testCollectorPr.getExisting(db));
     }
   },
 };
