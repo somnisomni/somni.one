@@ -63,7 +63,7 @@
 
       <p class="jujeori">플랫폼 독립적이라는 점에서 매력을 느끼고 제 주력 분야로 정했습니다.</p>
       <p class="jujeori"><br /></p>
-      <p class="jujeori">프론트엔드와 백엔드 모두 골고루 해보고 있습니다. <IconText svg={ siTypescript.svg }><b>TypeScript</b></IconText>를 기본적으로 사용하며, 주력 프론트엔드 프레임워크는 <IconText svg={ siVuedotjs.svg }><b>Vue</b></IconText> 및 <IconText svg={ siSvelte.svg }><b>Svelte</b></IconText> 입니다. 백엔드 프레임워크로 <IconText svg={ siNestjs.svg }><b>NestJS</b></IconText>를 사용해 본 경험이 있습니다. <IconText svg={ siCss3.svg }><b>CSS</b></IconText>를 직접 작성할 수 있으며, <IconText svg={ siSass.svg }><b>SCSS</b></IconText>를 선호합니다.</p>
+      <p class="jujeori">프론트엔드와 백엔드 모두 골고루 해보고 있습니다. <IconText svg={ siTypescript.svg }><b>TypeScript</b></IconText>를 기본적으로 사용하며, 주력 프론트엔드 프레임워크는 <IconText svg={ siVuedotjs.svg }><b>Vue</b></IconText> 및 <IconText svg={ siSvelte.svg }><b>Svelte</b></IconText> 입니다. 백엔드 프레임워크로 <IconText svg={ siNestjs.svg }><b>NestJS</b></IconText>를 사용해 본 경험이 있습니다. <IconText svg={ siCss.svg }><b>CSS</b></IconText>를 직접 작성할 수 있으며, <IconText svg={ siSass.svg }><b>SCSS</b></IconText>를 선호합니다.</p>
     </section>
 
     <section id="game-dev">
@@ -128,7 +128,7 @@ import { fade } from "svelte/transition";
 import stringToColor from "string-to-color";
 import MainTransitionOverlay from "$/components/animation/MainTransitionOverlay.svelte";
 import { ScrollSmoother } from "gsap/ScrollSmoother";
-import { siCss3, siFmod, siNestjs, siSass, siSvelte, siTypescript, siUnity, siVuedotjs } from "simple-icons";
+import { siCss, siFmod, siNestjs, siSass, siSvelte, siTypescript, siUnity, siVuedotjs } from "simple-icons";
 import IconText from "$/components/common/IconText.svelte";
 import faChevronDown from "$/assets/icons/ui/fa-chevron-down.svg?raw";
 import type { PageProps } from "./$types";
