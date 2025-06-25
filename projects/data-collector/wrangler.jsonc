@@ -17,5 +17,11 @@
     "crons": [
       "30 * * * *"
     ]
+  },
+  "observability": {
+    "enabled": true,
+    "logs": {
+      "enabled": true
+    }
   }
 }
