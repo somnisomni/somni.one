@@ -1,6 +1,6 @@
 {
 	"name": "@somni.one/web",
-	"packageManager": "pnpm@10.11.0",
+	"packageManager": "pnpm@10.12.3",
 	"private": true,
 	"type": "module",
 	"scripts": {
