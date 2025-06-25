@@ -1,5 +1,5 @@
 import type { RequiredKeys } from "$/lib/typings/util";
-import type { TechStack } from "$/lib/utils/tech-stacks";
+import type { TechStack } from "@somni.one/common";
 
 export enum MeDataType {
   PROJECT_INDIVIDUAL = "projects_individual",

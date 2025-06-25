@@ -1,0 +1,44 @@
+export enum TechStack {
+  // Languages
+  HTML5 = "HTML5",
+  CSS3 = "CSS3",
+  JAVASCRIPT = "JAVASCRIPT",
+  TYPESCRIPT = "TYPESCRIPT",
+  JAVA = "JAVA",
+  CSHARP = "CSHARP",
+  VISUALBASIC_NET = "VISUALBASIC_NET",
+  PYTHON = "PYTHON",
+
+  // Platforms
+  NODEJS = "NODEJS",
+  DOTNET_FRAMEWORK = "DOTNET_FRAMEWORK",
+  DOTNET_CORE = "DOTNET_CORE",
+  ANDROID = "ANDROID",
+  MINECRAFT = "MINECRAFT",
+  X = "X",
+
+  // DBMS
+  MYSQL = "MYSQL",
+
+  // Backend Libraries & Server Management
+  PODMAN = "PODMAN",
+  SEQUELIZE = "SEQUELIZE",
+  ENTITYFRAMEWORKCORE = "ENTITYFRAMEWORKCORE",
+  SELENIUM = "SELENIUM",
+  NESTJS = "NESTJS",
+
+  // Frontend Libraries
+  VUEJS = "VUEJS",
+  VUETIFY = "VUETIFY",
+  NUXT = "NUXT",
+  SVELTE = "SVELTE",
+  SVELTEKIT = "SVELTEKIT",
+  TAILWINDCSS = "TAILWINDCSS",
+  SASS = "SASS",
+  JQUERY = "JQUERY",
+  WPF = "WPF",
+
+  // Game Engines & Audio Engines
+  UNITY = "UNITY",
+  FMOD = "FMOD",
+}

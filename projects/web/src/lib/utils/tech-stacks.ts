@@ -1,5 +1,6 @@
 /* eslint-disable import-x/exports-last */
 
+import { TechStack } from "@somni.one/common";
 import { siAndroid, siCss, siDotnet, siFmod, siHtml5, siJavascript, siJquery, siMysql, siNestjs, siNodedotjs, siNuxt, siPodman, siPython, siSass, siSelenium, siSequelize, siSvelte, siTailwindcss, siTypescript, siUnity, siVuedotjs, siVuetify, siX } from "simple-icons";
 import IconCSharp from "$assets/icons/tech-stack/csharp.svg?raw";
 import IconDotnetFramework from "$assets/icons/tech-stack/dotnet-framework.svg?raw";
@@ -8,51 +9,6 @@ import IconJava from "$assets/icons/tech-stack/java.svg?raw";
 import IconMinecraft from "$assets/icons/tech-stack/minecraft_alt.svg?raw";
 import IconVisualBasic from "$assets/icons/tech-stack/visualbasic.svg?raw";
 import IconXaml from "$assets/icons/tech-stack/xaml.svg?raw";
-
-export enum TechStack {
-  // Languages
-  HTML5 = "HTML5",
-  CSS3 = "CSS3",
-  JAVASCRIPT = "JAVASCRIPT",
-  TYPESCRIPT = "TYPESCRIPT",
-  JAVA = "JAVA",
-  CSHARP = "CSHARP",
-  VISUALBASIC_NET = "VISUALBASIC_NET",
-  PYTHON = "PYTHON",
-
-  // Platforms
-  NODEJS = "NODEJS",
-  DOTNET_FRAMEWORK = "DOTNET_FRAMEWORK",
-  DOTNET_CORE = "DOTNET_CORE",
-  ANDROID = "ANDROID",
-  MINECRAFT = "MINECRAFT",
-  X = "X",
-
-  // DBMS
-  MYSQL = "MYSQL",
-
-  // Backend Libraries & Server Management
-  PODMAN = "PODMAN",
-  SEQUELIZE = "SEQUELIZE",
-  ENTITYFRAMEWORKCORE = "ENTITYFRAMEWORKCORE",
-  SELENIUM = "SELENIUM",
-  NESTJS = "NESTJS",
-
-  // Frontend Libraries
-  VUEJS = "VUEJS",
-  VUETIFY = "VUETIFY",
-  NUXT = "NUXT",
-  SVELTE = "SVELTE",
-  SVELTEKIT = "SVELTEKIT",
-  TAILWINDCSS = "TAILWINDCSS",
-  SASS = "SASS",
-  JQUERY = "JQUERY",
-  WPF = "WPF",
-
-  // Game Engines & Audio Engines
-  UNITY = "UNITY",
-  FMOD = "FMOD",
-}
 
 export interface TechStackData {
   title: string;
