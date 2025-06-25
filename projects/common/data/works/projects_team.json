@@ -1,5 +1,23 @@
 [
   {
+    "id": "ck-graduation-colorting",
+    "title": "컬러팅",
+    "desc": "[추가 예정]",
+    "association": "청강문화산업대학교 3학년 졸업작",
+    "teamName": "팀 팔레트",
+    "charge": "클라이언트 프로그래머",
+    "stacks": [
+      "UNITY",
+      "CSHARP"
+    ],
+    "yearFrom": 2025,
+    "yearTo": 2025,
+    "status": "ONGOING",
+    "details": [
+      "[추가 예정]"
+    ]
+  },
+  {
     "id": "ck-graduation-roselia",
     "title": "로젤리아 <small>(Roselia)</small>",
     "desc": "<span class='text-red-300'>[팀 해체로 인한 개발 중단]</span>",
@@ -15,8 +33,7 @@
     "yearTo": 2025,
     "status": "DISCONTINUED",
     "details": [
-      "[추가 예정]",
-      ""
+      "[추가 예정]"
     ]
   },
   {
@@ -35,8 +52,7 @@
     "yearTo": 2024,
     "status": "COMPLETED",
     "details": [
-      "[추가 예정]",
-      ""
+      "[추가 예정]"
     ]
   },
   {
@@ -55,8 +71,7 @@
     "yearTo": 2022,
     "status": "COMPLETED",
     "details": [
-      "[추가 예정]",
-      ""
+      "[추가 예정]"
     ],
     "repositoryUrl": "https://github.com/SWM-TEAM-GOYUKKURI/ToAnyone"
   },
@@ -76,8 +91,7 @@
     "yearTo": 2022,
     "status": "COMPLETED",
     "details": [
-      "[추가 예정]",
-      ""
+      "[추가 예정]"
     ],
     "prizes": [
       "SW마에스트로 연수생 투표 - 3위"
@@ -102,8 +116,7 @@
     "yearTo": 2021,
     "status": "COMPLETED",
     "details": [
-      "[추가 예정]",
-      ""
+      "[추가 예정]"
     ],
     "prizes": [
       "정보통신진흥원장상"
@@ -126,8 +139,7 @@
     "yearTo": 2013,
     "status": "COMPLETED",
     "details": [
-      "[추가 예정]",
-      ""
+      "[추가 예정]"
     ],
     "repositoryUrl": "https://github.com/SDSkyKlouD/disco-maze",
     "pageUrl": ""
