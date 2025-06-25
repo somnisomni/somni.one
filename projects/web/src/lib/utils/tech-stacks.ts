@@ -1,13 +1,13 @@
 /* eslint-disable import-x/exports-last */
 
-import { siAndroid, siCss3, siDotnet, siFmod, siHtml5, siJavascript, siJquery, siMysql, siNestjs, siNodedotjs, siNuxt, siPodman, siPython, siSass, siSelenium, siSequelize, siSvelte, siTailwindcss, siTypescript, siUnity, siVuedotjs, siVuetify, siX } from "simple-icons";
+import { siAndroid, siCss, siDotnet, siFmod, siHtml5, siJavascript, siJquery, siMysql, siNestjs, siNodedotjs, siNuxt, siPodman, siPython, siSass, siSelenium, siSequelize, siSvelte, siTailwindcss, siTypescript, siUnity, siVuedotjs, siVuetify, siX } from "simple-icons";
 import IconCSharp from "$assets/icons/tech-stack/csharp.svg?raw";
 import IconDotnetFramework from "$assets/icons/tech-stack/dotnet-framework.svg?raw";
+import IconEntityFrameworkCore from "$assets/icons/tech-stack/entityframeworkcore.svg?raw";
 import IconJava from "$assets/icons/tech-stack/java.svg?raw";
 import IconMinecraft from "$assets/icons/tech-stack/minecraft_alt.svg?raw";
 import IconVisualBasic from "$assets/icons/tech-stack/visualbasic.svg?raw";
 import IconXaml from "$assets/icons/tech-stack/xaml.svg?raw";
-import IconEntityFrameworkCore from "$assets/icons/tech-stack/entityframeworkcore.svg?raw";
 
 export enum TechStack {
   // Languages
@@ -68,9 +68,9 @@ const stackData: Record<TechStack, TechStackData> = {
     colorHex: siHtml5.hex,
   },
   [TechStack.CSS3]: {
-    title: siCss3.title,
-    svg: siCss3.svg,
-    colorHex: siCss3.hex,
+    title: siCss.title,
+    svg: siCss.svg,
+    colorHex: siCss.hex,
   },
   [TechStack.JAVASCRIPT]: {
     title: siJavascript.title,
