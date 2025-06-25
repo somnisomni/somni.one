@@ -10,3 +10,7 @@ import type { PageProps } from "./$types";
 
 const { data }: PageProps = $props();
 </script>
+
+<style>
+/* tailwindcss ditto: 'text-red-300' */
+</style>

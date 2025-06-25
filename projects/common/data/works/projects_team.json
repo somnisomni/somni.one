@@ -1,8 +1,8 @@
 [
   {
-    "id": "ck-graduation-game",
-    "title": "(진행 중 졸업작품 프로젝트)",
-    "desc": "[추가 예정]",
+    "id": "ck-graduation-roselia",
+    "title": "로젤리아 <small>(Roselia)</small>",
+    "desc": "<span class='text-red-300'>[팀 해체로 인한 개발 중단]</span>",
     "association": "청강문화산업대학교 3학년 졸업작",
     "teamName": "팀 경로당",
     "charge": "리드 프로그래머 (TD), 테크니컬 사운드 디자인 및 엔지니어링",
@@ -13,7 +13,7 @@
     ],
     "yearFrom": 2025,
     "yearTo": 2025,
-    "status": "ONGOING",
+    "status": "DISCONTINUED",
     "details": [
       "[추가 예정]",
       ""
