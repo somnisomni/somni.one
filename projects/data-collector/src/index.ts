@@ -36,7 +36,7 @@ export default {
       console.log(await testCollector.collect(db));
     } else {
       console.log("no need to collect");
-      console.log(testCollector.getExisting(db));
+      console.log(await testCollector.getExisting(db));
     }
   },
 };

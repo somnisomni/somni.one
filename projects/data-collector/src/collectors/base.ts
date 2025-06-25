@@ -50,7 +50,7 @@ export default abstract class DataCollectorBase<TData> {
     // Try to get the existing data entry with conditions
     const existing = await this.getExisting(db, {
       updatedAt: {
-        lte: dateThresholdToRecollect,
+        gte: dateThresholdToRecollect,
       },
     });
 
@@ -64,4 +64,40 @@ export default abstract class DataCollectorBase<TData> {
    * @returns A promise that resolves to the collected data (of type `TData` which was successfully inserted into DB).
    */
   public abstract collect(db: PrismaClient): Promise<TData>;
+
+  /**
+   * Create or update data in the database.
+   * @param db - The Prisma client instance.
+   * @param data - The data to update (of type `TData`).
+   * @returns A promise that resolves to the created/updated row entry.
+   */
+  protected async createOrUpdateData(db: PrismaClient, data: TData): Promise<ReturnType<typeof db.data.upsert> | null> {
+    try {
+      const updated = await db.data.upsert({
+        where: {
+          dataType: this.dataType,
+          dataId: this.dataId,
+        },
+        create: {
+          dataType: this.dataType,
+          dataId: this.dataId,
+          data: JSON.stringify(data),
+        },
+        update: {
+          data: JSON.stringify(data),
+        },
+      });
+
+      if(updated && updated.data) {
+        return updated;
+      }
+    } catch(error) {
+      console.error("Failed to create or update data in the database:", error);
+
+      // Optionally, you can rethrow the error or handle it as needed
+      throw error;
+    }
+
+    return null;
+  }
 }

@@ -47,23 +47,8 @@ export default class GitHubCommitDataCollector extends DataCollectorBase<GitHubC
       throw error;
     }
 
-    // Insert data into database
-    try {
-      const dbData = await db.data.create({
-        data: {
-          dataType: this.dataType,
-          dataId: this.dataId,
-          data: JSON.stringify(structedData),
-        },
-      });
-
-      if(!dbData || !dbData.data) {
-        throw new Error("Inserted data is invalid!");
-      }
-    } catch(error) {
-      console.error("Failed to insert data into database!");
-      throw error;
-    }
+    // Create or update the data into database
+    await this.createOrUpdateData(db, structedData);
 
     // If successfully inserted, return the structured data
     return structedData;
