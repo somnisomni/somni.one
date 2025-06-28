@@ -20,9 +20,10 @@ export default abstract class DataCollectorBase<TData> {
    * Get the existing data from the database.
    * @param db - The Prisma client instance.
    * @param where - Optional conditions to filter the data.
+   * @param collectIfNotExist - If true, it will automatically collect data if it does not exist.
    * @returns A promise that resolves to the existing data (of type `TData`) or null if not found.
    */
-  public async getExisting(db: PrismaClient, where?: Prisma.DataWhereInput): Promise<TData | null> {
+  public async getData(db: PrismaClient, where: Prisma.DataWhereInput = {}, collectIfNotExist = true): Promise<TData | null> {
     const existing = await db.data.findFirst({
       where: {
         ...where,
@@ -32,7 +33,17 @@ export default abstract class DataCollectorBase<TData> {
     });
 
     if(!existing || !existing.data) {
-      return null;
+      if(!collectIfNotExist) {
+        return null;
+      }
+
+      const collected = await this.collect(db);
+
+      if(!collected) {
+        return null;
+      }
+
+      return collected;
     }
 
     return JSON.parse(existing.data) as TData;
@@ -48,11 +59,11 @@ export default abstract class DataCollectorBase<TData> {
     const dateThresholdToRecollect = new Date(Date.now() - (this.recollectMinimumPeriod * 1000));
 
     // Try to get the existing data entry with conditions
-    const existing = await this.getExisting(db, {
+    const existing = await this.getData(db, {
       updatedAt: {
         gte: dateThresholdToRecollect,
       },
-    });
+    }, false);
 
     // If no existing data is found, data should be recollected
     return !existing;

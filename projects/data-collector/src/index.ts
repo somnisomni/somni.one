@@ -21,9 +21,9 @@ export default {
           Location: Const.HomepageUrl,
         },
       });
-    } else {
-      return await handle(request);
     }
+
+    return await handle(request);
   },
 
   async scheduled(controller: ScheduledController, env: CloudflareEnv, ctx: ExecutionContext) {
