@@ -7,7 +7,7 @@
     "build": "tsc --noEmit",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "dev": "wrangler dev",
+    "dev": "wrangler dev --x-remote-bindings",
     "prisma:generate": "prisma generate",
     "prisma:push": "prisma db push",
     "prisma:studio": "prisma studio"

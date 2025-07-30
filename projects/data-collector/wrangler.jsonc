@@ -10,7 +10,8 @@
     {
       "binding": "DB",
       "database_name": "somni.one",
-      "database_id": "e49886f3-1731-454c-8b66-790f4ff69596"
+      "database_id": "e49886f3-1731-454c-8b66-790f4ff69596",
+      "experimental_remote": true
     }
   ],
   "triggers": {
