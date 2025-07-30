@@ -5,8 +5,9 @@
     "repositoryUrl": "https://github.com/Revanced/revanced-manager",
     "contributions": [
       {
-        "desc": "패치 번들 목록을 스크롤할 수 있도록 수정",
-        "pullRequest": 2322
+        "type": "pull-request",
+        "pr": 2322,
+        "desc": "패치 번들 목록을 스크롤할 수 있도록 수정"
       }
     ]
   },
@@ -16,8 +17,9 @@
     "repositoryUrl": "https://github.com/lego37yoon/isspc-yespc",
     "contributions": [
       {
-        "desc": "업체별 바코드 Prefix를 JSON에 담고 불러올 수 있도록 수정",
-        "pullRequest": 4
+        "type": "pull-request",
+        "pr": 4,
+        "desc": "업체별 바코드 Prefix를 JSON에 담고 불러올 수 있도록 수정"
       }
     ]
   },
@@ -27,8 +29,9 @@
     "repositoryUrl": "https://github.com/openresty/headers-more-nginx-module",
     "contributions": [
       {
-        "desc": "NGINX v1.23.0 이상에서 빌드가 되지 않는 문제 수정",
-        "pullRequest": 134
+        "type": "pull-request",
+        "pr": 134,
+        "desc": "NGINX v1.23.0 이상에서 빌드가 되지 않는 문제 수정"
       }
     ]
   },
@@ -38,16 +41,19 @@
     "repositoryUrl": "https://github.com/Kyome22/RunCat_for_windows",
     "contributions": [
       {
-        "desc": "ARM64 빌드 지원",
-        "pullRequest": 95
+        "type": "pull-request",
+        "pr": 95,
+        "desc": "ARM64 빌드 지원"
       },
       {
-        "desc": "ARM64 Self-Contained 빌드 시 .NET 네이티브 라이브러리 포함",
-        "pullRequest": 103
+        "type": "pull-request",
+        "pr": 103,
+        "desc": "ARM64 Self-Contained 빌드 시 .NET 네이티브 라이브러리 포함"
       },
       {
-        "desc": "트레이 아이콘의 컨텍스트 메뉴에 프로그램 버전 추가",
-        "pullRequest": 106
+        "type": "pull-request",
+        "pr": 106,
+        "desc": "트레이 아이콘의 컨텍스트 메뉴에 프로그램 버전 추가"
       }
     ]
   },
@@ -57,24 +63,29 @@
     "repositoryUrl": "https://github.com/Expugn/priconne-quest-helper",
     "contributions": [
       {
-        "desc": "비슷한 동작의 함수들을 단일 함수로 통합",
-        "pullRequest": 18
+        "type": "pull-request",
+        "pr": 18,
+        "desc": "비슷한 동작의 함수들을 단일 함수로 통합"
       },
       {
-        "desc": "한국어/일본어 폰트 스타일시트 지정 및 동적 로드",
-        "pullRequest": 21
+        "type": "pull-request",
+        "pr": 21,
+        "desc": "한국어/일본어 폰트 스타일시트 지정 및 동적 로드"
       },
       {
-        "desc": "CSS 문법 오류 수정",
-        "directCommit": "98c50bbd0cc39aa9d4e005be545e86c78faecfac"
+        "type": "direct-commit",
+        "commit": "98c50bbd0cc39aa9d4e005be545e86c78faecfac",
+        "desc": "CSS 문법 오류 수정"
       },
       {
-        "desc": "웹사이트 언어 변경 시 HTML lang 속성 업데이트",
-        "directCommit": "bee116568b942edb4b512f601b33855f5bc61305"
+        "type": "direct-commit",
+        "commit": "bee116568b942edb4b512f601b33855f5bc61305",
+        "desc": "웹사이트 언어 변경 시 HTML lang 속성 업데이트"
       },
       {
-        "desc": "불필요한 jQuery 특정 버전 라이브러리 제거",
-        "directCommit": "380b05706bca6deed68c88b657889c0ea9d79552"
+        "type": "direct-commit",
+        "commit": "380b05706bca6deed68c88b657889c0ea9d79552",
+        "desc": "불필요한 jQuery 특정 버전 라이브러리 제거"
       }
     ]
   }

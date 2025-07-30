@@ -18,7 +18,7 @@
     "langTo": "ko",
     "platform": "github",
     "contributions": [
-      { "pullRequest": 6995 }
+      { "type": "pull-request", "pr": 6995 }
     ]
   },
   {
@@ -30,7 +30,7 @@
     "langTo": "ko",
     "platform": "github",
     "contributions": [
-      { "pullRequest": 8541 }
+      { "type": "pull-request", "pr": 8541 }
     ]
   },
   {
@@ -42,15 +42,15 @@
     "langTo": "ko",
     "platform": "github",
     "contributions": [
-      { "pullRequest": 1 },
-      { "pullRequest": 2 },
-      { "pullRequest": 3 },
-      { "pullRequest": 4 },
-      { "pullRequest": 5 },
-      { "pullRequest": 6 },
-      { "pullRequest": 7 },
-      { "pullRequest": 8 },
-      { "pullRequest": 9 }
+      { "type": "pull-request", "pr": 1 },
+      { "type": "pull-request", "pr": 2 },
+      { "type": "pull-request", "pr": 3 },
+      { "type": "pull-request", "pr": 4 },
+      { "type": "pull-request", "pr": 5 },
+      { "type": "pull-request", "pr": 6 },
+      { "type": "pull-request", "pr": 7 },
+      { "type": "pull-request", "pr": 8 },
+      { "type": "pull-request", "pr": 9 }
     ]
   },
   {
@@ -65,21 +65,21 @@
     ],
     "platform": "github",
     "contributions": [
-      { "pullRequest": 3 },
-      { "pullRequest": 8 },
-      { "pullRequest": 9 },
-      { "pullRequest": 11 },
-      { "pullRequest": 17 },
-      { "directCommit": "1349c68c4cfd3ebf59eea3dae2e53d7ad6eacb55" },
-      { "directCommit": "ecc50d062803099601ebd526e1c24676c191c6fd" },
-      { "directCommit": "9378229c6790f8a1d15be507f695f8e71576fff5" },
-      { "directCommit": "a6ab55de0bee78dfd171c5959812d28a22b69570" },
-      { "directCommit": "20e586302cc144982bbdeff9a2cef34713f91d05" },
-      { "directCommit": "cb4e6d5d7fe8d39970eade67405deaa161d93f28" },
-      { "directCommit": "a8b4ebb543e0fdec2841d7ded317fdc6abdfcee9" },
-      { "directCommit": "c8934f7fe95cd405df50e31b56207fd502e039d3" },
-      { "directCommit": "674cad47accd104f5b0dfbc40949dcdf1bd80b40" },
-      { "directCommit": "c79c810220fbba509a131484f68230e0cd5369d7" }
+      { "type": "pull-request", "pr": 3 },
+      { "type": "pull-request", "pr": 8 },
+      { "type": "pull-request", "pr": 9 },
+      { "type": "pull-request", "pr": 11 },
+      { "type": "pull-request", "pr": 17 },
+      { "type": "direct-commit", "commit": "1349c68c4cfd3ebf59eea3dae2e53d7ad6eacb55" },
+      { "type": "direct-commit", "commit": "ecc50d062803099601ebd526e1c24676c191c6fd" },
+      { "type": "direct-commit", "commit": "9378229c6790f8a1d15be507f695f8e71576fff5" },
+      { "type": "direct-commit", "commit": "a6ab55de0bee78dfd171c5959812d28a22b69570" },
+      { "type": "direct-commit", "commit": "20e586302cc144982bbdeff9a2cef34713f91d05" },
+      { "type": "direct-commit", "commit": "cb4e6d5d7fe8d39970eade67405deaa161d93f28" },
+      { "type": "direct-commit", "commit": "a8b4ebb543e0fdec2841d7ded317fdc6abdfcee9" },
+      { "type": "direct-commit", "commit": "c8934f7fe95cd405df50e31b56207fd502e039d3" },
+      { "type": "direct-commit", "commit": "674cad47accd104f5b0dfbc40949dcdf1bd80b40" },
+      { "type": "direct-commit", "commit": "c79c810220fbba509a131484f68230e0cd5369d7" }
     ]
   },
   {
@@ -91,7 +91,7 @@
     "langTo": "ko",
     "platform": "github",
     "contributions": [
-      { "pullRequest": 49 }
+      { "type": "pull-request", "pr": 49 }
     ]
   },
   {
@@ -103,8 +103,8 @@
     "langTo": "ko",
     "platform": "github",
     "contributions": [
-      { "pullRequest": 80 },
-      { "pullRequest": 84 }
+      { "type": "pull-request", "pr": 80 },
+      { "type": "pull-request", "pr": 84 }
     ]
   },
   {
@@ -116,7 +116,7 @@
     "langTo": "ko",
     "platform": "github",
     "contributions": [
-      { "pullRequest": 5 }
+      { "type": "pull-request", "pr": 5 }
     ]
   },
   {
@@ -128,8 +128,8 @@
     "langTo": "ko",
     "platform": "github",
     "contributions": [
-      { "pullRequest": 144 },
-      { "pullRequest": 285 }
+      { "type": "pull-request", "pr": 144 },
+      { "type": "pull-request", "pr": 285 }
     ]
   },
   {
@@ -141,7 +141,7 @@
     "langTo": "ko",
     "platform": "github",
     "contributions": [
-      { "pullRequest": 38 }
+      { "type": "pull-request", "pr": 38 }
     ]
   },
   {
@@ -153,7 +153,7 @@
     "langTo": "ko",
     "platform": "github",
     "contributions": [
-      { "pullRequest": 4 }
+      { "type": "pull-request", "pr": 4 }
     ]
   },
   {
@@ -165,7 +165,7 @@
     "langTo": "ko",
     "platform": "github",
     "contributions": [
-      { "pullRequest": 229 }
+      { "type": "pull-request", "pr": 229 }
     ]
   },
   {
@@ -177,7 +177,7 @@
     "langTo": "ko",
     "platform": "github",
     "contributions": [
-      { "pullRequest": 2 }
+      { "type": "pull-request", "pr": 2 }
     ]
   },
   {
@@ -189,7 +189,7 @@
     "langTo": "ko",
     "platform": "github",
     "contributions": [
-      { "pullRequest": 34 }
+      { "type": "pull-request", "pr": 34 }
     ]
   },
   {
@@ -201,22 +201,22 @@
     "langTo": "ko",
     "platform": "github",
     "contributions": [
-      { "pullRequest": 277 },
-      { "pullRequest": 282 },
-      { "pullRequest": 283 },
-      { "pullRequest": 314 },
-      { "pullRequest": 315 },
-      { "pullRequest": 331 },
-      { "pullRequest": 332 },
-      { "pullRequest": 586 },
-      { "pullRequest": 587 },
-      { "pullRequest": 590 },
-      { "pullRequest": 591 },
-      { "pullRequest": 988 },
-      { "pullRequest": 1326 },
-      { "pullRequest": 1327 },
-      { "pullRequest": 1328 },
-      { "pullRequest": 1341 }
+      { "type": "pull-request", "pr": 277 },
+      { "type": "pull-request", "pr": 282 },
+      { "type": "pull-request", "pr": 283 },
+      { "type": "pull-request", "pr": 314 },
+      { "type": "pull-request", "pr": 315 },
+      { "type": "pull-request", "pr": 331 },
+      { "type": "pull-request", "pr": 332 },
+      { "type": "pull-request", "pr": 586 },
+      { "type": "pull-request", "pr": 587 },
+      { "type": "pull-request", "pr": 590 },
+      { "type": "pull-request", "pr": 591 },
+      { "type": "pull-request", "pr": 988 },
+      { "type": "pull-request", "pr": 1326 },
+      { "type": "pull-request", "pr": 1327 },
+      { "type": "pull-request", "pr": 1328 },
+      { "type": "pull-request", "pr": 1341 }
     ]
   },
   {
@@ -228,14 +228,13 @@
     "langTo": "ko",
     "platform": "github",
     "contributions": [
-      { "pullRequest": 21 },
-      { "pullRequest": 22 }
+      { "type": "pull-request", "pr": 21 },
+      { "type": "pull-request", "pr": 22 }
     ]
   },
   {
     "id": "ubuntu-budgie",
     "title": "Ubuntu Budgie",
-    "repositoryUrl": "",
     "proofUrl": "https://app.transifex.com/user/profile/SDSkyKlouD/",
     "category": "operating-system",
     "langFrom": "en",
@@ -245,8 +244,6 @@
   {
     "id": "adm",
     "title": "ADM <small>(Advanced Download Manager)</small>",
-    "repositoryUrl": "",
-    "proofUrl": "",
     "category": "app-android",
     "langFrom": "en",
     "langTo": "ko",

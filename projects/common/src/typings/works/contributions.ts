@@ -1,22 +1,23 @@
 import type { WorkDataBase } from ".";
 
 export interface ContributionDataBase extends WorkDataBase {
+  repositoryUrl?: string;
   proofUrl?: string;
   contributions: Array<{
     desc?: string;
   } & ({
     type: "pull-request";
-    pullRequest: number;
+    pr: number;
   } | {
     type: "direct-commit";
-    directCommit: string;
+    commit: string;
   })>;
 }
 
 export interface ContributionTranslationData extends ContributionDataBase {
   category: string;
-  langFrom: string[];
-  langTo: string[];
+  langFrom: string | string[];
+  langTo: string | string[];
   platform: "github" | "crowdin" | "weblate" | "transifex" | "direct";
 }
 
