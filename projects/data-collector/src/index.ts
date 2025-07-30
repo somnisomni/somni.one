@@ -29,5 +29,7 @@ export default {
   async scheduled(controller: ScheduledController, env: CloudflareEnv, ctx: ExecutionContext) {
     const adapter = new PrismaD1(env.DB);
     const db = new PrismaClient({ adapter });
+
+    // TODO
   },
 };
