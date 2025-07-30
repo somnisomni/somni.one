@@ -1,6 +1,6 @@
 {
   "name": "@somni.one/data-collector",
-  "packageManager": "pnpm@10.12.3",
+  "packageManager": "pnpm@10.13.1",
   "private": true,
   "type": "module",
   "scripts": {
@@ -12,20 +12,20 @@
     "wrangler:deploy": "wrangler d1 migrations apply somni.one --remote && wrangler deploy --minify"
   },
   "devDependencies": {
-    "@cloudflare/workers-types": "^4.20250620.0",
+    "@cloudflare/workers-types": "^4.20250730.0",
     "@somni/eslint-config": "catalog:",
     "@types/eslint": "catalog:",
     "@types/node": "catalog:",
     "eslint": "catalog:",
-    "prisma": "^6.10.1",
+    "prisma": "^6.13.0",
     "typescript": "catalog:",
-    "wrangler": "^4.21.2"
+    "wrangler": "^4.26.1"
   },
   "dependencies": {
-    "@prisma/adapter-d1": "^6.10.1",
-    "@prisma/client": "^6.10.1",
+    "@prisma/adapter-d1": "^6.13.0",
+    "@prisma/client": "^6.13.0",
     "@somni.one/common": "workspace:*",
-    "dotenv": "^16.5.0",
+    "dotenv": "^17.2.1",
     "octokit": "^5.0.3"
   }
 }

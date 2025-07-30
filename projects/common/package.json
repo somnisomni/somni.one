@@ -1,6 +1,6 @@
 {
   "name": "@somni.one/common",
-  "packageManager": "pnpm@10.12.3",
+  "packageManager": "pnpm@10.13.1",
   "private": true,
   "type": "module",
   "main": "index.ts",
