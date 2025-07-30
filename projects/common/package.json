@@ -3,10 +3,9 @@
   "packageManager": "pnpm@10.13.1",
   "private": true,
   "type": "module",
-  "main": "index.ts",
+  "main": "src/index.ts",
   "files": [
     "./data",
-    "./typings"
-  ],
-  "types": "./typings/index.ts"
+    "./src"
+  ]
 }

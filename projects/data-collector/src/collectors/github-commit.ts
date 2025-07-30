@@ -1,6 +1,7 @@
 import type { GitHubCommitData } from "../typings/github";
 import type { PrismaClient } from "@prisma/client";
 import { DataType } from "@prisma/client";
+import { generateGitHubCommitId } from "@somni.one/common";
 import { createOctokit } from "../lib/octokit";
 import DataCollectorBase from "./base";
 
@@ -15,7 +16,7 @@ export default class GitHubCommitDataCollector extends DataCollectorBase<GitHubC
   public override readonly dataType: DataType = DataType.GitHubCommit;
 
   protected override get dataId(): string {
-    return `github-commit/${this.repositoryOwner}/${this.repositoryName}/${this.commitHash}`;
+    return generateGitHubCommitId(this.repositoryOwner, this.repositoryName, this.commitHash);
   }
 
   public override async collect(db: PrismaClient): Promise<GitHubCommitData> {

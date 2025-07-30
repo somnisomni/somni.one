@@ -1,6 +1,7 @@
 import type { GitHubPullRequestData } from "../typings/github";
 import type { PrismaClient } from "@prisma/client";
 import { DataType } from "@prisma/client";
+import { generateGitHubPullRequestId } from "@somni.one/common";
 import { createOctokit } from "../lib/octokit";
 import DataCollectorBase from "./base";
 
@@ -15,7 +16,7 @@ export default class GitHubPullRequestDataCollector extends DataCollectorBase<Gi
   public override readonly dataType: DataType = DataType.GitHubPullRequest;
 
   protected override get dataId(): string {
-    return `github-pull-request/${this.repositoryOwner}/${this.repositoryName}/${this.pullRequestNumber}`;
+    return generateGitHubPullRequestId(this.repositoryOwner, this.repositoryName, this.pullRequestNumber);
   }
 
   public override async collect(db: PrismaClient): Promise<GitHubPullRequestData> {
