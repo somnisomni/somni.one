@@ -10,7 +10,8 @@ export interface RouteHandler {
 
 export async function handle(request: Request): Promise<Response> {
   const url = new URL(request.url);
-  const handler = url.pathname in handlerMap ? handlerMap[url.pathname] : null;
+  const pathname = url.pathname.replace(/\/$/, "");
+  const handler = pathname in handlerMap ? handlerMap[pathname] : null;
 
   if(handler) {
     return await handler.handle(request, url);

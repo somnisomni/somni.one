@@ -1,6 +1,7 @@
 import type { DataType, Prisma, PrismaClient } from "@prisma/client";
 
-export default abstract class DataCollectorBase<TData> {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export default abstract class DataCollectorBase<TData = Record<string, any>> {
   /**
    * The minimum period (in seconds) before the next recollection is allowed.
    */
@@ -14,7 +15,7 @@ export default abstract class DataCollectorBase<TData> {
   /**
    * The unique identifier for the data being collected.
    */
-  protected abstract get dataId(): string;
+  public abstract get dataId(): string;
 
   /**
    * Get the existing data from the database.

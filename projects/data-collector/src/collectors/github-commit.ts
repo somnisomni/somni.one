@@ -15,7 +15,7 @@ export default class GitHubCommitDataCollector extends DataCollectorBase<GitHubC
   public override readonly recollectMinimumPeriod = 60 * 60 * 24; // 24 hours (1 day)
   public override readonly dataType: DataType = DataType.GitHubCommit;
 
-  protected override get dataId(): string {
+  public override get dataId(): string {
     return generateGitHubCommitId(this.repositoryOwner, this.repositoryName, this.commitHash);
   }
 

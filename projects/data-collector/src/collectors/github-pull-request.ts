@@ -15,7 +15,7 @@ export default class GitHubPullRequestDataCollector extends DataCollectorBase<Gi
   public override readonly recollectMinimumPeriod = 60 * 60 * 24; // 24 hours (1 day)
   public override readonly dataType: DataType = DataType.GitHubPullRequest;
 
-  protected override get dataId(): string {
+  public override get dataId(): string {
     return generateGitHubPullRequestId(this.repositoryOwner, this.repositoryName, this.pullRequestNumber);
   }
 
