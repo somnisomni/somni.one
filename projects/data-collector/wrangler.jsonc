@@ -24,5 +24,8 @@
     "logs": {
       "enabled": true
     }
+  },
+  "placement": {
+    "mode": "smart"
   }
 }
