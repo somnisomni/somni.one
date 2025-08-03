@@ -6,9 +6,11 @@
   "type": "module",
   "scripts": {
     "@web": "pnpm --filter @somni.one/web",
-    "@collector": "pnpm --filter @somni.one/data-collector"
+    "@collector": "pnpm --filter @somni.one/data-collector",
+    "dev": "concurrently --pad-prefix -k -n \"Web,Collector\" -c \"white.bgGreen,white.bgCyan\" \"pnpm @web dev\" \"pnpm @collector dev\""
   },
   "devDependencies": {
+    "concurrently": "^9.2.0",
     "eslint": "catalog:"
   }
 }
