@@ -4,14 +4,14 @@
     {#if item.platform === "github" && item.contributions}
       {#each item.contributions ?? [] as contribution}
         <li>
-          {#if contribution.pullRequest}
-            <MeDataGitHubPullRequestItem dataType={MeDataType.CONTRIBUTION_TRANSLATION}
+          {#if contribution.type === "pull-request"}
+            <MeDataGitHubPullRequestItem dataType={WorksDataType.CONTRIBUTION_TRANSLATION}
                                          dataId={item.id}
-                                         pullRequestNumber={contribution.pullRequest} />
-          {:else if contribution.directCommit}
-            <MeDataGitHubCommitItem dataType={MeDataType.CONTRIBUTION_TRANSLATION}
+                                         pullRequestNumber={contribution.pr} />
+          {:else if contribution.type === "direct-commit"}
+            <MeDataGitHubCommitItem dataType={WorksDataType.CONTRIBUTION_TRANSLATION}
                                     dataId={item.id}
-                                    commitHash={contribution.directCommit} />
+                                    commitHash={contribution.commit} />
           {/if}
         </li>
       {/each}
@@ -40,9 +40,10 @@
 import MeDataItemBase from "$/components/me/item/base/MeDataItemBase.svelte";
 import MeDataGitHubCommitItem from "$/components/me/fragments/MeDataGitHubCommitItem.svelte";
 import MeDataGitHubPullRequestItem from "$/components/me/fragments/MeDataGitHubPullRequestItem.svelte";
-import { MeDataType, type MeContributionTranslationData } from "$/lib/typings/me-data";
 import { _ } from "svelte-i18n";
 import { siTransifex, siWeblate } from "simple-icons";
+import type { ContributionTranslationData } from "@somni.one/common";
+import { WorksDataType } from "$/lib/typings/works-data";
 
-const { item }: { item: MeContributionTranslationData } = $props();
+const { item }: { item: ContributionTranslationData } = $props();
 </script>

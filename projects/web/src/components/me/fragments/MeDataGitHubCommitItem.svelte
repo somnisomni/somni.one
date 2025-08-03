@@ -12,7 +12,7 @@
 </a>
 
 <script lang="ts">
-import type { MeDataType } from "$/lib/typings/me-data";
+import type { WorksDataType } from "$/lib/typings/works-data";
 import MeDataGitChangesFragment from "$/components/me/fragments/MeDataGitChangesFragment.svelte";
 import { githubCommitDataStore, githubDataFetchQueue } from "$/lib/stores/me.svelte";
 import { GitHubDataResponseType, type GitHubDataResponse } from "$/lib/typings/github";
@@ -20,7 +20,7 @@ import { siGithub } from "simple-icons";
 import { onMount } from "svelte";
 import { _ } from "svelte-i18n";
 
-const { dataType, dataId, commitHash }: { dataType: MeDataType, dataId: string, commitHash: string } = $props();
+const { dataType, dataId, commitHash }: { dataType: WorksDataType, dataId: string, commitHash: string } = $props();
 
 const apiUrl = $derived("/works/api/github"
   + `?type=${dataType}`

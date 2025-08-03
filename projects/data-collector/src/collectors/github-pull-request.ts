@@ -1,4 +1,4 @@
-import type { GitHubPullRequestData } from "../typings/github";
+import type { GitHubPullRequestData } from "@somni.one/common";
 import type { PrismaClient } from "@prisma/client";
 import { DataType } from "@prisma/client";
 import { generateGitHubPullRequestId } from "@somni.one/common";

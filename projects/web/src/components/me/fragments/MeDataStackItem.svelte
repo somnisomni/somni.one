@@ -5,7 +5,8 @@
 </span>
 
 <script lang="ts">
-import { getTechStackData, type TechStack } from "$/lib/utils/tech-stacks";
+import { getTechStackData } from "$/lib/utils/tech-stacks";
+import type { TechStack } from "@somni.one/common";
 
 const { stack }: { stack?: TechStack } = $props();
 const stackData = $derived(stack ? getTechStackData(stack) : null);

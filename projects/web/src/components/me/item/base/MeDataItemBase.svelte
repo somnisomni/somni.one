@@ -20,15 +20,15 @@
 
 <script lang="ts">
 import type { Snippet } from "svelte";
-import type { MeDataBase } from "$/lib/typings/me-data";
 import stringToColor from "string-to-color";
+import type { WorkDataBase } from "@somni.one/common";
 
 const {
   children,
   nextToTitle,
   idPrefix = "item",
   item,
-}: { children?: Snippet, nextToTitle?: Snippet, idPrefix: string, item: MeDataBase } = $props();
+}: { children?: Snippet, nextToTitle?: Snippet, idPrefix: string, item: WorkDataBase } = $props();
 </script>
 
 <style scoped>

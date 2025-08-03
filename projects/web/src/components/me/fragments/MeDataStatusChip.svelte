@@ -3,7 +3,7 @@
 </div>
 
 <script lang="ts">
-import type { MeProjectDataBase } from "$/lib/typings/me-data";
+import type { MeProjectDataBase } from "$/lib/typings/works-data";
 import { _ } from "svelte-i18n";
 
 const { status }: { status: MeProjectDataBase["status"] } = $props();

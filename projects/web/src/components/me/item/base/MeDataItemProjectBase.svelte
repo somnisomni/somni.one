@@ -8,7 +8,7 @@
                        to={item.yearTo} />
     </div>
 
-    {@render nextToTitleSub?.()}
+    {@render nextToTitle?.()}
   {/snippet}
 
   {@render beforeStacks?.()}
@@ -26,20 +26,20 @@
 
 <script lang="ts">
 import type { Snippet } from "svelte";
-import type { MeProjectDataBase } from "$/lib/typings/me-data";
 import MeDataStackItem from "$/components/me/fragments/MeDataStackItem.svelte";
 import MeDataStatusChip from "$/components/me/fragments/MeDataStatusChip.svelte";
 import MeDataYearRange from "$/components/me/fragments/MeDataYearRange.svelte";
 import MeDataItemBase from "$/components/me/item/base/MeDataItemBase.svelte";
+import type { ProjectDataBase } from "@somni.one/common";
 
 const {
   children,
-  nextToTitle: nextToTitleSub,
+  nextToTitle,
   beforeStacks,
   afterStacks,
   idTargetPrefix,
   item,
-}: { children?: Snippet, nextToTitle?: Snippet, beforeStacks?: Snippet, afterStacks?: Snippet, idTargetPrefix: string, item: MeProjectDataBase } = $props();
+}: { children?: Snippet, nextToTitle?: Snippet, beforeStacks?: Snippet, afterStacks?: Snippet, idTargetPrefix: string, item: ProjectDataBase } = $props();
 </script>
 
 <style scoped>

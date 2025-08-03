@@ -1,9 +1,9 @@
-import type { MeCertificationData } from "$/lib/typings/me-data";
 import type { PageServerLoad } from "./$types";
+import type { CertificationData } from "@somni.one/common";
 
 export const load: PageServerLoad = async () => {
   // Load data from JSON
-  const data = [ ...(await import("@somni.one/common/data/works/certifications.json")).default as MeCertificationData[] ];
+  const data = [ ...(await import("@somni.one/common/data/works/certifications.json")).default as CertificationData[] ];
 
   // Sort by certification year (or sub-certification year if no certification year)
   data.sort((a, b) => {

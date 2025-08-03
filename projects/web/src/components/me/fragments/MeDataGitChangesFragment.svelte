@@ -9,7 +9,7 @@
 </span>
 
 <script lang="ts">
-import type { GitCommitChanges } from "$/lib/typings/github";
+import type { GitCommitChanges } from "@somni.one/common";
 
 const { changes }: { changes: GitCommitChanges } = $props();
 </script>

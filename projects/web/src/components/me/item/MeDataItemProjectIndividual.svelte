@@ -5,7 +5,7 @@
 
 <script lang="ts">
 import MeDataItemProjectBase from "$/components/me/item/base/MeDataItemProjectBase.svelte";
-import type { MeProjectIndividualData } from "$/lib/typings/me-data";
+import type { ProjectIndividualData } from "@somni.one/common";
 
-const { item }: { item: MeProjectIndividualData } = $props();
+const { item }: { item: ProjectIndividualData } = $props();
 </script>

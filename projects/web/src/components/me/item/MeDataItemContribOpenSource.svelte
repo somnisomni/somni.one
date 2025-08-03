@@ -3,14 +3,14 @@
   <ul>
     {#each item.contributions as contribution}
       <li class="mb-2">
-        {#if contribution.pullRequest}
-          <MeDataGitHubPullRequestItem dataType={MeDataType.CONTRIBUTION_OPENSOURCE}
+        {#if contribution.type === "pull-request"}
+          <MeDataGitHubPullRequestItem dataType={WorksDataType.CONTRIBUTION_OPENSOURCE}
                                        dataId={item.id}
-                                       pullRequestNumber={contribution.pullRequest} />
-        {:else if contribution.directCommit}
-          <MeDataGitHubCommitItem dataType={MeDataType.CONTRIBUTION_OPENSOURCE}
+                                       pullRequestNumber={contribution.pr} />
+        {:else if contribution.type === "direct-commit"}
+          <MeDataGitHubCommitItem dataType={WorksDataType.CONTRIBUTION_OPENSOURCE}
                                   dataId={item.id}
-                                  commitHash={contribution.directCommit} />
+                                  commitHash={contribution.commit} />
         {/if}
 
         <div class="text-sm ml-4">→ {contribution.desc}</div>
@@ -23,7 +23,8 @@
 import MeDataItemBase from "$/components/me/item/base/MeDataItemBase.svelte";
 import MeDataGitHubCommitItem from "$/components/me/fragments/MeDataGitHubCommitItem.svelte";
 import MeDataGitHubPullRequestItem from "$/components/me/fragments/MeDataGitHubPullRequestItem.svelte";
-import { MeDataType, type MeContributionOpenSourceData } from "$/lib/typings/me-data";
+import type { ContributionOpenSourceData } from "@somni.one/common";
+import { WorksDataType } from "$/lib/typings/works-data";
 
-const { item }: { item: MeContributionOpenSourceData } = $props();
+const { item }: { item: ContributionOpenSourceData } = $props();
 </script>

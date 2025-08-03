@@ -1,4 +1,4 @@
-import type { GitHubCommitData } from "../typings/github";
+import type { GitHubCommitData } from "@somni.one/common";
 import type { PrismaClient } from "@prisma/client";
 import { DataType } from "@prisma/client";
 import { generateGitHubCommitId } from "@somni.one/common";

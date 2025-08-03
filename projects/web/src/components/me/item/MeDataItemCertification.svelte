@@ -17,7 +17,7 @@
 <script lang="ts">
 import MeDataYearRange from "$/components/me/fragments/MeDataYearRange.svelte";
 import MeDataItemBase from "$/components/me/item/base/MeDataItemBase.svelte";
-import type { MeCertificationData } from "$/lib/typings/me-data";
+import type { CertificationData } from "@somni.one/common";
 
-const { item }: { item: MeCertificationData } = $props();
+const { item }: { item: CertificationData } = $props();
 </script>
