@@ -14,6 +14,9 @@
       "experimental_remote": true
     }
   ],
+  "vars": {
+    "FRONTEND_URL": "https://somni.one"
+  },
   "triggers": {
     "crons": [
       "0 */1 * * *"
