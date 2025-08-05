@@ -14,13 +14,25 @@ export async function handle(request: Request): Promise<Response> {
   const handler = pathname in handlerMap ? handlerMap[pathname] : null;
 
   if(handler) {
-    const handlerResponse = await handler.get(request, url);
+    let response: Response;
+    switch(request.method.toUpperCase()) {
+      case "GET":
+        response = await handler.get(request, url);
+        break;
+      case "OPTIONS":
+        response = new Response(null, { status: 204 });
+        break;
+      default:
+        response = new Response("Method Not Allowed", { status: 405 });
+        break;
+    }
 
     // Add CORS headers if the response is valid
-    if(handlerResponse) {
-      handlerResponse.headers.set("Access-Control-Allow-Origin", process.env.FRONTEND_URL ?? "*");
-      handlerResponse.headers.set("Access-Control-Allow-Methods", "GET, OPTIONS");
-      return handlerResponse;
+    if(response) {
+      response.headers.set("Access-Control-Allow-Origin", process.env.FRONTEND_URL ?? "*");
+      response.headers.set("Access-Control-Allow-Methods", "GET, OPTIONS");
+      response.headers.set("Access-Control-Allow-Headers", "Content-Type");
+      return response;
     }
   }
 
