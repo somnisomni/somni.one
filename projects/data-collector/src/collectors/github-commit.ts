@@ -1,5 +1,5 @@
-import type { GitHubCommitData } from "@somni.one/common";
 import type { PrismaClient } from "@prisma/client";
+import type { GitHubCommitData } from "@somni.one/common";
 import { DataType } from "@prisma/client";
 import { generateGitHubCommitId } from "@somni.one/common";
 import { createOctokit } from "../lib/octokit";

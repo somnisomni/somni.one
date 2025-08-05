@@ -1,5 +1,5 @@
-import type { GitHubPullRequestData } from "@somni.one/common";
 import type { PrismaClient } from "@prisma/client";
+import type { GitHubPullRequestData } from "@somni.one/common";
 import { DataType } from "@prisma/client";
 import { generateGitHubPullRequestId } from "@somni.one/common";
 import { createOctokit } from "../lib/octokit";

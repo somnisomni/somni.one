@@ -4,7 +4,7 @@ import type { ScheduledController, ExecutionContext, D1Database } from "@cloudfl
 import { PrismaD1 } from "@prisma/adapter-d1";
 import { PrismaClient } from "@prisma/client";
 import Const from "./const";
-import { getCollectTargets } from "./lib/collect-target";
+import { collectTargets } from "./lib/collect-target";
 import { handle } from "./routes";
 
 export interface CloudflareEnv {
@@ -31,10 +31,11 @@ export default {
     const adapter = new PrismaD1(env.DB);
     const db = new PrismaClient({ adapter });
 
-    const targets = await getCollectTargets();
-    console.log(`\n[*] Starting process ${targets.length} targets.\n`);
+    console.log(`\n[*] Starting process ${Object.keys(collectTargets).length} targets.\n`);
 
-    for(const target of targets) {
+    for(const targetKey in collectTargets) {
+      const target = collectTargets[targetKey];
+
       try {
         console.log(`\n[*] Checking target: '${target.dataId}' (data type: ${target.dataType})`);
 
@@ -54,5 +55,7 @@ export default {
         }
       }
     }
+
+    console.log("\n[*] Finished collecting and updating data.\n");
   },
 };

@@ -73,8 +73,8 @@ const targetGetterMap: TargetGetterMapItem[] = [
   },
 ];
 
-export async function getCollectTargets(): Promise<DataCollectorBase[]> {
-  const targets: DataCollectorBase[] = [];
+async function getCollectTargets(): Promise<Record<string, DataCollectorBase>> {
+  const targets: Record<string, DataCollectorBase> = {};
 
   for(const item of targetGetterMap) {
     const { dataLoader, targetGetter } = item;
@@ -83,11 +83,13 @@ export async function getCollectTargets(): Promise<DataCollectorBase[]> {
     for(const data of rawData) {
       const collectors = (await targetGetter(data))?.filter(c => !!c);
 
-      if(collectors && collectors.length > 0) {
-        targets.push(...collectors);
+      for(const collector of collectors || []) {
+        targets[collector.dataId] = collector;
       }
     }
   }
 
   return targets;
 }
+
+export const collectTargets = Object.freeze(await getCollectTargets());
