@@ -1,11 +1,11 @@
 <section id="certifications">
   {#each data.data as item}
-    <MeDataItemCertification item={item} />
+    <WorkCertificationItem item={item} />
   {/each}
 </section>
 
 <script lang="ts">
-import MeDataItemCertification from "$/components/me/item/MeDataItemCertification.svelte";
+import WorkCertificationItem from "$/components/works/items/WorkCertificationItem.svelte";
 import type { PageProps } from "./$types";
 
 const { data }: PageProps = $props();

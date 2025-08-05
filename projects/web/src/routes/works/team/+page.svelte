@@ -1,11 +1,11 @@
 <section id="projects-team">
   {#each data.data as item}
-    <MeDataItemProjectTeam item={item} />
+    <WorkProjectTeamItem item={item} />
   {/each}
 </section>
 
 <script lang="ts">
-import MeDataItemProjectTeam from "$/components/me/item/MeDataItemProjectTeam.svelte";
+import WorkProjectTeamItem from "$/components/works/items/WorkProjectTeamItem.svelte";
 import type { PageProps } from "./$types";
 
 const { data }: PageProps = $props();
