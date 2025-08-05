@@ -1,10 +1,10 @@
 import type { RouteHandler } from ".";
 import type DataCollectorBase from "../collectors/base";
+import type { DataCollectorResponse, DataType } from "@somni.one/common";
 import { collectTargets } from "../lib/collect-target";
 import { getDB } from "../lib/db";
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-const cachedData: Record<string, Record<string, any>> = {};
+const cachedData: Record<string, DataCollectorResponse> = {};
 
 export class GetDataHandler implements RouteHandler {
   public async get(request: Request, url: URL): Promise<Response> {
@@ -45,7 +45,7 @@ export class GetDataHandler implements RouteHandler {
     }
 
     // Get collected data for the provided IDs
-    const collectedData: Array<Record<string, any>> = [];  // eslint-disable-line @typescript-eslint/no-explicit-any
+    const collectedData: DataCollectorResponse[] = [];
     for(const id of Object.keys(realTargets)) {
       // If data is cached, use it; otherwise, collect it
 
@@ -53,7 +53,11 @@ export class GetDataHandler implements RouteHandler {
         collectedData.push(cachedData[id]);
       } else {
         const collector = realTargets[id];
-        const data = await collector.getData(getDB());
+        const data: DataCollectorResponse = {
+          dataId: collector.dataId,
+          dataType: collector.dataType as DataType,
+          data: await collector.getData(getDB()),
+        };
 
         if(!data) {
           console.warn(`No data found for ID "${id}"`);

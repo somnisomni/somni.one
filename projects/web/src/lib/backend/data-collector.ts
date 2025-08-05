@@ -1,8 +1,8 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
+import type { DataCollectorResponse } from "@somni.one/common";
 
 const baseUrl = import.meta.env.VITE_DATA_COLLECTOR_URL;
 
-export async function getCollectedData(dataIdList: string[], customFetch?: typeof fetch): Promise<Array<Record<string, any>>> {
+export async function getCollectedData(dataIdList: string[], customFetch?: typeof fetch): Promise<DataCollectorResponse[]> {
   if(!baseUrl) {
     console.error("Data collector backend URL is not defined");
     return [];
@@ -18,7 +18,7 @@ export async function getCollectedData(dataIdList: string[], customFetch?: typeo
     },
     cache: "default",
     mode: "cors",
-  })).json()) as Array<Record<string, any>>;
+  })).json()) as DataCollectorResponse[];
 
   return response;
 }

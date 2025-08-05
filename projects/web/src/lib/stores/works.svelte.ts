@@ -1,9 +1,10 @@
 import { getCollectedData } from "$/lib/backend/data-collector";
+import type { DataCollectorResponse } from "@somni.one/common";
 
-const cachedData = $state<Record<string, Record<string, any>>>({});
+const cachedData = $state<Record<string, DataCollectorResponse>>({});
 
-export async function requestGetWorkData(dataIdList: string[]): Promise<Record<string, Record<string, any>>> {
-  const data: Record<string, Record<string, any>> = {};
+export async function requestGetWorkData(dataIdList: string[]): Promise<Record<string, DataCollectorResponse>> {
+  const data: Record<string, DataCollectorResponse> = {};
 
   if(dataIdList.length === 0) {
     return {};
@@ -13,7 +14,7 @@ export async function requestGetWorkData(dataIdList: string[]): Promise<Record<s
   const fetchedData = await getCollectedData(dataToFetch, fetch);
 
   for(const item of fetchedData) {
-    cachedData[item.id] = item.data;
+    cachedData[item.dataId] = item;
   }
 
   for(const id of dataIdList) {
