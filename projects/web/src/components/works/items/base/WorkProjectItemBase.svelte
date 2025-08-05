@@ -1,10 +1,10 @@
-<MeDataItemBase idPrefix="project-{idTargetPrefix}"
+<WorkItemBase idPrefix="project-{idTargetPrefix}"
                 item={item}>
   {#snippet nextToTitle()}
     <div class="data-item-extra">
-      <MeDataStatusChip status={item.status} />
+      <WorkStatusChip status={item.status} />
 
-      <MeDataYearRange from={item.yearFrom}
+      <WorkYearRange from={item.yearFrom}
                        to={item.yearTo} />
     </div>
 
@@ -15,22 +15,22 @@
 
   <div class="data-item-stacks">
     {#each item.stacks as stack}
-      <MeDataStackItem stack={stack} />
+      <WorkStackItem stack={stack} />
     {/each}
   </div>
 
   {@render afterStacks?.()}
 
   {@render children?.()}
-</MeDataItemBase>
+</WorkItemBase>
 
 <script lang="ts">
 import type { Snippet } from "svelte";
-import MeDataStackItem from "$/components/me/fragments/MeDataStackItem.svelte";
-import MeDataStatusChip from "$/components/me/fragments/MeDataStatusChip.svelte";
-import MeDataYearRange from "$/components/me/fragments/MeDataYearRange.svelte";
-import MeDataItemBase from "$/components/me/item/base/MeDataItemBase.svelte";
 import type { ProjectDataBase } from "@somni.one/common";
+import WorkItemBase from "$/components/works/items/base/WorkItemBase.svelte";
+import WorkStatusChip from "$/components/works/fragments/WorkStatusChip.svelte";
+import WorkYearRange from "$/components/works/fragments/WorkYearRange.svelte";
+import WorkStackItem from "$/components/works/fragments/WorkStackItem.svelte";
 
 const {
   children,

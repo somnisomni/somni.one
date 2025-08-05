@@ -1,8 +1,8 @@
-<MeDataItemBase idPrefix="certification"
+<WorkItemBase idPrefix="certification"
                 item={item}>
   {#snippet nextToTitle()}
     {#if item.certificationYear}
-      <MeDataYearRange from={item.certificationYear}
+      <WorkYearRange from={item.certificationYear}
                        to={item.certificationYear} />
     {/if}
   {/snippet}
@@ -12,11 +12,11 @@
       <p>{@html subCert.title} - {subCert.certificationYear}</p>
     {/each}
   {/if}
-</MeDataItemBase>
+</WorkItemBase>
 
 <script lang="ts">
-import MeDataYearRange from "$/components/me/fragments/MeDataYearRange.svelte";
-import MeDataItemBase from "$/components/me/item/base/MeDataItemBase.svelte";
+import WorkYearRange from "$/components/works/fragments/WorkYearRange.svelte";
+import WorkItemBase from "$/components/works/items/base/WorkItemBase.svelte";
 import type { CertificationData } from "@somni.one/common";
 
 const { item }: { item: CertificationData } = $props();
