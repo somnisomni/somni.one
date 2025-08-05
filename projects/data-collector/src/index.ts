@@ -1,10 +1,9 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 
 import type { ScheduledController, ExecutionContext, D1Database } from "@cloudflare/workers-types";
-import { PrismaD1 } from "@prisma/adapter-d1";
-import { PrismaClient } from "@prisma/client";
 import Const from "./const";
 import { collectTargets } from "./lib/collect-target";
+import { getDB, initDB } from "./lib/db";
 import { handle } from "./routes";
 
 export interface CloudflareEnv {
@@ -13,6 +12,8 @@ export interface CloudflareEnv {
 
 export default {
   async fetch(request: Request, env: CloudflareEnv, ctx: ExecutionContext): Promise<Response> {
+    initDB(env.DB);
+
     const url = new URL(request.url);
 
     if(url.pathname === "/") {
@@ -28,8 +29,8 @@ export default {
   },
 
   async scheduled(controller: ScheduledController, env: CloudflareEnv, ctx: ExecutionContext) {
-    const adapter = new PrismaD1(env.DB);
-    const db = new PrismaClient({ adapter });
+    initDB(env.DB);
+    const db = getDB();
 
     console.log(`\n[*] Starting process ${Object.keys(collectTargets).length} targets.\n`);
 
