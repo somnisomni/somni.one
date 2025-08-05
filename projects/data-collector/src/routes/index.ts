@@ -5,7 +5,7 @@ const handlerMap: Record<string, RouteHandler> = {
 };
 
 export interface RouteHandler {
-  handle(request: Request, url: URL): Promise<Response>;
+  get(request: Request, url: URL): Promise<Response>;
 }
 
 export async function handle(request: Request): Promise<Response> {
@@ -14,7 +14,14 @@ export async function handle(request: Request): Promise<Response> {
   const handler = pathname in handlerMap ? handlerMap[pathname] : null;
 
   if(handler) {
-    return await handler.handle(request, url);
+    const handlerResponse = await handler.get(request, url);
+
+    // Add CORS headers if the response is valid
+    if(handlerResponse) {
+      handlerResponse.headers.set("Access-Control-Allow-Origin", process.env.FRONTEND_URL ?? "*");
+      handlerResponse.headers.set("Access-Control-Allow-Methods", "GET, OPTIONS");
+      return handlerResponse;
+    }
   }
 
   return new Response("You picked the wrong way", { status: 404 });

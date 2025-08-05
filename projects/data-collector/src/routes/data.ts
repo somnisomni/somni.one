@@ -7,13 +7,13 @@ import { getDB } from "../lib/db";
 const cachedData: Record<string, Record<string, any>> = {};
 
 export class GetDataHandler implements RouteHandler {
-  public async handle(request: Request, url: URL): Promise<Response> {
+  public async get(request: Request, url: URL): Promise<Response> {
     //
     // IDs search parameter is required, in the form of "ids=some-id,another-id,awesome-id" (comma-separated ID string list)
     // In this context, ID refers to a unique identifier for a data item, which is typically generated using `DataCollectorBase.dataId` getter for each data collector.
     //
 
-    console.info("[*] Handling get data request (GET /data)");
+    console.info(`[*] Handling get data request (GET ${url.pathname})`);
 
     // Get and validate the 'ids' search parameter
     const idParam = url.searchParams.get("ids");
