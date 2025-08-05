@@ -6,15 +6,19 @@ const cachedData = $state<Record<string, DataCollectorResponse>>({});
 export async function requestGetWorkData(dataIdList: string[]): Promise<Record<string, DataCollectorResponse>> {
   const data: Record<string, DataCollectorResponse> = {};
 
-  if(dataIdList.length === 0) {
+  if(dataIdList.length <= 0) {
     return {};
   }
 
   const dataToFetch = dataIdList.filter(id => !(id in cachedData));
-  const fetchedData = await getCollectedData(dataToFetch, fetch);
+  if(dataToFetch?.length > 0) {
+    const fetchedData = await getCollectedData(dataToFetch, fetch);
 
-  for(const item of fetchedData) {
-    cachedData[item.dataId] = item;
+    if(fetchedData?.length > 0) {
+      for(const item of fetchedData) {
+        cachedData[item.dataId] = item;
+      }
+    }
   }
 
   for(const id of dataIdList) {
