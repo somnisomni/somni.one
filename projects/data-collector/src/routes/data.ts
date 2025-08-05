@@ -33,7 +33,10 @@ export class GetDataHandler implements RouteHandler {
         continue;
       }
 
-      console.warn(`Data collector with ID "${id}" not found.`);
+      return new Response(
+        JSON.stringify({ error: "Invalid data ID was provided" }),
+        { status: 400, headers: { "Content-Type": "application/json" } },
+      );
     }
 
     // If no valid targets are found, return a 404 response
