@@ -17,5 +17,5 @@ import { _ } from "svelte-i18n";
 import type { GitHubPullRequestData } from "@somni.one/common";
 import GitChanges from "$/components/works/fragments/GitChanges.svelte";
 
-const { data, displayPullRequestNumber }: { data: GitHubPullRequestData, displayPullRequestNumber?: number  } = $props();
+const { data, displayPullRequestNumber }: { data?: GitHubPullRequestData, displayPullRequestNumber?: number  } = $props();
 </script>

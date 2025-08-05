@@ -4,11 +4,11 @@
     {#if item.platform === "github" && item.contributions}
       {#each item.contributions ?? [] as contribution}
         <li>
-          {#if contribution.type === "pull-request" && contribution.pr in prData}
-            <GitHubPullRequest data={prData[contribution.pr]}
+          {#if contribution.type === "pull-request"}
+            <GitHubPullRequest data={prData?.[contribution.pr]}
                                displayPullRequestNumber={contribution.pr} />
-          {:else if contribution.type === "direct-commit" && contribution.commit in commitData}
-            <GitHubCommit data={commitData[contribution.commit]}
+          {:else if contribution.type === "direct-commit"}
+            <GitHubCommit data={commitData?.[contribution.commit]}
                           displayCommit={contribution.commit} />
           {/if}
         </li>
@@ -42,5 +42,5 @@ import WorkItemBase from "$/components/works/items/base/WorkItemBase.svelte";
 import GitHubPullRequest from "$/components/works/fragments/GitHubPullRequest.svelte";
 import GitHubCommit from "$/components/works/fragments/GitHubCommit.svelte";
 
-const { item, prData, commitData }: { item: ContributionTranslationData, prData: Record<number, GitHubPullRequestData>, commitData: Record<string, GitHubCommitData> } = $props();
+const { item, prData, commitData }: { item: ContributionTranslationData, prData?: Record<number, GitHubPullRequestData>, commitData?: Record<string, GitHubCommitData> } = $props();
 </script>

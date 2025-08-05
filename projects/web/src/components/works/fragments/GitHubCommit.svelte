@@ -1,7 +1,7 @@
 <a href={data?.url}
    class="inline-block *:mr-1">
   <span class="float-left !mr-2 w-5 h-5">{@html siGithub.svg}</span>
-  <span>Commit <span class="font-mono font-medium">{data?.commitHashShort ?? data?.commitHash.slice(0, 7) ?? displayCommit}</span></span>
+  <span>Commit <span class="font-mono font-medium">{data?.commitHashShort ?? data?.commitHash.slice(0, 7) ?? displayCommit?.slice(0, 7)}</span></span>
 
   {#if data}
     <GitChanges changes={data.changes} />
@@ -17,5 +17,5 @@ import { _ } from "svelte-i18n";
 import type { GitHubCommitData } from "@somni.one/common";
 import GitChanges from "$/components/works/fragments/GitChanges.svelte";
 
-const { data, displayCommit }: { data: GitHubCommitData, displayCommit?: string } = $props();
+const { data, displayCommit }: { data?: GitHubCommitData, displayCommit?: string } = $props();
 </script>
