@@ -30,7 +30,6 @@
       <div class="min-w-full">
         <h1 class="headline-text">
           <p class="font-mono font-light text-nowrap">
-            <span class="font-medium">&gt; somni &lt;</span>
             <span class="text-teal-500">web-dev</span>
             <span class="text-pink-500">game-dev</span>
             <span class="text-sky-600">translation</span>
@@ -38,8 +37,12 @@
           <p bind:this={ headlineElement[0] }>{ $_("main.headline.line1") }</p>
           <p bind:this={ headlineElement[1] }>{ $_("main.headline.line2") }</p>
           <p bind:this={ headlineElement[2] }>{@html $_("main.headline.line3", { values: { emphasize: textToColorHtml($_("main.headline.emphasize")) }})}</p>
+          <p class="font-mono font-light text-orange-300 text-[0.25em] text-nowrap my-2">
+            <span>{ $_("main.wip") }</span>
+          </p>
           <p class="user-typings overflow-clip">
             <span>
+              <span>somni &gt;&nbsp;</span>
               <a bind:this={ additionalTypingsUrlAnchor }
                 class="user-typings-url"
                 href={ additionalTypingsUrl }>
