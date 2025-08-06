@@ -42,8 +42,8 @@
           </p>
           <p class="user-typings overflow-clip">
             <span>
-              <span>somni &gt;&nbsp;</span>
-              <a bind:this={ additionalTypingsUrlAnchor }
+              <span>somni &gt;&nbsp;</span><!--
+              --><a bind:this={ additionalTypingsUrlAnchor }
                 class="user-typings-url"
                 href={ additionalTypingsUrl }>
                 <!-- Will be filled by typing -->
@@ -97,7 +97,7 @@
 
       <p class="jujeori">어렸을 때 우연한 계기로 <b>피아노</b>를 배웠고, 피아노라는 악기에 매료되어 지금까지도 이따금씩 좋아하는 곡을 연습합니다. 사용하는 디지털 피아노는 <b>커즈와일 Ka E1</b>입니다.</p>
       <p class="jujeori"><b>서브컬처</b>를 좋아합니다. 첫 서브컬처 입문은 <b>하츠네 미쿠</b>였고, 동시에 작곡에 대한 꿈도 가졌습니다. <s>작곡이 호락호락한 분야가 아닌 걸 느낀 후로는 꿈만 가지고 있습니다.</s> 좋아하는 미쿠 곡은 <b>livetune - Hand in Hand</b>, <b>DECO*27, kemu - SEKAI</b> 입니다.</p>
-      <p class="jujeori"><b>서브컬처 모바일 게임</b>도 여럿 해보았고, 이런 게임의 스탭 롤에 제 이름이 들어가는 게 목표입니다. 현재 최애는 블루 아카이브의 <b>프라나</b>입니다.</p>
+      <p class="jujeori"><b>서브컬처 모바일 게임</b>도 여럿 해보았고, 이런 게임의 스탭 롤에 제 이름이 들어가는 게 목표입니다. 현재 최애는 <a href="https://bluearchive.nexon.com/" target="_blank">블루 아카이브</a>의 <b>프라나</b>입니다.</p>
       <p class="jujeori">PC로는 주로 싱글 플레이어 위주의 게임을 합니다. 제 개인 Top 3는 <b>Red Dead Redemption 2</b>, <b>Oxygen Not Included</b>, <b>Ori 시리즈</b>입니다.</p>
       <p class="jujeori"><br /></p>
       <p class="jujeori">현실과 인터넷 어딘가에서 이러한 취미들을 열심히 향유하고 있습니다.</p>
@@ -175,6 +175,11 @@ const typingActionMap: Record<string, () => void> = {
   "japanese": () => changeLanguage("ja"),
   "ja": () => changeLanguage("ja"),
   "jpn": () => changeLanguage("ja"),
+
+  "arona": () => alert("NO PINK ENVELOPES"),
+  "plana": () => alert("Love"),
+  "koharu": () => alert("ECCHINA NO WA DAME! SHIKEI!"),
+  "seia": () => alert("🔇"),
 };
 
 function changeLanguage(lang: string) {
@@ -467,5 +472,9 @@ section .jujeori b {
 
 section .jujeori s {
   @apply text-zinc-300;
+}
+
+section .jujeori a {
+  @apply underline;
 }
 </style>
