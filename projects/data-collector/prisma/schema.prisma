@@ -23,4 +23,5 @@ enum DataType {
   Unknown
   GitHubCommit
   GitHubPullRequest
+  SteamUser
 }

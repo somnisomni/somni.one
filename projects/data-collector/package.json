@@ -13,20 +13,21 @@
     "prisma:studio": "prisma studio"
   },
   "devDependencies": {
-    "@cloudflare/workers-types": "^4.20250730.0",
+    "@cloudflare/workers-types": "^4.20250806.0",
     "@somni/eslint-config": "catalog:",
     "@types/eslint": "catalog:",
     "@types/node": "catalog:",
     "eslint": "catalog:",
     "prisma": "^6.13.0",
     "typescript": "catalog:",
-    "wrangler": "^4.26.1"
+    "wrangler": "^4.28.0"
   },
   "dependencies": {
     "@prisma/adapter-d1": "^6.13.0",
     "@prisma/client": "^6.13.0",
     "@somni.one/common": "workspace:*",
     "dotenv": "^17.2.1",
-    "octokit": "^5.0.3"
+    "octokit": "^5.0.3",
+    "steamapi": "^3.1.3"
   }
 }

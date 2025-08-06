@@ -26,3 +26,7 @@ export function generateGitHubPullRequestId(
 ): `github-pull-request/${string}/${string}/${number}` {
   return `github-pull-request/${repositoryOwner}/${repositoryName}/${pullRequestNumber}`;
 }
+
+export function generateSteamUserId(username: string): `steam-user/${string}` {
+  return `steam-user/${username}`;
+}
