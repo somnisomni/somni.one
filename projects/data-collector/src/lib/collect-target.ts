@@ -3,7 +3,7 @@ import type { ContributionOpenSourceData, ContributionTranslationData } from "@s
 import { sliceGitHubRepoUrl } from "@somni.one/common";
 import GitHubCommitDataCollector from "../collectors/github-commit";
 import GitHubPullRequestDataCollector from "../collectors/github-pull-request";
-import SteamDataCollector from "../collectors/steam";
+import SteamUserDataCollector from "../collectors/steam-user";
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
 type TargetGetterMapItem = {
@@ -75,9 +75,9 @@ const targetGetterMap: TargetGetterMapItem[] = [
 
   /* Steam user data (somni_somni) */
   {
-    async dataLoader() { return []; },
+    async dataLoader() { return [ {} ]; },
     async targetGetter() {
-      return [ new SteamDataCollector("somni_somni") ];
+      return [ new SteamUserDataCollector("somni_somni") ];
     },
   },
 ];

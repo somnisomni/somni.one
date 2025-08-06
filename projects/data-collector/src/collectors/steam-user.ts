@@ -6,12 +6,12 @@ import { generateSteamUserId } from "@somni.one/common";
 import { createSteamAPI } from "../lib/steam";
 import DataCollectorBase from "./base";
 
-export default class SteamDataCollector extends DataCollectorBase<SteamUserData> {
+export default class SteamUserDataCollector extends DataCollectorBase<SteamUserData> {
   constructor(
     private readonly userName: string,
   ) { super(); }
 
-  public override readonly recollectMinimumPeriod = 60 * 60 * 4; // 4 hours
+  public override readonly recollectMinimumPeriod = 60 * 60 * 1; // 1 hour
   public override readonly dataType: DataType = DataType.SteamUser;
 
   public get dataId(): string {
