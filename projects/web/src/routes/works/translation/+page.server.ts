@@ -1,13 +1,35 @@
 import type { PageServerLoad } from "./$types";
 import type { ContributionTranslationData } from "@somni.one/common";
+import { generateGitHubCommitId, generateGitHubPullRequestId, sliceGitHubRepoUrl } from "@somni.one/common";
 
 export const load: PageServerLoad = async () => {
   // Load data from JSON
-  const data = [ ...(await import("@somni.one/common/data/works/contributions_translation.json")).default as ContributionTranslationData[] ];
+  const workData = [ ...(await import("@somni.one/common/data/works/contributions_translation.json")).default as ContributionTranslationData[] ];
 
   // Sort by title in alphabetical order
-  data.sort((a, b) => a.title.localeCompare(b.title));
+  workData.sort((a, b) => a.title.localeCompare(b.title));
+
+  // List up data fetch target IDs
+  const workDataFetchTargetIds: string[] = [];
+  for(const item of workData) {
+    if(item.platform !== "github" || !item.repositoryUrl || !item.contributions || item.contributions.length <= 0) {
+      continue;
+    }
+
+    const github = sliceGitHubRepoUrl(item.repositoryUrl);
+    if(!github) {
+      continue;
+    }
+
+    for(const contribution of item.contributions) {
+      if(contribution.type === "pull-request" && contribution.pr) {
+        workDataFetchTargetIds.push(generateGitHubPullRequestId(github.owner, github.repo, contribution.pr));
+      } else if(contribution.type === "direct-commit" && contribution.commit) {
+        workDataFetchTargetIds.push(generateGitHubCommitId(github.owner, github.repo, contribution.commit));
+      }
+    }
+  }
 
   // Return data
-  return { data };
+  return { workData, workDataFetchTargetIds };
 };

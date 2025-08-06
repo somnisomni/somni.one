@@ -1,5 +1,5 @@
 <section id="contributions-translation">
-  {#each data.data as item}
+  {#each data.workData as item}
     <WorkContribTranslationItem item={item}
                                 commitData={contributionCommitData}
                                 prData={contributionPrData} />
@@ -8,7 +8,7 @@
 
 <script lang="ts">
 import WorkContribTranslationItem from "$/components/works/items/WorkContribTranslationItem.svelte";
-import { DataType, generateGitHubCommitId, generateGitHubPullRequestId, type GitHubPullRequestData, sliceGitHubRepoUrl, type GitHubCommitData } from "@somni.one/common";
+import { DataType, type GitHubPullRequestData, type GitHubCommitData } from "@somni.one/common";
 import type { PageProps } from "./$types";
 import { onMount } from "svelte";
 import { requestGetWorkData } from "$/lib/stores/works.svelte";
@@ -16,29 +16,9 @@ import { requestGetWorkData } from "$/lib/stores/works.svelte";
 const { data }: PageProps = $props();
 const contributionCommitData = $state<Record<string, GitHubCommitData>>({});
 const contributionPrData = $state<Record<number, GitHubPullRequestData>>({});
-const dataFetchTargetIds = $state<string[]>([]);
-
-for(const item of data.data) {
-  if(item.platform !== "github" || !item.repositoryUrl || !item.contributions || item.contributions.length <= 0) {
-    continue;
-  }
-
-  const github = sliceGitHubRepoUrl(item.repositoryUrl);
-  if(!github) {
-    continue;
-  }
-
-  for(const contribution of item.contributions) {
-    if(contribution.type === "pull-request" && contribution.pr) {
-      dataFetchTargetIds.push(generateGitHubPullRequestId(github.owner, github.repo, contribution.pr));
-    } else if(contribution.type === "direct-commit" && contribution.commit) {
-      dataFetchTargetIds.push(generateGitHubCommitId(github.owner, github.repo, contribution.commit));
-    }
-  }
-}
 
 onMount(async () => {
-  const response = await requestGetWorkData(dataFetchTargetIds);
+  const response = await requestGetWorkData(data.workDataFetchTargetIds);
 
   for(const itemKey in response) {
     const item = response[itemKey];
