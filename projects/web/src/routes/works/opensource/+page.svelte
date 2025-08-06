@@ -8,7 +8,7 @@
 
 <script lang="ts">
 import WorkContribOpenSourceItem from "$/components/works/items/WorkContribOpenSourceItem.svelte";
-import { requestGetWorkData } from "$/lib/stores/works.svelte";
+import { requestGetData } from "$/lib/stores/works.svelte";
 import { DataType, type GitHubCommitData, type GitHubPullRequestData } from "@somni.one/common";
 import { onMount } from "svelte";
 import type { PageProps } from "./$types";
@@ -22,7 +22,7 @@ onMount(async () => {
 });
 
 async function fetchContributionData() {
-  const response = await requestGetWorkData(data.workDataFetchTargetIds);
+  const response = await requestGetData(data.workDataFetchTargetIds);
 
   for(const itemKey in response) {
     const item = response[itemKey];

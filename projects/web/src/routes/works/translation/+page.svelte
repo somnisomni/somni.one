@@ -11,7 +11,7 @@ import WorkContribTranslationItem from "$/components/works/items/WorkContribTran
 import { DataType, type GitHubPullRequestData, type GitHubCommitData } from "@somni.one/common";
 import type { PageProps } from "./$types";
 import { onMount } from "svelte";
-import { requestGetWorkData } from "$/lib/stores/works.svelte";
+import { requestGetData } from "$/lib/stores/works.svelte";
 
 const { data }: PageProps = $props();
 const contributionCommitData = $state<Record<string, Record<string, GitHubCommitData>>>({});
@@ -22,7 +22,7 @@ onMount(async () => {
 });
 
 async function fetchContributionData() {
-  const response = await requestGetWorkData(data.workDataFetchTargetIds);
+  const response = await requestGetData(data.workDataFetchTargetIds);
 
   for(const itemKey in response) {
     const item = response[itemKey];

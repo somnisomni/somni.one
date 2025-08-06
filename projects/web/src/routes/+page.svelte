@@ -119,6 +119,17 @@
           </ul>
         </div>
       {/each}
+
+      {#if steamData}
+        <div class="mt-8">
+          <p>Steam data</p>
+          <p><a href={ steamData.profileUrl }>Nickname: { steamData.nickname }</a></p>
+
+          {#if steamData.lastPlayedGame}
+            <p>Last played game: { steamData.lastPlayedGame.name } (total { steamData.lastPlayedGame.totalPlayTimeMinutes.toLocaleString() } min)</p>
+          {/if}
+        </div>
+      {/if}
     </section>
   </div>
 </div>
@@ -135,6 +146,9 @@ import { siCss, siFmod, siNestjs, siSass, siSvelte, siTypescript, siUnity, siVue
 import IconText from "$/components/common/IconText.svelte";
 import faChevronDown from "$/assets/icons/ui/fa-chevron-down.svg?raw";
 import type { PageProps } from "./$types";
+import { generateSteamUserId, type SteamUserData } from "@somni.one/common";
+import { requestGetData } from "$/lib/stores/works.svelte";
+import ServiceAccounts from "$/lib/data/service_accounts.json";
 
 const typingUrlMap: Record<string, string> = {
   "mail": "mailto:" + atob("bWU=") + "@" + atob("c29tbmkub25l"),
@@ -209,9 +223,11 @@ let additionalTypingsUrlAnchor: HTMLAnchorElement | null = null;
 
 let windowScrollY: number = $state(0);
 
+let steamData = $state<SteamUserData | null>(null);
+
 const { data }: PageProps = $props();
 
-onMount(() => {
+onMount(async () => {
   animateText(null, true);
 
   ScrollSmoother.create({
@@ -220,6 +236,9 @@ onMount(() => {
     effects: true,
     autoResize: true,
   });
+
+  const steamDataId = generateSteamUserId(ServiceAccounts.steam);
+  steamData = (await requestGetData([ steamDataId ]))[steamDataId]?.data as SteamUserData;
 });
 
 $effect(() => {

@@ -3,7 +3,7 @@ import type { DataCollectorResponse } from "@somni.one/common";
 
 const cachedData = $state<Record<string, DataCollectorResponse>>({});
 
-export async function requestGetWorkData(dataIdList: string[]): Promise<Record<string, DataCollectorResponse>> {
+export async function requestGetData(dataIdList: string[]): Promise<Record<string, DataCollectorResponse>> {
   const data: Record<string, DataCollectorResponse> = {};
 
   if(dataIdList.length <= 0) {
