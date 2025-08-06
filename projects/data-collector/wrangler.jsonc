@@ -4,8 +4,7 @@
   "main": "src/index.ts",
   "compatibility_date": "2025-07-30",
   "compatibility_flags": [
-    "nodejs_compat",
-    "brotli_content_encoding"
+    "nodejs_compat"
   ],
   "d1_databases": [
     {
