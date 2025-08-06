@@ -11,8 +11,9 @@ export const load: PageServerLoad = async () => {
 
   // List up data fetch target IDs
   const workDataFetchTargetIds: string[] = [];
+  const fetchDataWorkDataIdMap: Record<string, string> = {};
   for(const item of workData) {
-    if(item.platform !== "github" || !item.repositoryUrl || !item.contributions || item.contributions.length <= 0) {
+    if(!item.repositoryUrl || !item.contributions || item.contributions.length <= 0) {
       continue;
     }
 
@@ -22,14 +23,23 @@ export const load: PageServerLoad = async () => {
     }
 
     for(const contribution of item.contributions) {
+      let generatedId: string | undefined;
+
       if(contribution.type === "pull-request" && contribution.pr) {
-        workDataFetchTargetIds.push(generateGitHubPullRequestId(github.owner, github.repo, contribution.pr));
+        generatedId = generateGitHubPullRequestId(github.owner, github.repo, contribution.pr);
       } else if(contribution.type === "direct-commit" && contribution.commit) {
-        workDataFetchTargetIds.push(generateGitHubCommitId(github.owner, github.repo, contribution.commit));
+        generatedId = generateGitHubCommitId(github.owner, github.repo, contribution.commit);
       }
+
+      if(!generatedId) {
+        continue;
+      }
+
+      workDataFetchTargetIds.push(generatedId);
+      fetchDataWorkDataIdMap[generatedId] = item.id;
     }
   }
 
   // Return data
-  return { workData, workDataFetchTargetIds };
+  return { workData, workDataFetchTargetIds, fetchDataWorkDataIdMap };
 };

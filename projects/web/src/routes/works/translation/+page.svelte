@@ -1,8 +1,8 @@
 <section id="contributions-translation">
   {#each data.workData as item}
     <WorkContribTranslationItem item={item}
-                                commitData={contributionCommitData}
-                                prData={contributionPrData} />
+                                commitData={contributionCommitData[item.id]}
+                                prData={contributionPrData[item.id]} />
   {/each}
 </section>
 
@@ -14,10 +14,14 @@ import { onMount } from "svelte";
 import { requestGetWorkData } from "$/lib/stores/works.svelte";
 
 const { data }: PageProps = $props();
-const contributionCommitData = $state<Record<string, GitHubCommitData>>({});
-const contributionPrData = $state<Record<number, GitHubPullRequestData>>({});
+const contributionCommitData = $state<Record<string, Record<string, GitHubCommitData>>>({});
+const contributionPrData = $state<Record<string, Record<number, GitHubPullRequestData>>>({});
 
 onMount(async () => {
+  await fetchContributionData();
+});
+
+async function fetchContributionData() {
   const response = await requestGetWorkData(data.workDataFetchTargetIds);
 
   for(const itemKey in response) {
@@ -26,14 +30,18 @@ onMount(async () => {
       continue;
     }
 
+    const targetWorkId = data.fetchDataWorkDataIdMap[itemKey];
+    if(!contributionCommitData[targetWorkId]) contributionCommitData[targetWorkId] = {};
+    if(!contributionPrData[targetWorkId])     contributionPrData[targetWorkId] = {};
+
     switch(item.dataType) {
       case DataType.GitHubCommit:
         const commitData = item.data as GitHubCommitData;
-        contributionCommitData[commitData.commitHash] = commitData;
+        contributionCommitData[targetWorkId][commitData.commitHash] = commitData;
         break;
       case DataType.GitHubPullRequest:
         const prData = item.data as GitHubPullRequestData;
-        contributionPrData[prData.pullRequestNumber] = prData;
+        contributionPrData[targetWorkId][prData.pullRequestNumber] = prData;
         break;
       case DataType.Unknown:
       default:
@@ -41,5 +49,5 @@ onMount(async () => {
         break;
     }
   }
-});
+}
 </script>
