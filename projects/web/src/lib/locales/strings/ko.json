@@ -6,6 +6,10 @@
         "maintaining": "유지보수 중",
         "completed": "완료",
         "discontinued": "개발 중단"
+      },
+      "link": {
+        "app": "서비스 페이지",
+        "repository": "소스 코드 저장소"
       }
     },
     "nav": {

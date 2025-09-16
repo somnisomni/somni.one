@@ -6,6 +6,10 @@
         "discontinued": "Discontinued",
         "maintaining": "Maintaining",
         "ongoing": "Ongoing"
+      },
+      "link": {
+        "app": "Service page",
+        "repository": "Source code repository"
       }
     },
     "nav": {
