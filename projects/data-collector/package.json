@@ -1,6 +1,6 @@
 {
   "name": "@somni.one/data-collector",
-  "packageManager": "pnpm@10.13.1",
+  "packageManager": "pnpm@10.16.1",
   "private": true,
   "type": "module",
   "scripts": {
@@ -13,20 +13,20 @@
     "prisma:studio": "prisma studio"
   },
   "devDependencies": {
-    "@cloudflare/workers-types": "^4.20250806.0",
+    "@cloudflare/workers-types": "^4.20250913.0",
     "@somni/eslint-config": "catalog:",
     "@types/eslint": "catalog:",
     "@types/node": "catalog:",
     "eslint": "catalog:",
-    "prisma": "^6.13.0",
+    "prisma": "^6.16.2",
     "typescript": "catalog:",
-    "wrangler": "^4.28.0"
+    "wrangler": "^4.37.1"
   },
   "dependencies": {
-    "@prisma/adapter-d1": "^6.13.0",
-    "@prisma/client": "^6.13.0",
+    "@prisma/adapter-d1": "^6.16.2",
+    "@prisma/client": "^6.16.2",
     "@somni.one/common": "workspace:*",
-    "dotenv": "^17.2.1",
+    "dotenv": "^17.2.2",
     "octokit": "^5.0.3",
     "steamapi": "github:somnisomni/node-steamapi"
   }

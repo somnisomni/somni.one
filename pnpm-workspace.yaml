@@ -4,10 +4,10 @@ packages:
 catalog:
   '@somni/eslint-config': https://gitpkg.vercel.app/somnisomni/webdev-common/packages/eslint-config?main
   '@types/eslint': ^9.6.1
-  '@types/node': ^24.2.0
-  eslint: ^9.32.0
+  '@types/node': ^24.5.0
+  eslint: ^9.35.0
   typescript: ^5.9.2
-  vite: ^7.0.6
+  vite: ^7.1.5
 
 ignoredBuiltDependencies:
   - '@tailwindcss/oxide'
