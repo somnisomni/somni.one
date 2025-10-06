@@ -1,34 +1,34 @@
 /* Font family - Pretendard */
 @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@latest/dist/web/variable/pretendardvariable-dynamic-subset.min.css");
 @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@latest/dist/web/variable/pretendardvariable-jp-dynamic-subset.min.css");
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@100..900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@100..900&display=swap');
 
 /* Tailwind CSS & Dependencies */
 @import "tailwindcss";
-@import "@somni.one/common/styles/common.css";
+@import "./transition.css";
 
 @theme {
-  /* Font family */
   --font-sans:
     "Pretendard JP Variable", "Pretendard Variable", "Pretendard JP", "Pretendard", "Noto Sans CJK KR", "Noto Sans KR", "Noto Sans",
     ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --font-mono: "Noto Sans Mono", "Noto Sans Mono CJK KR", "Noto Sans Mono CJK JP", "Noto Sans Mono KR", "Noto Sans Mono JP", "D2Coding",
     ui-monospace, monospace;
-
-  /* Color */
-  --color-primary: var(--color-primary);
-  --color-accent: var(--color-accent);
-  --color-background: var(--color-background);
-  --color-background-inverse: var(--color-background-inverse);
 }
 
 body, html {
-  @apply bg-background text-background-inverse;
+  @apply bg-zinc-50 text-zinc-700;
 
   box-sizing: border-box;
   margin: 0;
   padding: 0;
   width: 100%;
   min-height: 100%;
-  overflow: hidden auto;
+  overflow-x: hidden;
+}
+
+.ignore-pointer {
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-user-drag: none;
 }

@@ -1,4 +1,4 @@
-import { getCollectedData } from "$/lib/backend/data-collector";
+import { getCollectedData } from "$/_legacy/lib/backend/data-collector";
 import type { DataCollectorResponse } from "@somni.one/common";
 
 const cachedData = $state<Record<string, DataCollectorResponse>>({});

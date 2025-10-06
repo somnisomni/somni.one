@@ -1,0 +1,78 @@
+{
+  "me": {
+    "common": {
+      "status": {
+        "completed": "Completed",
+        "discontinued": "Discontinued",
+        "maintaining": "Maintaining",
+        "ongoing": "Ongoing"
+      },
+      "link": {
+        "app": "Service page",
+        "repository": "Source code repository"
+      }
+    },
+    "nav": {
+      "individualProjects": "Personal Projects",
+      "openSourceContributions": "Open Source Contributions",
+      "teamProjects": "Team Projects",
+      "translationContributions": "Translation Contributions",
+      "certifications": "Certifications",
+      "title": "Personal Record"
+    },
+    "contrib": {
+      "translation": {
+        "weblate": {
+          "proof": "Search translation history on Weblate"
+        },
+        "transifex": {
+          "proof": "My profile page on Transifex"
+        }
+      }
+    }
+  },
+  "common": {
+    "nav": {
+      "back": "Back"
+    },
+    "loading": "Loading…"
+  },
+  "main": {
+    "headline": {
+      "line3": "keep <strong>{emphasize}</strong>.",
+      "line2": "I've been",
+      "line1": "Turns out,",
+      "emphasize": "TRYING"
+    },
+    "section": {
+      "game-dev": {
+        "title": "Diving into the familiar, but new."
+      },
+      "trivia": {
+        "title": "To be a 10x geek."
+      },
+      "translation": {
+        "title": "Updated Korean (thanks @somnisomni)"
+      }
+    },
+    "links": {
+      "bluesky": "Bluesky",
+      "discord": "Discord",
+      "github": "GitHub",
+      "monkeytype": "Monkeytype",
+      "solvedac": "solved.ac (BOJ)",
+      "steam": "Steam",
+      "twitter": "X (Twitter)",
+      "category": {
+        "misc": "Misc",
+        "programming": "Programming / Development",
+        "social": "Social Network",
+        "own": "Sites and services"
+      },
+      "blog": "somni.log (Blog)",
+      "koharudev": "koharu.dev",
+      "keybase": "Keybase"
+    },
+    "wip": "Homepage is still under construction!"
+  }
+}

@@ -8,6 +8,6 @@ for(const locale of SUPPORTED_LOCALES) {
 }
 
 init({
-  fallbackLocale: "en",
+  fallbackLocale: "ko",
   initialLocale: browser && window ? window.navigator.language.split(",")[0].split("-")[0] : "en",
 });
