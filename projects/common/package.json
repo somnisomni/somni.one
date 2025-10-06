@@ -6,6 +6,7 @@
   "main": "src/index.ts",
   "files": [
     "./data",
-    "./src"
+    "./src",
+    "./styles"
   ]
 }

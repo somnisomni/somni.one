@@ -1,0 +1,15 @@
+:root {
+  --color-primary: #2495F7;
+  --color-accent: #F7A625;
+  --color-background: #F0F0F0;
+  --color-background-inverse: #121212;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-primary: #4AA5FA;
+    --color-accent: #FAB84B;
+    --color-background: #121212;
+    --color-background-inverse: #F0F0F0;
+  }
+}
