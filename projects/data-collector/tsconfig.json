@@ -1,5 +1,5 @@
 {
-  "extends": "../../tsconfig.typescript.json",
+  "extends": "@somni.one/common/tsconfig.typescript.json",
   "include": ["*.config.ts", "./src/**/*.ts", "./src/**/*.d.ts", "env.d.ts"],
   "exclude": ["node_modules", "dist", "build", "coverage"]
 }

@@ -1,12 +1,13 @@
 {
   "name": "@somni.one/common",
-  "packageManager": "pnpm@10.16.1",
+  "packageManager": "pnpm@10.18.1",
   "private": true,
   "type": "module",
   "main": "src/index.ts",
   "files": [
     "./data",
     "./src",
-    "./styles"
+    "./styles",
+    "./tsconfig.typescript.json"
   ]
 }
