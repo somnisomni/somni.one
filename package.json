@@ -1,7 +1,7 @@
 {
   "name": "somni.one",
   "version": "0.0.0",
-  "packageManager": "pnpm@10.13.1",
+  "packageManager": "pnpm@10.18.1",
   "private": true,
   "type": "module",
   "scripts": {
@@ -10,7 +10,7 @@
     "dev": "concurrently --pad-prefix -k -n \"Web,Collector\" -c \"white.bgGreen,white.bgCyan\" \"pnpm @web dev\" \"pnpm @collector dev\""
   },
   "devDependencies": {
-    "concurrently": "^9.2.0",
+    "concurrently": "^9.2.1",
     "eslint": "catalog:"
   }
 }
