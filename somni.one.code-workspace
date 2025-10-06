@@ -34,7 +34,8 @@
 		"tailwindCSS.includeLanguages": {
 			"svelte": "svelte"
 		},
-		"css.lint.unknownAtRules": "ignore"
+ 	  "css.lint.unknownAtRules": "ignore",
+		"scss.lint.unknownAtRules": "ignore"
 	},
 	"extensions": {
 		"recommendations": [
