@@ -1,0 +1,20 @@
+.page {
+  @apply p-12;
+
+  & .title {
+    @apply flex flex-col justify-start items-baseline my-8 *:mr-4;
+    @apply font-sans-header;
+
+    & .details {
+      @apply text-lg font-thin;
+    }
+
+    & h1 {
+      @apply font-black text-7xl;
+    }
+  }
+
+  .divider {
+    @apply w-full mt-16 mb-8 border-b-[1px] border-dashed border-background-inverse/50;
+  }
+}

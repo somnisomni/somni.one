@@ -1,1 +1,21 @@
-{}
+{
+  "links": {
+    "github": {
+      "label": "GitHub"
+    }
+  },
+  "main": {
+    "somni": {
+      "tip": {}
+    },
+    "content": {
+      "headline": {
+        "somni": {
+          "tip": "Pronounce as \"som-nee\""
+        },
+        "seg1": "Hello! I'm ",
+        "seg2": ", a developer."
+      }
+    }
+  }
+}

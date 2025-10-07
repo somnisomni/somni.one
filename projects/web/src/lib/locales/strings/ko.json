@@ -1,1 +1,21 @@
-{}
+{
+  "links": {
+    "github": {
+      "label": "GitHub"
+    }
+  },
+  "main": {
+    "somni": {
+      "tip": {}
+    },
+    "content": {
+      "headline": {
+        "somni": {
+          "tip": "\"솜니\"라고 발음합니다."
+        },
+        "seg1": "안녕하세요! 개발자 ",
+        "seg2": "입니다."
+      }
+    }
+  }
+}
