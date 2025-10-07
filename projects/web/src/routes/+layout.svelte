@@ -43,6 +43,10 @@ const { children }: LayoutProps = $props();
     & > * {
       @apply ml-[0.5em];
     }
+
+    & > *:not(:last-child) {
+      @apply opacity-70;
+    }
   }
 
   & .name {

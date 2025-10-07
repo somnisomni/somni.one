@@ -4,5 +4,11 @@
     "url": "https://github.com/somnisomni",
     "userId": "somnisomni",
     "icon": "github"
+  },
+  "twitter": {
+    "labelKey": "links.twitter.label",
+    "url": "https://twitter.com/somni_somni",
+    "userId": "somni_somni",
+    "icon": "twitter"
   }
 }
