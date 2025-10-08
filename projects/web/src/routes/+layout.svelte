@@ -24,8 +24,8 @@ onMount(() => {
   const headerNameSplit = SplitText.create(headerName, { type: "chars" });
 
   gsap.fromTo(headerNameSplit.chars.reverse(),
-    { x: -20, opacity: 0 },
-    { x: 0, opacity: 1, duration: 0.5, stagger: 0.1, ease: "power2.out" });
+    { y: 20, opacity: 0 },
+    { y: 0, opacity: 1, duration: 0.5, stagger: 0.1, ease: "power2.out" });
 });
 </script>
 

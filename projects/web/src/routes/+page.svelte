@@ -14,47 +14,56 @@
       <p>&nbsp;<strong>{ $_("main.content.headline.seg1") }<SpanWithTip tip={ $_("main.content.headline.somni.tip") }>somni</SpanWithTip>{ $_("main.content.headline.seg2") }</strong></p>
       <p>&nbsp;도전과 노력을 최고의 가치로 여깁니다. <b>웹</b>을 포함한 다양한 개발 분야를 접해 보았으며, 이제는 <b>게임 개발</b>이라는 확고한 방향을 가지고 나아가고 있습니다.</p>
       <p>&nbsp;게임 내 오브젝트를 기능하게 만들 때마다 큰 즐거움과 희열을 느낍니다. 이 즐거움이 많은 플레이어들에게 전해질 수 있도록 끊임없이 공부하고 있습니다.</p>
-      <p>&nbsp;현재 <a href="https://ck.ac.kr">청강문화산업대학교</a>에서 실력파 팀원들과 함께 졸업 작품 프로젝트 「<a href="https://ck25-palette.notion.site/Palette-KOR-22bd7b6d0d0c80a8917aebee9471b57d">컬러팅! 캐치 & 라비</a>」를 개발하고 있습니다.</p>
+      <p>&nbsp;현재 <a href="https://ck.ac.kr">청강문화산업대학교</a>에 재학 중이며, 실력파 팀원들과 함께 졸업 작품 프로젝트 「<a href="https://ck25-palette.notion.site/Palette-KOR-22bd7b6d0d0c80a8917aebee9471b57d">컬러팅! 캐치 & 라비</a>」를 개발하고 있습니다.</p>
+      <p class="opacity-70 !text-[0.5em]"><a href="/me">자세히 보기 ›</a></p>
     </div>
   </section>
 
   <section>
     <div class="nav">/// Quick links</div>
 
-    <div class="quick-links">
-      <LinkAnchor linkId="blog">
-        <SpanWithTip tip={ $_("links.blog.anchorTip") }
-                     notText={ true }>
-          <ScaleAnimationOnHover>
-            <div class="p-4">{@html FaLinesLeaning}</div>
-          </ScaleAnimationOnHover>
-        </SpanWithTip>
-      </LinkAnchor>
-      <LinkAnchor linkId="email">
-        <SpanWithTip tip={ $_("links.email.anchorTip") }
-                     notText={ true }>
-          <ScaleAnimationOnHover>
-            <div class="p-4">{@html FaAt}</div>
-          </ScaleAnimationOnHover>
-        </SpanWithTip>
-      </LinkAnchor>
-      <LinkAnchor linkId="github">
-        <SpanWithTip tip={ $_("links.github.anchorTip") }
-                     notText={ true }>
-          <ScaleAnimationOnHover>
-            <div class="p-4">{@html siGithub.svg}</div>
-          </ScaleAnimationOnHover>
-        </SpanWithTip>
-      </LinkAnchor>
-      <LinkAnchor linkId="twitter">
-        <SpanWithTip tip={ $_("links.twitter.anchorTip") }
-                     notText={ true }>
-          <ScaleAnimationOnHover>
-            <div class="p-4">{@html siX.svg}</div>
-          </ScaleAnimationOnHover>
-        </SpanWithTip>
-      </LinkAnchor>
+    <div class="content">
+      <div class="quick-links">
+        <LinkAnchor linkId="blog">
+          <SpanWithTip tip={ $_("links.blog.anchorTip") }
+                       notText={ true }>
+            <ScaleAnimationOnHover>
+              <div class="p-4">{@html FaLinesLeaning}</div>
+            </ScaleAnimationOnHover>
+          </SpanWithTip>
+        </LinkAnchor>
+        <LinkAnchor linkId="email">
+          <SpanWithTip tip={ $_("links.email.anchorTip") }
+                       notText={ true }>
+            <ScaleAnimationOnHover>
+              <div class="p-4">{@html FaAt}</div>
+            </ScaleAnimationOnHover>
+          </SpanWithTip>
+        </LinkAnchor>
+        <LinkAnchor linkId="github">
+          <SpanWithTip tip={ $_("links.github.anchorTip") }
+                       notText={ true }>
+            <ScaleAnimationOnHover>
+              <div class="p-4">{@html siGithub.svg}</div>
+            </ScaleAnimationOnHover>
+          </SpanWithTip>
+        </LinkAnchor>
+        <LinkAnchor linkId="twitter">
+          <SpanWithTip tip={ $_("links.twitter.anchorTip") }
+                       notText={ true }>
+            <ScaleAnimationOnHover>
+              <div class="p-4">{@html siX.svg}</div>
+            </ScaleAnimationOnHover>
+          </SpanWithTip>
+        </LinkAnchor>
+      </div>
+
+      <p class="opacity-70 !text-[0.5em]"><a href="/links">모든 링크 및 연락처 보기 ›</a></p>
     </div>
+  </section>
+
+  <section>
+    <div class="nav">/// </div>
   </section>
 </div>
 
