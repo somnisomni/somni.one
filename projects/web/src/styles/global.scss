@@ -36,9 +36,13 @@ body, html {
 }
 
 p {
-  @apply text-justify break-keep;
+  @apply text-justify;
 
   line-height: 1.5;
+
+  &:lang(ko) {
+    @apply break-keep;
+  }
 }
 
 h1, h2, h3 {
