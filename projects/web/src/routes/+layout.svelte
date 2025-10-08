@@ -1,6 +1,7 @@
 <div id="name-header">
   <div class="rotate-wrap">
-    <h1 class="name">somni</h1>
+    <h1 bind:this={headerName}
+        class="name">somni</h1>
   </div>
 </div>
 
@@ -10,10 +11,22 @@
 
 <script lang="ts">
 import "$/styles/app.css";
-
+import "$lib/init";
 import type { LayoutProps } from "./$types";
+import { onMount } from "svelte";
+import gsap from "gsap";
+import { SplitText } from "gsap/SplitText";
 
 const { children }: LayoutProps = $props();
+let headerName: HTMLElement;
+
+onMount(() => {
+  const headerNameSplit = SplitText.create(headerName, { type: "chars" });
+
+  gsap.fromTo(headerNameSplit.chars.reverse(),
+    { x: -20, opacity: 0 },
+    { x: 0, opacity: 1, duration: 0.5, stagger: 0.1, ease: "power2.out" });
+});
 </script>
 
 <style lang="scss">
