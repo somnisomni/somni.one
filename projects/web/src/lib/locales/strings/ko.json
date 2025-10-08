@@ -1,7 +1,20 @@
 {
   "links": {
     "github": {
-      "label": "GitHub"
+      "label": "GitHub",
+      "anchorTip": "GitHub — @somnisomni"
+    },
+    "blog": {
+      "label": "솜니.로그 (블로그)",
+      "anchorTip": "솜니.로그 (블로그) — log.somni.one"
+    },
+    "twitter": {
+      "label": "트위터 (X)",
+      "anchorTip": "트위터 (X) — @somni_somni"
+    },
+    "email": {
+      "label": "이메일",
+      "anchorTip": "이메일 (주소 복사)"
     }
   },
   "main": {
@@ -15,6 +28,11 @@
         },
         "seg1": "안녕하세요! 개발자 ",
         "seg2": "입니다."
+      }
+    },
+    "links": {
+      "message": {
+        "email-copied": "이메일 주소가 클립보드로 복사되었습니다."
       }
     }
   }

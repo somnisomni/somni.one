@@ -1,7 +1,7 @@
 <div class="page">
   <div class="py-4"></div>
 
-  <section class="main-section">
+  <section>
     <div class="nav !mb-8">/// Me in a nutshell</div>
 
     <ScaleAnimationOnHover>
@@ -18,19 +18,41 @@
     </div>
   </section>
 
-  <section class="main-section">
+  <section>
     <div class="nav">/// Quick links</div>
 
     <div class="quick-links">
+      <LinkAnchor linkId="blog">
+        <SpanWithTip tip={ $_("links.blog.anchorTip") }
+                     notText={ true }>
+          <ScaleAnimationOnHover>
+            <div class="p-4">{@html FaLinesLeaning}</div>
+          </ScaleAnimationOnHover>
+        </SpanWithTip>
+      </LinkAnchor>
+      <LinkAnchor linkId="email">
+        <SpanWithTip tip={ $_("links.email.anchorTip") }
+                     notText={ true }>
+          <ScaleAnimationOnHover>
+            <div class="p-4">{@html FaAt}</div>
+          </ScaleAnimationOnHover>
+        </SpanWithTip>
+      </LinkAnchor>
       <LinkAnchor linkId="github">
-        <ScaleAnimationOnHover>
-          {@html siGithub.svg}
-        </ScaleAnimationOnHover>
+        <SpanWithTip tip={ $_("links.github.anchorTip") }
+                     notText={ true }>
+          <ScaleAnimationOnHover>
+            <div class="p-4">{@html siGithub.svg}</div>
+          </ScaleAnimationOnHover>
+        </SpanWithTip>
       </LinkAnchor>
       <LinkAnchor linkId="twitter">
-        <ScaleAnimationOnHover>
-          {@html siX.svg}
-        </ScaleAnimationOnHover>
+        <SpanWithTip tip={ $_("links.twitter.anchorTip") }
+                     notText={ true }>
+          <ScaleAnimationOnHover>
+            <div class="p-4">{@html siX.svg}</div>
+          </ScaleAnimationOnHover>
+        </SpanWithTip>
       </LinkAnchor>
     </div>
   </section>
@@ -43,13 +65,15 @@ import GitHubProfileImage from "$/components/GitHubProfileImage.svelte";
 import LinkAnchor from "$/components/LinkAnchor.svelte";
 import ScaleAnimationOnHover from "$/components/ScaleAnimationOnHover.svelte";
 import SpanWithTip from "$/components/SpanWithTip.svelte";
+import FaLinesLeaning from "$/assets/icons/fa-lines-leaning-solid-full.svg?raw";
+import FaAt from "$/assets/icons/fa-at-solid-full.svg?raw";
 </script>
 
 <style lang="scss">
 @reference "$/styles/app.css";
 
 .page {
-  .main-section {
+  section {
     @apply mb-16;
   }
 
@@ -84,8 +108,20 @@ import SpanWithTip from "$/components/SpanWithTip.svelte";
   .quick-links {
     @apply flex flex-row *:mx-2;
 
-    :global(svg) {
+    :global(img), :global(svg) {
       @apply fill-background-inverse w-12 h-12;
+    }
+
+    & > :global(*) {
+      @apply mx-2 rounded-xl border-1 border-background-inverse/20;
+      @apply transition-shadow duration-200 ease-in-out;
+
+      &:hover {
+        @apply shadow-lg;
+      }
+
+      &:first-child { @apply ml-0; }
+      &:last-child  { @apply mr-0; }
     }
   }
 }

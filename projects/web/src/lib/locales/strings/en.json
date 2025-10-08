@@ -1,7 +1,20 @@
 {
   "links": {
     "github": {
-      "label": "GitHub"
+      "label": "GitHub",
+      "anchorTip": "GitHub — @somnisomni"
+    },
+    "blog": {
+      "label": "somni.log (Blog)",
+      "anchorTip": "somni.log (Blog) — log.somni.one"
+    },
+    "twitter": {
+      "label": "X (Twitter)",
+      "anchorTip": "X (Twitter) — @somni_somni"
+    },
+    "email": {
+      "label": "Email",
+      "anchorTip": "Email (Click to copy the address)"
     }
   },
   "main": {
@@ -15,6 +28,11 @@
         },
         "seg1": "Hello! I'm ",
         "seg2": ", a developer."
+      }
+    },
+    "links": {
+      "message": {
+        "email-copied": "Email address has been copied to clipboard."
       }
     }
   }

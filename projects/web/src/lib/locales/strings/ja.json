@@ -1,7 +1,20 @@
 {
   "links": {
     "github": {
-      "label": "GitHub"
+      "label": "GitHub",
+      "anchorTip": "GitHub — @somnisomni"
+    },
+    "blog": {
+      "label": "somni.log （ブログ）",
+      "anchorTip": "somni.log （ブログ） — log.somni.one"
+    },
+    "twitter": {
+      "label": "Twitter (X)",
+      "anchorTip": "Twitter (X) — @somni_somni"
+    },
+    "email": {
+      "label": "Eメール",
+      "anchorTip": "Eメール （押してアドレスをコピー）"
     }
   },
   "main": {
@@ -15,6 +28,11 @@
         },
         "seg1": "こんにちは！ソフトウェアエンジニアの",
         "seg2": "です。"
+      }
+    },
+    "links": {
+      "message": {
+        "email-copied": "メールアドレスがクリップボードにコピーされました。"
       }
     }
   }
