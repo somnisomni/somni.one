@@ -6,6 +6,7 @@ interface ViteTypeOptions {
 
 interface ImportMetaEnv {
   readonly VITE_DATA_COLLECTOR_URL: string;
+  readonly VITE_REMOTE_ASSETS_HOST_URL: string;
 }
 
 interface ImportMeta {

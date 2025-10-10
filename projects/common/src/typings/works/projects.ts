@@ -8,6 +8,7 @@ export interface ProjectDataBase extends WorkDataBase {
   status: "ongoing" | "maintaining" | "completed" | "discontinued";
   pageUrl?: string;
   appUrl?: string;
+  headerImageRemotePaths?: string[];
   stacks: TechStack[];
 }
 
