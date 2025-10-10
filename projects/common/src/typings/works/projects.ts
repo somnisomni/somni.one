@@ -10,6 +10,7 @@ export interface ProjectDataBase extends WorkDataBase {
   appUrl?: string;
   headerImageRemotePaths?: string[];
   stacks: TechStack[];
+  featured: boolean;
 }
 
 export type ProjectIndividualData = ProjectDataBase;

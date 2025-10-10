@@ -18,7 +18,8 @@
       "[추가 예정]",
       ""
     ],
-    "repositoryUrl": "https://github.com/somnisomni/trawler-csharp"
+    "repositoryUrl": "https://github.com/somnisomni/trawler-csharp",
+    "featured": false
   },
   {
     "id": "myboothmanager",
@@ -43,7 +44,8 @@
       ""
     ],
     "repositoryUrl": "https://github.com/somnisomni/MyBoothManager",
-    "appUrl": "https://booth.koharu.dev"
+    "appUrl": "https://booth.koharu.dev",
+    "featured": true
   },
   {
     "id": "twitter-account-data-crawler",
@@ -62,7 +64,8 @@
       "[추가 예정]",
       ""
     ],
-    "repositoryUrl": "https://github.com/somnisomni/twitter-account-data-crawler"
+    "repositoryUrl": "https://github.com/somnisomni/twitter-account-data-crawler",
+    "featured": false
   },
   {
     "id": "ghostodon",
@@ -80,7 +83,8 @@
       "[추가 예정]",
       ""
     ],
-    "repositoryUrl": "https://github.com/somnisomni/ghostodon"
+    "repositoryUrl": "https://github.com/somnisomni/ghostodon",
+    "featured": false
   },
   {
     "id": "twiper",
@@ -103,7 +107,8 @@
       "트위터 계정의 트윗 아카이브 데이터를 사용하여 계정 내 트윗을 API를 통해 삭제."
     ],
     "repositoryUrl": "https://github.com/somnisomni/Twiper",
-    "appUrl": "https://github.com/somnisomni/Twiper/releases"
+    "appUrl": "https://github.com/somnisomni/Twiper/releases",
+    "featured": false
   },
   {
     "id": "mollufier",
@@ -126,7 +131,8 @@
       "배포를 간단히 하기 위해 Dockerfile 생성, 개인 서버에서 컨테이너를 빌드하여 배포<small>(Podman 사용)</small> 중."
     ],
     "repositoryUrl": "https://github.com/somnisomni/mollufier",
-    "appUrl": "https://app.somni.one/mollufier/"
+    "appUrl": "https://app.somni.one/mollufier/",
+    "featured": true
   },
   {
     "id": "siina",
@@ -149,7 +155,8 @@
       "'사운드폰트' 시스템: 사용자가 설정한 값들을 프리셋처럼 LocalStorage에 저장하고, JSON 형태로 가져오기/내보내기 가능."
     ],
     "repositoryUrl": "https://github.com/somnisomni/siina",
-    "appUrl": "https://somnisomni.github.io/siina/siina.html"
+    "appUrl": "https://somnisomni.github.io/siina/siina.html",
+    "featured": false
   },
   {
     "id": "dust-on-me",
@@ -169,7 +176,8 @@
       "1시간마다 OpenAPI로부터 데이터를 조회해 트위터 봇 계정에 트윗 게시.",
       "봇 계정을 멘션한 트윗에서 첫 번째 단어를 명령어로 인식하고 파싱, 명령어에 알맞는 결과를 답글로 게시."
     ],
-    "repositoryUrl": "https://github.com/SDSkyKlouD/dust-on-me"
+    "repositoryUrl": "https://github.com/SDSkyKlouD/dust-on-me",
+    "featured": false
   },
   {
     "id": "unikod",
@@ -190,7 +198,8 @@
       "<a href='https://www.nuget.org/'>NuGet</a>에 시험적으로 개발 빌드를 업로드하였지만, 사용을 권장하지 않음."
     ],
     "repositoryUrl": "https://github.com/SDSkyKlouD/Unikod",
-    "appUrl": "https://www.nuget.org/packages/Unikod"
+    "appUrl": "https://www.nuget.org/packages/Unikod",
+    "featured": false
   },
   {
     "id": "quiqcompose",
@@ -212,7 +221,8 @@
       "클로즈드 소스로 개발하다가 개발 중단과 함께 소스 코드 공개."
     ],
     "repositoryUrl": "https://github.com/SDSkyKlouD/QuiqCompose-OSS-WPF",
-    "appUrl": "https://github.com/SDSkyKlouD/QuiqCompose-OSS-WPF/releases"
+    "appUrl": "https://github.com/SDSkyKlouD/QuiqCompose-OSS-WPF/releases",
+    "featured": false
   },
   {
     "id": "apimiku-twitterbot",
@@ -231,7 +241,8 @@
       "R-18 및 NSFW와 관련된 태그 및 계정은 블랙리스트에 등록하여 그러한 작품의 공유를 최대한 방지하도록 함.",
       "픽시브는 검색 쿼리의 pagination count가 존재하여 그 범위 내에서 페이지를 랜덤 선택할 수 있었지만, 니코니코정화는 그렇지 않아 검색 결과의 1페이지부터 순차적으로 공유하고 페이지 오프셋을 파일로 저장, 봇 재시작 시 오프셋 파일을 활용함."
     ],
-    "repositoryUrl": "https://github.com/SDSkyKlouD/apimiku-twitterbot"
+    "repositoryUrl": "https://github.com/SDSkyKlouD/apimiku-twitterbot",
+    "featured": false
   },
   {
     "id": "portal-still-alive-web",
@@ -253,7 +264,8 @@
       "<s>소스가 공개되어 있지만</s> 이스터 에그를 추가함."
     ],
     "repositoryUrl": "https://github.com/SDSkyKlouD/still-alive-web",
-    "appUrl": "https://sdskykloud.github.io/still-alive-web/"
+    "appUrl": "https://sdskykloud.github.io/still-alive-web/",
+    "featured": false
   },
   {
     "id": "srtg",
@@ -271,7 +283,8 @@
       "지정한 범위 내의 랜덤 숫자를 생성하는 기능을 구현했던 것은 생각나지만, 그 이외에는 기억이 나지 않음.",
       "그렇게 만든 앱을 당시 담임 선생님의 스마트폰에 설치해드렸음.",
       "이 프로그램과 관련하여 작성했던 글이나 데이터, 소스 코드 등이 전부 유실된 상태임."
-    ]
+    ],
+    "featured": false
   },
   {
     "id": "kumi",
@@ -292,6 +305,7 @@
       "당시 다른 모드 설치기에는 없었던 '모드별 설명' 기능 추가.",
       "개인 호스팅 서비스에 최신 버전 정보를 업로드하고 그 정보를 받아와 실행 중인 프로그램의 버전을 대조하는 것으로 업데이트 확인 기능 구현.",
       "이 프로그램과 관련하여 작성했던 글이나 데이터, 소스 코드 등이 전부 유실된 상태임."
-    ]
+    ],
+    "featured": false
   }
 ]

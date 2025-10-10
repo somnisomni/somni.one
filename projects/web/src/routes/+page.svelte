@@ -10,12 +10,12 @@
       </LinkAnchor>
     </ScaleAnimationOnHover>
 
-    <div class="content">
+    <div class="content in-a-nutshell">
       <p>&nbsp;<strong>{ $_("main.content.headline.seg1") }<SpanWithTip tip={ $_("main.content.headline.somni.tip") }>somni</SpanWithTip>{ $_("main.content.headline.seg2") }</strong></p>
       <p>&nbsp;도전과 노력을 최고의 가치로 여깁니다. <b>웹</b>을 포함한 <SpanWithTip tip="임베디드, 모바일 앱, 데스크탑 프로그램, SNS/메신저 봇, 생산 자동화(PLC) 등...">다양한 개발 분야</SpanWithTip>를 접해 보았으며, 이제는 <b>게임 개발</b>이라는 확고한 방향을 가지고 나아가고 있습니다.</p>
       <p>&nbsp;게임 내 오브젝트를 기능하게 만들 때마다 큰 즐거움과 희열을 느낍니다. 이 즐거움이 많은 플레이어들에게 전해질 수 있도록 끊임없이 공부하고 있습니다.</p>
       <p>&nbsp;현재 <a href="https://ck.ac.kr">청강문화산업대학교</a>에 재학 중이며, 실력파 팀원들과 함께 졸업 작품 게임 프로젝트 「<a href="https://ck25-palette.notion.site/Palette-KOR-22bd7b6d0d0c80a8917aebee9471b57d">컬러팅! 캐치 & 라비</a>」를 개발하고 있습니다.</p>
-      <p class="opacity-70 !text-[0.5em]"><a href="/me">자세히 보기 ›</a></p>
+      <p class="opacity-70 !text-lg"><a href="/me">자세히 보기 ›</a></p>
     </div>
   </section>
 
@@ -58,28 +58,24 @@
         </LinkAnchor>
       </div>
 
-      <p class="opacity-70 !text-[0.5em]"><a href="/links">모든 링크 및 연락처 보기 ›</a></p>
+      <p class="opacity-70"><a href="/links">모든 링크 및 연락처 보기 ›</a></p>
     </div>
   </section>
 
   <section>
-    <div class="nav">/// <span class="opacity-50">FEATURED_WORKS::</span>GAME_DEV</div>
+    <div class="nav">/// <span class="opacity-50">somni::</span>FEATURED_WORKS</div>
 
     <div class="content">
-      <p>(작성 예정) <!-- featured works here --></p>
-    </div>
-  </section>
-
-  <section>
-    <div class="nav">/// <span class="opacity-50">FEATURED_WORKS::</span>WEB_DEV</div>
-
-    <div class="content">
-      <p>(작성 예정) <!-- featured works here --></p>
+      {#each featuredWorks as work}
+        <FeaturedWorkItem data={ work } />
+      {/each}
+      <p class="opacity-70"><a href="/works">모든 작업물 보기 ›</a></p>
     </div>
   </section>
 </div>
 
 <script lang="ts">
+import type { ProjectIndividualData, ProjectTeamData } from "@somni.one/common";
 import { _ } from "svelte-i18n";
 import { siGithub, siX } from "simple-icons";
 import GitHubProfileImage from "$/components/GitHubProfileImage.svelte";
@@ -88,6 +84,16 @@ import ScaleAnimationOnHover from "$/components/ScaleAnimationOnHover.svelte";
 import SpanWithTip from "$/components/SpanWithTip.svelte";
 import FaLinesLeaning from "$/assets/icons/fa-lines-leaning-solid-full.svg?raw";
 import FaAt from "$/assets/icons/fa-at-solid-full.svg?raw";
+import projectsTeam from "@somni.one/common/data/works/projects_team.json";
+import projectsIndividual from "@somni.one/common/data/works/projects_individual.json";
+import FeaturedWorkItem from "$/components/FeaturedWorkItem.svelte";
+
+const featuredWorks = [
+  ...projectsTeam.filter(p => p.featured) as ProjectTeamData[],
+  ...projectsIndividual.filter(p => p.featured) as ProjectIndividualData[],
+].sort((a, b) => {
+  return b.yearFrom - a.yearFrom;
+});
 </script>
 
 <style lang="scss">
@@ -113,7 +119,11 @@ p {
   }
 
   .content {
-    @apply my-8 text-4xl font-light text-background-inverse/50;
+    @apply my-8 text-xl font-light text-background-inverse/50;
+
+    &.in-a-nutshell {
+      @apply text-4xl;
+    }
 
     strong {
       @apply font-extrabold text-background-inverse;
