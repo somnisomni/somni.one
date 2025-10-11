@@ -66,9 +66,12 @@
     <div class="nav">/// <span class="opacity-50">somni::</span>FEATURED_WORKS</div>
 
     <div class="content">
-      {#each featuredWorks as work}
-        <FeaturedWorkItem data={ work } />
-      {/each}
+      <div class="grid grid-cols-2 gap-4">
+        {#each featuredWorks as work}
+          <FeaturedWorkItem data={ work } />
+        {/each}
+      </div>
+
       <p class="opacity-70"><a href="/works">모든 작업물 보기 ›</a></p>
     </div>
   </section>
@@ -84,8 +87,8 @@ import ScaleAnimationOnHover from "$/components/ScaleAnimationOnHover.svelte";
 import SpanWithTip from "$/components/SpanWithTip.svelte";
 import FaLinesLeaning from "$/assets/icons/fa-lines-leaning-solid-full.svg?raw";
 import FaAt from "$/assets/icons/fa-at-solid-full.svg?raw";
-import projectsTeam from "@somni.one/common/data/works/projects_team.json";
-import projectsIndividual from "@somni.one/common/data/works/projects_individual.json";
+import projectsTeam from "@somni.one/common/data/works/projects/projects_team.json";
+import projectsIndividual from "@somni.one/common/data/works/projects/projects_individual.json";
 import FeaturedWorkItem from "$/components/FeaturedWorkItem.svelte";
 
 const featuredWorks = [

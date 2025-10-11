@@ -16,7 +16,7 @@ const targetGetterMap: TargetGetterMapItem[] = [
   /* contributions_opensource.json - GitHub PRs & Commits */
   {
     async dataLoader() {
-      return (await import("@somni.one/common/data/works/contributions_opensource.json")).default as ContributionOpenSourceData[];
+      return (await import("@somni.one/common/data/works/contributions/contributions_opensource.json")).default as ContributionOpenSourceData[];
     },
     async targetGetter(data) {
       const dataTyped = data as ContributionOpenSourceData;
@@ -46,7 +46,7 @@ const targetGetterMap: TargetGetterMapItem[] = [
   /* contributions_translation.json - GitHub PRs & Commits */
   {
     async dataLoader() {
-      return (await import("@somni.one/common/data/works/contributions_translation.json")).default as ContributionTranslationData[];
+      return (await import("@somni.one/common/data/works/contributions/contributions_translation.json")).default as ContributionTranslationData[];
     },
     async targetGetter(data) {
       const dataTyped = data as ContributionTranslationData;

@@ -4,19 +4,9 @@
   <p>&nbsp;게임의 <b>적응형 사운드</b>에 관심이 많으며 주력 사운드 미들웨어는 <IconText svg={ siFmod.svg }><b>FMOD</b></IconText>입니다. 이를 이용해 사운드 이벤트를 구성하고 인게임에 적용한 경험이 있습니다.</p>
 </div>
 
-<div>
-  <p>* test</p>
-  <img src={ testImageSrc } />
-</div>
-
 <script lang="ts">
 import { siUnity, siUnrealengine, siFmod } from "simple-icons";
 import IconText from "$/components/IconText.svelte";
-import projectsTeam from "@somni.one/common/data/works/projects_team.json";
-import type { ProjectTeamData } from "@somni.one/common";
-
-const remoteImageHost = import.meta.env.VITE_REMOTE_ASSETS_HOST_URL;
-const testImageSrc = $derived(remoteImageHost + (projectsTeam as ProjectTeamData[]).find(p => p.id === "ck-graduation-colorting")?.headerImageRemotePaths?.[0]);
 </script>
 
 <style lang="scss" scoped>
