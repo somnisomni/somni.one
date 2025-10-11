@@ -1,14 +1,9 @@
 <div class="featured-work-item { additionalClassName }">
   <!-- Header image of the work -->
-  <picture>
-    {#each data.headerImageRemotePaths as path}
-      <source srcset={ `${import.meta.env.VITE_REMOTE_ASSETS_HOST_URL}/${path.startsWith('/') ? path.slice(1) : path}` }
-              type={ getImageTypeFromPath(path) } />
-    {/each}
-
-    <!-- fallback or placeholder image here -->
-     <img class="w-full h-full object-cover" />
-  </picture>
+  <img class="w-full h-full object-cover"
+       srcset={ headerImageSrcSet }
+       src={ transformRemoteAssetPath(data.headerImageRemoteSrcSet?.[0]?.path) }
+       alt={ data.title } />
 
   <!-- Overlays -->
   <div class="overlay">
@@ -24,18 +19,10 @@ import type { ProjectDataBase } from "@somni.one/common";
 
 const { data, additionalClassName }: { data: ProjectDataBase, additionalClassName?: string } = $props();
 
-function getImageTypeFromPath(path: string) {
-  const ext = path.split('.').pop()?.toLowerCase();
+const headerImageSrcSet = data.headerImageRemoteSrcSet?.map(src => `${transformRemoteAssetPath(src.path)} ${src.scale ? `${src.scale}x` : ''}`).join(', ');
 
-  switch(ext) {
-    case 'avif': return 'image/avif';
-    case 'webp': return 'image/webp';
-    case 'jpg':
-    case 'jpeg': return 'image/jpeg';
-    case 'png': return 'image/png';
-    case 'gif': return 'image/gif';
-    default: return null;
-  }
+function transformRemoteAssetPath(path?: string) {
+  return path ? `${import.meta.env.VITE_REMOTE_ASSETS_HOST_URL}/${path.startsWith('/') ? path.slice(1) : path}` : null;
 }
 </script>
 

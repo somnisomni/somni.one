@@ -1,5 +1,10 @@
 import type { TechStack, WorkDataBase } from ".";
 
+export interface ImageSrcSet {
+  path: string;
+  scale: number;
+}
+
 export interface ProjectDataBase extends WorkDataBase {
   repositoryUrl?: string;
   yearFrom: number;
@@ -8,7 +13,7 @@ export interface ProjectDataBase extends WorkDataBase {
   status: "ongoing" | "maintaining" | "completed" | "discontinued";
   pageUrl?: string;
   appUrl?: string;
-  headerImageRemotePaths?: string[];
+  headerImageRemoteSrcSet?: ImageSrcSet[];
   stacks: TechStack[];
   featured: boolean;
 }

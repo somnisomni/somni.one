@@ -66,7 +66,7 @@
     <div class="nav">/// <span class="opacity-50">somni::</span>FEATURED_WORKS</div>
 
     <div class="content">
-      <div class="grid grid-cols-2 gap-4">
+      <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
         {#each featuredWorks as work}
           <FeaturedWorkItem data={ work } />
         {/each}

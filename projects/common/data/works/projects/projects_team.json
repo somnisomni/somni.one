@@ -19,9 +19,9 @@
     "prizes": [
       "BIC 2025 루키부문 선정작"
     ],
-    "headerImageRemotePaths": [
-      "/images/works/ck-graduation-colorting-header.webp",
-      "/images/works/ck-graduation-colorting-header.png"
+    "headerImageRemoteSrcSet": [
+      { "path": "/images/works/ck-graduation-colorting-header.webp", "scale": 1 },
+      { "path": "/images/works/ck-graduation-colorting-header@0.5x.webp", "scale": 0.5 }
     ],
     "featured": true
   },
