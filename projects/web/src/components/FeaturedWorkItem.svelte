@@ -1,8 +1,8 @@
 <div class="featured-work-item { additionalClassName }">
   <!-- Header image of the work -->
-  <img class="w-full h-full object-cover"
+  <img class="w-full h-full object-cover bg-black"
        srcset={ headerImageSrcSet }
-       src={ transformRemoteAssetPath(data.headerImageRemoteSrcSet?.[0]?.path) }
+       src={ transformRemoteAssetPath(data.headerImageRemoteSrcSet?.[0]?.path) ?? encodedBlackImage }
        alt={ data.title } />
 
   <!-- Overlays -->
@@ -19,6 +19,7 @@ import type { ProjectDataBase } from "@somni.one/common";
 
 const { data, additionalClassName }: { data: ProjectDataBase, additionalClassName?: string } = $props();
 
+const encodedBlackImage = "data:image/gif;base64,R0lGODlhAQABAIAAAAUEBAAAACwAAAAAAQABAAACAkQBADs=";
 const headerImageSrcSet = data.headerImageRemoteSrcSet?.map(src => `${transformRemoteAssetPath(src.path)} ${src.scale ? `${src.scale}x` : ''}`).join(', ');
 
 function transformRemoteAssetPath(path?: string) {
@@ -47,7 +48,7 @@ function transformRemoteAssetPath(path?: string) {
 
   .overlay {
     @apply absolute left-0 top-0 right-0 bottom-0 w-full h-full;
-    @apply bg-gradient-to-b from-transparent via-transparent to-black/70;
+    @apply bg-gradient-to-b from-transparent via-black/20 to-black/80;
 
     .overlay-content {
       @apply absolute left-0 right-0 bottom-0 w-full p-3;
