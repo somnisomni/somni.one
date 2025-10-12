@@ -132,6 +132,10 @@
     ],
     "repositoryUrl": "https://github.com/somnisomni/mollufier",
     "appUrl": "https://app.somni.one/mollufier/",
+    "headerImageRemoteSrcSet": [
+      { "path": "/images/works/mollufier-header.webp", "scale": 1 },
+      { "path": "/images/works/mollufier-header@0.5x.webp", "scale": 0.5 }
+    ],
     "featured": true
   },
   {
