@@ -11,7 +11,11 @@ const config = {
   },
   kit: {
     adapter: adapter({ }),
-
+    typescript: {
+      config(config) {
+        config.extends = "@somni.one/common/tsconfig.typescript.json";
+      },
+    },
     alias: {
       $: "src",
       $components: "src/components",

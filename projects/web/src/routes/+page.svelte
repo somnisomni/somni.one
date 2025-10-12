@@ -81,14 +81,14 @@
 import type { ProjectIndividualData, ProjectTeamData } from "@somni.one/common";
 import { _ } from "svelte-i18n";
 import { siGithub, siX } from "simple-icons";
+import projectsTeam from "@somni.one/common/data/works/projects/projects_team.json";
+import projectsIndividual from "@somni.one/common/data/works/projects/projects_individual.json";
 import GitHubProfileImage from "$/components/GitHubProfileImage.svelte";
 import LinkAnchor from "$/components/LinkAnchor.svelte";
 import ScaleAnimationOnHover from "$/components/ScaleAnimationOnHover.svelte";
 import SpanWithTip from "$/components/SpanWithTip.svelte";
 import FaLinesLeaning from "$/assets/icons/fa-lines-leaning-solid-full.svg?raw";
 import FaAt from "$/assets/icons/fa-at-solid-full.svg?raw";
-import projectsTeam from "@somni.one/common/data/works/projects/projects_team.json";
-import projectsIndividual from "@somni.one/common/data/works/projects/projects_individual.json";
 import FeaturedWorkItem from "$/components/FeaturedWorkItem.svelte";
 
 const featuredWorks = [

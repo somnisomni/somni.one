@@ -1,7 +1,8 @@
 <div id="name-header">
-  <div class="rotate-wrap">
-    <h1 bind:this={headerName}
-        class="name">somni</h1>
+  <div class="rotate-wrap"
+       bind:this={headerContainer}>
+    <!-- <h1 bind:this={headerName}
+        class="name">somni</h1> -->
   </div>
 </div>
 
@@ -13,19 +14,41 @@
 import "$/styles/app.css";
 import "$lib/init";
 import type { LayoutProps } from "./$types";
-import { onMount } from "svelte";
 import gsap from "gsap";
 import { SplitText } from "gsap/SplitText";
+import { page } from "$app/state";
 
 const { children }: LayoutProps = $props();
-let headerName: HTMLElement;
+const routeStack: string[] = $derived(page.route.id === "/" ? [""] : (page.route.id?.split("/") ?? [""]));
+let headerContainer: HTMLElement;
 
-onMount(() => {
-  const headerNameSplit = SplitText.create(headerName, { type: "chars" });
+$effect(() => {
+  const routeElementsToRemove = headerContainer.querySelectorAll(".route").values().toArray() as HTMLElement[];
 
-  gsap.fromTo(headerNameSplit.chars.reverse(),
-    { y: 20, opacity: 0 },
-    { y: 0, opacity: 1, duration: 0.5, stagger: 0.1, ease: "power2.out" });
+  for(const route of routeStack) {
+    const normalizedRoute = route.length > 0 ? route : "somni";
+
+    const existingElementIndex = routeElementsToRemove.findIndex(e => e.dataset.route === normalizedRoute);
+    if(existingElementIndex >= 0) {
+      routeElementsToRemove.splice(existingElementIndex, 1);
+      continue;
+    }
+
+    const routeElement = document.createElement("h1");
+    routeElement.className = "route";
+    routeElement.dataset.route = normalizedRoute;
+    routeElement.textContent = normalizedRoute;
+    headerContainer.appendChild(routeElement);
+
+    const split = SplitText.create(routeElement, { type: "chars" });
+    gsap.fromTo(split.chars.reverse(),
+      { y: 20, opacity: 0 },
+      { y: 0, opacity: 1, duration: 0.5, stagger: 0.1, ease: "power2.out" });
+  }
+
+  for(const el of routeElementsToRemove) {
+    el.remove();
+  }
 });
 </script>
 
@@ -48,22 +71,22 @@ onMount(() => {
     @apply inline-block -rotate-90 translate-x-3 -translate-y-[100%] origin-bottom-right text-nowrap whitespace-nowrap;
   }
 
-  & .rotate-wrap {
+  .rotate-wrap {
     @apply flex flex-row justify-start items-end;
 
     letter-spacing: -0.139em;
 
-    & > * {
+    :global(> *) {
       @apply ml-[0.5em];
     }
 
-    & > *:not(:last-child) {
-      @apply opacity-70;
+    :global(> *:not(:last-child)) {
+      @apply opacity-50;
     }
-  }
 
-  & .name {
-    @apply text-6xl;
+    :global(h1) {
+      @apply text-6xl;
+    }
   }
 }
 

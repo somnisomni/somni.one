@@ -1,0 +1,74 @@
+[
+  {
+    "id": "swm-toanyone",
+    "title": "To. Anyone",
+    "desc": "소통이 그리운 사람, 자신의 속마음을 털어놓고 위로받고 싶은 사람 모두를 위한 “랜덤 익명 편지 서비스”",
+    "association": "SW마에스트로 13기",
+    "teamName": "TEAM GOYUKKURI",
+    "charge": "팀장, 프론트엔드(웹) 개발",
+    "stacks": [
+      "TYPESCRIPT",
+      "VUEJS",
+      "SASS"
+    ],
+    "yearFrom": 2022,
+    "yearTo": 2022,
+    "status": "completed",
+    "details": [
+      "[추가 예정]"
+    ],
+    "repositoryUrl": "https://github.com/SWM-TEAM-GOYUKKURI/ToAnyone",
+    "featured": false
+  },
+  {
+    "id": "swm-mini-sosikmadang",
+    "title": "소食마당",
+    "desc": "<span class='text-zinc-400'>[미니프로젝트]</span> 소마센터 근처의 맛집들의 정보를 보여주고, 리뷰와 별점을 남기고 공유할 수 있는 공간🍖",
+    "association": "SW마에스트로 13기",
+    "teamName": "미니프로젝트 40팀",
+    "charge": "프론트엔드(웹) 개발",
+    "stacks": [
+      "TYPESCRIPT",
+      "VUEJS",
+      "SASS"
+    ],
+    "yearFrom": 2022,
+    "yearTo": 2022,
+    "status": "completed",
+    "details": [
+      "[추가 예정]"
+    ],
+    "prizes": [
+      "SW마에스트로 연수생 투표 - 3위"
+    ],
+    "repositoryUrl": "https://github.com/somnisomni/SOsik-MAdang",
+    "pageUrl": "https://github.com/somnisomni/SOsik-MAdang/blob/main/README.md",
+    "featured": false
+  },
+  {
+    "id": "osam-pool",
+    "title": "풀(POOL)",
+    "desc": "군 생활동안 성장하는 나의 이야기를 기록하고 공유하는, 자기개발 및 취업연결 SNS 플랫폼",
+    "association": "2021 군장병 공개SW 온라인 해커톤",
+    "teamName": "YD(연등)",
+    "charge": "프론트엔드(웹) 개발",
+    "stacks": [
+      "TYPESCRIPT",
+      "VUEJS",
+      "VUETIFY",
+      "SASS"
+    ],
+    "yearFrom": 2021,
+    "yearTo": 2021,
+    "status": "completed",
+    "details": [
+      "[추가 예정]"
+    ],
+    "prizes": [
+      "정보통신진흥원장상"
+    ],
+    "repositoryUrl": "https://github.com/osamhack2021/AI_WEB_POOL_YD",
+    "pageUrl": "https://github.com/osamhack2021/AI_WEB_POOL_YD/blob/develop/README.md",
+    "featured": false
+  }
+]
