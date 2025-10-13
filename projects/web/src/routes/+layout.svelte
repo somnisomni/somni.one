@@ -1,8 +1,18 @@
 <div id="name-header">
-  <div class="rotate-wrap"
-       bind:this={headerContainer}>
-    <!-- <h1 bind:this={headerName}
-        class="name">somni</h1> -->
+  <div class="rotate-wrap">
+    <noscript>
+      <h1 class="name">somni</h1>
+    </noscript>
+
+    <div class="route-container">
+      {#each routeStack as route (route)}
+        <h1 class="route"
+            data-route={ route.length > 0 ? route : "somni" }
+            use:setUpRouteElement> <!-- animate:flip -->
+          <div>{ route.length > 0 ? route : "somni" }</div>
+        </h1>
+      {/each}
+    </div>
   </div>
 </div>
 
@@ -17,39 +27,18 @@ import type { LayoutProps } from "./$types";
 import gsap from "gsap";
 import { SplitText } from "gsap/SplitText";
 import { page } from "$app/state";
+import { fade } from "svelte/transition";
+import { flip } from "svelte/animate";
 
 const { children }: LayoutProps = $props();
 const routeStack: string[] = $derived(page.route.id === "/" ? [""] : (page.route.id?.split("/") ?? [""]));
-let headerContainer: HTMLElement;
 
-$effect(() => {
-  const routeElementsToRemove = headerContainer.querySelectorAll(".route").values().toArray() as HTMLElement[];
-
-  for(const route of routeStack) {
-    const normalizedRoute = route.length > 0 ? route : "somni";
-
-    const existingElementIndex = routeElementsToRemove.findIndex(e => e.dataset.route === normalizedRoute);
-    if(existingElementIndex >= 0) {
-      routeElementsToRemove.splice(existingElementIndex, 1);
-      continue;
-    }
-
-    const routeElement = document.createElement("h1");
-    routeElement.className = "route";
-    routeElement.dataset.route = normalizedRoute;
-    routeElement.textContent = normalizedRoute;
-    headerContainer.appendChild(routeElement);
-
-    const split = SplitText.create(routeElement, { type: "chars" });
-    gsap.fromTo(split.chars.reverse(),
-      { y: 20, opacity: 0 },
-      { y: 0, opacity: 1, duration: 0.5, stagger: 0.1, ease: "power2.out" });
-  }
-
-  for(const el of routeElementsToRemove) {
-    el.remove();
-  }
-});
+function setUpRouteElement(node: HTMLElement) {
+  const split = SplitText.create(node.querySelector("div"), { type: "chars" });
+  gsap.fromTo(split.chars.reverse(),
+    { y: 20, opacity: 0 },
+    { y: 0, opacity: 1, duration: 0.5, stagger: 0.1, ease: "power2.out" });
+}
 </script>
 
 <style lang="scss">
@@ -76,12 +65,16 @@ $effect(() => {
 
     letter-spacing: -0.139em;
 
-    :global(> *) {
-      @apply ml-[0.5em];
-    }
+    .route-container {
+      @apply contents;
 
-    :global(> *:not(:last-child)) {
-      @apply opacity-50;
+      :global(> *) {
+        @apply ml-[0.5em];
+      }
+
+      :global(> *:not(:last-child)) {
+        @apply opacity-50;
+      }
     }
 
     :global(h1) {
