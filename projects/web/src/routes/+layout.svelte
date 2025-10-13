@@ -7,8 +7,9 @@
     <div class="route-container">
       {#each routeStack as route (route)}
         <h1 class="route"
-            data-route={ route.length > 0 ? route : "somni" }
-            use:setUpRouteElement> <!-- animate:flip -->
+            out:fade={{ duration: 100 }}
+            animate:flip={{ duration: 1000, easing: quartOut }}
+            use:setUpRouteElement>
           <div>{ route.length > 0 ? route : "somni" }</div>
         </h1>
       {/each}
@@ -27,8 +28,9 @@ import type { LayoutProps } from "./$types";
 import gsap from "gsap";
 import { SplitText } from "gsap/SplitText";
 import { page } from "$app/state";
-import { fade } from "svelte/transition";
 import { flip } from "svelte/animate";
+import { quartOut } from "svelte/easing";
+import { fade } from "svelte/transition";
 
 const { children }: LayoutProps = $props();
 const routeStack: string[] = $derived(page.route.id === "/" ? [""] : (page.route.id?.split("/") ?? [""]));
@@ -36,8 +38,8 @@ const routeStack: string[] = $derived(page.route.id === "/" ? [""] : (page.route
 function setUpRouteElement(node: HTMLElement) {
   const split = SplitText.create(node.querySelector("div"), { type: "chars" });
   gsap.fromTo(split.chars.reverse(),
-    { y: 20, opacity: 0 },
-    { y: 0, opacity: 1, duration: 0.5, stagger: 0.1, ease: "power2.out" });
+    { x: 20, opacity: 0 },
+    { x: 0, opacity: 1, duration: 0.5, stagger: 0.075, ease: "power2.out" });
 }
 </script>
 
@@ -56,20 +58,18 @@ function setUpRouteElement(node: HTMLElement) {
 
   width: var(--header-size);
 
-  & > * {
-    @apply inline-block -rotate-90 translate-x-3 -translate-y-[100%] origin-bottom-right text-nowrap whitespace-nowrap;
-  }
-
   .rotate-wrap {
     @apply flex flex-row justify-start items-end;
+    @apply translate-x-3 text-nowrap whitespace-nowrap;
 
+    writing-mode: sideways-lr;
     letter-spacing: -0.139em;
 
     .route-container {
       @apply contents;
 
       :global(> *) {
-        @apply ml-[0.5em];
+        @apply mb-[0.5em];
       }
 
       :global(> *:not(:last-child)) {
