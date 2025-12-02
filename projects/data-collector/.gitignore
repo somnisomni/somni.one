@@ -19,3 +19,9 @@ Thumbs.db
 
 # Wrangler
 .wrangler
+
+# Prisma
+/prisma/*.db
+
+# Generated source files
+/src/generated/
