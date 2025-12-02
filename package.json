@@ -1,7 +1,7 @@
 {
   "name": "somni.one",
   "version": "0.0.0",
-  "packageManager": "pnpm@10.18.1",
+  "packageManager": "pnpm@10.24.0",
   "private": true,
   "type": "module",
   "scripts": {

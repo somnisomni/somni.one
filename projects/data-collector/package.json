@@ -1,6 +1,6 @@
 {
   "name": "@somni.one/data-collector",
-  "packageManager": "pnpm@10.18.1",
+  "packageManager": "pnpm@10.24.0",
   "private": true,
   "type": "module",
   "scripts": {
@@ -10,24 +10,25 @@
     "dev": "wrangler dev --x-remote-bindings",
     "prisma:generate": "prisma generate",
     "prisma:push": "prisma db push",
-    "prisma:studio": "prisma studio"
+    "prisma:studio": "prisma studio",
+    "postinstall": "pnpm prisma:generate"
   },
   "devDependencies": {
-    "@cloudflare/workers-types": "^4.20251004.0",
+    "@cloudflare/workers-types": "^4.20251202.0",
     "@somni/eslint-config": "catalog:",
     "@types/eslint": "catalog:",
     "@types/node": "catalog:",
     "eslint": "catalog:",
     "prisma": "^7.0.1",
     "typescript": "catalog:",
-    "wrangler": "^4.42.0"
+    "wrangler": "^4.51.0"
   },
   "dependencies": {
     "@prisma/adapter-d1": "^7.0.1",
     "@prisma/client": "^7.0.1",
     "@somni.one/common": "workspace:*",
     "dotenv": "^17.2.3",
-    "octokit": "^5.0.3",
+    "octokit": "^5.0.5",
     "steamapi": "github:somnisomni/node-steamapi"
   }
 }
