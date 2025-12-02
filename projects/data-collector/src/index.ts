@@ -41,7 +41,7 @@ export default {
         console.log(`\n[*] Checking target: '${target.dataId}' (data type: ${target.dataType})`);
 
         if(await target.shouldRecollect(db)) {
-          console.log("... Need to recollect, collecting data now...");
+          console.log("... Need to (re)collect, collecting data now...");
 
           await target.collect(db);
         } else {

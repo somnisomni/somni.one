@@ -1,8 +1,8 @@
-import type { PrismaClient } from "@prisma/client";
+import type { PrismaClient } from "../generated/prisma-client/client";
 import type { SteamUserData } from "@somni.one/common";
 import type SteamAPI from "steamapi";
-import { DataType } from "@prisma/client";
 import { generateSteamUserId } from "@somni.one/common";
+import { DataType } from "../generated/prisma-client/enums";
 import { createSteamAPI } from "../lib/steam";
 import DataCollectorBase from "./base";
 

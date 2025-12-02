@@ -34,9 +34,12 @@ export class MonkeytypeAPI {
     return json as TResponse;
   }
 
-  public async getPersonalBest(mode: "time" | "words" | "quote" | "custom" | "zen"): Promise<IMonkeytypePersonalBestResponse | number> {
+  public async getPersonalBest(mode: "time" | "words" | "quote" | "custom" | "zen", value?: string | number): Promise<IMonkeytypePersonalBestResponse | number> {
     const query = new URLSearchParams();
     query.set("mode", mode);
+    if(value) {
+      query.set("mode2", value.toString());
+    }
 
     return this.get<IMonkeytypePersonalBestResponse>("/users/personalBests", query);
   }
@@ -46,7 +49,7 @@ export class MonkeytypeAPI {
   }
 }
 
-export function createMonkeytype(): MonkeytypeAPI {
+export function createMonkeytypeAPI(): MonkeytypeAPI {
   return new MonkeytypeAPI(process.env.MONKEYTYPE_APE);
 }
 

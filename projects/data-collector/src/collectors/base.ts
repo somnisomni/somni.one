@@ -1,4 +1,5 @@
-import type { DataType, Prisma, PrismaClient } from "@prisma/client";
+import type { Prisma, PrismaClient } from "../generated/prisma-client/client";
+import type { DataType } from "../generated/prisma-client/enums";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export default abstract class DataCollectorBase<TData = Record<string, any>> {
