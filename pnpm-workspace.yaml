@@ -2,7 +2,7 @@ packages:
   - projects/*
 
 catalog:
-  '@somni/eslint-config': https://gitpkg.vercel.app/somnisomni/webdev-common/packages/eslint-config?main
+  '@somni/eslint-config': https://github.com/somnisomni/webdev-common.git#path:/packages/eslint-config
   '@types/eslint': ^9.6.1
   '@types/node': ^24.10.1
   eslint: ^9.39.1
