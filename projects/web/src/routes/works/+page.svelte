@@ -39,6 +39,18 @@ const categoryDefinitions = {
     href: "/works/web",
     headerImageSrc: transformRemoteAssetPath(getLatestFeaturedWork(projectsWeb as ProjectData[], true)?.headerImageRemoteSrcSet?.[0]?.path),
   },
+  software: {
+    id: "software",
+    nameKey: "works.category.softwares",
+    href: "/works/software",
+    headerImageSrc: null,
+  },
+  opensource: {
+    id: "opensource",
+    nameKey: "works.category.opensource",
+    href: "/works/opensource",
+    headerImageSrc: null,
+  },
   translations: {
     id: "translations",
     nameKey: "works.category.translations",
@@ -82,13 +94,18 @@ onMount(() => {
   }
 
   .featured-work-image {
-    @apply absolute right-0 top-0 w-[80%] h-full object-cover object-right;
+    @apply absolute right-0 top-0 w-[80%] h-full object-cover object-center;
+    @apply /* < md */ max-md:w-[60%];
 
     clip-path: polygon(0 0, 100% 0%, 100% 100%, 25% 100%);
   }
 
   .title {
     @apply text-[2em] font-bold;
+
+    &:after {
+      @apply content-["›"] ml-2;
+    }
   }
 }
 </style>
