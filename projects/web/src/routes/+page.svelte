@@ -81,8 +81,6 @@
 import type { ProjectData } from "@somni.one/common";
 import { _ } from "svelte-i18n";
 import { siGithub, siX } from "simple-icons";
-import projectsTeam from "@somni.one/common/data/works/projects/projects_team.json";
-import projectsIndividual from "@somni.one/common/data/works/projects/projects_individual.json";
 import GitHubProfileImage from "$/components/GitHubProfileImage.svelte";
 import LinkAnchor from "$/components/LinkAnchor.svelte";
 import ScaleAnimationOnHover from "$/components/ScaleAnimationOnHover.svelte";
@@ -90,10 +88,14 @@ import SpanWithTip from "$/components/SpanWithTip.svelte";
 import FaLinesLeaning from "$/assets/icons/fa-lines-leaning-solid-full.svg?raw";
 import FaAt from "$/assets/icons/fa-at-solid-full.svg?raw";
 import FeaturedWorkItem from "$/components/FeaturedWorkItem.svelte";
+import projectsGames from "@somni.one/common/data/works/projects/game.json";
+import projectsSoftwares from "@somni.one/common/data/works/projects/software.json";
+import projectsWeb from "@somni.one/common/data/works/projects/web.json";
 
 const featuredWorks = [
-  ...projectsTeam.filter(p => p.featured) as ProjectData[],
-  ...projectsIndividual.filter(p => p.featured) as ProjectData[],
+  ...projectsGames.filter(p => p.featured) as ProjectData[],
+  ...projectsSoftwares.filter(p => p.featured) as ProjectData[],
+  ...projectsWeb.filter(p => p.featured) as ProjectData[],
 ].sort((a, b) => {
   return b.yearFrom - a.yearFrom;
 }).slice(0, 6);
