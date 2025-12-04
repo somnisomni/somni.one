@@ -18,8 +18,9 @@ const link = $derived((LinkData as Record<string, Link>)[linkId]) satisfies Link
 const url = $derived(linkId === "email" ? "#" : link.url);
 const title = $derived(link.userId ? `${$_(link.labelKey)} (${link.userId})` : $_(link.labelKey));
 
-async function onAnchorClick() {
+async function onAnchorClick(event: Event) {
   if(linkId !== "email") return;
+  event.preventDefault();
 
   const email = decodeEmailAddress(link.url);
   await window.navigator.clipboard.writeText(email);
