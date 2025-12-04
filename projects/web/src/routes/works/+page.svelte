@@ -3,13 +3,13 @@
      class="work-category-card"
      href={ category.href }
      in:fly={{ y: 100, duration: 1000, delay: index * 200, easing: quartOut }}>
-    {#if category.headerImageRemoteSrc}
-      <img class="absolute right-0 top-0 w-[50%] h-full object-cover object-center"
-           src={ category.headerImageRemoteSrc }
-           alt={ $_(category.nameKey) } />
-    {/if}
+    <div class="content">
+      {#if category.headerImageSrc}
+        <img class="featured-work-image"
+             src={ category.headerImageSrc }
+             alt={ $_(category.nameKey) } />
+      {/if}
 
-    <div class="z-10">
       <span class="title">{ $_(category.nameKey) }</span>
     </div>
   </a>
@@ -31,19 +31,19 @@ const categoryDefinitions = {
     id: "games",
     nameKey: "works.category.games",
     href: "/works/games",
-    headerImageRemoteSrc: transformRemoteAssetPath(getLatestFeaturedWork(projectsGame as ProjectData[], true)?.headerImageRemoteSrcSet?.[0]?.path),
+    headerImageSrc: transformRemoteAssetPath(getLatestFeaturedWork(projectsGame as ProjectData[], true)?.headerImageRemoteSrcSet?.[0]?.path),
   },
   web: {
     id: "web",
     nameKey: "works.category.web",
     href: "/works/web",
-    headerImageRemoteSrc: transformRemoteAssetPath(getLatestFeaturedWork(projectsWeb as ProjectData[], true)?.headerImageRemoteSrcSet?.[0]?.path),
+    headerImageSrc: transformRemoteAssetPath(getLatestFeaturedWork(projectsWeb as ProjectData[], true)?.headerImageRemoteSrcSet?.[0]?.path),
   },
   translations: {
     id: "translations",
     nameKey: "works.category.translations",
     href: "/works/translations",
-    headerImageRemoteSrc: null,
+    headerImageSrc: null,
   },
 };
 
@@ -56,7 +56,34 @@ onMount(() => {
 @reference "$/styles/app.css";
 
 .work-category-card {
-  @apply relative flex w-full h-64 p-8 justify-start items-end;
+  @apply relative block w-full h-64 bg-background overflow-hidden;
+  @apply scale-100 shadow-black/50 rounded-none transition-[scale,box-shadow,border-radius] duration-500 ease-out;
+
+  border-color: var(--color-background-inverse);
+
+  &:hover {
+    @apply z-10;
+    @apply scale-102 shadow-2xl rounded-2xl border;
+
+    &:active {
+      @apply scale-101;
+    }
+
+    .content {
+      @apply opacity-100;
+    }
+  }
+
+  .content {
+    @apply relative flex w-full h-full px-6 py-4 justify-start items-end;
+    @apply opacity-70 transition-opacity duration-[inherit] ease-[inherit];
+  }
+
+  .featured-work-image {
+    @apply absolute right-0 top-0 w-[80%] h-full object-cover object-right;
+
+    clip-path: polygon(0 0, 100% 0%, 100% 100%, 25% 100%);
+  }
 
   .title {
     @apply text-[2em] font-bold;
