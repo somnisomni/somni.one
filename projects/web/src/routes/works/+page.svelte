@@ -1,19 +1,23 @@
-{#each Object.values(categories) as category, index (category.id)}
-  <a id={ category.id }
-     class="work-category-card"
-     href={ category.href }
-     in:fly={{ y: 100, duration: 1000, delay: index * 200, easing: quartOut }}>
-    <div class="content">
-      {#if category.headerImageSrc}
-        <img class="featured-work-image"
-             src={ category.headerImageSrc }
-             alt={ $_(category.nameKey) } />
-      {/if}
+<div>
+  {#each Object.values(categories) as category, index (category.id)}
+    <a id={ category.id }
+       class="work-category-card"
+       href={ category.href }
+       in:fly={{ y: 100, duration: 1000, delay: index * 200, easing: quartOut }}>
+      <div class="content">
+        {#if category.headerImageSrc}
+          <img class="featured-work-image"
+               src={ category.headerImageSrc }
+               alt={ $_(category.nameKey) } />
+        {/if}
 
-      <span class="title">{ $_(category.nameKey) }</span>
-    </div>
-  </a>
-{/each}
+        <span class="title">{ $_(category.nameKey) }</span>
+      </div>
+    </a>
+  {/each}
+
+<div class="mt-50 mb-4 text-center opacity-20">Made with ♥</div>
+</div>
 
 <script lang="ts">
 import { fly } from "svelte/transition";
@@ -70,6 +74,7 @@ onMount(() => {
 .work-category-card {
   @apply relative block w-full h-64 bg-background overflow-hidden;
   @apply scale-100 shadow-black/50 rounded-none transition-[scale,box-shadow,border-radius] duration-500 ease-out;
+  @apply /* < md */ max-md:h-48;
 
   border-color: var(--color-background-inverse);
 
@@ -101,7 +106,8 @@ onMount(() => {
   }
 
   .title {
-    @apply text-[2em] font-bold;
+    @apply text-4xl font-bold;
+    @apply /* < md */ max-md:text-2xl;
 
     &:after {
       @apply content-["›"] ml-2;
