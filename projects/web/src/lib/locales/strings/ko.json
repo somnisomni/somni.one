@@ -35,5 +35,12 @@
         "email-copied": "이메일 주소가 클립보드로 복사되었습니다."
       }
     }
+  },
+  "works": {
+    "category": {
+      "games": "게임",
+      "web": "웹",
+      "translations": "번역"
+    }
   }
 }
