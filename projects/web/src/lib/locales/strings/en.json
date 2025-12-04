@@ -35,5 +35,14 @@
         "email-copied": "Email address has been copied to clipboard."
       }
     }
+  },
+  "works": {
+    "category": {
+      "games": "Games",
+      "opensource": "Open Source",
+      "softwares": "Softwares",
+      "translations": "Translations",
+      "web": "Web"
+    }
   }
 }
