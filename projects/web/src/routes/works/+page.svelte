@@ -64,9 +64,11 @@ onMount(() => {
   &:hover {
     @apply z-10;
     @apply scale-102 shadow-2xl rounded-2xl border;
+    @apply /* < md */ max-md:scale-105;
 
     &:active {
       @apply scale-101;
+      @apply /* < md */ max-md:scale-103;
     }
 
     .content {

@@ -36,7 +36,7 @@
   <section>
     <div class="nav">/// <span class="opacity-50">somni::</span>QUICK_LINKS</div>
 
-    <div class="content">
+    <div class="content mt-0!">
       <div class="quick-links">
         <LinkAnchor linkId="blog">
           <SpanWithTip tip={ $_("links.blog.anchorTip") }
@@ -144,22 +144,19 @@ p {
   }
 
   .quick-links {
-    @apply flex flex-row *:mx-2;
+    @apply flex flex-row flex-wrap *:m-2;
 
     :global(img), :global(svg) {
       @apply fill-background-inverse w-12 h-12;
     }
 
     & > :global(*) {
-      @apply mx-2 rounded-xl border-1 border-background-inverse/20;
+      @apply mx-2 rounded-xl border border-background-inverse/20;
       @apply transition-shadow duration-200 ease-in-out;
 
       &:hover {
         @apply shadow-lg;
       }
-
-      &:first-child { @apply ml-0; }
-      &:last-child  { @apply mr-0; }
     }
   }
 }
