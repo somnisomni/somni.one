@@ -110,7 +110,7 @@ onMount(() => {
 }
 
 #main {
-  @apply ml-(--header-size);
+  @apply ml-(--header-size) overflow-hidden;
   @apply /* < md */ max-md:ml-0 max-md:mt-(--header-size);
 }
 </style>
