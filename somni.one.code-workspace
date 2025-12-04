@@ -35,7 +35,8 @@
 			"svelte": "svelte"
 		},
  	  "css.lint.unknownAtRules": "ignore",
-		"scss.lint.unknownAtRules": "ignore"
+		"scss.lint.unknownAtRules": "ignore",
+		"eslint.validate": [ "javascript", "typescript", "svelte" ]
 	},
 	"extensions": {
 		"recommendations": [

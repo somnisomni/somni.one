@@ -4,14 +4,14 @@
 </span>
 
 <script lang="ts">
-import { type Snippet } from "svelte";
+import type { Snippet } from "svelte";
 
 const { children, svg }: { children?: Snippet; svg: string } = $props();
 </script>
 
 <style scoped>
 span {
-  @apply inline-block !indent-[0];
+  @apply inline-block indent-0!;
   @apply **:text-current **:fill-current;
 }
 
