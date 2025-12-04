@@ -1,3 +1,6 @@
+<svelte:window on:scroll={ onWindowScroll }
+               on:load={ onWindowScroll } />
+
 <div id="name-header">
   <div class="rotate-wrap">
     <noscript>
@@ -41,6 +44,11 @@ function setUpRouteElement(node: HTMLElement) {
     { x: 20, opacity: 0 },
     { x: 0, opacity: 1, duration: 0.5, stagger: 0.075, ease: "power2.out" });
 }
+
+function onWindowScroll() {
+  if(window.scrollY <= 0) document.documentElement.classList.add("current-scroll-top");
+  else document.documentElement.classList.remove("current-scroll-top");
+}
 </script>
 
 <style lang="scss">
@@ -48,28 +56,42 @@ function setUpRouteElement(node: HTMLElement) {
 
 :root {
   --header-size: 6rem;
+
+  @variant max-md {
+    --header-size: 4rem;
+  }
 }
 
 #name-header {
   @apply select-none pointer-events-none;
-  @apply flex flex-col justify-start items-end fixed left-0 top-0 bottom-0 h-full pt-12 overflow-hidden;
+  @apply flex flex-col justify-start items-end fixed h-full w-(--header-size) left-0 top-0 overflow-hidden pt-12 z-5;
   @apply bg-primary text-background;
-  // @apply border-r-primary border-r-4 text-primary;
+  @apply transition-[background-color] duration-500;
+  @apply /* >= md */ md:bottom-0;
+  @apply /* < md */ max-md:bg-primary/80 max-md:backdrop-blur-md max-md:pt-0 max-md:justify-end max-md:right-0 max-md:h-(--header-size) max-md:w-full;
 
-  width: var(--header-size);
+  :global(.current-scroll-top) & {
+    @apply max-md:bg-primary;
+  }
 
   .rotate-wrap {
-    @apply flex flex-row justify-start items-end;
+    @apply flex flex-row items-end;
     @apply translate-x-3 text-nowrap whitespace-nowrap;
+    @apply /* < md */ max-md:translate-x-0 max-md:translate-y-3;
 
     writing-mode: sideways-lr;
     letter-spacing: -0.139em;
+
+    @variant max-md {
+      writing-mode: initial;
+    }
 
     .route-container {
       @apply contents;
 
       :global(> *) {
         @apply mb-[0.5em];
+        @apply /* < md */ max-md:mb-0 max-md:mr-[0.5em];
       }
 
       :global(> *:not(:last-child)) {
@@ -84,6 +106,7 @@ function setUpRouteElement(node: HTMLElement) {
 }
 
 #main {
-  margin-left: var(--header-size);
+  @apply ml-(--header-size);
+  @apply /* < md */ max-md:ml-0 max-md:mt-(--header-size);
 }
 </style>
