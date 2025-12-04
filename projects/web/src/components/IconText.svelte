@@ -10,6 +10,8 @@ const { children, svg }: { children?: Snippet; svg: string } = $props();
 </script>
 
 <style scoped>
+@reference "$/styles/app.css";
+
 span {
   @apply inline-block indent-0!;
   @apply **:text-current **:fill-current;

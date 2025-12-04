@@ -16,6 +16,6 @@ const { size = 8, elevate = false }: { size?: number, elevate?: boolean } = $pro
 @reference "$/styles/app.css";
 
 .github-avatar {
-  @apply rounded-full border-1 border-background-inverse/10;
+  @apply rounded-full border border-background-inverse/10;
 }
 </style>

@@ -24,7 +24,7 @@ const { children, tip, notText }: { children?: Snippet, tip?: string, notText?: 
     @apply pointer-events-none absolute left-1/2 top-[110%] -translate-x-1/2 w-max max-w-xs px-4 py-2;
     @apply text-sm font-light text-background-inverse whitespace-pre-wrap;
     @apply rounded-lg shadow-md backdrop-blur-md bg-background/50;
-    @apply border-1 border-background-inverse/10;
+    @apply border border-background-inverse/10;
     @apply opacity-0 -translate-y-2 transition-all duration-300 ease-out;
 
     content: attr(title);

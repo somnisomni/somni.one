@@ -17,7 +17,7 @@ const { children, scale = 105 }: { children?: Snippet, scale?: number } = $props
   @apply transition-transform origin-center duration-250 ease-in-out scale-100;
 
   &:hover {
-    @apply scale-[var(--scale)];
+    @apply scale-(--scale);
   }
 }
 </style>
