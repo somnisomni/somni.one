@@ -34,6 +34,7 @@ import { page } from "$app/state";
 import { flip } from "svelte/animate";
 import { quartOut } from "svelte/easing";
 import { fade } from "svelte/transition";
+import { onMount } from "svelte";
 
 const { children }: LayoutProps = $props();
 const routeStack: string[] = $derived(page.route.id === "/" ? [""] : (page.route.id?.split("/") ?? [""]));
@@ -46,9 +47,13 @@ function setUpRouteElement(node: HTMLElement) {
 }
 
 function onWindowScroll() {
-  if(window.scrollY <= 0) document.documentElement.classList.add("current-scroll-top");
+  if(window.scrollY <= 10) document.documentElement.classList.add("current-scroll-top");
   else document.documentElement.classList.remove("current-scroll-top");
 }
+
+onMount(() => {
+  onWindowScroll();
+});
 </script>
 
 <style lang="scss">
@@ -64,11 +69,10 @@ function onWindowScroll() {
 
 #name-header {
   @apply select-none pointer-events-none;
-  @apply flex flex-col justify-start items-end fixed h-full w-(--header-size) left-0 top-0 overflow-hidden pt-12 z-5;
+  @apply flex flex-col justify-start items-end fixed h-full w-(--header-size) bottom-0 left-0 top-0 overflow-hidden pt-12 z-5;
   @apply bg-primary text-background;
   @apply transition-[background-color] duration-500;
-  @apply /* >= md */ md:bottom-0;
-  @apply /* < md */ max-md:bg-primary/80 max-md:backdrop-blur-md max-md:pt-0 max-md:justify-end max-md:right-0 max-md:h-(--header-size) max-md:w-full;
+  @apply /* < md */ max-md:bottom-[unset] max-md:bg-primary/80 max-md:backdrop-blur-md max-md:pt-0 max-md:justify-end max-md:right-0 max-md:h-(--header-size) max-md:w-full max-md:z-20;
 
   :global(.current-scroll-top) & {
     @apply max-md:bg-primary;
