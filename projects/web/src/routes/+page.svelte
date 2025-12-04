@@ -96,7 +96,7 @@ const featuredWorks = [
   ...projectsIndividual.filter(p => p.featured) as ProjectIndividualData[],
 ].sort((a, b) => {
   return b.yearFrom - a.yearFrom;
-});
+}).slice(0, 6);
 </script>
 
 <style lang="scss">
