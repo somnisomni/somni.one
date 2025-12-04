@@ -33,7 +33,7 @@ export function generateSteamUserId(username: string): `steam-user/${string}` {
   return `steam-user/${username}`;
 }
 
-export function getLatestFeaturedWork(data: ProjectData[], shouldHaveHeaderImage = false): ProjectData | null {
+export function getLatestFeaturedWork(data: ProjectData[], shouldHaveHeaderImage: boolean = false): ProjectData | null {
   return data.filter(p => p.featured && (!shouldHaveHeaderImage || p.headerImageRemoteSrcSet?.length))
              .sort((a, b) => b.yearFrom - a.yearFrom)
              .shift() || null;

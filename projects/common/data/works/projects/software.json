@@ -22,32 +22,6 @@
     "featured": false
   },
   {
-    "id": "myboothmanager",
-    "title": "MyBoothManager",
-    "desc": "창작자들의 부스 운영을 돕는 부스 및 굿즈 관리 웹서비스",
-    "stacks": [
-      "TYPESCRIPT",
-      "VUEJS",
-      "VUETIFY",
-      "NUXT",
-      "SASS",
-      "NESTJS",
-      "SEQUELIZE",
-      "MYSQL",
-      "PODMAN"
-    ],
-    "yearFrom": 2023,
-    "yearTo": -1,
-    "status": "ongoing",
-    "details": [
-      "[추가 예정]",
-      ""
-    ],
-    "repositoryUrl": "https://github.com/somnisomni/MyBoothManager",
-    "appUrl": "https://booth.koharu.dev",
-    "featured": true
-  },
-  {
     "id": "twitter-account-data-crawler",
     "title": "Twitter Account Data Crawler",
     "desc": "트위터 계정의 프로필 데이터를 주기적으로 크롤링하는 서버 프로그램",
@@ -108,58 +82,6 @@
     ],
     "repositoryUrl": "https://github.com/somnisomni/Twiper",
     "appUrl": "https://github.com/somnisomni/Twiper/releases",
-    "featured": false
-  },
-  {
-    "id": "mollufier",
-    "title": "몰?루파이어",
-    "desc": "한국어 형태소 분석기<small>(<a href='https://github.com/bab2min/Kiwi'>Kiwi</a>)</small>를 활용하여 문장을 '몰?루화' 해주는 웹 앱",
-    "stacks": [
-      "TYPESCRIPT",
-      "VUEJS",
-      "SASS",
-      "PYTHON",
-      "PODMAN"
-    ],
-    "yearFrom": 2021,
-    "yearTo": 2022,
-    "status": "maintaining",
-    "details": [
-      "모바일 게임 &lt;<a href='https://bluearchive.nexon.com/'>블루 아카이브</a>&gt;의 유명한 밈인 '<a href='https://coconut-emoji.tistory.com/49'>몰?루<a/>'에서 영감을 얻어 만든 토이 프로젝트.",
-      "실제 인게임 UI와 유사하게 디자인함.",
-      "Python Flask 백엔드 ↔ Vue 프론트엔드 간 REST API 형태로 통신하도록 설계함.",
-      "배포를 간단히 하기 위해 Dockerfile 생성, 개인 서버에서 컨테이너를 빌드하여 배포<small>(Podman 사용)</small> 중."
-    ],
-    "repositoryUrl": "https://github.com/somnisomni/mollufier",
-    "appUrl": "https://app.somni.one/mollufier/",
-    "headerImageRemoteSrcSet": [
-      { "path": "/images/works/mollufier-header.webp", "scale": 1 },
-      { "path": "/images/works/mollufier-header@0.5x.webp", "scale": 0.5 }
-    ],
-    "featured": true
-  },
-  {
-    "id": "siina",
-    "title": "Siina",
-    "desc": "다중 오실레이터 및 마스터 앰프 ADSR을 지원하는 간단한 피아노 웹 앱",
-    "stacks": [
-      "HTML5",
-      "CSS3",
-      "JAVASCRIPT"
-    ],
-    "yearFrom": 2020,
-    "yearTo": 2021,
-    "status": "completed",
-    "details": [
-      "군 복무 기간의 무료함을 달래기 위해 군 인트라넷 컴퓨터 상에서 개발했던 토이 프로젝트.",
-      "프레임워크를 사용하지 않고 순수 JavaScript로 개발.",
-      "로컬 환경에서 메인 HTML 파일을 브라우저에서 여는 것만으로도 모든 기능을 사용할 수 있도록 개발 (Frontend-only App).",
-      "키보드로 건반을 연주하기 위해 FL Studio와 유사한 키 매핑 설정.",
-      "WebAudio API를 활용하여 다중 오실레이터 기능 구현 및 ADSR 모사.",
-      "'사운드폰트' 시스템: 사용자가 설정한 값들을 프리셋처럼 LocalStorage에 저장하고, JSON 형태로 가져오기/내보내기 가능."
-    ],
-    "repositoryUrl": "https://github.com/somnisomni/siina",
-    "appUrl": "https://somnisomni.github.io/siina/siina.html",
     "featured": false
   },
   {
@@ -246,29 +168,6 @@
       "픽시브는 검색 쿼리의 pagination count가 존재하여 그 범위 내에서 페이지를 랜덤 선택할 수 있었지만, 니코니코정화는 그렇지 않아 검색 결과의 1페이지부터 순차적으로 공유하고 페이지 오프셋을 파일로 저장, 봇 재시작 시 오프셋 파일을 활용함."
     ],
     "repositoryUrl": "https://github.com/SDSkyKlouD/apimiku-twitterbot",
-    "featured": false
-  },
-  {
-    "id": "portal-still-alive-web",
-    "title": "웹으로 만든 'Still Alive'",
-    "desc": "Portal™ 게임의 아웃트로<small>('Still Alive')</small>를 HTML, CSS, JavaScript(jQuery)로 구현한 웹페이지",
-    "stacks": [
-      "HTML5",
-      "CSS3",
-      "JAVASCRIPT",
-      "JQUERY"
-    ],
-    "yearFrom": 2017,
-    "yearTo": 2017,
-    "status": "completed",
-    "details": [
-      "Portal™ 게임 출시 10주년을 기념하여 제작한 웹페이지.",
-      "한 글자씩 표시, 터미널 커서, 아스키 아트 전환 등 게임 내 모든 효과를 JavaScript로 직접 구현.",
-      "<a href='https://github.com/SDSkyKlouD/still-alive-web/blob/master/dev_data/credits.txt'>실제 Portal™ 게임 리소스 데이터</a>를 참고하며 글자 표시 및 전환 효과 등의 타이밍 조정.",
-      "<s>소스가 공개되어 있지만</s> 이스터 에그를 추가함."
-    ],
-    "repositoryUrl": "https://github.com/SDSkyKlouD/still-alive-web",
-    "appUrl": "https://sdskykloud.github.io/still-alive-web/",
     "featured": false
   },
   {

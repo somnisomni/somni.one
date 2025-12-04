@@ -9,5 +9,12 @@
     "./src",
     "./styles",
     "./tsconfig.typescript.json"
-  ]
+  ],
+  "scripts": {
+    "generate:schema": "node tools/generate-json-schemas.mjs",
+    "postinstall": "pnpm generate:schema"
+  },
+  "devDependencies": {
+    "ts-json-schema-generator": "^2.4.0"
+  }
 }

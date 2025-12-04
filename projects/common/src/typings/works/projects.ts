@@ -12,17 +12,17 @@ export interface ProjectTeamData {
 
 export interface ProjectData extends WorkDataBase {
   association?: string;
-  repositoryUrl?: string;
   yearFrom: number;
   yearTo?: number;
   details: string[];
   status: "ongoing" | "maintaining" | "completed" | "discontinued";
+  repositoryUrl?: string;
   pageUrl?: string;
   appUrl?: string;
-  headerImageRemoteSrcSet?: ImageSrcSet[];
   stacks: TechStack[];
   prizes?: string[];
   featured: boolean;
+  headerImageRemoteSrcSet?: ImageSrcSet[];
 
   // Optional team data; if absent, it's an individual project
   teamData?: ProjectTeamData;

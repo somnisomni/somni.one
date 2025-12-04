@@ -3,7 +3,7 @@ import type { WorkDataBase } from ".";
 export interface ContributionDataBase extends WorkDataBase {
   repositoryUrl?: string;
   proofUrl?: string;
-  contributions: Array<{
+  contributions?: Array<{
     desc?: string;
   } & ({
     type: "pull-request";
@@ -15,9 +15,7 @@ export interface ContributionDataBase extends WorkDataBase {
 }
 
 export interface ContributionTranslationData extends ContributionDataBase {
-  category: string;
-  langFrom: string | string[];
-  langTo: string | string[];
+  langFromTo: { from: string; to: string }[];
   platform: "github" | "crowdin" | "weblate" | "transifex" | "direct";
 }
 

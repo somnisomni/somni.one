@@ -1,0 +1,16 @@
+{
+  "json.schemas": [
+    {
+      "fileMatch": [ "/data/works/projects/*.json" ],
+      "url": "/schema/works_projects.json"
+    },
+    {
+      "fileMatch": [ "/data/works/contributions/translation.json" ],
+      "url": "/schema/works_contributions_translation.json"
+    },
+    {
+      "fileMatch": [ "/data/works/contributions/opensource.json" ],
+      "url": "/schema/works_contributions_opensource.json"
+    }
+  ]
+}

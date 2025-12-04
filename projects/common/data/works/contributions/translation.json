@@ -4,18 +4,14 @@
     "title": "OpenWrt",
     "repositoryUrl": "https://github.com/openwrt/openwrt",
     "proofUrl": "https://hosted.weblate.org/search/openwrt/?q=changed_by%3Asomni",
-    "category": "operating-system",
     "platform": "weblate",
-    "langFrom": "en",
-    "langTo": "ko"
+    "langFromTo": [ { "from": "en", "to": "ko" } ]
   },
   {
     "id": "utm",
     "title": "UTM",
     "repositoryUrl": "https://github.com/utmapp/UTM",
-    "category": "app-macos",
-    "langFrom": "en",
-    "langTo": "ko",
+    "langFromTo": [ { "from": "en", "to": "ko" } ],
     "platform": "github",
     "contributions": [
       { "type": "pull-request", "pr": 6995 }
@@ -25,9 +21,7 @@
     "id": "files",
     "title": "Files",
     "repositoryUrl": "https://github.com/files-community/Files",
-    "category": "app-windows",
-    "langFrom": "en",
-    "langTo": "ko",
+    "langFromTo": [ { "from": "en", "to": "ko" } ],
     "platform": "github",
     "contributions": [
       { "type": "pull-request", "pr": 8541 }
@@ -37,9 +31,7 @@
     "id": "yuzutalk",
     "title": "YuzuTalk",
     "repositoryUrl": "https://github.com/YuzuTalk/translation",
-    "category": "website",
-    "langFrom": "ja",
-    "langTo": "ko",
+    "langFromTo": [ { "from": "ja", "to": "ko" } ],
     "platform": "github",
     "contributions": [
       { "type": "pull-request", "pr": 1 },
@@ -57,12 +49,7 @@
     "id": "priconne-quest-helper",
     "title": "Princess Connect! Re:Dive - Quest Helper",
     "repositoryUrl": "https://github.com/Expugn/priconne-quest-helper",
-    "category": "website",
-    "langFrom": "en",
-    "langTo": [
-      "ko",
-      "ja"
-    ],
+    "langFromTo": [ { "from": "en", "to": "ko" }, { "from": "en", "to": "ja" } ],
     "platform": "github",
     "contributions": [
       { "type": "pull-request", "pr": 3 },
@@ -86,9 +73,7 @@
     "id": "xposed-anrc",
     "title": "ANRC <small>(Xposed 모듈)</small>",
     "repositoryUrl": "https://github.com/wDCat/ANRC",
-    "category": "app-android",
-    "langFrom": "en",
-    "langTo": "ko",
+    "langFromTo": [ { "from": "en", "to": "ko" } ],
     "platform": "github",
     "contributions": [
       { "type": "pull-request", "pr": 49 }
@@ -98,9 +83,7 @@
     "id": "discord-rembot",
     "title": "Rem V2 <small>(Discord 봇)</small>",
     "repositoryUrl": "https://github.com/rem-bot-industries/rem-v2",
-    "category": "app-other",
-    "langFrom": "en",
-    "langTo": "ko",
+    "langFromTo": [ { "from": "en", "to": "ko" } ],
     "platform": "github",
     "contributions": [
       { "type": "pull-request", "pr": 80 },
@@ -111,9 +94,7 @@
     "id": "xposed-wifi-password",
     "title": "WiFi Password Viewer <small>(Xposed 모듈)</small>",
     "repositoryUrl": "https://github.com/CzBiX/wifi-password-android",
-    "category": "app-android",
-    "langFrom": "en",
-    "langTo": "ko",
+    "langFromTo": [ { "from": "en", "to": "ko" } ],
     "platform": "github",
     "contributions": [
       { "type": "pull-request", "pr": 5 }
@@ -123,9 +104,7 @@
     "id": "phpsysinfo",
     "title": "phpSysInfo",
     "repositoryUrl": "https://github.com/phpsysinfo/phpsysinfo",
-    "category": "app-webapp",
-    "langFrom": "en",
-    "langTo": "ko",
+    "langFromTo": [ { "from": "en", "to": "ko" } ],
     "platform": "github",
     "contributions": [
       { "type": "pull-request", "pr": 144 },
@@ -136,9 +115,7 @@
     "id": "xposed-youtube-background-playback",
     "title": "YouTube Background Playback <small>(Xposed 모듈)</small>",
     "repositoryUrl": "https://github.com/pylerSM/YouTubeBackgroundPlayback",
-    "category": "app-android",
-    "langFrom": "en",
-    "langTo": "ko",
+    "langFromTo": [ { "from": "en", "to": "ko" } ],
     "platform": "github",
     "contributions": [
       { "type": "pull-request", "pr": 38 }
@@ -148,9 +125,7 @@
     "id": "xposed-fix-lollipop-memory-leak",
     "title": "Fix Lollipop Memory Leak <small>(Xposed 모듈)</small>",
     "repositoryUrl": "https://github.com/tonyp/FixLollipopMemoryLeak",
-    "category": "app-android",
-    "langFrom": "en",
-    "langTo": "ko",
+    "langFromTo": [ { "from": "en", "to": "ko" } ],
     "platform": "github",
     "contributions": [
       { "type": "pull-request", "pr": 4 }
@@ -160,9 +135,7 @@
     "id": "inventorytweaks-homepage",
     "title": "Inventory Tweaks 홈페이지",
     "repositoryUrl": "https://github.com/Inventory-Tweaks/inventory-tweaks",
-    "category": "website",
-    "langFrom": "en",
-    "langTo": "ko",
+    "langFromTo": [ { "from": "en", "to": "ko" } ],
     "platform": "github",
     "contributions": [
       { "type": "pull-request", "pr": 229 }
@@ -172,9 +145,7 @@
     "id": "xposed-app-ops",
     "title": "App Ops <small>(Xposed 모듈)</small>",
     "repositoryUrl": "https://github.com/jclehner/AppOpsXposed",
-    "category": "app-android",
-    "langFrom": "en",
-    "langTo": "ko",
+    "langFromTo": [ { "from": "en", "to": "ko" } ],
     "platform": "github",
     "contributions": [
       { "type": "pull-request", "pr": 2 }
@@ -184,9 +155,7 @@
     "id": "xposed-app-settings",
     "title": "App Settings <small>(Xposed 모듈)</small>",
     "repositoryUrl": "https://github.com/rovo89/XposedAppSettings",
-    "category": "app-android",
-    "langFrom": "en",
-    "langTo": "ko",
+    "langFromTo": [ { "from": "en", "to": "ko" } ],
     "platform": "github",
     "contributions": [
       { "type": "pull-request", "pr": 34 }
@@ -196,9 +165,7 @@
     "id": "xposed-gravitybox",
     "title": "GravityBox <small>(Xposed 모듈)</small>",
     "repositoryUrl": "https://github.com/GravityBox/GravityBox",
-    "category": "app-android",
-    "langFrom": "en",
-    "langTo": "ko",
+    "langFromTo": [ { "from": "en", "to": "ko" } ],
     "platform": "github",
     "contributions": [
       { "type": "pull-request", "pr": 277 },
@@ -223,9 +190,7 @@
     "id": "xposed-advanced-power-menu",
     "title": "Advanced Power Menu <small>(Xposed 모듈)</small>",
     "repositoryUrl": "https://github.com/kennethso168/AdvancedPowerMenu",
-    "category": "app-android",
-    "langFrom": "en",
-    "langTo": "ko",
+    "langFromTo": [ { "from": "en", "to": "ko" } ],
     "platform": "github",
     "contributions": [
       { "type": "pull-request", "pr": 21 },
@@ -236,17 +201,13 @@
     "id": "ubuntu-budgie",
     "title": "Ubuntu Budgie",
     "proofUrl": "https://app.transifex.com/user/profile/SDSkyKlouD/",
-    "category": "operating-system",
-    "langFrom": "en",
-    "langTo": ["ko", "ja"],
+    "langFromTo": [ { "from": "en", "to": "ko" }, { "from": "en", "to": "ja" } ],
     "platform": "transifex"
   },
   {
     "id": "adm",
     "title": "ADM <small>(Advanced Download Manager)</small>",
-    "category": "app-android",
-    "langFrom": "en",
-    "langTo": "ko",
+    "langFromTo": [ { "from": "en", "to": "ko" } ],
     "platform": "direct"
   }
 ]
