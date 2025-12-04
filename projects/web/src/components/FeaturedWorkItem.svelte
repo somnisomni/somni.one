@@ -10,22 +10,19 @@
     <div class="overlay-content">
       <div></div>
       <div class="work-title">{ data.title }</div>
-      <div class="work-association">{ (data as ProjectTeamData).association ?? "개인 프로젝트" }</div>
+      <div class="work-association">{ (data as ProjectData).association ?? "개인 프로젝트" }</div>
     </div>
   </div>
 </div>
 
 <script lang="ts">
-import type { ProjectDataBase, ProjectTeamData } from "@somni.one/common";
+import { transformRemoteAssetPath } from "$/lib/utils";
+import type { ProjectData } from "@somni.one/common";
 
-const { data, additionalClassName }: { data: ProjectDataBase, additionalClassName?: string } = $props();
+const { data, additionalClassName }: { data: ProjectData, additionalClassName?: string } = $props();
 
 const encodedBlackImage = "data:image/gif;base64,R0lGODlhAQABAIAAAAUEBAAAACwAAAAAAQABAAACAkQBADs=";
 const getHeaderImageSrcSet = () => data.headerImageRemoteSrcSet?.map(src => `${transformRemoteAssetPath(src.path)} ${src.scale ? `${src.scale}x` : ''}`).join(', ');
-
-function transformRemoteAssetPath(path?: string) {
-  return path ? `${import.meta.env.VITE_REMOTE_ASSETS_HOST_URL}/${path.startsWith('/') ? path.slice(1) : path}` : null;
-}
 </script>
 
 <style lang="scss" scoped>

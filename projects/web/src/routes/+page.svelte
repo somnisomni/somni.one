@@ -78,7 +78,7 @@
 </div>
 
 <script lang="ts">
-import type { ProjectIndividualData, ProjectTeamData } from "@somni.one/common";
+import type { ProjectData } from "@somni.one/common";
 import { _ } from "svelte-i18n";
 import { siGithub, siX } from "simple-icons";
 import projectsTeam from "@somni.one/common/data/works/projects/projects_team.json";
@@ -92,8 +92,8 @@ import FaAt from "$/assets/icons/fa-at-solid-full.svg?raw";
 import FeaturedWorkItem from "$/components/FeaturedWorkItem.svelte";
 
 const featuredWorks = [
-  ...projectsTeam.filter(p => p.featured) as ProjectTeamData[],
-  ...projectsIndividual.filter(p => p.featured) as ProjectIndividualData[],
+  ...projectsTeam.filter(p => p.featured) as ProjectData[],
+  ...projectsIndividual.filter(p => p.featured) as ProjectData[],
 ].sort((a, b) => {
   return b.yearFrom - a.yearFrom;
 }).slice(0, 6);

@@ -29,11 +29,11 @@
       {/if}
 
       {#if item.repositoryUrl}
-        <WorkExternalLink url={item.repositoryUrl}
+        <WorkExternalLink url=ProjectDatayUrl}
                          title={$_("me.common.link.repository")} />
       {/if}
     </div>
-  {/if}
+  {/if}ProjectData
 
   {@render children?.()}
 </WorkItemBase>

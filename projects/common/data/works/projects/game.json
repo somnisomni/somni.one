@@ -4,8 +4,10 @@
     "title": "컬러팅! 캐치 & 라비",
     "desc": "아이들의 그림에서 태어난 “낙서 요정”들이 알록달록한 색으로 가득한 도시의 색을 빼앗은 수수께끼의 괴물 “맥”들을 물리치고 도시에 색을 되찾아주기 위한 여정을 담은 <strong>협동 퍼즐 플랫포머 게임</strong>",
     "association": "청강문화산업대학교 3학년 졸업 작품",
-    "teamName": "팀 팔레트",
-    "charge": "클라이언트 프로그래머",
+    "teamData": {
+      "teamName": "팀 팔레트",
+      "charge": "클라이언트 프로그래머"
+    },
     "stacks": [
       "UNITY",
       "CSHARP"
@@ -31,8 +33,10 @@
     "title": "로젤리아 <small>(Roselia)</small>",
     "desc": "<span class='text-red-300'>[팀 해체로 인한 개발 중단]</span> 피를 조종하여 무기로 사용하는 마검사가 체스 유적을 공략한다는 컨셉의 <strong>무기 스위칭 쿼터뷰 액션 게임</strong>",
     "association": "청강문화산업대학교 3학년 졸업 작품",
-    "teamName": "팀 경로당",
-    "charge": "리드 프로그래머 (TD), 테크니컬 사운드 디자인 및 엔지니어링",
+    "teamData": {
+      "teamName": "팀 경로당",
+      "charge": "리드 프로그래머 (TD), 테크니컬 사운드 디자인 및 엔지니어링"
+    },
     "stacks": [
       "UNITY",
       "CSHARP",
@@ -51,8 +55,10 @@
     "title": "꼬마 마녀 리타",
     "desc": "꼬마 마녀가 되어 포션 가게를 운영하고 NPC의 고민을 해결하는 포션을 제조하는 컨셉의 <strong>넘버링크 기반 2D 퍼즐 게임 프로젝트</strong>",
     "association": "청강문화산업대학교 2학년 2학기 학기작",
-    "teamName": "8팀 - 잘 자요, 꼬마 아가씨",
-    "charge": "팀장, 리드 프로그래머 (TD), 테크니컬 사운드 디자인 및 엔지니어링",
+    "teamData": {
+      "teamName": "8팀 - 잘 자요, 꼬마 아가씨",
+      "charge": "팀장, 리드 프로그래머 (TD), 테크니컬 사운드 디자인 및 엔지니어링"
+    },
     "stacks": [
       "UNITY",
       "CSHARP",
@@ -71,8 +77,10 @@
     "title": "DISCO Maze",
     "desc": "",
     "association": "2013 광주교육정보원 IT영재원 발전과정",
-    "teamName": "발전1반 3팀",
-    "charge": "게임 프로그래밍",
+    "teamData": {
+      "teamName": "발전1반 3팀",
+      "charge": "게임 프로그래밍"
+    },
     "stacks": [
       "UNITY",
       "JAVASCRIPT"

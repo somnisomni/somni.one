@@ -10,8 +10,7 @@
 
 @theme {
   /* Font family */
-  --font-sans:
-    "Pretendard JP Variable", "Pretendard Variable", "Pretendard JP", "Pretendard", "Noto Sans CJK KR", "Noto Sans KR", "Noto Sans",
+  --font-sans: "Pretendard JP Variable", "Pretendard Variable", "Pretendard JP", "Pretendard", "Noto Sans CJK KR", "Noto Sans KR", "Noto Sans",
     ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --font-sans-header: "Mulish", var(--font-sans);
   --font-mono: "Noto Sans Mono", "Noto Sans Mono CJK KR", "Noto Sans Mono CJK JP", "Noto Sans Mono KR", "Noto Sans Mono JP", "D2Coding",
@@ -31,7 +30,7 @@ body, html {
   margin: 0;
   padding: 0;
   width: 100%;
-  min-height: 100%;
+  min-height: 100vh;
   font-size: 1.039rem;
   overflow: hidden auto;
 }

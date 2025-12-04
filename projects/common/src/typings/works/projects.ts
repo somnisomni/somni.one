@@ -5,7 +5,13 @@ export interface ImageSrcSet {
   scale: number;
 }
 
-export interface ProjectDataBase extends WorkDataBase {
+export interface ProjectTeamData {
+  teamName: string;
+  charge: string;
+}
+
+export interface ProjectData extends WorkDataBase {
+  association?: string;
   repositoryUrl?: string;
   yearFrom: number;
   yearTo?: number;
@@ -15,14 +21,9 @@ export interface ProjectDataBase extends WorkDataBase {
   appUrl?: string;
   headerImageRemoteSrcSet?: ImageSrcSet[];
   stacks: TechStack[];
-  featured: boolean;
-}
-
-export type ProjectIndividualData = ProjectDataBase;
-
-export interface ProjectTeamData extends ProjectDataBase {
-  association: string;
-  teamName: string;
-  charge: string;
   prizes?: string[];
+  featured: boolean;
+
+  // Optional team data; if absent, it's an individual project
+  teamData?: ProjectTeamData;
 }

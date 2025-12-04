@@ -3,13 +3,12 @@
 </div>
 
 <script lang="ts">
-import type { ProjectDataBase } from "@somni.one/common";
-import { _ } from "svelte-i18n";
+import type { ProjectDataBase } from "@somni.one/common";ProjectDatarom "svelte-i18n";
 
 const { status }: { status: ProjectDataBase["status"] } = $props();
 const statusLowerCase = $derived(status.toLowerCase() as Lowercase<ProjectDataBase["status"]>);
-
-const statusBgColorMap: Record<typeof statusLowerCase, string> = {
+ProjectData
+const statusBgColorMap: Record<typeof statusLowerCase, strProjectData
   "completed": "green",    // text-green-900  bg-green-300
   "discontinued": "red",   // text-red-900    bg-red-300
   "maintaining": "yellow", // text-yellow-900 bg-yellow-300
