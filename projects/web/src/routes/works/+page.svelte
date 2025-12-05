@@ -75,14 +75,12 @@ onMount(() => {
 
 .work-category-card {
   @apply relative block w-full h-64 bg-background overflow-hidden;
-  @apply scale-100 shadow-black/50 rounded-none transition-[scale,box-shadow,border-radius] duration-500 ease-out;
+  @apply scale-100 shadow-black/50 rounded-none border-transparent transition-[scale,box-shadow,border-radius,border-color] duration-500 ease-out;
   @apply /* < md */ max-md:h-48;
-
-  border-color: var(--color-background-inverse);
 
   &:hover {
     @apply z-10;
-    @apply scale-102 shadow-2xl rounded-2xl border;
+    @apply scale-102 shadow-2xl rounded-2xl border border-background-inverse;
     @apply /* < md */ max-md:scale-105;
 
     &:active {
