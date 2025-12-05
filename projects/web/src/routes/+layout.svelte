@@ -8,13 +8,15 @@
     </noscript>
 
     <div class="route-container">
-      {#each routeStack as route (route)}
-        <h1 class="route"
-            out:fade={{ duration: 100 }}
-            animate:flip={{ duration: 1000, easing: quartOut }}
-            use:setUpRouteElement>
-          <div>{ route.length > 0 ? route : "somni" }</div>
-        </h1>
+      {#each routeStack as route, index (route)}
+        <a class="route"
+           href={ index == routeStack.length - 1 ? null : `/${routeStack.slice(0, index + 1).filter(r => r.length > 0).join("/")}` }
+           out:fade={{ duration: 100 }}
+           animate:flip={{ duration: 1000, easing: quartOut }}>
+          <h1 use:setUpRouteElement>
+            <div>{ route.length > 0 ? route : "somni" }</div>
+          </h1>
+        </a>
       {/each}
     </div>
   </div>
@@ -104,8 +106,8 @@ onMount(() => {
     @apply contents;
 
     :global(> *) {
-      @apply mb-[0.5em];
-      @apply /* < md */ max-md:mb-0 max-md:mr-[0.5em];
+      @apply inline-block mb-[2em];
+      @apply /* < md */ max-md:mb-0 max-md:mr-[2em];
     }
 
     :global(> *:not(:last-child)) {
