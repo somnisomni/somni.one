@@ -48,7 +48,7 @@ const categoryDefinitions = {
   software: {
     id: "software",
     nameKey: "works.category.softwares",
-    href: "/works/software",
+    href: "/works/softwares",
     headerImageSrc: null,
   },
   opensource: {
