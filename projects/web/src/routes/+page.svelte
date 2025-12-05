@@ -128,6 +128,7 @@ p {
 
     &.in-a-nutshell {
       @apply text-4xl;
+      @apply /* < md */ max-md:text-3xl;
     }
 
     strong {
