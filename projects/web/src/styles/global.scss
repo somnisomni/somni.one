@@ -37,6 +37,7 @@ body, html {
 
 p {
   @apply text-justify;
+  @apply /* < md */ max-md:text-start;
 
   line-height: 1.666;
 
