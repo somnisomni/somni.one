@@ -18,6 +18,7 @@
     "details": [
       "[추가 예정]"
     ],
+    "appUrl": "https://store.onstove.com/games/102900",
     "prizes": [
       "BIC 2025 루키부문 선정작",
       "GEEKS 2025 테크니컬솔루션상 수상"
@@ -48,6 +49,10 @@
     "details": [
       "[추가 예정]"
     ],
+    "headerImageRemoteSrcSet": [
+      { "path": "/images/works/ck-graduation-roselia-header.webp", "scale": 1 },
+      { "path": "/images/works/ck-graduation-roselia-header@0.5x.webp", "scale": 0.5 }
+    ],
     "featured": false
   },
   {
@@ -69,6 +74,10 @@
     "status": "completed",
     "details": [
       "[추가 예정]"
+    ],
+    "headerImageRemoteSrcSet": [
+      { "path": "/images/works/ck-semester-littlewitchrita-header.webp", "scale": 1 },
+      { "path": "/images/works/ck-semester-littlewitchrita-header@0.5x.webp", "scale": 0.5 }
     ],
     "featured": false
   },
