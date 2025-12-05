@@ -1,0 +1,43 @@
+:root, :root.force-light {
+  /* LIGHT */
+  --color-primary: #2495F7;
+  --color-accent: #E99919;
+  --color-background: #F9FBFE;
+  --color-background-inverse: #121212;
+}
+
+:root.force-dark {
+  /* DARK */
+  --color-primary: #4AA5FA;
+  --color-accent: #FAB84B;
+  --color-background: #121212;
+  --color-background-inverse: #F9FBFE;
+}
+
+:root.force-high-contrast {
+  /* HIGH CONTRAST */
+  --color-primary: #0055BB;
+  --color-accent: #FF6600;
+  --color-background: #FFFFFF;
+  --color-background-inverse: #000000;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* DARK */
+    --color-primary: #4AA5FA;
+    --color-accent: #FAB84B;
+    --color-background: #121212;
+    --color-background-inverse: #F9FBFE;
+  }
+}
+
+@media (prefers-contrast: more) {
+  :root {
+    /* HIGH CONTRAST */
+    --color-primary: #0055BB;
+    --color-accent: #FFA600;
+    --color-background: #FFFFFF;
+    --color-background-inverse: #000000;
+  }
+}

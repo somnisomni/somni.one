@@ -5,8 +5,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Mulish:wght@200..1000&display=swap");
 
 /* Tailwind CSS & Dependencies */
+@import "@somni.one/common/styles/color";
 @import "tailwindcss";
-@import "@somni.one/common/styles/common.css";
 
 @theme {
   /* Font family */

@@ -2,6 +2,10 @@
                on:load={ onWindowScroll } />
 
 <div id="name-header">
+  <div class="site-features-container">
+    <NavColorModeChanger />
+  </div>
+
   <div class="rotate-wrap">
     <noscript>
       <h1 class="name">somni</h1>
@@ -35,6 +39,7 @@ import { flip } from "svelte/animate";
 import { quartOut } from "svelte/easing";
 import { fade } from "svelte/transition";
 import { onMount } from "svelte";
+import NavColorModeChanger from "$/components/NavColorModeChanger.svelte";
 
 const { children }: LayoutProps = $props();
 const routeStack: string[] = $derived(page.route.id === "/" ? [""] : (page.route.id?.split("/") ?? [""]));
@@ -68,7 +73,7 @@ onMount(() => {
 }
 
 #name-header {
-  @apply select-none pointer-events-none;
+  @apply select-none;
   @apply flex flex-col justify-start items-end fixed h-full w-(--header-size) bottom-0 left-0 top-0 overflow-hidden pt-12 z-5;
   @apply bg-primary text-background;
   @apply transition-[background-color] duration-500;
@@ -90,21 +95,30 @@ onMount(() => {
       writing-mode: initial;
     }
 
-    .route-container {
-      @apply contents;
-
-      :global(> *) {
-        @apply mb-[0.5em];
-        @apply /* < md */ max-md:mb-0 max-md:mr-[0.5em];
-      }
-
-      :global(> *:not(:last-child)) {
-        @apply opacity-50;
-      }
-    }
-
     :global(h1) {
       @apply text-6xl;
+    }
+  }
+
+  .route-container {
+    @apply contents;
+
+    :global(> *) {
+      @apply mb-[0.5em];
+      @apply /* < md */ max-md:mb-0 max-md:mr-[0.5em];
+    }
+
+    :global(> *:not(:last-child)) {
+      @apply opacity-50;
+    }
+  }
+
+  .site-features-container {
+    @apply absolute flex flex-col items-center justify-end bottom-0 left-0 right-0;
+    @apply /* < md */ max-md:flex-row max-md:justify-center max-md:right-[unset] max-md:top-0;
+
+    & > :global(*) {
+      @apply w-(--header-size) h-(--header-size);
     }
   }
 }
