@@ -5,7 +5,7 @@
 
     <div class="extra-info">
       {#if extraData}
-        <p>{ extraData }</p>
+        <p class="extra-data">{ extraData }</p>
       {/if}
 
       <div class="link-icon">
@@ -79,8 +79,9 @@ onMount(async () => {
 .extra-info {
   @apply absolute right-0 px-[inherit] flex flex-row items-center justify-end text-end text-background-inverse/50 fill-background-inverse/50;
 
-  p {
+  .extra-data {
     @apply text-sm whitespace-pre-line text-end;
+    @apply /* < md */ max-md:hidden;
   }
 
   .link-icon {
