@@ -24,7 +24,7 @@ import { onMount } from "svelte";
 
 let linkGroupData: Record<string, LinkGroup> = $state({});
 
-onMount(() => {
+onMount(async () => {
   linkGroupData = LinkGroupData as Record<string, LinkGroup>;
 });
 </script>

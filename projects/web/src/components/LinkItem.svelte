@@ -4,7 +4,9 @@
     <span class="userId">{ linkItem.userId }</span>
 
     <div class="extra-info">
-      {@render children?.()}
+      {#if extraData}
+        <p>{ extraData }</p>
+      {/if}
 
       <div class="link-icon">
         {#if linkId === "email"}
@@ -22,13 +24,30 @@ import type { Link } from "$/lib/data/links/links";
 import LinkAnchor from "$/components/LinkAnchor.svelte";
 import LinkData from "$/lib/data/links/links.json";
 import { _ } from "svelte-i18n";
-import type { Snippet } from "svelte";
 import faCopy from "$assets/icons/fa-copy-solid-full.svg?raw";
 import faSquareArrowUp from "$assets/icons/fa-square-arrow-up-right-solid-full.svg?raw";
+import { onMount } from "svelte";
+import { requestGetData } from "$/lib/stores/data-collector.svelte";
+import { generateMonkeytypeUserId, type MonkeytypeUserData } from "@somni.one/common";
 
-const { children, linkId }: { children?: Snippet, linkId: string } = $props();
+const { linkId }: { linkId: keyof typeof LinkData } = $props();
 
 const linkItem = $derived((LinkData as Record<string, Link>)[linkId]);
+let extraData = $state("");
+
+onMount(async () => {
+  switch(linkId) {
+    case "monkeytype":
+      const id = generateMonkeytypeUserId();
+      const data = ((await requestGetData([ id ]))?.[id])?.data as MonkeytypeUserData;
+      if(!data) break;
+
+      extraData = `Last Result (${data.lastResult.testDuration}s)\n${data.lastResult.wpm} WPM, Accuracy ${data.lastResult.acc}%`;
+      break;
+    default:
+      break;
+  }
+})
 </script>
 
 <style lang="scss" scoped>
@@ -58,7 +77,11 @@ const linkItem = $derived((LinkData as Record<string, Link>)[linkId]);
 }
 
 .extra-info {
-  @apply absolute right-0 px-[inherit] flex flex-row items-center justify-end text-background-inverse/50 fill-background-inverse/50;
+  @apply absolute right-0 px-[inherit] flex flex-row items-center justify-end text-end text-background-inverse/50 fill-background-inverse/50;
+
+  p {
+    @apply text-sm whitespace-pre-line text-end;
+  }
 
   .link-icon {
     @apply *:w-8 *:h-8 ml-2;

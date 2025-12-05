@@ -3,7 +3,6 @@ export interface MonkeytypeUserResultData {
   rawWpm: number;
   acc: number;
   consistency: number;
-  language: string;
   timestamp: number;
 }
 

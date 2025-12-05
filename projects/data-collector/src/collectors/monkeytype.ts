@@ -1,5 +1,6 @@
 import type { PrismaClient } from "../generated/prisma-client/client";
 import type { MonkeytypeUserData } from "@somni.one/common";
+import { generateMonkeytypeUserId } from "@somni.one/common";
 import { DataType } from "../generated/prisma-client/enums";
 import { createMonkeytypeAPI } from "../lib/monkeytype";
 import DataCollectorBase from "./base";
@@ -9,7 +10,7 @@ export default class MonkeytypeUserDataCollector extends DataCollectorBase<Monke
   public override readonly dataType: DataType = DataType.MonkeytypeUser;
 
   public get dataId(): string {
-    return "monkeytype/user";
+    return generateMonkeytypeUserId();
   }
 
   public async collect(db: PrismaClient): Promise<MonkeytypeUserData> {
@@ -38,7 +39,6 @@ export default class MonkeytypeUserDataCollector extends DataCollectorBase<Monke
           acc: lastResult.data.acc,
           testDuration: lastResult.data.testDuration,
           consistency: lastResult.data.consistency,
-          language: lastResult.data.language,
           timestamp: lastResult.data.timestamp,
         },
       };
