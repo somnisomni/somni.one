@@ -1,5 +1,6 @@
 .page {
   @apply p-12;
+  @apply /* < md */ max-md:p-6;
 
   .title {
     @apply flex flex-col justify-start items-baseline my-8 *:mr-4;
@@ -15,6 +16,6 @@
   }
 
   .divider {
-    @apply w-full mt-16 mb-8 border-b-[1px] border-dashed border-background-inverse/50;
+    @apply w-full mt-16 mb-8 border-b border-dashed border-background-inverse/50;
   }
 }
