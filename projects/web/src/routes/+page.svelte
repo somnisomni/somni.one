@@ -72,7 +72,7 @@
         </LinkAnchor>
       </div>
 
-      <p class="opacity-70"><a href="/links">모든 링크 및 연락처 보기 ›</a></p>
+      <p class="opacity-70"><a href="/about/links">모든 링크 및 연락처 보기 ›</a></p>
     </div>
   </section>
 </div>
