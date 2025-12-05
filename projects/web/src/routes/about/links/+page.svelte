@@ -1,6 +1,7 @@
 <div class="page">
-  {#each Object.values(linkGroupData) as linkGroup}
-    <section class="link-group">
+  {#each Object.values(linkGroupData) as linkGroup, index (linkGroup.labelKey)}
+    <section class="link-group"
+             in:fly={{ y: 100, duration: 1000, delay: index * 100, easing: quartOut }}>
       <h1 class="text-2xl! text-accent font-light! mb-4">:: { $_(linkGroup.labelKey) }</h1>
 
       <div class="link-group-items">
@@ -17,8 +18,16 @@ import type { LinkGroup } from "$/lib/data/links/links";
 import LinkGroupData from "$/lib/data/links/link-groups.json";
 import { _ } from "svelte-i18n";
 import LinkItem from "$/components/LinkItem.svelte";
+import { fly } from "svelte/transition";
+import { quartOut } from "svelte/easing";
+import { on } from "svelte/events";
+import { onMount } from "svelte";
 
-const linkGroupData = LinkGroupData as Record<string, LinkGroup>;
+let linkGroupData: Record<string, LinkGroup> = $state({});
+
+onMount(() => {
+  linkGroupData = LinkGroupData as Record<string, LinkGroup>;
+});
 </script>
 
 <style lang="scss" scoped>
