@@ -20,7 +20,6 @@ import { _ } from "svelte-i18n";
 import LinkItem from "$/components/LinkItem.svelte";
 import { fly } from "svelte/transition";
 import { quartOut } from "svelte/easing";
-import { on } from "svelte/events";
 import { onMount } from "svelte";
 
 let linkGroupData: Record<string, LinkGroup> = $state({});

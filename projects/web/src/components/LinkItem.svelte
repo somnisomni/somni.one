@@ -41,6 +41,11 @@ const linkItem = $derived((LinkData as Record<string, Link>)[linkId]);
   &:hover {
     @apply scale-102 border-background-inverse;
     @apply /* < md */ max-md:scale-105;
+
+    &:active {
+      @apply scale-101;
+      @apply /* < md */ max-md:scale-103;
+    }
   }
 
   .name {
