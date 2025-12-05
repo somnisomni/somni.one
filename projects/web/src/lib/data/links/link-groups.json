@@ -1,0 +1,30 @@
+{
+  "contacts": {
+    "labelKey": "links.group.contacts",
+    "items": [
+      "email",
+      "twitter",
+      "bluesky",
+      "discord"
+    ]
+  },
+  "sites": {
+    "labelKey": "links.group.sites",
+    "items": [
+      "blog"
+    ]
+  },
+  "development": {
+    "labelKey": "links.group.development",
+    "items": [
+      "github",
+      "solvedac"
+    ]
+  },
+  "etc": {
+    "labelKey": "links.group.etc",
+    "items": [
+      "monkeytype"
+    ]
+  }
+}

@@ -9,12 +9,34 @@
       "anchorTip": "솜니.로그 (블로그) — log.somni.one"
     },
     "twitter": {
-      "label": "트위터 (X)",
-      "anchorTip": "트위터 (X) — @somni_somni"
+      "label": "Twitter (X)",
+      "anchorTip": "Twitter (X) — @somni_somni"
     },
     "email": {
       "label": "이메일",
       "anchorTip": "이메일 (주소 복사)"
+    },
+    "group": {
+      "contacts": "연락처 / SNS",
+      "sites": "소유 사이트 및 서비스",
+      "development": "프로그래밍 / 개발 관련",
+      "etc": "기타"
+    },
+    "discord": {
+      "label": "Discord",
+      "anchorTip": "Discord — somnisomni"
+    },
+    "bluesky": {
+      "label": "Bluesky",
+      "anchorTip": "Bluesky — @somni.one"
+    },
+    "solvedac": {
+      "label": "solved.ac (BOJ)",
+      "anchorTip": "solved.ac (BOJ) — sdskykloud"
+    },
+    "monkeytype": {
+      "label": "Monkeytype",
+      "anchorTip": "Monkeytype — somnisomni"
     }
   },
   "main": {

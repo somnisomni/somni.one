@@ -4,8 +4,8 @@
      alt="GitHub @{ githubLink.userId } avatar" />
 
 <script lang="ts">
-import LinkData from "$/lib/data/links.json";
-import type { Link } from "$lib/typings/links";
+import LinkData from "$/lib/data/links/links.json";
+import type { Link } from "$/lib/data/links/links";
 
 const githubLink = LinkData.github satisfies Link;
 

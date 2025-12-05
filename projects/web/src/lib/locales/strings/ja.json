@@ -15,6 +15,28 @@
     "email": {
       "label": "Eメール",
       "anchorTip": "Eメール （押してアドレスをコピー）"
+    },
+    "group": {
+      "contacts": "お問い合わせ・SNS",
+      "sites": "サイト・サービス",
+      "development": "プログラミング・開発",
+      "etc": "その他"
+    },
+    "discord": {
+      "label": "Discord",
+      "anchorTip": "Discord — somnisomni"
+    },
+    "bluesky": {
+      "label": "Bluesky",
+      "anchorTip": "Bluesky — @somni.one"
+    },
+    "solvedac": {
+      "anchorTip": "solved.ac (BOJ) — sdskykloud",
+      "label": "solved.ac (BOJ)"
+    },
+    "monkeytype": {
+      "label": "Monkeytype",
+      "anchorTip": "Monkeytype — somnisomni"
     }
   },
   "main": {

@@ -15,6 +15,28 @@
     "email": {
       "label": "Email",
       "anchorTip": "Email (Click to copy the address)"
+    },
+    "group": {
+      "contacts": "Contacts / SNS",
+      "sites": "Sites / Services",
+      "development": "Programming / Development",
+      "etc": "Other Stuffs"
+    },
+    "discord": {
+      "label": "Discord",
+      "anchorTip": "Discord — somnisomni"
+    },
+    "bluesky": {
+      "label": "Bluesky",
+      "anchorTip": "Bluesky — @somni.one"
+    },
+    "solvedac": {
+      "anchorTip": "solved.ac (BOJ) — sdskykloud",
+      "label": "solved.ac (BOJ)"
+    },
+    "monkeytype": {
+      "label": "Monkeytype",
+      "anchorTip": "Monkeytype — somnisomni"
     }
   },
   "main": {
