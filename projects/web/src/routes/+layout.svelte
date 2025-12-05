@@ -2,10 +2,6 @@
                on:load={ onWindowScroll } />
 
 <div id="name-header">
-  <div class="site-features-container">
-    <NavColorModeChanger />
-  </div>
-
   <div class="rotate-wrap">
     <noscript>
       <h1 class="name">somni</h1>
@@ -21,6 +17,10 @@
         </h1>
       {/each}
     </div>
+  </div>
+
+  <div class="site-features-container">
+    <NavColorModeChanger />
   </div>
 </div>
 
