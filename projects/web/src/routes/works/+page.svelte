@@ -29,6 +29,8 @@ import { onMount } from "svelte";
 import { _ } from "svelte-i18n";
 import { quartOut } from "svelte/easing";
 
+const openSourceContributionBgImagePath = "/images/works/contribution-20251205-bg.webp";
+
 let categories: Record<string, typeof categoryDefinitions[keyof typeof categoryDefinitions]> = $state({});
 const categoryDefinitions = {
   games: {
@@ -52,8 +54,8 @@ const categoryDefinitions = {
   opensource: {
     id: "opensource",
     nameKey: "works.category.opensource",
-    href: "/works/opensource",
-    headerImageSrc: null,
+    href: "/works/contributions",
+    headerImageSrc: transformRemoteAssetPath(openSourceContributionBgImagePath),
   },
   translations: {
     id: "translations",
