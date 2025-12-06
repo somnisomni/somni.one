@@ -38,38 +38,16 @@
 
     <div class="content mt-0!">
       <div class="quick-links">
-        <LinkAnchor linkId="blog">
-          <SpanWithTip tip={ $_("links.blog.anchorTip") }
-                       notText={ true }>
-            <ScaleAnimationOnHover>
-              <div class="p-4">{@html FaLinesLeaning}</div>
-            </ScaleAnimationOnHover>
-          </SpanWithTip>
-        </LinkAnchor>
-        <LinkAnchor linkId="email">
-          <SpanWithTip tip={ $_("links.email.anchorTip") }
-                       notText={ true }>
-            <ScaleAnimationOnHover>
-              <div class="p-4">{@html FaAt}</div>
-            </ScaleAnimationOnHover>
-          </SpanWithTip>
-        </LinkAnchor>
-        <LinkAnchor linkId="github">
-          <SpanWithTip tip={ $_("links.github.anchorTip") }
-                       notText={ true }>
-            <ScaleAnimationOnHover>
-              <div class="p-4">{@html siGithub.svg}</div>
-            </ScaleAnimationOnHover>
-          </SpanWithTip>
-        </LinkAnchor>
-        <LinkAnchor linkId="twitter">
-          <SpanWithTip tip={ $_("links.twitter.anchorTip") }
-                       notText={ true }>
-            <ScaleAnimationOnHover>
-              <div class="p-4">{@html siX.svg}</div>
-            </ScaleAnimationOnHover>
-          </SpanWithTip>
-        </LinkAnchor>
+        {#each Object.entries(quickLinks) as link}
+          <LinkAnchor linkId={ link[0] }>
+            <SpanWithTip tip={ $_(link[1].anchorTipKey) }
+                         notText={ true }>
+              <ScaleAnimationOnHover>
+                <div class="p-4">{@html getLinkIconSvg(link[0])}</div>
+              </ScaleAnimationOnHover>
+            </SpanWithTip>
+          </LinkAnchor>
+        {/each}
       </div>
 
       <p class="opacity-70"><a href="/about/links">모든 링크 및 연락처 보기 ›</a></p>
@@ -80,17 +58,15 @@
 <script lang="ts">
 import type { ProjectData } from "@somni.one/common";
 import { _ } from "svelte-i18n";
-import { siGithub, siX } from "simple-icons";
 import GitHubProfileImage from "$/components/GitHubProfileImage.svelte";
 import LinkAnchor from "$/components/LinkAnchor.svelte";
 import ScaleAnimationOnHover from "$/components/ScaleAnimationOnHover.svelte";
 import SpanWithTip from "$/components/SpanWithTip.svelte";
-import FaLinesLeaning from "$/assets/icons/fa-lines-leaning-solid-full.svg?raw";
-import FaAt from "$/assets/icons/fa-at-solid-full.svg?raw";
 import FeaturedWorkItem from "$/components/FeaturedWorkItem.svelte";
 import projectsGames from "@somni.one/common/data/works/projects/game.json";
 import projectsSoftwares from "@somni.one/common/data/works/projects/software.json";
 import projectsWeb from "@somni.one/common/data/works/projects/web.json";
+import { getLinkIconSvg, getQuickAccessLinks } from "$/lib/data/links/links";
 
 const featuredWorks = [
   ...projectsGames.filter(p => p.featured) as ProjectData[],
@@ -99,6 +75,8 @@ const featuredWorks = [
 ].sort((a, b) => {
   return b.yearFrom - a.yearFrom;
 }).slice(0, 6);
+
+const quickLinks = getQuickAccessLinks();
 </script>
 
 <style lang="scss">

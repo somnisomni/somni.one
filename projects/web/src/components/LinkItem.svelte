@@ -1,14 +1,22 @@
 <LinkAnchor { linkId }>
   <div class="link-item">
-    <span class="name">{ $_(linkItem.labelKey) }</span>
-    <span class="userId">{ linkItem.userId }</span>
+    {#if linkIcon}
+      <div class="link-icon">
+        {@html linkIcon}
+      </div>
+    {/if}
+
+    <div class="link-content">
+      <span class="name">{ $_(linkItem.labelKey) }</span>
+      <span class="userId">{ linkItem.userId }</span>
+    </div>
 
     <div class="extra-info">
       {#if extraData}
         <p class="extra-data">{ extraData }</p>
       {/if}
 
-      <div class="link-icon">
+      <div class="link-navigation-icon">
         {#if linkId === "email"}
           {@html faCopy}
         {:else}
@@ -20,7 +28,7 @@
 </LinkAnchor>
 
 <script lang="ts">
-import type { Link } from "$/lib/data/links/links";
+import { getLinkIconSvg, type Link } from "$/lib/data/links/links";
 import LinkAnchor from "$/components/LinkAnchor.svelte";
 import LinkData from "$/lib/data/links/links.json";
 import { _ } from "svelte-i18n";
@@ -33,6 +41,7 @@ import { generateMonkeytypeUserId, type MonkeytypeUserData } from "@somni.one/co
 const { linkId }: { linkId: keyof typeof LinkData } = $props();
 
 const linkItem = $derived((LinkData as Record<string, Link>)[linkId]);
+const linkIcon = $derived(getLinkIconSvg(linkId));
 let extraData = $state("");
 
 onMount(async () => {
@@ -54,7 +63,7 @@ onMount(async () => {
 @reference "$/styles/app.css";
 
 .link-item {
-  @apply relative flex flex-col justify-center w-full h-full px-6 py-4 border rounded-lg;
+  @apply relative flex flex-row items-center justify-start w-full h-full px-6 py-4 border rounded-lg;
   @apply scale-100 border-background-inverse/20 transition-[scale,border-color] duration-200 ease-out;
 
   &:hover {
@@ -67,12 +76,20 @@ onMount(async () => {
     }
   }
 
-  .name {
-    @apply text-xl font-semibold;
+  .link-icon {
+    @apply w-6 h-6 mr-4 fill-background-inverse;
   }
 
-  .userId {
-    @apply text-sm font-light;
+  .link-content {
+    @apply flex flex-col justify-center items-start;
+
+    .name {
+      @apply text-xl font-semibold;
+    }
+
+    .userId {
+      @apply text-sm font-light;
+    }
   }
 }
 
@@ -84,7 +101,7 @@ onMount(async () => {
     @apply /* < md */ max-md:hidden;
   }
 
-  .link-icon {
+  .link-navigation-icon {
     @apply *:w-8 *:h-8 ml-2;
   }
 }
