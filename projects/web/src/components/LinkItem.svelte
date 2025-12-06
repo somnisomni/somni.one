@@ -36,22 +36,33 @@ import faCopy from "$assets/icons/fa-copy-solid-full.svg?raw";
 import faSquareArrowUp from "$assets/icons/fa-square-arrow-up-right-solid-full.svg?raw";
 import { onMount } from "svelte";
 import { requestGetData } from "$/lib/stores/data-collector.svelte";
-import { generateMonkeytypeUserId, type MonkeytypeUserData } from "@somni.one/common";
+import { generateGitHubUserId, generateMonkeytypeUserId, type GitHubUserData, type MonkeytypeUserData } from "@somni.one/common";
 
 const { linkId }: { linkId: keyof typeof LinkData } = $props();
 
 const linkItem = $derived((LinkData as Record<string, Link>)[linkId]);
 const linkIcon = $derived(getLinkIconSvg(linkId));
-let extraData = $state("");
+let extraData: string | null = $state(null);
 
 onMount(async () => {
   switch(linkId) {
-    case "monkeytype":
-      const id = generateMonkeytypeUserId();
-      const data = ((await requestGetData([ id ]))?.[id])?.data as MonkeytypeUserData;
-      if(!data) break;
+    case "github":
+      {
+        const id = generateGitHubUserId(linkItem.userId!);
+        const data = ((await requestGetData([ id ]))?.[id])?.data as GitHubUserData;
+        if(!data) break;
 
-      extraData = `Last Result (${data.lastResult.testDuration}s)\n${data.lastResult.wpm} WPM, Accuracy ${data.lastResult.acc}%`;
+        extraData = `Public Repos: ${data.publicRepos}\nFollowers: ${data.followers}`;
+      }
+      break;
+    case "monkeytype":
+      {
+        const id = generateMonkeytypeUserId();
+        const data = ((await requestGetData([ id ]))?.[id])?.data as MonkeytypeUserData;
+        if(!data) break;
+
+        extraData = `Last Result (${data.lastResult.testDuration}s)\n${data.lastResult.wpm} WPM, Accuracy ${data.lastResult.acc}%`;
+      }
       break;
     default:
       break;
