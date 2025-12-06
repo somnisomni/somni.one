@@ -20,3 +20,12 @@ export interface GitHubPullRequestData {
   createdAt: string;
   doneAt: string | null;
 }
+
+export interface GitHubUserData {
+  username: string;
+  avatarUrl: string;
+  profileUrl: string;
+  followers: number;
+  following: number;
+  publicRepos: number;
+}

@@ -23,6 +23,7 @@ enum DataType {
   Unknown
   GitHubCommit
   GitHubPullRequest
+  GitHubUser
   SteamUser
   MonkeytypeUser
 }

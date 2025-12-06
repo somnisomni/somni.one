@@ -3,6 +3,7 @@ import type { ContributionOpenSourceData, ContributionTranslationData } from "@s
 import { sliceGitHubRepoUrl } from "@somni.one/common";
 import GitHubCommitDataCollector from "../collectors/github-commit";
 import GitHubPullRequestDataCollector from "../collectors/github-pull-request";
+import GitHubUserDataCollector from "../collectors/github-user";
 import MonkeytypeUserDataCollector from "../collectors/monkeytype";
 import SteamUserDataCollector from "../collectors/steam-user";
 
@@ -71,6 +72,14 @@ const targetGetterMap: TargetGetterMapItem[] = [
             return null;
         }
       });
+    },
+  },
+
+  /* GitHub user data (somnisomni) */
+  {
+    async dataLoader() { return [ {} ]; },
+    async targetGetter() {
+      return [ new GitHubUserDataCollector("somnisomni") ];
     },
   },
 

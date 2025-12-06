@@ -12,6 +12,7 @@ $ pnpm wrangler d1 migrations create <DB_NAME> <MIGRATION_NAME>
 ```
 
 ### 2. Do Prisma migration diff
+> If you want to check if there are any differences, just run this command without the `--output` flag.
 ```
 $ pnpm prisma migrate diff --from-local-d1 --to-schema ./prisma/schema.prisma --script --output <PATH_TO_D1_MIGRATION_FILE>
 ```
