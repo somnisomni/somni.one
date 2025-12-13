@@ -21,6 +21,12 @@
       "solvedac"
     ]
   },
+  "games": {
+    "labelKey": "links.group.games",
+    "items": [
+      "steam"
+    ]
+  },
   "etc": {
     "labelKey": "links.group.etc",
     "items": [

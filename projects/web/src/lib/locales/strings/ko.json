@@ -2,7 +2,11 @@
   "links": {
     "github": {
       "label": "GitHub",
-      "anchorTip": "GitHub — @somnisomni"
+      "anchorTip": "GitHub — @somnisomni",
+      "extra": {
+        "publicRepos": "공개 저장소: {value}개",
+        "followers": "팔로워: {value}명"
+      }
     },
     "blog": {
       "label": "솜니.로그 (블로그)",
@@ -20,7 +24,8 @@
       "contacts": "연락처 / SNS",
       "sites": "소유 사이트 및 서비스",
       "development": "프로그래밍 / 개발 관련",
-      "etc": "기타"
+      "etc": "기타",
+      "games": "게임"
     },
     "discord": {
       "label": "Discord",
@@ -36,7 +41,19 @@
     },
     "monkeytype": {
       "label": "Monkeytype",
-      "anchorTip": "Monkeytype — somnisomni"
+      "anchorTip": "Monkeytype — somnisomni",
+      "extra": {
+        "lastResultTitleFormat": "마지막 결과 ({duration}초)",
+        "lastResultContentFormat": "{wpm} WPM / 정확도 {acc}%"
+      }
+    },
+    "steam": {
+      "label": "Steam",
+      "anchorTip": "Steam — somni_somni",
+      "extra": {
+        "lastPlayedGameTitle": "마지막으로 플레이한 게임",
+        "lastPlayedGameFormat": "{name} (총 {hours} 시간)"
+      }
     }
   },
   "main": {

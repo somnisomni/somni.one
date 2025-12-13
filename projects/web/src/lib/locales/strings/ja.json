@@ -2,7 +2,11 @@
   "links": {
     "github": {
       "label": "GitHub",
-      "anchorTip": "GitHub — @somnisomni"
+      "anchorTip": "GitHub — @somnisomni",
+      "extra": {
+        "followers": "フォロワー：{value}人",
+        "publicRepos": "公開リポジトリ：{value}個"
+      }
     },
     "blog": {
       "label": "somni.log （ブログ）",
@@ -20,7 +24,8 @@
       "contacts": "お問い合わせ・SNS",
       "sites": "サイト・サービス",
       "development": "プログラミング・開発",
-      "etc": "その他"
+      "etc": "その他",
+      "games": "ゲーム"
     },
     "discord": {
       "label": "Discord",
@@ -36,7 +41,19 @@
     },
     "monkeytype": {
       "label": "Monkeytype",
-      "anchorTip": "Monkeytype — somnisomni"
+      "anchorTip": "Monkeytype — somnisomni",
+      "extra": {
+        "lastResultTitleFormat": "最近の結果（{duration}秒）",
+        "lastResultContentFormat": "{wpm} WPM・正確性{acc}%"
+      }
+    },
+    "steam": {
+      "anchorTip": "Steam — somni_somni",
+      "label": "Steam",
+      "extra": {
+        "lastPlayedGameFormat": "{name}（合計 {hours} 時間）",
+        "lastPlayedGameTitle": "最近プレイしたゲーム"
+      }
     }
   },
   "main": {

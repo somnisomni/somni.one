@@ -2,7 +2,11 @@
   "links": {
     "github": {
       "label": "GitHub",
-      "anchorTip": "GitHub — @somnisomni"
+      "anchorTip": "GitHub — @somnisomni",
+      "extra": {
+        "followers": "Followers: {value}",
+        "publicRepos": "Public Repos: {value}"
+      }
     },
     "blog": {
       "label": "somni.log (Blog)",
@@ -20,7 +24,8 @@
       "contacts": "Contacts / SNS",
       "sites": "Sites / Services",
       "development": "Programming / Development",
-      "etc": "Other Stuffs"
+      "etc": "Other Stuffs",
+      "games": "Games"
     },
     "discord": {
       "label": "Discord",
@@ -36,7 +41,19 @@
     },
     "monkeytype": {
       "label": "Monkeytype",
-      "anchorTip": "Monkeytype — somnisomni"
+      "anchorTip": "Monkeytype — somnisomni",
+      "extra": {
+        "lastResultTitleFormat": "Last Result ({duration}s)",
+        "lastResultContentFormat": "{wpm} WPM / Accuracy {acc}%"
+      }
+    },
+    "steam": {
+      "anchorTip": "Steam — somni_somni",
+      "label": "Steam",
+      "extra": {
+        "lastPlayedGameFormat": "{name} (Total {hours} hrs)",
+        "lastPlayedGameTitle": "Last Played Game"
+      }
     }
   },
   "main": {

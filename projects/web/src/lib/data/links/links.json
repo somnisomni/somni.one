@@ -49,5 +49,11 @@
     "anchorTipKey": "links.monkeytype.anchorTip",
     "url": "https://monkeytype.com/profile/somnisomni",
     "userId": "somnisomni"
+  },
+  "steam": {
+    "labelKey": "links.steam.label",
+    "anchorTipKey": "links.steam.anchorTip",
+    "url": "https://steamcommunity.com/id/somni_somni",
+    "userId": "somni_somni"
   }
 }

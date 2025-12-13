@@ -36,7 +36,7 @@ import faCopy from "$assets/icons/fa-copy-solid-full.svg?raw";
 import faSquareArrowUp from "$assets/icons/fa-square-arrow-up-right-solid-full.svg?raw";
 import { onMount } from "svelte";
 import { requestGetData } from "$/lib/stores/data-collector.svelte";
-import { generateGitHubUserId, generateMonkeytypeUserId, type GitHubUserData, type MonkeytypeUserData } from "@somni.one/common";
+import { generateGitHubUserId, generateMonkeytypeUserId, generateSteamUserId, type GitHubUserData, type MonkeytypeUserData, type SteamUserData } from "@somni.one/common";
 
 const { linkId }: { linkId: keyof typeof LinkData } = $props();
 
@@ -52,7 +52,13 @@ onMount(async () => {
         const data = ((await requestGetData([ id ]))?.[id])?.data as GitHubUserData;
         if(!data) break;
 
-        extraData = `Public Repos: ${data.publicRepos}\nFollowers: ${data.followers}`;
+        const publicRepos = data.publicRepos.toLocaleString();
+        const followers = data.followers.toLocaleString();
+
+        const publicReposStr = $_("links.github.extra.publicRepos", { values: { value: publicRepos } });
+        const followersStr = $_("links.github.extra.followers", { values: { value: followers } });
+
+        extraData = `${publicReposStr}\n${followersStr}`;
       }
       break;
     case "monkeytype":
@@ -61,9 +67,29 @@ onMount(async () => {
         const data = ((await requestGetData([ id ]))?.[id])?.data as MonkeytypeUserData;
         if(!data) break;
 
-        extraData = `Last Result (${data.lastResult.testDuration}s)\n${data.lastResult.wpm} WPM, Accuracy ${data.lastResult.acc}%`;
+        const lastTestDuration = data.lastResult.testDuration.toLocaleString();
+        const lastWpm = data.lastResult.wpm.toLocaleString();
+        const lastAcc = data.lastResult.acc.toLocaleString();
+
+        const lastResultTitle = $_("links.monkeytype.extra.lastResultTitleFormat", { values: { duration: lastTestDuration } });
+        const lastResultContent = $_("links.monkeytype.extra.lastResultContentFormat", { values: { wpm: lastWpm, acc: lastAcc } });
+
+        extraData = `${lastResultTitle}\n${lastResultContent}`;
       }
       break;
+    case "steam":
+      {
+        const id = generateSteamUserId(linkItem.userId!);
+        const data = ((await requestGetData([ id ]))?.[id])?.data as SteamUserData;
+        if(!data || !data.lastPlayedGame) break;
+
+        const lastPlayedGameTotalHours = (data.lastPlayedGame.totalPlayTimeMinutes / 60).toLocaleString(undefined, { maximumFractionDigits: 1 });
+
+        const lastPlayedGameTitle = $_("links.steam.extra.lastPlayedGameTitle");
+        const lastPlayedGameContent = $_("links.steam.extra.lastPlayedGameFormat", { values: { name: data.lastPlayedGame.name, hours: lastPlayedGameTotalHours } });
+
+        extraData = `${lastPlayedGameTitle}\n${lastPlayedGameContent}`;
+      }
     default:
       break;
   }

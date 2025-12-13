@@ -1,4 +1,4 @@
-import { siBluesky, siDiscord, siGithub, siMonkeytype, siX } from "simple-icons";
+import { siBluesky, siDiscord, siGithub, siMonkeytype, siSteam, siX } from "simple-icons";
 import faAt from "$assets/icons/fa-at-solid-full.svg?raw";
 import faCircleCheck from "$assets/icons/fa-circle-check-solid-full.svg?raw";
 import faLinesLeaning from "$assets/icons/fa-lines-leaning-solid-full.svg?raw";
@@ -24,7 +24,7 @@ export function getQuickAccessLinks(): Record<string, Link> {
 }
 
 export function getLinkIconSvg(linkId: string): string | null {
-  return {
+  return ({
     email: faAt,
     twitter: siX.svg,
     bluesky: siBluesky.svg,
@@ -33,5 +33,6 @@ export function getLinkIconSvg(linkId: string): string | null {
     github: siGithub.svg,
     solvedac: faCircleCheck,
     monkeytype: siMonkeytype.svg,
-  }[linkId] || null;
+    steam: siSteam.svg,
+  } satisfies Record<keyof typeof LinkData, string>)[linkId] || null;
 }
