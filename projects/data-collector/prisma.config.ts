@@ -1,12 +1,10 @@
 import "dotenv/config";
 
-import type { PrismaConfig } from "prisma";
 import path from "node:path";
 import { listLocalDatabases } from "@prisma/adapter-d1";
+import { defineConfig } from "@prisma/config";
 
-export default {
+export default defineConfig({
   schema: path.join("prisma", "schema.prisma"),
-  datasource: {
-    url: `file://${listLocalDatabases().pop()}`,
-  },
-} satisfies PrismaConfig;
+  datasource: process.env.DEV ? { url: `file://${listLocalDatabases().pop()}` } : undefined,
+});

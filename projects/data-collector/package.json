@@ -8,7 +8,9 @@
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "dev": "wrangler dev",
-    "prisma:generate": "prisma generate"
+    "prisma:dev": "DEV=1 prisma",
+    "prisma:generate": "prisma generate",
+    "postinstall": "pnpm prisma:generate"
   },
   "devDependencies": {
     "@cloudflare/workers-types": "^4.20251213.0",
@@ -23,6 +25,7 @@
   "dependencies": {
     "@prisma/adapter-d1": "^7.1.0",
     "@prisma/client": "^7.1.0",
+    "@prisma/config": "^7.1.0",
     "@somni.one/common": "workspace:*",
     "dotenv": "^17.2.3",
     "octokit": "^5.0.5",
