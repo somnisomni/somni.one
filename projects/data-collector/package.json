@@ -8,8 +8,7 @@
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "dev": "wrangler dev",
-    "prisma:generate": "prisma generate",
-    "postinstall": "pnpm prisma:generate"
+    "prisma:generate": "prisma generate"
   },
   "devDependencies": {
     "@cloudflare/workers-types": "^4.20251213.0",
