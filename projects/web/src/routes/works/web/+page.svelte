@@ -16,7 +16,7 @@
 
       <div class="flex flex-col justify-center">
         <p class="text-3xl font-medium">{@html project.title}</p>
-        <p class="text-sm font-extralight">{project.yearFrom}</p>
+        <p class="text-sm font-extralight">{project.yearFrom} {#if project.association}- { project.association }{/if}</p>
         <p class="text-lg font-light">{@html project.desc}</p>
       </div>
     </div>
