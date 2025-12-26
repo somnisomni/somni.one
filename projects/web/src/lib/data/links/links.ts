@@ -7,8 +7,9 @@ import LinkData from "./links.json";
 export interface Link {
   labelKey: string;
   anchorTipKey: string;
-  url: string;
+  url: string | null;
   userId?: string;
+  userIdAlt?: string;
   quickAccess?: boolean;
 }
 
@@ -23,7 +24,7 @@ export function getQuickAccessLinks(): Record<string, Link> {
   );
 }
 
-export function getLinkIconSvg(linkId: string): string | null {
+export function getLinkIconHtml(linkId: string): string | null {
   return ({
     email: faAt,
     twitter: siX.svg,

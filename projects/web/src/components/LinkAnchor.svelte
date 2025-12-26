@@ -1,9 +1,11 @@
-<a class="link-anchor"
-   href={ url }
-   title={ title }
-   onclick={ onAnchorClick }>
+<svelte:element this={ link.url ? "a" : "div" }
+                role={ link.url ? "link" : "listitem" }
+                class="link-anchor"
+                href={ url }
+                title={ title }
+                onclick={ onAnchorClick }>
   {@render children?.()}
-</a>
+</svelte:element>
 
 <script lang="ts">
 import type { Snippet } from "svelte";
@@ -19,7 +21,7 @@ const url = $derived(linkId === "email" ? "#" : link.url);
 const title = $derived(link.userId ? `${$_(link.labelKey)} (${link.userId})` : $_(link.labelKey));
 
 async function onAnchorClick(event: Event) {
-  if(linkId !== "email") return;
+  if(linkId !== "email" || !link.url) return;
   event.preventDefault();
 
   const email = decodeEmailAddress(link.url);

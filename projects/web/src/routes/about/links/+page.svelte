@@ -1,7 +1,7 @@
 <div class="page">
   {#each Object.values(linkGroupData) as linkGroup, index (linkGroup.labelKey)}
     <section class="link-group"
-             in:fly={{ y: 100, duration: 1000, delay: index * 100, easing: quartOut }}>
+             in:fly={{ y: 100, duration: 1000, delay: index * 200, easing: quartOut }}>
       <h1 class="text-2xl! text-accent font-light! mb-4">:: { $_(linkGroup.labelKey) }</h1>
 
       <div class="link-group-items">

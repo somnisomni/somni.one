@@ -28,7 +28,7 @@
 </LinkAnchor>
 
 <script lang="ts">
-import { getLinkIconSvg, type Link } from "$/lib/data/links/links";
+import { getLinkIconHtml, type Link } from "$/lib/data/links/links";
 import LinkAnchor from "$/components/LinkAnchor.svelte";
 import LinkData from "$/lib/data/links/links.json";
 import { _ } from "svelte-i18n";

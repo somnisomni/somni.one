@@ -43,7 +43,7 @@
             <SpanWithTip tip={ $_(link[1].anchorTipKey) }
                          notText={ true }>
               <ScaleAnimationOnHover>
-                <div class="p-4">{@html getLinkIconSvg(link[0])}</div>
+                <div class="p-4">{@html getLinkIconHtml(link[0])}</div>
               </ScaleAnimationOnHover>
             </SpanWithTip>
           </LinkAnchor>
@@ -66,7 +66,7 @@ import FeaturedWorkItem from "$/components/FeaturedWorkItem.svelte";
 import projectsGames from "@somni.one/common/data/works/projects/game.json";
 import projectsSoftwares from "@somni.one/common/data/works/projects/software.json";
 import projectsWeb from "@somni.one/common/data/works/projects/web.json";
-import { getLinkIconSvg, getQuickAccessLinks } from "$/lib/data/links/links";
+import { getLinkIconHtml, getQuickAccessLinks } from "$/lib/data/links/links";
 
 const featuredWorks = [
   ...projectsGames.filter(p => p.featured) as ProjectData[],
