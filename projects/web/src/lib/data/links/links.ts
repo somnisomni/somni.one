@@ -2,6 +2,7 @@ import { siBluesky, siDiscord, siGithub, siMonkeytype, siSteam, siX } from "simp
 import faAt from "$assets/icons/fa-at-solid-full.svg?raw";
 import faCircleCheck from "$assets/icons/fa-circle-check-solid-full.svg?raw";
 import faLinesLeaning from "$assets/icons/fa-lines-leaning-solid-full.svg?raw";
+import faCube from "$assets/icons/fa-cube-solid-full.svg?raw";
 import LinkData from "./links.json";
 
 export interface Link {
@@ -35,6 +36,6 @@ export function getLinkIconHtml(linkId: string): string | null {
     solvedac: faCircleCheck,
     monkeytype: siMonkeytype.svg,
     steam: siSteam.svg,
-    minecraft: `<img src="https://mc-heads.net/head/${LinkData.minecraft.userIdAlt}/300.png" />`,
+    minecraft: faCube,
   } satisfies Record<keyof typeof LinkData, string>)[linkId] || null;
 }

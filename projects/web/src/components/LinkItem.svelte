@@ -38,6 +38,13 @@
         </div>
       {/if}
     </div>
+
+    {#if extraImage}
+      <div class="extra-image">
+        <img src={ extraImage }
+             alt="Extra" />
+      </div>
+    {/if}
   </div>
 </LinkAnchor>
 
@@ -60,6 +67,7 @@ const linkIcon = $derived(getLinkIconHtml(linkId));
 let hover: boolean = $state(false);
 let decodedEmailAddress: string = $derived(linkItem.url && hover ? decodeEmailAddress(linkItem.url) : "");
 let extraData: string | null = $state(null);
+let extraImage: string | null = $derived(null);
 
 onMount(async () => {
   switch(linkId) {
@@ -107,6 +115,10 @@ onMount(async () => {
 
         extraData = `${lastPlayedGameTitle}\n${lastPlayedGameContent}`;
       }
+      break;
+    case "minecraft":
+      extraImage = `https://mc-heads.net/head/${LinkData.minecraft.userIdAlt}/300.png`;
+      break;
     default:
       break;
   }
@@ -157,6 +169,19 @@ onMount(async () => {
 
   .link-navigation-icon {
     @apply *:w-8 *:h-8 ml-2;
+  }
+}
+
+.extra-image {
+  @apply absolute top-0 right-0 bottom-0 p-4 max-w-50 overflow-hidden;
+  @apply opacity-50 transition-opacity duration-200 ease-out;
+
+  :hover & {
+    @apply opacity-100;
+  }
+
+  img, svg {
+    @apply h-full;
   }
 }
 </style>
