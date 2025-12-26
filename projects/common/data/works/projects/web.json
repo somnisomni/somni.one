@@ -154,6 +154,10 @@
     ],
     "repositoryUrl": "https://github.com/somnisomni/siina",
     "appUrl": "https://somnisomni.github.io/siina/siina.html",
+    "headerImageRemoteSrcSet": [
+      { "path": "/images/works/siina-header.webp", "scale": 1 },
+      { "path": "/images/works/siina-header@0.5x.webp", "scale": 0.5 }
+    ],
     "featured": false
   },
   {
@@ -177,6 +181,10 @@
     ],
     "repositoryUrl": "https://github.com/SDSkyKlouD/still-alive-web",
     "appUrl": "https://sdskykloud.github.io/still-alive-web/",
+    "headerImageRemoteSrcSet": [
+      { "path": "/images/works/still-alive-web-header.webp", "scale": 1 },
+      { "path": "/images/works/still-alive-web-header@0.5x.webp", "scale": 0.5 }
+    ],
     "featured": false
   }
 ]
