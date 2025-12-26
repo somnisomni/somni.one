@@ -62,12 +62,12 @@ import { decodeEmailAddress } from "$/lib/data/email";
 
 const { linkId }: { linkId: keyof typeof LinkData } = $props();
 
-const linkItem = $derived((LinkData as Record<string, Link>)[linkId]);
-const linkIcon = $derived(getLinkIconHtml(linkId));
 let hover: boolean = $state(false);
-let decodedEmailAddress: string = $derived(linkItem.url && hover ? decodeEmailAddress(linkItem.url) : "");
 let extraData: string | null = $state(null);
 let extraImage: string | null = $derived(null);
+const linkItem = $derived((LinkData as Record<string, Link>)[linkId]);
+const linkIcon = $derived(getLinkIconHtml(linkId));
+const decodedEmailAddress: string = $derived(hover && linkId === "email" && linkItem.url ? decodeEmailAddress(linkItem.url) : "");
 
 onMount(async () => {
   switch(linkId) {
