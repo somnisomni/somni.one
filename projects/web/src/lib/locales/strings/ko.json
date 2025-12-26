@@ -79,9 +79,8 @@
     "category": {
       "games": "게임",
       "web": "웹",
-      "translations": "번역",
       "softwares": "소프트웨어",
-      "opensource": "오픈 소스 기여"
+      "contributions": "기여 / 번역"
     }
   }
 }

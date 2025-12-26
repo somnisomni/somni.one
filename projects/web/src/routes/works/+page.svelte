@@ -51,17 +51,11 @@ const categoryDefinitions = {
     href: "/works/softwares",
     headerImageSrc: null,
   },
-  opensource: {
-    id: "opensource",
-    nameKey: "works.category.opensource",
+  contributions: {
+    id: "contributions",
+    nameKey: "works.category.contributions",
     href: "/works/contributions",
     headerImageSrc: transformRemoteAssetPath(openSourceContributionBgImagePath),
-  },
-  translations: {
-    id: "translations",
-    nameKey: "works.category.translations",
-    href: "/works/translations",
-    headerImageSrc: null,
   },
 };
 

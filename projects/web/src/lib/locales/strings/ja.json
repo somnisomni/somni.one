@@ -78,10 +78,9 @@
   "works": {
     "category": {
       "games": "ゲーム",
-      "opensource": "オープンソース",
       "softwares": "ソフトウェア",
-      "translations": "翻訳",
-      "web": "ウェブ"
+      "web": "ウェブ",
+      "contributions": "寄稿 / 翻訳"
     }
   }
 }

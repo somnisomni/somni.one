@@ -78,10 +78,9 @@
   "works": {
     "category": {
       "games": "Games",
-      "opensource": "Open Source",
       "softwares": "Softwares",
-      "translations": "Translations",
-      "web": "Web"
+      "web": "Web",
+      "contributions": "Contribs / Translations"
     }
   }
 }
