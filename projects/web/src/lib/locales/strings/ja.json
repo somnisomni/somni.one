@@ -18,7 +18,8 @@
     },
     "email": {
       "label": "Eメール",
-      "anchorTip": "Eメール （押してアドレスをコピー）"
+      "anchorTip": "Eメール （押してアドレスをコピー）",
+      "hoverToReveal": "マウスポインターを重ねてメールアドレス表示"
     },
     "group": {
       "contacts": "お問い合わせ・SNS",
@@ -54,6 +55,10 @@
         "lastPlayedGameFormat": "{name}（合計 {hours} 時間）",
         "lastPlayedGameTitle": "最近プレイしたゲーム"
       }
+    },
+    "minecraft": {
+      "anchorTip": "Minecraft ({userId})",
+      "label": "Minecraft"
     }
   },
   "main": {

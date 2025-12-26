@@ -55,5 +55,12 @@
     "anchorTipKey": "links.steam.anchorTip",
     "url": "https://steamcommunity.com/id/somni_somni",
     "userId": "somni_somni"
+  },
+  "minecraft": {
+    "labelKey": "links.minecraft.label",
+    "anchorTipKey": "links.minecraft.anchorTip",
+    "url": null,
+    "userId": "somnisomni",
+    "userIdAlt": "d0b86057-f0e5-4cbd-a534-63347c9a2a92"
   }
 }

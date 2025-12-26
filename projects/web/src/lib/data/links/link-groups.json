@@ -24,7 +24,8 @@
   "games": {
     "labelKey": "links.group.games",
     "items": [
-      "steam"
+      "steam",
+      "minecraft"
     ]
   },
   "etc": {

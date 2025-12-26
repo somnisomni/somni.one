@@ -1,5 +1,7 @@
 <LinkAnchor { linkId }>
-  <div class="link-item">
+  <div class="link-item { !linkItem.url ? 'no-url' : '' }"
+       onpointerenter={ () => hover = true }
+       onpointerleave={ () => hover = false }>
     {#if linkIcon}
       <div class="link-icon">
         {@html linkIcon}
@@ -8,7 +10,17 @@
 
     <div class="link-content">
       <span class="name">{ $_(linkItem.labelKey) }</span>
-      <span class="userId">{ linkItem.userId }</span>
+      {#if linkId === "email"}
+        <span class="userId">
+          {#if !hover}
+            <span class="opacity-50">[ { $_("links.email.hoverToReveal") } ]</span>
+          {:else}
+            <span>{ decodedEmailAddress }</span>
+          {/if}
+        </span>
+      {:else}
+        <span class="userId">{ linkItem.userId }</span>
+      {/if}
     </div>
 
     <div class="extra-info">
@@ -16,13 +28,15 @@
         <p class="extra-data">{ extraData }</p>
       {/if}
 
-      <div class="link-navigation-icon">
-        {#if linkId === "email"}
-          {@html faCopy}
-        {:else}
-          {@html faSquareArrowUp}
-        {/if}
-      </div>
+      {#if linkItem.url}
+        <div class="link-navigation-icon">
+          {#if linkId === "email"}
+            {@html faCopy}
+          {:else}
+            {@html faSquareArrowUp}
+          {/if}
+        </div>
+      {/if}
     </div>
   </div>
 </LinkAnchor>
@@ -37,11 +51,14 @@ import faSquareArrowUp from "$assets/icons/fa-square-arrow-up-right-solid-full.s
 import { onMount } from "svelte";
 import { requestGetData } from "$/lib/stores/data-collector.svelte";
 import { generateGitHubUserId, generateMonkeytypeUserId, generateSteamUserId, type GitHubUserData, type MonkeytypeUserData, type SteamUserData } from "@somni.one/common";
+import { decodeEmailAddress } from "$/lib/data/email";
 
 const { linkId }: { linkId: keyof typeof LinkData } = $props();
 
 const linkItem = $derived((LinkData as Record<string, Link>)[linkId]);
-const linkIcon = $derived(getLinkIconSvg(linkId));
+const linkIcon = $derived(getLinkIconHtml(linkId));
+let hover: boolean = $state(false);
+let decodedEmailAddress: string = $derived(linkItem.url && hover ? decodeEmailAddress(linkItem.url) : "");
 let extraData: string | null = $state(null);
 
 onMount(async () => {
@@ -107,7 +124,7 @@ onMount(async () => {
     @apply scale-102 border-background-inverse;
     @apply /* < md */ max-md:scale-105;
 
-    &:active {
+    &:not(.no-url):active {
       @apply scale-101;
       @apply /* < md */ max-md:scale-103;
     }

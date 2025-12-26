@@ -35,5 +35,6 @@ export function getLinkIconHtml(linkId: string): string | null {
     solvedac: faCircleCheck,
     monkeytype: siMonkeytype.svg,
     steam: siSteam.svg,
+    minecraft: `<img src="https://mc-heads.net/head/${LinkData.minecraft.userIdAlt}/300.png" />`,
   } satisfies Record<keyof typeof LinkData, string>)[linkId] || null;
 }

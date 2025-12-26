@@ -18,7 +18,8 @@
     },
     "email": {
       "label": "Email",
-      "anchorTip": "Email (Click to copy the address)"
+      "anchorTip": "Email (Click to copy the address)",
+      "hoverToReveal": "Hover to reveal the address"
     },
     "group": {
       "contacts": "Contacts / SNS",
@@ -54,6 +55,10 @@
         "lastPlayedGameFormat": "{name} (Total {hours} hrs)",
         "lastPlayedGameTitle": "Last Played Game"
       }
+    },
+    "minecraft": {
+      "anchorTip": "Minecraft ({userId})",
+      "label": "Minecraft"
     }
   },
   "main": {

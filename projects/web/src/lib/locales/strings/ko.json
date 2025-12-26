@@ -18,7 +18,8 @@
     },
     "email": {
       "label": "이메일",
-      "anchorTip": "이메일 (주소 복사)"
+      "anchorTip": "이메일 (주소 복사)",
+      "hoverToReveal": "마우스 포인터를 올려 메일 주소 표시"
     },
     "group": {
       "contacts": "연락처 / SNS",
@@ -54,6 +55,10 @@
         "lastPlayedGameTitle": "마지막으로 플레이한 게임",
         "lastPlayedGameFormat": "{name} (총 {hours} 시간)"
       }
+    },
+    "minecraft": {
+      "label": "Minecraft",
+      "anchorTip": "Minecraft ({userId})"
     }
   },
   "main": {
