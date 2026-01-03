@@ -1,8 +1,8 @@
 import { siBluesky, siDiscord, siGithub, siMonkeytype, siSteam, siX } from "simple-icons";
 import faAt from "$assets/icons/fa-at-solid-full.svg?raw";
 import faCircleCheck from "$assets/icons/fa-circle-check-solid-full.svg?raw";
-import faLinesLeaning from "$assets/icons/fa-lines-leaning-solid-full.svg?raw";
 import faCube from "$assets/icons/fa-cube-solid-full.svg?raw";
+import faLinesLeaning from "$assets/icons/fa-lines-leaning-solid-full.svg?raw";
 import LinkData from "./links.json";
 
 export interface Link {
