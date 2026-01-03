@@ -1,13 +1,12 @@
 <img class="github-avatar { elevate ? 'shadow-lg' : '' }"
      style="width: { size }rem; height: { size }rem;"
-     src="https://github.com/{ githubLink.userId }.png"
-     alt="GitHub @{ githubLink.userId } avatar" />
+     src="https://github.com/{ githubLink.data.userId }.png"
+     alt="GitHub @{ githubLink.data.userId } avatar" />
 
 <script lang="ts">
-import LinkData from "$/lib/data/links/links.json";
-import type { Link } from "$/lib/data/links/links";
+import { links } from "$/lib/data/links/links";
 
-const githubLink = LinkData.github satisfies Link;
+const githubLink = links.github;
 
 const { size = 8, elevate = false }: { size?: number, elevate?: boolean } = $props();
 </script>

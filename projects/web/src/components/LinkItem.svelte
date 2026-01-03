@@ -1,25 +1,25 @@
-<LinkAnchor { linkId }>
-  <div class="link-item { !linkItem.url ? 'no-url' : '' }"
+<LinkAnchor { link }>
+  <div class="link-item { !linkItem.data.url ? 'no-url' : '' }"
        onpointerenter={ () => hover = true }
        onpointerleave={ () => hover = false }>
-    {#if linkIcon}
+    {#if linkItem.iconHtml}
       <div class="link-icon">
-        {@html linkIcon}
+        {@html linkItem.iconHtml}
       </div>
     {/if}
 
     <div class="link-content">
       <span class="name">{ $_(linkItem.labelKey) }</span>
-      {#if linkId === "email"}
+      {#if linkItem.id === "email"}
         <span class="userId">
           {#if !hover}
             <span class="opacity-50">[ { $_("links.email.hoverToReveal") } ]</span>
           {:else}
-            <span>{ decodedEmailAddress }</span>
+            <span>{ linkItem.normalizedUrl }</span>
           {/if}
         </span>
       {:else}
-        <span class="userId">{ linkItem.userId }</span>
+        <span class="userId">{ linkItem.data.userId }</span>
       {/if}
     </div>
 
@@ -28,13 +28,9 @@
         <p class="extra-data">{ extraData }</p>
       {/if}
 
-      {#if linkItem.url}
+      {#if linkItem.data.url}
         <div class="link-navigation-icon">
-          {#if linkId === "email"}
-            {@html faCopy}
-          {:else}
-            {@html faSquareArrowUp}
-          {/if}
+          {@html linkItem.navIconHtml}
         </div>
       {/if}
     </div>
@@ -49,31 +45,30 @@
 </LinkAnchor>
 
 <script lang="ts">
-import { getLinkIconHtml, type Link } from "$/lib/data/links/links";
+import { links } from "$/lib/data/links/links";
 import LinkAnchor from "$/components/LinkAnchor.svelte";
-import LinkData from "$/lib/data/links/links.json";
 import { _ } from "svelte-i18n";
-import faCopy from "$assets/icons/fa-copy-solid-full.svg?raw";
-import faSquareArrowUp from "$assets/icons/fa-square-arrow-up-right-solid-full.svg?raw";
 import { onMount } from "svelte";
 import { requestGetData } from "$/lib/stores/data-collector.svelte";
 import { generateGitHubUserId, generateMonkeytypeUserId, generateSteamUserId, type GitHubUserData, type MonkeytypeUserData, type SteamUserData } from "@somni.one/common";
-import { decodeEmailAddress } from "$/lib/data/email";
+import type { LinkItem, LinkItemId } from "$/lib/data/links/links";
 
-const { linkId }: { linkId: keyof typeof LinkData } = $props();
+interface Props {
+  link: LinkItemId | LinkItem;
+}
+
+const { link }: Props = $props();
 
 let hover: boolean = $state(false);
 let extraData: string | null = $state(null);
 let extraImage: string | null = $derived(null);
-const linkItem = $derived((LinkData as Record<string, Link>)[linkId]);
-const linkIcon = $derived(getLinkIconHtml(linkId));
-const decodedEmailAddress: string = $derived(hover && linkId === "email" && linkItem.url ? decodeEmailAddress(linkItem.url) : "");
+const linkItem = $derived(typeof link === "string" ? links[link] : link);
 
 onMount(async () => {
-  switch(linkId) {
+  switch(linkItem.id) {
     case "github":
       {
-        const id = generateGitHubUserId(linkItem.userId!);
+        const id = generateGitHubUserId(linkItem.data.userId!);
         const data = ((await requestGetData([ id ]))?.[id])?.data as GitHubUserData;
         if(!data) break;
 
@@ -104,7 +99,7 @@ onMount(async () => {
       break;
     case "steam":
       {
-        const id = generateSteamUserId(linkItem.userId!);
+        const id = generateSteamUserId(linkItem.data.userId!);
         const data = ((await requestGetData([ id ]))?.[id])?.data as SteamUserData;
         if(!data || !data.lastPlayedGame) break;
 
@@ -117,7 +112,7 @@ onMount(async () => {
       }
       break;
     case "minecraft":
-      extraImage = `https://mc-heads.net/head/${LinkData.minecraft.userIdAlt}/300.png`;
+      extraImage = `https://mc-heads.net/head/${linkItem.data.userIdAlt}/300.png`;
       break;
     default:
       break;

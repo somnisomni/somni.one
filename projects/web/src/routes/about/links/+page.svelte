@@ -6,7 +6,7 @@
 
       <div class="link-group-items">
         {#each linkGroup.items as linkId}
-          <LinkItem { linkId } />
+          <LinkItem link={ linkId } />
         {/each}
       </div>
     </section>

@@ -5,7 +5,7 @@
     <div class="nav mb-8!">/// <span class="opacity-50">somni::</span>IN_A_NUTSHELL</div>
 
     <ScaleAnimationOnHover>
-      <LinkAnchor linkId="github">
+      <LinkAnchor link="github">
         <GitHubProfileImage elevate={ true } />
       </LinkAnchor>
     </ScaleAnimationOnHover>
@@ -38,12 +38,12 @@
 
     <div class="content mt-0!">
       <div class="quick-links">
-        {#each Object.entries(quickLinks) as link}
-          <LinkAnchor linkId={ link[0] }>
-            <SpanWithTip tip={ $_(link[1].anchorTipKey) }
+        {#each quickAccessLinks as link}
+          <LinkAnchor { link }>
+            <SpanWithTip tip={ $_(link.anchorTipKey) }
                          notText={ true }>
               <ScaleAnimationOnHover>
-                <div class="p-4">{@html getLinkIconHtml(link[0])}</div>
+                <div class="p-4">{@html link.iconHtml}</div>
               </ScaleAnimationOnHover>
             </SpanWithTip>
           </LinkAnchor>
@@ -66,7 +66,7 @@ import FeaturedWorkItem from "$/components/FeaturedWorkItem.svelte";
 import projectsGames from "@somni.one/common/data/works/projects/game.json";
 import projectsSoftwares from "@somni.one/common/data/works/projects/software.json";
 import projectsWeb from "@somni.one/common/data/works/projects/web.json";
-import { getLinkIconHtml, getQuickAccessLinks } from "$/lib/data/links/links";
+import { quickAccessLinks } from "$/lib/data/links/links";
 
 const featuredWorks = [
   ...projectsGames.filter(p => p.featured) as ProjectData[],
@@ -75,8 +75,6 @@ const featuredWorks = [
 ].sort((a, b) => {
   return b.yearFrom - a.yearFrom;
 }).slice(0, 6);
-
-const quickLinks = getQuickAccessLinks();
 </script>
 
 <style lang="scss">

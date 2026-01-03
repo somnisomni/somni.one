@@ -1,64 +1,54 @@
 {
   "email": {
-    "labelKey": "links.email.label",
-    "anchorTipKey": "links.email.anchorTip",
+    "textParentKey": "links.email",
     "url": "e09CRlVTQ0FURUR9bWV7QVR9c29tbml7RE9UfW9uZXtPQkZVU0NBVEVEfQ==",
     "quickAccess": true
   },
   "blog": {
-    "labelKey": "links.blog.label",
-    "anchorTipKey": "links.blog.anchorTip",
+    "textParentKey": "links.blog",
     "url": "https://log.somni.one",
     "userId": "log.somni.one",
     "quickAccess": true
   },
   "twitter": {
-    "labelKey": "links.twitter.label",
-    "anchorTipKey": "links.twitter.anchorTip",
+    "textParentKey": "links.twitter",
     "url": "https://twitter.com/somni_somni",
     "userId": "@somni_somni",
     "quickAccess": true
   },
   "bluesky": {
-    "labelKey": "links.bluesky.label",
-    "anchorTipKey": "links.bluesky.anchorTip",
+    "textParentKey": "links.bluesky",
     "url": "https://bsky.app/profile/somni.one",
     "userId": "@somni.one"
   },
   "discord": {
-    "labelKey": "links.discord.label",
-    "anchorTipKey": "links.discord.anchorTip",
+    "textParentKey": "links.discord",
     "url": "https://discord.com/users/860100705514553355",
     "userId": "somnisomni"
   },
   "github": {
-    "labelKey": "links.github.label",
-    "anchorTipKey": "links.github.anchorTip",
+    "textParentKey": "links.github",
     "url": "https://github.com/somnisomni",
     "userId": "somnisomni",
     "quickAccess": true
   },
   "solvedac": {
-    "labelKey": "links.solvedac.label",
-    "anchorTipKey": "links.solvedac.anchorTip",
+    "textParentKey": "links.solvedac",
     "url": "https://solved.ac/profile/sdskykloud",
     "userId": "sdskykloud"
   },
   "monkeytype": {
-    "labelKey": "links.monkeytype.label",
-    "anchorTipKey": "links.monkeytype.anchorTip",
+    "textParentKey": "links.monkeytype",
     "url": "https://monkeytype.com/profile/somnisomni",
     "userId": "somnisomni"
   },
   "steam": {
-    "labelKey": "links.steam.label",
-    "anchorTipKey": "links.steam.anchorTip",
+    "textParentKey": "links.steam",
     "url": "https://steamcommunity.com/id/somni_somni",
     "userId": "somni_somni"
   },
   "minecraft": {
-    "labelKey": "links.minecraft.label",
-    "anchorTipKey": "links.minecraft.anchorTip",
+    "textParentKey": "links.minecraft",
     "url": null,
     "userId": "somnisomni",
     "userIdAlt": "d0b86057-f0e5-4cbd-a534-63347c9a2a92"
