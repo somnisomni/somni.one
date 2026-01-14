@@ -1,5 +1,5 @@
 <div class="flex flex-row mb-8 gap-4">
-  <img class="w-lg h-fit aspect-video rounded-xl object-cover bg-black"
+  <img class="w-lg h-fit shrink-0 aspect-video rounded-xl object-cover bg-black"
         srcset={ generateImageSrcSet(project.headerImageRemoteSrcSet) }
         src={ transformRemoteAssetPath(project.headerImageRemoteSrcSet?.[0]?.path) ?? BLACK_IMAGE_ENCODED }
         alt={ project.title } />
