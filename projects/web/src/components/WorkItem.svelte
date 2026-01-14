@@ -12,7 +12,7 @@
         <span class="icon inline-flex items-center m-1 fill-current"
               style="--color-on-light: #{ getTechStackData(stack).colorHex }; --color-on-dark: #{ getTechStackData(stack).colorHexOnDark ?? getTechStackData(stack).colorHex };">
           <SpanWithTip tip={ getTechStackData(stack).title }
-                        notText={ true }>
+                       notText={ true }>
             <span class="w-6">{@html getTechStackData(stack).svg}</span>
           </SpanWithTip>
         </span>
@@ -30,3 +30,9 @@ import { BLACK_IMAGE_ENCODED, generateImageSrcSet, transformRemoteAssetPath } fr
 
 const { project }: { project: ProjectData } = $props();
 </script>
+
+<style lang="scss" scoped>
+.icon {
+  @include by-color-scheme(color, var(--color-on-light), var(--color-on-dark));
+}
+</style>

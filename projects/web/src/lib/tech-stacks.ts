@@ -90,6 +90,7 @@ const stackData: Record<TechStack, TechStackData> = Object.freeze({
     title: siX.title,
     svg: siX.svg,
     colorHex: siX.hex,
+    colorHexOnDark: "FFFFFF",
   },
 
   // DBMS
