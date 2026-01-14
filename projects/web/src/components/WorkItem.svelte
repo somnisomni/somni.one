@@ -18,7 +18,7 @@
         </span>
       {/each}
     </p>
-    <p class="text-md font-light">{@html project.desc}</p>
+    <p class="desc text-md font-light">{@html project.desc}</p>
   </div>
 </div>
 
@@ -34,5 +34,9 @@ const { project }: { project: ProjectData } = $props();
 <style lang="scss" scoped>
 .icon {
   @include by-color-scheme(color, var(--color-on-light), var(--color-on-dark));
+}
+
+.desc :global(a) {
+  @apply underline;
 }
 </style>
