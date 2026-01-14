@@ -17,6 +17,8 @@
       <p>&nbsp;<a href="https://ck.ac.kr/school-department/game/school">청강문화산업대학교 게임콘텐츠스쿨</a> 졸업 예정이며, 졸업 작품으로 게임 프로젝트 「<a href="https://ck25-palette.notion.site/Palette-KOR-22bd7b6d0d0c80a8917aebee9471b57d">컬러팅! 캐치 & 라비</a>」를 개발했습니다.</p>
       <p class="opacity-70 text-lg!"><a href="/about">자세히 보기 ›</a></p>
     </div>
+
+    <p class="mt-4 font-extralight text-xl text-primary/70">사이트 공사 중입니다! This website is under construction!</p>
   </section>
 
   <section>
