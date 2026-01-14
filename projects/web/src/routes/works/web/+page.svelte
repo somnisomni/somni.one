@@ -16,7 +16,18 @@
 
       <div class="flex flex-col justify-center">
         <p class="text-3xl font-medium">{@html project.title}</p>
-        <p class="text-sm font-extralight">{project.yearFrom} {#if project.association}- { project.association }{/if}</p>
+        <p class="text-sm font-extralight">{ project.yearFrom } {#if project.association}/ { project.association }{/if}</p>
+        <p class="inline-flex items-center flex-wrap my-4">
+          {#each project.stacks as stack}
+            <span class="inline-flex items-center m-1 fill-current"
+                  style="color: #{ getTechStackData(stack).colorHex }">
+              <SpanWithTip tip={ getTechStackData(stack).title }
+                           notText={ true }>
+                <span class="w-6">{@html getTechStackData(stack).svg}</span>
+              </SpanWithTip>
+            </span>
+          {/each}
+        </p>
         <p class="text-lg font-light">{@html project.desc}</p>
       </div>
     </div>
@@ -24,11 +35,13 @@
 </div>
 
 <script lang="ts">
+import type { ProjectData } from "@somni.one/common";
 import { siTypescript, siVuedotjs, siSvelte, siNestjs, siCss, siSass } from "simple-icons";
 import IconText from "$/components/IconText.svelte";
 import WebWorks from "@somni.one/common/data/works/projects/web.json";
-import type { ProjectData } from "@somni.one/common";
 import { generateImageSrcSet, transformRemoteAssetPath } from "$/lib/utils";
+import { getTechStackData } from "$/lib/tech-stacks";
+import SpanWithTip from "$/components/SpanWithTip.svelte";
 
 const projects = WebWorks as ProjectData[];
 const encodedBlackImage = "data:image/gif;base64,R0lGODlhAQABAIAAAAUEBAAAACwAAAAAAQABAAACAkQBADs=";
