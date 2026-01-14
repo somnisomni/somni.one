@@ -1,6 +1,6 @@
 {
   "name": "@somni.one/data-collector",
-  "packageManager": "pnpm@10.26.0",
+  "packageManager": "pnpm@10.28.0",
   "private": true,
   "type": "module",
   "scripts": {
@@ -13,14 +13,14 @@
     "postinstall": "pnpm prisma:generate"
   },
   "devDependencies": {
-    "@cloudflare/workers-types": "^4.20251217.0",
+    "@cloudflare/workers-types": "^4.20260114.0",
     "@somni/eslint-config": "catalog:",
     "@types/eslint": "catalog:",
     "@types/node": "catalog:",
     "eslint": "catalog:",
     "prisma": "^7.2.0",
     "typescript": "catalog:",
-    "wrangler": "^4.56.0"
+    "wrangler": "^4.59.1"
   },
   "dependencies": {
     "@prisma/adapter-d1": "^7.2.0",
