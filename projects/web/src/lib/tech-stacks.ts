@@ -14,6 +14,7 @@ export interface TechStackData {
   title: string;
   svg: string;
   colorHex: string;
+  colorHexOnDark?: string;
 }
 
 const stackData: Record<TechStack, TechStackData> = Object.freeze({
@@ -177,11 +178,13 @@ const stackData: Record<TechStack, TechStackData> = Object.freeze({
     title: siUnity.title,
     svg: siUnity.svg,
     colorHex: siUnity.hex,
+    colorHexOnDark: "FFFFFF",
   },
   [TechStack.FMOD]: {
     title: siFmod.title,
     svg: siFmod.svg,
     colorHex: siFmod.hex,
+    colorHexOnDark: "FFFFFF",
   },
 });
 

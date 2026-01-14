@@ -5,12 +5,12 @@
         alt={ project.title } />
 
   <div class="flex flex-col justify-center">
-    <p class="text-3xl font-medium">{@html project.title}</p>
-    <p class="text-sm font-extralight">{ project.yearFrom } {#if project.association}/ { project.association }{/if}</p>
+    <p class="text-3xl font-bold">{@html project.title}</p>
+    <p class="text-sm font-light opacity-70">{ project.yearFrom } {#if project.association}/ { project.association }{/if}</p>
     <p class="inline-flex items-center flex-wrap my-4">
       {#each project.stacks as stack}
-        <span class="inline-flex items-center m-1 fill-current"
-              style="color: #{ getTechStackData(stack).colorHex }">
+        <span class="icon inline-flex items-center m-1 fill-current"
+              style="--color-on-light: #{ getTechStackData(stack).colorHex }; --color-on-dark: #{ getTechStackData(stack).colorHexOnDark ?? getTechStackData(stack).colorHex };">
           <SpanWithTip tip={ getTechStackData(stack).title }
                         notText={ true }>
             <span class="w-6">{@html getTechStackData(stack).svg}</span>
@@ -18,7 +18,7 @@
         </span>
       {/each}
     </p>
-    <p class="text-lg font-light">{@html project.desc}</p>
+    <p class="text-md font-light">{@html project.desc}</p>
   </div>
 </div>
 
