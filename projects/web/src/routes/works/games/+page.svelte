@@ -8,30 +8,18 @@
   <div class="my-8"></div>
 
   {#each projects as project}
-    <div class="flex flex-row mb-8 gap-4">
-      <img class="w-lg aspect-video rounded-xl object-cover bg-black"
-           srcset={ generateImageSrcSet(project.headerImageRemoteSrcSet) }
-           src={ transformRemoteAssetPath(project.headerImageRemoteSrcSet?.[0]?.path) ?? encodedBlackImage }
-           alt={ project.title } />
-
-      <div class="flex flex-col justify-center">
-        <p class="text-3xl font-medium">{@html project.title}</p>
-        <p class="text-sm font-extralight">{project.yearFrom} {#if project.association}- { project.association }{/if}</p>
-        <p class="text-lg font-light">{@html project.desc}</p>
-      </div>
-    </div>
+    <WorkItem { project } />
   {/each}
 </div>
 
 <script lang="ts">
+import type { ProjectData } from "@somni.one/common";
 import { siUnity, siFmod } from "simple-icons";
 import IconText from "$/components/IconText.svelte";
 import GameWorks from "@somni.one/common/data/works/projects/game.json";
-import type { ProjectData } from "@somni.one/common";
-import { generateImageSrcSet, transformRemoteAssetPath } from "$/lib/utils";
+import WorkItem from "$/components/WorkItem.svelte";
 
-const projects = GameWorks as ProjectData[];
-const encodedBlackImage = "data:image/gif;base64,R0lGODlhAQABAIAAAAUEBAAAACwAAAAAAQABAAACAkQBADs=";
+const projects = (GameWorks as ProjectData[]).sort((a, b) => b.yearFrom - a.yearFrom);
 </script>
 
 <style lang="scss" scoped>
