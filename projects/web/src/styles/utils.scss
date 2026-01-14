@@ -1,0 +1,19 @@
+@mixin by-color-scheme($prop, $value-on-light, $value-on-dark) {
+  #{$prop}: $value-on-light;
+
+  :global(.force-dark) & {
+    #{$prop}: $value-on-dark;
+  }
+
+  :global(.force-light) & {
+    #{$prop}: $value-on-light;
+  }
+
+  @media (prefers-color-scheme: light) {
+    #{$prop}: $value-on-light;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    #{$prop}: $value-on-dark;
+  }
+}

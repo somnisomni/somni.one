@@ -11,9 +11,7 @@ const githubLink = links.github;
 const { size = 8, elevate = false }: { size?: number, elevate?: boolean } = $props();
 </script>
 
-<style lang="scss">
-@reference "$/styles/app.css";
-
+<style lang="scss" scoped>
 .github-avatar {
   @apply rounded-full border border-background-inverse/10;
 }

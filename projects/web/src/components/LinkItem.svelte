@@ -121,8 +121,6 @@ onMount(async () => {
 </script>
 
 <style lang="scss" scoped>
-@reference "$/styles/app.css";
-
 .link-item {
   @apply relative flex flex-row items-center justify-start w-full h-full px-6 py-4 border rounded-lg;
   @apply scale-100 border-background-inverse/20 transition-[scale,border-color] duration-200 ease-out;

@@ -23,8 +23,6 @@ const projects = (WebWorks as ProjectData[]).sort((a, b) => b.yearFrom - a.yearF
 </script>
 
 <style lang="scss" scoped>
-@reference "$/styles/app.css";
-
 .nav-desc {
   @apply text-xl font-extralight text-background-inverse/50;
 }

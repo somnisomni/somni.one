@@ -78,8 +78,6 @@ const featuredWorks = [
 </script>
 
 <style lang="scss">
-@reference "$/styles/app.css";
-
 p {
   b {
     @apply font-semibold;

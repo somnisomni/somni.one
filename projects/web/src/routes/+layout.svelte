@@ -64,8 +64,6 @@ onMount(() => {
 </script>
 
 <style lang="scss">
-@reference "$/styles/app.css";
-
 :root {
   --header-size: 6rem;
 

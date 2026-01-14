@@ -7,4 +7,15 @@ export default defineConfig({
     tailwindcss(),
     sveltekit(),
   ],
+  css: {
+    preprocessorOptions: {
+      scss: {
+        additionalData: source => `
+          @use "$/styles/utils.scss" as *;
+          ${source}
+          @reference "$/styles/app.css";
+        `,
+      },
+    },
+  },
 });

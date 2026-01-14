@@ -1,2 +1,59 @@
-@import "./global.scss";
-@import "./content.scss";
+@import "./_tailwind.css";
+
+body, html {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100vh;
+  font-size: 1.039rem;
+  overflow: hidden auto;
+
+  background-color: var(--color-background);
+  color: var(--color-background-inverse);
+}
+
+p {
+  @apply text-justify;
+  @apply /* < md */ max-md:text-start;
+
+  line-height: 1.666;
+
+  &:lang(ko) {
+    @apply break-keep;
+  }
+}
+
+h1, h2, h3 {
+  @apply font-sans-header;
+
+  &:is(h1) {
+    @apply text-2xl font-extrabold;
+  }
+
+  &:is(h2) {
+    @apply text-xl font-bold;
+  }
+}
+
+img, picture, svg {
+  @apply pointer-events-none select-none;
+}
+
+.page {
+  @apply p-12;
+  @apply /* < md */ max-md:p-6;
+
+  .title {
+    @apply flex flex-col justify-start items-baseline my-8 *:mr-4;
+    @apply font-sans-header;
+
+    .details {
+      @apply text-lg font-thin;
+    }
+
+    h1 {
+      @apply font-black text-7xl;
+    }
+  }
+}

@@ -34,9 +34,7 @@ async function onAnchorClick(event: Event) {
 }
 </script>
 
-<style lang="scss">
-@reference "$/styles/app.css";
-
+<style lang="scss" scoped>
 .link-anchor {
   @apply inline-flex items-center justify-center;
 }

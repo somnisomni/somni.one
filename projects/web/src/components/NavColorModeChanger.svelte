@@ -59,8 +59,6 @@ $effect(() => {
 </script>
 
 <style lang="scss" scoped>
-@reference "$/styles/app.css";
-
 .color-mode-indicator {
   @apply flex items-center justify-center opacity-80;
   @apply transition-[background-color,opacity] duration-200;

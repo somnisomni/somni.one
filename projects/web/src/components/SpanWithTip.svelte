@@ -10,9 +10,7 @@ import type { Snippet } from "svelte";
 const { children, tip, notText }: { children?: Snippet, tip?: string, notText?: boolean } = $props();
 </script>
 
-<style lang="scss">
-@reference "$/styles/app.css";
-
+<style lang="scss" scoped>
 .span-with-tip {
   @apply relative;
 

@@ -30,8 +30,6 @@ onMount(async () => {
 </script>
 
 <style lang="scss" scoped>
-@reference "$/styles/app.css";
-
 .link-group {
   @apply mb-12;
 

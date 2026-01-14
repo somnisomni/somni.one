@@ -25,8 +25,6 @@ const encodedBlackImage = "data:image/gif;base64,R0lGODlhAQABAIAAAAUEBAAAACwAAAA
 </script>
 
 <style lang="scss" scoped>
-@reference "$/styles/app.css";
-
 .featured-work-item {
   @apply relative overflow-hidden h-64 rounded-3xl border border-solid border-background-inverse/20;
   @apply transition-shadow duration-300 ease-in-out;
