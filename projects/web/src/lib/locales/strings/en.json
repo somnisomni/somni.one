@@ -86,6 +86,12 @@
       "softwares": "Softwares",
       "web": "Web",
       "contributions": "Contribs / Translations"
+    },
+    "tags": {
+      "personal": "Personal",
+      "team": "Team",
+      "opensource": "Open Source",
+      "distributingGame": "Public Release"
     }
   }
 }

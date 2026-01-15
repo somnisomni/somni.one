@@ -86,6 +86,12 @@
       "softwares": "ソフトウェア",
       "web": "ウェブ",
       "contributions": "寄稿 / 翻訳"
+    },
+    "tags": {
+      "team": "チーム",
+      "personal": "個人",
+      "opensource": "オープンソース",
+      "distributingGame": "公開リリース"
     }
   }
 }
