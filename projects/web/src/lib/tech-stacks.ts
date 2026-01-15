@@ -87,7 +87,7 @@ const stackData: Record<TechStack, TechStackData> = Object.freeze({
     colorHex: "86BC48",
   },
   [TechStack.X]: {
-    title: siX.title,
+    title: "Twitter / X (API)",
     svg: siX.svg,
     colorHex: siX.hex,
     colorHexOnDark: "FFFFFF",
