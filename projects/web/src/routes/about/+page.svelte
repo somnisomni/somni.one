@@ -1,3 +1,3 @@
 <div class="page">
-asdf
+작성 예정입니다. WIP.
 </div>
