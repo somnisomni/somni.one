@@ -11,7 +11,7 @@
     <p class="text-sm font-light opacity-70">
       <span>
         {#each tagEvaluator.evaluate(project) as tag}
-          <span class="work-tag mr-2 rounded-full px-2 py-0.5 bg-current text-background font-normal"
+          <span class="work-tag mr-2 rounded-full px-2 py-0.5 border border-current font-normal"
                 style="--color-on-light: #{ tag.colorHex };
                        --color-on-dark: #{ tag.colorHexOnDark ?? tag.colorHex };">
             <span>{ $_(tag.labelKey) }</span>
@@ -127,12 +127,8 @@ export const tagEvaluator: ProjectDataTagEvaluator = {
 </script>
 
 <style lang="scss" scoped>
-.icon {
+.icon, .work-tag {
   @include by-color-scheme(color, var(--color-on-light), var(--color-on-dark));
-}
-
-.work-tag {
-  @include by-color-scheme(background-color, var(--color-on-light), var(--color-on-dark));
 }
 
 .desc :global(a) {
