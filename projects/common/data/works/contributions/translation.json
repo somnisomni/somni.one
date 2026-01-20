@@ -209,5 +209,15 @@
     "title": "ADM <small>(Advanced Download Manager)</small>",
     "langFromTo": [ { "from": "en", "to": "ko" } ],
     "platform": "direct"
+  },
+  {
+    "id": "hugo-admonitions",
+    "title": "Hugo Admonitions",
+    "repositoryUrl": "https://github.com/KKKZOZ/hugo-admonitions",
+    "langFromTo": [ { "from": "en", "to": "ko" } ],
+    "platform": "github",
+    "contributions": [
+      { "type": "pull-request", "pr": 47 }
+    ]
   }
 ]
