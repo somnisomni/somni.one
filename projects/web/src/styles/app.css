@@ -6,7 +6,6 @@ body, html {
   padding: 0;
   width: 100%;
   min-height: 100vh;
-  font-size: 1.039rem;
   overflow: hidden auto;
 
   background-color: var(--color-background);
