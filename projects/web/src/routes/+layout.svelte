@@ -1,6 +1,35 @@
 <svelte:window on:scroll={ onWindowScroll }
                on:load={ onWindowScroll } />
 
+<svelte:head>
+  <title>somni</title>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "name": "somni",
+        "owner": { "@id": "https://somni.one/#somni" },
+        "url": "https://somni.one"
+      },
+      {
+        "@type": "Person",
+        "@id": "https://somni.one/#somni",
+        "name": "somni",
+        "url": "https://somni.one",
+        "sameAs": [
+          "https://twitter.com/somni_somni",
+          "https://x.com/somni_somni",
+          "https://github.com/somnisomni"
+        ]
+      }
+    ]
+  }
+  </script>
+</svelte:head>
+
 <div id="name-header">
   <div class="rotate-wrap">
     <noscript>
