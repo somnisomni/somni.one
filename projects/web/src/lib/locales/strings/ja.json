@@ -91,7 +91,9 @@
       "team": "チーム",
       "personal": "個人",
       "opensource": "オープンソース",
-      "distributingGame": "公開リリース"
+      "distributingGame": "公開リリース",
+      "codeContribution": "オープンソース",
+      "translation": "翻訳"
     }
   }
 }

@@ -62,7 +62,7 @@ const evaluators: WorkItemTagEvaluator<ProjectData> = {
       evaluate(data: ProjectData) {
         return data.stacks.includes(TechStack.UNITY) && !!data.appUrl;
       },
-    }
+    },
   ],
 };
 </script>

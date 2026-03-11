@@ -91,7 +91,9 @@
       "personal": "Personal",
       "team": "Team",
       "opensource": "Open Source",
-      "distributingGame": "Public Release"
+      "distributingGame": "Public Release",
+      "codeContribution": "Open Source",
+      "translation": "Translation"
     }
   }
 }

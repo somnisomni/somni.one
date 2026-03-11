@@ -8,7 +8,7 @@
   <div class="my-8"></div>
 
   {#each projects as project}
-    <WorkItem { project } />
+    <ProjectItem { project } />
   {/each}
 </div>
 
@@ -17,7 +17,7 @@ import type { ProjectData } from "@somni.one/common";
 import { siTypescript, siVuedotjs, siSvelte, siNestjs, siCss, siSass } from "simple-icons";
 import IconText from "$/components/IconText.svelte";
 import WebWorks from "@somni.one/common/data/works/projects/web.json";
-import WorkItem from "$/components/works/WorkItem.svelte";
+import ProjectItem from "$/components/works/ProjectItem.svelte";
 
 const projects = (WebWorks as ProjectData[]).sort((a, b) => b.yearFrom - a.yearFrom);
 </script>

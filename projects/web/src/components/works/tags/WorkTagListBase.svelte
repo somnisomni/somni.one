@@ -1,6 +1,6 @@
 <ul class="work-tag-list inline-block">
   {#each evaluatedTags as tag}
-    <li class="work-tag inline-block mr-2 rounded-full px-2 py-0.5 border border-current font-normal"
+    <li class="work-tag inline-block mr-2 rounded-full px-1.5 py-px border border-current font-normal"
           style="--color-on-light: #{ tag.color.light };
                  --color-on-dark:  #{ tag.color.dark ?? tag.color.light };">
       <span>{ $_(tag.labelKey) }</span>
@@ -42,5 +42,7 @@ const evaluatedTags = evaluators.evaluators
 <style lang="scss">
 .work-tag {
   @include by-color-scheme(color, var(--color-on-light), var(--color-on-dark));
+
+  font-size: smaller;
 }
 </style>

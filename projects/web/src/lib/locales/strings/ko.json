@@ -91,7 +91,9 @@
       "personal": "개인",
       "team": "팀",
       "opensource": "오픈 소스",
-      "distributingGame": "공개 릴리즈"
+      "distributingGame": "공개 릴리즈",
+      "codeContribution": "오픈 소스",
+      "translation": "번역"
     }
   }
 }
