@@ -6,7 +6,7 @@
     "association": "SW마에스트로 13기",
     "teamData": {
       "teamName": "TEAM GOYUKKURI",
-      "charge": "팀장, 프론트엔드(웹) 개발"
+      "charge": "팀장, 웹 프론트엔드 개발"
     },
     "stacks": [
       "TYPESCRIPT",
@@ -25,11 +25,11 @@
   {
     "id": "swm-mini-sosikmadang",
     "title": "소食마당",
-    "desc": "<span class='text-zinc-400'>[미니프로젝트]</span> 소마센터 근처의 맛집들의 정보를 보여주고, 리뷰와 별점을 남기고 공유할 수 있는 공간🍖",
-    "association": "SW마에스트로 13기",
+    "desc": "소마센터 근처의 맛집들의 정보를 보여주고, 리뷰와 별점을 남기고 공유할 수 있는 공간🍖",
+    "association": "SW마에스트로 13기 (미니프로젝트)",
     "teamData": {
       "teamName": "미니프로젝트 40팀",
-      "charge": "프론트엔드(웹) 개발"
+      "charge": "웹 프론트엔드 개발"
     },
     "stacks": [
       "TYPESCRIPT",
@@ -56,7 +56,7 @@
     "association": "2021 군장병 공개SW 온라인 해커톤",
     "teamData": {
       "teamName": "YD(연등)",
-      "charge": "프론트엔드(웹) 개발"
+      "charge": "웹 프론트엔드 개발"
     },
     "stacks": [
       "TYPESCRIPT",
