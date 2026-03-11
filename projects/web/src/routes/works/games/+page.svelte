@@ -17,7 +17,7 @@ import type { ProjectData } from "@somni.one/common";
 import { siUnity, siFmod } from "simple-icons";
 import IconText from "$/components/IconText.svelte";
 import GameWorks from "@somni.one/common/data/works/projects/game.json";
-import WorkItem from "$/components/WorkItem.svelte";
+import WorkItem from "$/components/works/WorkItem.svelte";
 
 const projects = (GameWorks as ProjectData[]).sort((a, b) => b.yearFrom - a.yearFrom);
 </script>
