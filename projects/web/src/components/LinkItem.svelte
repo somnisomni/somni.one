@@ -50,7 +50,7 @@ import LinkAnchor from "$/components/LinkAnchor.svelte";
 import { _ } from "svelte-i18n";
 import { onMount } from "svelte";
 import { requestGetData } from "$/lib/stores/data-collector.svelte";
-import { generateGitHubUserId, generateMonkeytypeUserId, generateSteamUserId, type GitHubUserData, type MonkeytypeUserData, type SteamUserData } from "@somni.one/common";
+import { generateGitHubUserId, generateMonkeytypeUserId, generateSolvedACUserId, generateSteamUserId, type GitHubUserData, type MonkeytypeUserData, type SolvedACUserData, type SteamUserData } from "@somni.one/common";
 import type { LinkItem, LinkItemId } from "$/lib/data/links/links";
 
 interface Props {
@@ -113,6 +113,15 @@ onMount(async () => {
       break;
     case "minecraft":
       extraImage = `https://mc-heads.net/head/${linkItem.data.userIdAlt}/300.png`;
+      break;
+    case "solvedac":
+      {
+        const id = generateSolvedACUserId(linkItem.data.userId!);
+        const data = ((await requestGetData([ id ]))?.[id])?.data as SolvedACUserData;
+        if(!data) break;
+
+        extraData = `${data.tierName} ${data.tierLevel} / ★ ${data.rating.toLocaleString()}\n#${data.rank.toLocaleString()}`;
+      }
       break;
     default:
       break;
