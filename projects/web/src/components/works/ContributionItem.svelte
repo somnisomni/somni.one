@@ -1,22 +1,24 @@
 <div class="contribution-item p-4 border border-background-inverse/20 rounded-lg">
-  <div class="flex items-center gap-2">
+  <div class="flex flex-row items-center gap-2">
     <span class="text-xl">{@html contribution.title}</span>
 
-    {#if contribution.repositoryUrl}
-      <a href={ contribution.repositoryUrl }
-         target="_blank"
-         class="fill-current w-6 h-6 opacity-50 hover:opacity-100 transition-opacity duration-200">
-        {@html faCodeBranch}
-      </a>
-    {:else if contribution.proofUrl}
-      <a href={ contribution.proofUrl }
-         target="_blank"
-         class="fill-current w-6 h-6 opacity-50 hover:opacity-100 transition-opacity duration-200">
-        {@html faArrowUpRightFromSquare}
-      </a>
-    {/if}
+    <div class="flex flex-row justify-end items-center grow shrink-0 gap-2">
+      <ContributionWorkTagList { contribution } />
 
-    <ContributionWorkTagList { contribution } />
+      {#if contribution.repositoryUrl}
+        <a href={ contribution.repositoryUrl }
+          target="_blank"
+          class="contribution-item-link">
+          {@html faCodeBranch}
+        </a>
+      {:else if contribution.proofUrl}
+        <a href={ contribution.proofUrl }
+          target="_blank"
+          class="contribution-item-link">
+          {@html faArrowUpRightFromSquare}
+        </a>
+      {/if}
+    </div>
   </div>
 </div>
 
@@ -28,3 +30,9 @@ import faArrowUpRightFromSquare from "$assets/icons/fa-arrow-up-right-from-squar
 
 const { contribution }: { contribution: ContributionDataBase } = $props();
 </script>
+
+<style lang="scss">
+.contribution-item-link {
+  @apply fill-current w-6 h-6 opacity-50 hover:opacity-100 transition-opacity duration-200;
+}
+</style>
