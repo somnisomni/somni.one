@@ -1,7 +1,7 @@
 # somni.one - AI coding agent guidelines
 
 ## Overview
-This repository contains the whole codebase for the **"somni.one"** website. This personal website represents who the [**somni**](https://github.com/somnisomni) is, what he does, and how to contact him. 
+This repository contains the whole codebase for the **"[somni.one](https://somni.one)"** website. This personal website represents who the [**somni**](https://github.com/somnisomni) is, what he does, and how to contact him. 
 
 The website is built using **SvelteKit** for the frontend, and **Node.js** with **TypeScript** and **Prisma** for the backend.
 
