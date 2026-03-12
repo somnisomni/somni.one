@@ -52,9 +52,9 @@ const categoryDefinitions = {
     headerImageSrc: null,
   },
   contributions: {
-    id: "contributions",
+    id: "contribs",
     nameKey: "works.category.contributions",
-    href: "/works/contributions",
+    href: "/works/contribs",
     headerImageSrc: transformRemoteAssetPath(openSourceContributionBgImagePath),
   },
 };
