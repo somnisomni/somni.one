@@ -1,5 +1,6 @@
 <div class="page">
-  <ul class="grid gap-4 grid-cols-1 xl:grid-cols-2 min-[128rem]:grid-cols-3">
+  <ul class="grid gap-4 grid-cols-1 xl:grid-cols-2 min-[128rem]:grid-cols-3"
+      style="display: grid-lanes;">
     {#each contributions as contribution, index (index)}
       <li in:fly={{ y: 30, duration: 500, delay: index * 50, easing: quartOut }}>
         <ContributionItem { contribution } />
