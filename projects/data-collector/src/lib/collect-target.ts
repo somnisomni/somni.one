@@ -5,6 +5,7 @@ import GitHubCommitDataCollector from "../collectors/github-commit";
 import GitHubPullRequestDataCollector from "../collectors/github-pull-request";
 import GitHubUserDataCollector from "../collectors/github-user";
 import MonkeytypeUserDataCollector from "../collectors/monkeytype";
+import SolvedACUserDataCollector from "../collectors/solvedac-user";
 import SteamUserDataCollector from "../collectors/steam-user";
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
@@ -96,6 +97,14 @@ const targetGetterMap: TargetGetterMapItem[] = [
     async dataLoader() { return [ {} ]; },
     async targetGetter() {
       return [ new MonkeytypeUserDataCollector() ];
+    },
+  },
+
+  /* solved.ac user data (sdskykloud) */
+  {
+    async dataLoader() { return [ {} ]; },
+    async targetGetter() {
+      return [ new SolvedACUserDataCollector("sdskykloud") ];
     },
   },
 ];

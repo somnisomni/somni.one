@@ -41,6 +41,10 @@ export function generateMonkeytypeUserId(): `monkeytype/user` {
   return `monkeytype/user`;
 }
 
+export function generateSolvedACUserId(handle: string): `solvedac-user/${string}` {
+  return `solvedac-user/${handle}`;
+}
+
 export function getLatestFeaturedWork(data: ProjectData[], shouldHaveHeaderImage: boolean = false): ProjectData | null {
   return data.filter(p => p.featured && (!shouldHaveHeaderImage || p.headerImageRemoteSrcSet?.length))
              .sort((a, b) => b.yearFrom - a.yearFrom)

@@ -1,63 +1,40 @@
-export class MonkeytypeAPI {
-  private static readonly API_HOST = "https://api.monkeytype.com";
+import { BasicAPIFetch } from "./basic-fetch";
 
-  constructor(private apeKey?: string) { }
-
-  private async get<TResponse = IMonkeytypeResponseBase>(path: string, query?: URLSearchParams): Promise<TResponse | number> {
-    if(!this.apeKey) {
-      throw new Error("Monkeytype APE key should be provided");
-    }
-
-    const normalizedPath = path.replace(/^\/+/, "");
-    const url = new URL(`${MonkeytypeAPI.API_HOST}/${normalizedPath}`);
-    if(query) {
-      url.search = query.toString();
-    }
-
-    const response = await fetch(url.toString(), {
-      method: "GET",
-      headers: {
-        Authorization: `ApeKey ${this.apeKey}`,
-      },
+export class MonkeytypeAPI extends BasicAPIFetch {
+  public constructor(apeKey: string) {
+    super("https://api.monkeytype.com", {
+      Authorization: `ApeKey ${apeKey}`,
     });
-
-    const json = await response.json() as IMonkeytypeResponseBase;
-
-    if(!response.ok) {
-      if(json.message) {
-        console.error(`Monkeytype API request failed: ${response.status} ${response.statusText} (message: ${json.message})`);
-      }
-
-      return response.status;
-    }
-
-    return json as TResponse;
   }
 
-  public async getPersonalBest(mode: "time" | "words" | "quote" | "custom" | "zen", value?: string | number): Promise<IMonkeytypePersonalBestResponse | number> {
+  public async getPersonalBest(mode: "time" | "words" | "quote" | "custom" | "zen", value?: string | number): Promise<MonkeytypePersonalBestResponse | number> {
     const query = new URLSearchParams();
     query.set("mode", mode);
     if(value) {
       query.set("mode2", value.toString());
     }
 
-    return this.get<IMonkeytypePersonalBestResponse>("/users/personalBests", query);
+    return this.get<MonkeytypePersonalBestResponse>("/users/personalBests", query);
   }
 
-  public async getLastResult(): Promise<IMonkeytypeLastResultResponse | number> {
-    return this.get<IMonkeytypeLastResultResponse>("/results/last");
+  public async getLastResult(): Promise<MonkeytypeLastResultResponse | number> {
+    return this.get<MonkeytypeLastResultResponse>("/results/last");
   }
 }
 
 export function createMonkeytypeAPI(): MonkeytypeAPI {
+  if(!process.env.MONKEYTYPE_APE) {
+    throw new Error("Monkeytype API key is not set in environment variables.");
+  }
+
   return new MonkeytypeAPI(process.env.MONKEYTYPE_APE);
 }
 
-export interface IMonkeytypeResponseBase {
+export interface MonkeytypeResponseBase {
   message: string;
 }
 
-export interface IMonkeytypePersonalBestResponse extends IMonkeytypeResponseBase {
+export interface MonkeytypePersonalBestResponse extends MonkeytypeResponseBase {
   data: {
     acc: number;
     consistency: number;
@@ -72,7 +49,7 @@ export interface IMonkeytypePersonalBestResponse extends IMonkeytypeResponseBase
   };
 }
 
-export interface IMonkeytypeLastResultResponse extends IMonkeytypeResponseBase {
+export interface MonkeytypeLastResultResponse extends MonkeytypeResponseBase {
   data: {
     wpm: number;
     rawWpm: number;
