@@ -6,7 +6,7 @@ import { createMonkeytypeAPI } from "../lib/monkeytype";
 import DataCollectorBase from "./base";
 
 export default class MonkeytypeUserDataCollector extends DataCollectorBase<MonkeytypeUserData> {
-  public override readonly recollectMinimumPeriod = 60 * 60 * 1; // 1 hour
+  public override readonly recollectMinimumPeriod = 60 * 60 * 2; // 2 hours
   public override readonly dataType: DataType = DataType.MonkeytypeUser;
 
   public get dataId(): string {

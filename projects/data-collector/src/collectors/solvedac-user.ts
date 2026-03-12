@@ -18,10 +18,10 @@ export default class SolvedACUserDataCollector extends DataCollectorBase<SolvedA
   }
 
   public async collect(db: PrismaClient): Promise<SolvedACUserData> {
-    // Create SolvedAC API instance
+    // Create solved.ac API instance
     const api = createSolvedACAPI();
     if(!api) {
-      throw new Error("Failed to create SolvedAC API instance.");
+      throw new Error("Failed to create solved.ac API instance.");
     }
 
     let structedData: SolvedACUserData;

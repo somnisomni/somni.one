@@ -11,7 +11,7 @@ export default class SteamUserDataCollector extends DataCollectorBase<SteamUserD
     private readonly userName: string,
   ) { super(); }
 
-  public override readonly recollectMinimumPeriod = 60 * 60 * 1; // 1 hour
+  public override readonly recollectMinimumPeriod = 60 * 60 * 2; // 2 hours
   public override readonly dataType: DataType = DataType.SteamUser;
 
   public get dataId(): string {
