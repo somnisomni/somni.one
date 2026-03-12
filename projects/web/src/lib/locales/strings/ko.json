@@ -93,7 +93,8 @@
       "opensource": "오픈 소스",
       "distributingGame": "공개 릴리즈",
       "codeContribution": "오픈 소스",
-      "translation": "번역"
+      "translation": "번역",
+      "nonPublicMethod": "비공개 수단으로 작업"
     }
   }
 }

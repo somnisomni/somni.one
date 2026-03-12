@@ -93,7 +93,8 @@
       "opensource": "Open Source",
       "distributingGame": "Public Release",
       "codeContribution": "Open Source",
-      "translation": "Translation"
+      "translation": "Translation",
+      "nonPublicMethod": "Non-Public Method"
     }
   }
 }

@@ -37,6 +37,19 @@ const evaluators: WorkItemTagEvaluator<ContributionDataBase> = {
         return !!(data as ContributionTranslationData).langFromTo;
       },
     },
+    {
+      tag: {
+        id: "non-public-method",
+        color: {
+          light: "currentColor",
+          dark: "currentColor",
+        },
+        labelKey: "works.tags.nonPublicMethod",
+      },
+      evaluate(data: ContributionDataBase) {
+        return !data.repositoryUrl && !data.proofUrl && !(data.contributions && Object.values(data.contributions).length > 0);
+      },
+    },
   ],
 };
 </script>
