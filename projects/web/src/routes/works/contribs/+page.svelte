@@ -1,15 +1,9 @@
 <div class="page">
-  <ul class="grid grid-cols-1 xl:grid-cols-2 min-[128rem]:grid-cols-3 gap-4">
-    {#each contributions as contribution}
-      <li>
+  <ul class="grid gap-4 grid-cols-1 xl:grid-cols-2 min-[128rem]:grid-cols-3">
+    {#each contributions as contribution, index (index)}
+      <li in:fly={{ y: 30, duration: 500, delay: index * 50, easing: quartOut }}>
         <ContributionItem { contribution } />
       </li>
-      <!-- <div class="flex flex-row mb-8 gap-4">
-        <div class="flex flex-col justify-center">
-          <p class="text-3xl font-medium">{@html contribution.title}</p>
-          <p class="text-lg font-light">{@html contribution.desc}</p>
-        </div>
-      </div> -->
     {/each}
   </ul>
 </div>
@@ -19,9 +13,17 @@ import type { ContributionDataBase, ContributionOpenSourceData, ContributionTran
 import ContributionItem from "$/components/works/ContributionItem.svelte";
 import Contributions from "@somni.one/common/data/works/contributions/opensource.json";
 import Translations from "@somni.one/common/data/works/contributions/translation.json";
+import { fly } from "svelte/transition";
+import { quartOut } from "svelte/easing";
+import { onMount } from "svelte";
 
-const contributions: ContributionDataBase[] = [
+let contributions: ContributionDataBase[] = $state([]);
+const computedContributions: ContributionDataBase[] = [
   ...Contributions as ContributionOpenSourceData[],
   ...Translations as ContributionTranslationData[],
 ].sort((a, b) => a.title.localeCompare(b.title));
+
+onMount(() => {
+  contributions = computedContributions;
+});
 </script>
