@@ -1,9 +1,9 @@
 # somni.one - AI coding agent guidelines
 
 ## Overview
-This repository contains the whole codebase for the **"[somni.one](https://somni.one)"** website. This personal website represents who the [**somni**](https://github.com/somnisomni) is, what he does, and how to contact him. 
+This repository contains the whole codebase of the **"[somni.one](https://somni.one)"** website. This personal website represents who the [**somni**](https://github.com/somnisomni) is, what he does, and how to contact him. 
 
-The website is built using **SvelteKit** for the frontend, and **Node.js** with **TypeScript** and **Prisma** for the backend.
+The website is built using **SvelteKit** for the frontend, and **Node.js** with **TypeScript** and **Prisma** for the data collector. The website is designed to be run on **Cloudflare Pages and Workers**.
 
 ## THE ONLY (TWO) INSTRUCTIONS
 As stated in the overview, the website is personal and represents the "identity" of the owner. Therefore, the only instruction for any AI coding agent working on this codebase is:
