@@ -1,5 +1,5 @@
 <div class="page">
-  <ul class="grid grid-cols-1 xl:grid-cols-2 gap-4">
+  <ul class="grid grid-cols-1 xl:grid-cols-2 min-[128rem]:grid-cols-3 gap-4">
     {#each contributions as contribution}
       <li>
         <ContributionItem { contribution } />

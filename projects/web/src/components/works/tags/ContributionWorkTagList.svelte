@@ -15,8 +15,8 @@ const evaluators: WorkItemTagEvaluator<ContributionDataBase> = {
       tag: {
         id: "code-contribution",
         color: {
-          light: "000000",
-          dark: "FFFFFF",
+          light: "currentColor",
+          dark: "currentColor",
         },
         labelKey: "works.tags.codeContribution",
       },
@@ -28,8 +28,8 @@ const evaluators: WorkItemTagEvaluator<ContributionDataBase> = {
       tag: {
         id: "translation",
         color: {
-          light: "000000",
-          dark: "FFFFFF",
+          light: "currentColor",
+          dark: "currentColor",
         },
         labelKey: "works.tags.translation",
       },
