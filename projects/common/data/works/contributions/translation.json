@@ -1,5 +1,29 @@
 [
   {
+    "id": "amethyst",
+    "title": "Amethyst <small>(PojavLauncher)</small>",
+    "repositoryUrl": "https://github.com/AngelAuraMC/Amethyst-Android",
+    "proofUrl": "https://crowdin.com/project/pojavlauncher",
+    "platform": "crowdin",
+    "langFromTo": [ { "from": "en", "to": "ko" } ]
+  },
+  {
+    "id": "keepassium",
+    "title": "KeePassium",
+    "repositoryUrl": "https://github.com/keepassium/KeePassium",
+    "proofUrl": "https://crowdin.com/project/keepassium",
+    "platform": "crowdin",
+    "langFromTo": [ { "from": "en", "to": "ko" } ]
+  },
+  {
+    "id": "eartrumpet",
+    "title": "EarTrumpet",
+    "repositoryUrl": "https://github.com/File-New-Project/EarTrumpet",
+    "proofUrl": "https://crowdin.com/project/eartrumpet",
+    "platform": "crowdin",
+    "langFromTo": [ { "from": "en", "to": "ko" } ]
+  },
+  {
     "id": "openwrt",
     "title": "OpenWrt",
     "repositoryUrl": "https://github.com/openwrt/openwrt",
