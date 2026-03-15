@@ -9,6 +9,18 @@
   </ul>
 </div>
 
+<footer class="my-4">
+  <p class="text-center! text-sm opacity-50 *:[a]:underline">
+    { $_("works.contribs.footerGridLanes") }
+    | <a href="https://caniuse.com/css-grid-lanes" target="_blank">caniuse.com</a>
+    | <a href="https://webkit.org/blog/17660/introducing-css-grid-lanes/" target="_blank">WebKit Blog</a>
+
+    <br />
+
+    <small>Chromium flag: <code>#css-grid-lanes-layout</code></small>
+  </p>
+</footer>
+
 <script lang="ts">
 import type { ContributionDataBase, ContributionOpenSourceData, ContributionTranslationData } from "@somni.one/common";
 import ContributionItem from "$/components/works/ContributionItem.svelte";
@@ -17,6 +29,7 @@ import Translations from "@somni.one/common/data/works/contributions/translation
 import { fly } from "svelte/transition";
 import { quartOut } from "svelte/easing";
 import { onMount } from "svelte";
+import { _ } from "svelte-i18n";
 
 let contributions: ContributionDataBase[] = $state([]);
 const computedContributions: ContributionDataBase[] = [

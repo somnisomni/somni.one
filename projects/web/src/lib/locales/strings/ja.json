@@ -105,6 +105,9 @@
       "relatedPageUrl": "関連情報",
       "repositoryUrl": "ソースコードリポジトリ",
       "appUrl": "リリース/配布ページ"
+    },
+    "contribs": {
+      "footerGridLanes": ""
     }
   }
 }

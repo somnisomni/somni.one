@@ -105,6 +105,9 @@
       "relatedPageUrl": "Related Page",
       "repositoryUrl": "Source Code",
       "appUrl": "Release"
+    },
+    "contribs": {
+      "footerGridLanes": "This page looks better with CSS Grid Lanes enabled."
     }
   }
 }

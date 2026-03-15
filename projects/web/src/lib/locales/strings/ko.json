@@ -105,6 +105,9 @@
       "repositoryUrl": "소스 코드 저장소",
       "relatedPageUrl": "관련 정보",
       "appUrl": "릴리즈/배포 페이지"
+    },
+    "contribs": {
+      "footerGridLanes": "이 페이지는 CSS Grid Lanes가 활성화되었을 때 의도대로 표시됩니다."
     }
   }
 }
