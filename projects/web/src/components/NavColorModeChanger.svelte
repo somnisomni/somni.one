@@ -2,20 +2,18 @@
         class="color-mode-indicator"
         onclick={ toggleColorMode }>
   {#if currentColorMode === "auto"}
-    <span in:fly={ flyInParams } out:fly={ flyOutParams }>{@html faCircleHalfStroke}</span>
+    <span in:fly={ flyInParams } out:fly={ flyOutParams }><SunMoonIcon /></span>
   {:else if currentColorMode === "light"}
-    <span in:fly={ flyInParams } out:fly={ flyOutParams }>{@html faSun}</span>
+    <span in:fly={ flyInParams } out:fly={ flyOutParams }><SunIcon /></span>
   {:else if currentColorMode === "dark"}
-    <span in:fly={ flyInParams } out:fly={ flyOutParams }>{@html faMoon}</span>
+    <span in:fly={ flyInParams } out:fly={ flyOutParams }><MoonIcon /></span>
   {/if}
 </button>
 
 <script lang="ts">
-import faSun from "$assets/icons/fa-sun-solid-full.svg?raw";
-import faMoon from "$assets/icons/fa-moon-solid-full.svg?raw";
-import faCircleHalfStroke from "$assets/icons/fa-circle-half-stroke-solid-full.svg?raw";
 import { fly, type FlyParams } from "svelte/transition";
 import { quartOut } from "svelte/easing";
+import { SunMoonIcon, SunIcon, MoonIcon } from "@lucide/svelte";
 
 const animationDuration = 500;
 const flyInParams: FlyParams = {
@@ -67,13 +65,13 @@ $effect(() => {
     @apply cursor-pointer opacity-100 bg-background/80;
 
     span {
-      @apply fill-primary;
+      @apply text-primary;
     }
   }
 
   span {
-    @apply absolute w-[3em] h-[3em] fill-background;
-    @apply transition-[fill] duration-[inherit];
+    @apply absolute w-[3em] h-[3em] text-background *:[svg]:w-full *:[svg]:h-full;
+    @apply transition-colors duration-[inherit];
     @apply /* < md */ max-md:w-[2em] max-md:h-[2em];
   }
 }

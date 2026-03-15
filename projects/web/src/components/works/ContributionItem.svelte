@@ -9,13 +9,13 @@
         <a href={ contribution.proofUrl }
           target="_blank"
           class="contribution-item-link">
-          {@html faArrowUpRightFromSquare}
+          <SquareArrowOutUpRightIcon />
         </a>
       {:else if contribution.repositoryUrl}
         <a href={ contribution.repositoryUrl }
           target="_blank"
           class="contribution-item-link">
-          {@html faCodeBranch}
+          <GitForkIcon />
         </a>
       {/if}
     </div>
@@ -45,10 +45,9 @@
 <script lang="ts">
 import { generateGitHubCommitId, generateGitHubPullRequestId, sliceGitHubRepoUrl, type ContributionDataBase, type ContributionTranslationData, type GitHubCommitData, type GitHubPullRequestData } from "@somni.one/common";
 import ContributionWorkTagList from "$/components/works/tags/ContributionWorkTagList.svelte";
-import faCodeBranch from "$assets/icons/fa-code-branch-solid-full.svg?raw";
-import faArrowUpRightFromSquare from "$assets/icons/fa-arrow-up-right-from-square-solid-full.svg?raw";
 import { onMount } from "svelte";
 import { requestGetData } from "$/lib/stores/data-collector.svelte";
+import { GitForkIcon, SquareArrowOutUpRightIcon } from "@lucide/svelte";
 
 const { contribution }: { contribution: ContributionDataBase } = $props();
 let contribData: (GitHubCommitData | GitHubPullRequestData)[] | null = $state(null);
