@@ -70,7 +70,11 @@ const hasAnyLink = $derived(!!(project.appUrl || project.pageUrl || project.repo
 }
 
 .links a {
-  @apply opacity-50 border-b transition-[opacity,padding] duration-200 ease-out;
+  @apply opacity-40 border-b transition-[opacity,padding] duration-200 ease-out;
   @apply hover:opacity-100 hover:px-2;
+}
+
+.links a.text-accent {
+  @apply opacity-60 hover:opacity-100;
 }
 </style>
