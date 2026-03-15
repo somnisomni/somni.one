@@ -1,4 +1,4 @@
-<div class="flex flex-col lg:flex-row mb-16 lg:mb-12 gap-4">
+<div class="flex flex-col lg:flex-row mb-16 lg:mb-12 gap-6">
   <img class="w-full lg:w-md xl:w-lg
               h-64 lg:h-fit lg:aspect-video
               shrink-0 rounded-xl object-cover bg-black"
