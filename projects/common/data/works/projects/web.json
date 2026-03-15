@@ -102,6 +102,10 @@
     ],
     "repositoryUrl": "https://github.com/somnisomni/MyBoothManager",
     "appUrl": "https://booth.koharu.dev",
+    "headerImageRemoteSrcSet": [
+      { "path": "/images/works/myboothmanager-header.webp", "scale": 1 },
+      { "path": "/images/works/myboothmanager-header@0.5x.webp", "scale": 0.5 }
+    ],
     "featured": true
   },
   {
