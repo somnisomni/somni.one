@@ -26,7 +26,8 @@
       "sites": "Sites / Services",
       "development": "Programming / Development",
       "etc": "Other Stuffs",
-      "games": "Games"
+      "games": "Games",
+      "translation": "Localization Platform"
     },
     "discord": {
       "label": "Discord",
@@ -59,6 +60,10 @@
     "minecraft": {
       "anchorTip": "Minecraft ({userId})",
       "label": "Minecraft"
+    },
+    "crowdin": {
+      "label": "Crowdin",
+      "anchorTip": "Crowdin — @somni"
     }
   },
   "main": {

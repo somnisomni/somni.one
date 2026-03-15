@@ -26,7 +26,8 @@
       "sites": "소유 사이트 및 서비스",
       "development": "프로그래밍 / 개발 관련",
       "etc": "기타",
-      "games": "게임"
+      "games": "게임",
+      "translation": "번역 플랫폼"
     },
     "discord": {
       "label": "Discord",
@@ -59,6 +60,10 @@
     "minecraft": {
       "label": "Minecraft",
       "anchorTip": "Minecraft ({userId})"
+    },
+    "crowdin": {
+      "label": "Crowdin",
+      "anchorTip": "Crowdin — @somni"
     }
   },
   "main": {

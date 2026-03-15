@@ -1,4 +1,4 @@
-import { siX, siBluesky, siDiscord, siGithub, siMonkeytype, siSteam } from "simple-icons";
+import { siX, siBluesky, siDiscord, siGithub, siMonkeytype, siSteam, siCrowdin } from "simple-icons";
 import { decodeEmailAddress } from "$/lib/data/email";
 import faAt from "$assets/icons/fa-at-solid-full.svg?raw";
 import faCircleCheck from "$assets/icons/fa-circle-check-solid-full.svg?raw";
@@ -42,6 +42,7 @@ export class LinkItem {
     monkeytype: siMonkeytype.svg,
     steam: siSteam.svg,
     minecraft: faCube,
+    crowdin: siCrowdin.svg,
   };
 
   constructor(

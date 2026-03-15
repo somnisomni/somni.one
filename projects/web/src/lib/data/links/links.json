@@ -52,5 +52,10 @@
     "url": null,
     "userId": "somnisomni",
     "userIdAlt": "d0b86057-f0e5-4cbd-a534-63347c9a2a92"
+  },
+  "crowdin": {
+    "textParentKey": "links.crowdin",
+    "url": "https://crowdin.com/profile/somni",
+    "userId": "somni"
   }
 }

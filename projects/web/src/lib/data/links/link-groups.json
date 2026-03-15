@@ -28,6 +28,12 @@
       "minecraft"
     ]
   },
+  "translation": {
+    "labelKey": "links.group.translation",
+    "items": [
+      "crowdin"
+    ]
+  },
   "etc": {
     "labelKey": "links.group.etc",
     "items": [
