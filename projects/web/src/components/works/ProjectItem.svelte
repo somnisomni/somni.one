@@ -4,7 +4,8 @@
               shrink-0 rounded-xl object-cover bg-black"
         srcset={ generateImageSrcSet(project.headerImageRemoteSrcSet) }
         src={ transformRemoteAssetPath(project.headerImageRemoteSrcSet?.[0]?.path) ?? BLACK_IMAGE_ENCODED }
-        alt={ project.title } />
+        alt={ project.title }
+        loading="lazy" />
 
   <div class="flex flex-col justify-center">
     <p class="text-3xl font-bold">{@html project.title}</p>
