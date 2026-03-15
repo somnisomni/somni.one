@@ -100,6 +100,11 @@
       "codeContribution": "오픈 소스",
       "translation": "번역",
       "nonPublicMethod": "비공개 수단으로 작업"
+    },
+    "components": {
+      "repositoryUrl": "소스 코드 저장소",
+      "relatedPageUrl": "관련 정보",
+      "appUrl": "릴리즈/배포 페이지"
     }
   }
 }

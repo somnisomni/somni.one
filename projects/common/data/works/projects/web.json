@@ -129,7 +129,7 @@
       "배포를 간단히 하기 위해 Dockerfile 생성, 개인 서버에서 컨테이너를 빌드하여 배포<small>(Podman 사용)</small> 중."
     ],
     "repositoryUrl": "https://github.com/somnisomni/mollufier",
-    "appUrl": "https://app.somni.one/mollufier/",
+    "appUrl": "https://mollufier.koharu.dev/",
     "headerImageRemoteSrcSet": [
       { "path": "/images/works/mollufier-header.webp", "scale": 1 },
       { "path": "/images/works/mollufier-header@0.5x.webp", "scale": 0.5 }

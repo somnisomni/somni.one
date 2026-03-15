@@ -30,6 +30,7 @@
 		"vite": "catalog:"
 	},
 	"dependencies": {
+		"@lucide/svelte": "^0.577.0",
 		"@prgm/sveltekit-progress-bar": "^3.0.2",
 		"@somni.one/common": "workspace:*",
 		"gsap": "^3.14.2",

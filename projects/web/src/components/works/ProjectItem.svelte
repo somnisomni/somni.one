@@ -15,6 +15,7 @@
       <span>{ project.yearFrom }</span>
       <span>{#if project.association}/ { project.association }{/if}</span>
     </p>
+
     <p class="inline-flex items-center flex-wrap my-4">
       {#each project.stacks as stack}
         {@const techStackData = getTechStackData(stack)}
@@ -29,7 +30,16 @@
         </span>
       {/each}
     </p>
+
     <p class="desc text-md font-light">{@html project.desc}</p>
+
+    {#if hasAnyLink}
+      <p class="links flex flex-row gap-2 text-md font-light mt-4">
+        {#if project.appUrl} <a href={ project.appUrl } target="_blank" class="text-accent">{ $_("works.components.appUrl") } <SquareArrowOutUpRightIcon size="16" /></a> {/if}
+        {#if project.pageUrl} <a href={ project.pageUrl } target="_blank">{ $_("works.components.relatedPageUrl") } <SquareArrowOutUpRightIcon size="16" /></a> {/if}
+        {#if project.repositoryUrl} <a href={ project.repositoryUrl } target="_blank">{ $_("works.components.repositoryUrl") } <SquareArrowOutUpRightIcon size="16" /></a> {/if}
+      </p>
+    {/if}
   </div>
 </div>
 
@@ -40,8 +50,10 @@ import SpanWithTip from "$/components/SpanWithTip.svelte";
 import { getTechStackData } from "$/lib/tech-stacks";
 import { BLACK_IMAGE_ENCODED, generateImageSrcSet, transformRemoteAssetPath } from "$/lib/utils";
 import ProjectWorkTagList from "$/components/works/tags/ProjectWorkTagList.svelte";
+import { SquareArrowOutUpRightIcon } from "@lucide/svelte";
 
 const { project }: { project: ProjectData } = $props();
+const hasAnyLink = $derived(!!(project.appUrl || project.pageUrl || project.repositoryUrl));
 </script>
 
 <style lang="scss" scoped>
@@ -51,5 +63,14 @@ const { project }: { project: ProjectData } = $props();
 
 .desc :global(a) {
   @apply underline;
+}
+
+.links :global(svg) {
+  @apply inline-block;
+}
+
+.links a {
+  @apply opacity-50 border-b transition-[opacity,padding] duration-200 ease-out;
+  @apply hover:opacity-100 hover:px-2;
 }
 </style>
