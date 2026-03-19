@@ -1,3 +1,3 @@
 export default class Const {
-  public static readonly HomepageUrl = "https://somni.one";
+  public static readonly HOMEPAGE_URL = "https://somni.one";
 }

@@ -20,7 +20,7 @@ export default {
       return new Response(null, {
         status: 301,
         headers: {
-          Location: Const.HomepageUrl,
+          Location: Const.HOMEPAGE_URL,
         },
       });
     }
