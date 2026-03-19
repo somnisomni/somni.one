@@ -107,7 +107,8 @@
       "appUrl": "Release"
     },
     "contribs": {
-      "footerGridLanes": "This page looks better with CSS Grid Lanes enabled."
+      "footerGridLanes": "This page looks better with CSS Grid Lanes enabled.",
+      "externalPlatformMemo": "Contributions made at {platform}"
     }
   }
 }

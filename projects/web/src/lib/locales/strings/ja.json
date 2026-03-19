@@ -107,7 +107,7 @@
       "appUrl": "リリース/配布ページ"
     },
     "contribs": {
-      "footerGridLanes": ""
+      "externalPlatformMemo": "{platform}で翻訳を貢献"
     }
   }
 }

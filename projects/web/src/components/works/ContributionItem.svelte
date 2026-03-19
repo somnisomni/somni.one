@@ -1,4 +1,4 @@
-<div class="contribution-item p-4 border border-background-inverse/20 rounded-lg">
+<div class="contribution-item">
   <div class="flex flex-row flex-wrap items-center gap-2">
     <span class="text-2xl font-semibold">{@html contribution.title}</span>
 
@@ -21,8 +21,16 @@
     </div>
   </div>
 
+  {#if !contribData
+       && (contribution as ContributionTranslationData).platform !== "github"
+       && (contribution as ContributionTranslationData).platform !== "direct"}
+    {@const translationData = contribution as ContributionTranslationData}
+
+    <p class="font-light text-sm opacity-50">{ $_("works.contribs.externalPlatformMemo", { values: { platform: translationPlatformNameMap[translationData.platform] } }) }</p>
+  {/if}
+
   {#if contribData}
-    <ul class="mt-2">
+    <ul>
       {#each contribData as data}
         <li class="font-mono text-sm opacity-50 transition-opacity hover:opacity-80">
           <a href={ data.url }
@@ -42,12 +50,23 @@
   {/if}
 </div>
 
+<script lang="ts" module>
+const translationPlatformNameMap: Record<ContributionTranslationData["platform"], string> = {
+  github: "GitHub",
+  crowdin: "Crowdin",
+  transifex: "Transifex",
+  weblate: "Weblate",
+  direct: "Direct",
+};
+</script>
+
 <script lang="ts">
 import { generateGitHubCommitId, generateGitHubPullRequestId, sliceGitHubRepoUrl, type ContributionDataBase, type ContributionTranslationData, type GitHubCommitData, type GitHubPullRequestData } from "@somni.one/common";
 import ContributionWorkTagList from "$/components/works/tags/ContributionWorkTagList.svelte";
 import { onMount } from "svelte";
 import { requestGetData } from "$/lib/stores/data-collector.svelte";
 import { GitForkIcon, SquareArrowOutUpRightIcon } from "@lucide/svelte";
+import { _ } from "svelte-i18n";
 
 const { contribution }: { contribution: ContributionDataBase } = $props();
 let contribData: (GitHubCommitData | GitHubPullRequestData)[] | null = $state(null);
@@ -90,7 +109,12 @@ onMount(async () => {
 </script>
 
 <style lang="scss" scoped>
-.contribution-item-link {
-  @apply fill-current w-6 h-6 opacity-50 hover:opacity-100 transition-opacity duration-200;
+.contribution-item {
+  @apply p-4 flex flex-col gap-2 border border-background-inverse/20 rounded-lg;
+  @apply transition-colors hover:border-background-inverse/70;
+
+  .contribution-item-link {
+    @apply fill-current w-6 h-6 opacity-50 hover:opacity-100 transition-opacity duration-200;
+  }
 }
 </style>

@@ -1,6 +1,6 @@
-<ul class="work-tag-list inline-block">
+<ul class="work-tag-list inline-flex gap-2">
   {#each evaluatedTags as tag}
-    <li class="work-tag inline-block mr-2 rounded-full px-1.5 py-px border border-current font-normal"
+    <li class="work-tag inline-block rounded-full px-1.5 py-px border border-current font-normal"
           style="--color-on-light: #{ tag.color.light };
                  --color-on-dark:  #{ tag.color.dark ?? tag.color.light };">
       <span>{ $_(tag.labelKey) }</span>

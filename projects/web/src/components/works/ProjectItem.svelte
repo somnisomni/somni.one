@@ -12,8 +12,10 @@
     <p class="text-sm font-light opacity-70">
       <ProjectWorkTagList { project } />
 
-      <span>{ project.yearFrom }</span>
-      <span>{#if project.association}/ { project.association }{/if}</span>
+      <span class="ml-1">
+        <span>{ project.yearFrom }</span>
+        <span>{#if project.association}/ { project.association }{/if}</span>
+      </span>
     </p>
 
     <p class="inline-flex items-center flex-wrap my-4">
