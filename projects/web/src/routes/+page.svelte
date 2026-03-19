@@ -45,7 +45,9 @@
             <SpanWithTip tip={ $_(link.anchorTipKey) }
                          notText={ true }>
               <ScaleAnimationOnHover>
-                <div class="p-4">{@html link.iconHtml}</div>
+                {@const Icon = link.component}
+
+                <div class="p-4"><Icon /></div>
               </ScaleAnimationOnHover>
             </SpanWithTip>
           </LinkAnchor>
@@ -124,7 +126,7 @@ p {
     @apply flex flex-row flex-wrap *:m-2;
 
     :global(img), :global(svg) {
-      @apply fill-background-inverse w-12 h-12;
+      @apply text-background-inverse w-12 h-12;
     }
 
     & > :global(*) {

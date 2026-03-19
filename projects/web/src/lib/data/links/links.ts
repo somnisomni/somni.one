@@ -1,11 +1,8 @@
-import { siX, siBluesky, siDiscord, siGithub, siMonkeytype, siSteam, siCrowdin } from "simple-icons";
+import type { Component } from "svelte";
+import { SiBluesky, SiCrowdin, SiDiscord, SiGithub, SiMonkeytype, SiSteam, SiX } from "@icons-pack/svelte-simple-icons";
+import { AtSignIcon, CircleCheckBigIcon, CopyIcon, ExternalLinkIcon, NotebookTextIcon } from "@lucide/svelte";
+import MinecraftAltIcon from "$/components/icons/MinecraftAltIcon.svelte";
 import { decodeEmailAddress } from "$/lib/data/email";
-import faAt from "$assets/icons/fa-at-solid-full.svg?raw";
-import faCircleCheck from "$assets/icons/fa-circle-check-solid-full.svg?raw";
-import faCopy from "$assets/icons/fa-copy-solid-full.svg?raw";
-import faCube from "$assets/icons/fa-cube-solid-full.svg?raw";
-import faLinesLeaning from "$assets/icons/fa-lines-leaning-solid-full.svg?raw";
-import faSquareArrowUp from "$assets/icons/fa-square-arrow-up-right-solid-full.svg?raw";
 import LinkData from "./links.json";
 
 interface Link {
@@ -31,18 +28,18 @@ export interface LinkGroup {
 export type LinkItemId = keyof typeof LinkData;
 
 export class LinkItem {
-  private static icons = {
-    email: faAt,
-    twitter: siX.svg,
-    bluesky: siBluesky.svg,
-    discord: siDiscord.svg,
-    blog: faLinesLeaning,
-    github: siGithub.svg,
-    solvedac: faCircleCheck,
-    monkeytype: siMonkeytype.svg,
-    steam: siSteam.svg,
-    minecraft: faCube,
-    crowdin: siCrowdin.svg,
+  private static icons: Record<string, Component> = {
+    email: AtSignIcon,
+    twitter: SiX,
+    bluesky: SiBluesky,
+    discord: SiDiscord,
+    blog: NotebookTextIcon,
+    github: SiGithub,
+    solvedac: CircleCheckBigIcon,
+    monkeytype: SiMonkeytype,
+    steam: SiSteam,
+    minecraft: MinecraftAltIcon,
+    crowdin: SiCrowdin,
   };
 
   constructor(
@@ -62,12 +59,12 @@ export class LinkItem {
     return this.id === "email" && this.data.url ? decodeEmailAddress(this.data.url) : this.data.url;
   }
 
-  public get iconHtml(): string | null {
+  public get component(): Component | null {
     return LinkItem.icons[this.id] || null;
   }
 
-  public get navIconHtml(): string | null {
-    return this.id === "email" ? faCopy : faSquareArrowUp;
+  public get navIconComponent(): Component | null {
+    return this.id === "email" ? CopyIcon : ExternalLinkIcon;
   }
 }
 

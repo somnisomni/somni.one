@@ -32,11 +32,11 @@
 	"dependencies": {
 		"@lucide/svelte": "^0.577.0",
 		"@prgm/sveltekit-progress-bar": "^3.0.2",
+		"@icons-pack/svelte-simple-icons": "^7.2.0",
 		"@somni.one/common": "workspace:*",
 		"gsap": "^3.14.2",
 		"octokit": "^5.0.5",
 		"sass": "^1.97.2",
-		"simple-icons": "^16.5.0",
 		"string-to-color": "^2.2.2",
 		"svelte-i18n": "^4.0.1"
 	}

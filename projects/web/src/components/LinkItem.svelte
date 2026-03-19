@@ -2,9 +2,11 @@
   <div class="link-item { !linkItem.data.url ? 'no-url' : '' }"
        onpointerenter={ () => hover = true }
        onpointerleave={ () => hover = false }>
-    {#if linkItem.iconHtml}
+    {#if linkItem.component}
+      {@const Icon = linkItem.component}
+
       <div class="link-icon">
-        {@html linkItem.iconHtml}
+        <Icon />
       </div>
     {/if}
 
@@ -29,8 +31,10 @@
       {/if}
 
       {#if linkItem.data.url}
+        {@const NavIcon = linkItem.navIconComponent}
+
         <div class="link-navigation-icon">
-          {@html linkItem.navIconHtml}
+          <NavIcon />
         </div>
       {/if}
     </div>
@@ -145,7 +149,7 @@ onMount(async () => {
   }
 
   .link-icon {
-    @apply w-6 h-6 mr-4 fill-background-inverse;
+    @apply w-6 h-6 mr-4 text-background-inverse;
   }
 
   .link-content {
@@ -162,7 +166,7 @@ onMount(async () => {
 }
 
 .extra-info {
-  @apply absolute right-0 px-[inherit] flex flex-row items-center justify-end text-end text-background-inverse/50 fill-background-inverse/50;
+  @apply absolute right-0 px-[inherit] flex flex-row items-center justify-end text-end text-background-inverse/50;
 
   .extra-data {
     @apply text-sm whitespace-pre-line text-end;
@@ -170,7 +174,7 @@ onMount(async () => {
   }
 
   .link-navigation-icon {
-    @apply *:w-8 *:h-8 ml-2;
+    @apply *:w-8 *:h-8 ml-4;
   }
 }
 
@@ -182,7 +186,7 @@ onMount(async () => {
     @apply opacity-100;
   }
 
-  img, svg {
+  :global(img), :global(svg) {
     @apply h-full;
   }
 }
