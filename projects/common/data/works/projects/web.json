@@ -81,7 +81,7 @@
   {
     "id": "myboothmanager",
     "title": "MyBoothManager",
-    "desc": "창작자들의 부스 운영을 돕는 부스 및 굿즈 관리 웹서비스",
+    "desc": "창작자들의 부스 운영을 돕는 부스 및 굿즈 관리 웹서비스<br><small>(데모 계정: ID <code>demo</code> / PW <code>demo</code>)</small>",
     "stacks": [
       "TYPESCRIPT",
       "VUEJS",
@@ -101,7 +101,7 @@
       ""
     ],
     "repositoryUrl": "https://github.com/somnisomni/MyBoothManager",
-    "appUrl": "https://booth.koharu.dev",
+    "appUrl": "https://admin.booth.koharu.dev",
     "headerImageRemoteSrcSet": [
       { "path": "/images/works/myboothmanager-header.webp", "scale": 1 },
       { "path": "/images/works/myboothmanager-header@0.5x.webp", "scale": 0.5 }
