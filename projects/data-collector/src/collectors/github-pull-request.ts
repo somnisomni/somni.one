@@ -2,7 +2,7 @@ import type { PrismaClient } from "../generated/prisma-client/client";
 import type { GitHubPullRequestData } from "@somni.one/common";
 import { generateGitHubPullRequestId } from "@somni.one/common";
 import { DataType } from "../generated/prisma-client/enums";
-import { createOctokit } from "../lib/octokit";
+import { getOctokit } from "../lib/octokit";
 import DataCollectorBase from "./base";
 
 export default class GitHubPullRequestDataCollector extends DataCollectorBase<GitHubPullRequestData> {
@@ -20,8 +20,8 @@ export default class GitHubPullRequestDataCollector extends DataCollectorBase<Gi
   }
 
   public override async collect(db: PrismaClient): Promise<GitHubPullRequestData> {
-    // Create Octokit for querying GitHub API
-    const octokit = createOctokit(true);
+    // Get Octokit instance for querying GitHub API
+    const octokit = getOctokit(true);
 
     let structedData: GitHubPullRequestData;
     try {

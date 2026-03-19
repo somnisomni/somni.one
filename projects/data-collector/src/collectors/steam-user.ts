@@ -3,7 +3,7 @@ import type { SteamUserData } from "@somni.one/common";
 import type SteamAPI from "steamapi";
 import { generateSteamUserId } from "@somni.one/common";
 import { DataType } from "../generated/prisma-client/enums";
-import { createSteamAPI } from "../lib/steam";
+import { getSteamAPI } from "../lib/steam";
 import DataCollectorBase from "./base";
 
 export default class SteamUserDataCollector extends DataCollectorBase<SteamUserData> {
@@ -20,7 +20,7 @@ export default class SteamUserDataCollector extends DataCollectorBase<SteamUserD
 
   public async collect(db: PrismaClient): Promise<SteamUserData> {
     // Create Steam API instance
-    const api = createSteamAPI();
+    const api = getSteamAPI();
     if(!api) {
       throw new Error("Failed to create Steam API instance.");
     }

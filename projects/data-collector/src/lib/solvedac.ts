@@ -1,12 +1,15 @@
 import { BasicAPIFetch } from "./basic-fetch";
 
+const API_BASE_URL = "https://solved.ac/api/v3";
+const API_ENDPOINT_USER = "/user/show";
+
 export class SolvedACAPI extends BasicAPIFetch {
   public constructor() {
-    super("https://solved.ac/api/v3");
+    super(API_BASE_URL);
   }
 
   public async getUser(handle: string): Promise<SolvedACUserResponse | number> {
-    return await this.get<SolvedACUserResponse>("/user/show", new URLSearchParams({ handle }));
+    return await this.get<SolvedACUserResponse>(API_ENDPOINT_USER, new URLSearchParams({ handle }));
   }
 }
 

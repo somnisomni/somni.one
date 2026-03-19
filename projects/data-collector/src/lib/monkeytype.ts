@@ -1,8 +1,12 @@
 import { BasicAPIFetch } from "./basic-fetch";
 
+const API_BASE_URL = "https://api.monkeytype.com";
+const API_ENDPOINT_PERSONAL_BEST = "/users/personalBests";
+const API_ENDPOINT_LAST_RESULT = "/results/last";
+
 export class MonkeytypeAPI extends BasicAPIFetch {
   public constructor(apeKey: string) {
-    super("https://api.monkeytype.com", {
+    super(API_BASE_URL, {
       Authorization: `ApeKey ${apeKey}`,
     });
   }
@@ -14,11 +18,11 @@ export class MonkeytypeAPI extends BasicAPIFetch {
       query.set("mode2", value.toString());
     }
 
-    return this.get<MonkeytypePersonalBestResponse>("/users/personalBests", query);
+    return this.get<MonkeytypePersonalBestResponse>(API_ENDPOINT_PERSONAL_BEST, query);
   }
 
   public async getLastResult(): Promise<MonkeytypeLastResultResponse | number> {
-    return this.get<MonkeytypeLastResultResponse>("/results/last");
+    return this.get<MonkeytypeLastResultResponse>(API_ENDPOINT_LAST_RESULT);
   }
 }
 
