@@ -38,6 +38,7 @@
 		"octokit": "^5.0.5",
 		"sass": "^1.97.2",
 		"string-to-color": "^2.2.2",
-		"svelte-i18n": "^4.0.1"
+		"svelte-i18n": "^4.0.1",
+		"simple-icons": "^16.13.0"
 	}
 }
