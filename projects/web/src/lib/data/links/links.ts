@@ -1,7 +1,7 @@
 import type { Component } from "svelte";
 import { SiBluesky, SiCrowdin, SiDiscord, SiGithub, SiMonkeytype, SiSteam, SiX } from "@icons-pack/svelte-simple-icons";
-import { AtSignIcon, CircleCheckBigIcon, CopyIcon, ExternalLinkIcon, NotebookTextIcon } from "@lucide/svelte";
-import MinecraftAltIcon from "$/components/icons/MinecraftAltIcon.svelte";
+import { LucideAtSign, LucideCircleCheckBig, LucideCopy, LucideExternalLink, LucideNotebookText } from "@lucide/svelte";
+import MinecraftAltIcon from "$/components/icons/IconMinecraftAlt.svelte";
 import { decodeEmailAddress } from "$/lib/data/email";
 import LinkData from "./links.json";
 
@@ -29,13 +29,13 @@ export type LinkItemId = keyof typeof LinkData;
 
 export class LinkItem {
   private static icons: Record<string, Component> = {
-    email: AtSignIcon,
+    email: LucideAtSign,
     twitter: SiX,
     bluesky: SiBluesky,
     discord: SiDiscord,
-    blog: NotebookTextIcon,
+    blog: LucideNotebookText,
     github: SiGithub,
-    solvedac: CircleCheckBigIcon,
+    solvedac: LucideCircleCheckBig,
     monkeytype: SiMonkeytype,
     steam: SiSteam,
     minecraft: MinecraftAltIcon,
@@ -64,7 +64,7 @@ export class LinkItem {
   }
 
   public get navIconComponent(): Component | null {
-    return this.id === "email" ? CopyIcon : ExternalLinkIcon;
+    return this.id === "email" ? LucideCopy : LucideExternalLink;
   }
 }
 

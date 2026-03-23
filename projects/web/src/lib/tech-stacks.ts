@@ -1,18 +1,19 @@
 /* eslint-disable import-x/exports-last */
 
+import type { Component } from "svelte";
+import { SiAndroid, SiCss, SiDotnet, SiFmod, SiHtml5, SiJavascript, SiJquery, SiMysql, SiNestjs, SiNodedotjs, SiNuxt, SiPodman, SiPython, SiSass, SiSelenium, SiSequelize, SiSvelte, SiTailwindcss, SiTypescript, SiUnity, SiVuedotjs, SiVuetify, SiX } from "@icons-pack/svelte-simple-icons";
 import { TechStack } from "@somni.one/common";
-import { siAndroid, siCss, siDotnet, siFmod, siHtml5, siJavascript, siJquery, siMysql, siNestjs, siNodedotjs, siNuxt, siPodman, siPython, siSass, siSelenium, siSequelize, siSvelte, siTailwindcss, siTypescript, siUnity, siVuedotjs, siVuetify, siX } from "simple-icons";
-import IconCSharp from "$assets/icons/tech-stacks/csharp.svg?raw";
-import IconDotnetFramework from "$assets/icons/tech-stacks/dotnet-framework.svg?raw";
-import IconEntityFrameworkCore from "$assets/icons/tech-stacks/entityframeworkcore.svg?raw";
-import IconJava from "$assets/icons/tech-stacks/java.svg?raw";
-import IconMinecraft from "$assets/icons/tech-stacks/minecraft_alt.svg?raw";
-import IconVisualBasic from "$assets/icons/tech-stacks/visualbasic.svg?raw";
-import IconXaml from "$assets/icons/tech-stacks/xaml.svg?raw";
+import IconCSharpColor from "$/components/icons/IconCSharpColor.svelte";
+import IconDotNetFrameworkColor from "$/components/icons/IconDotNetFrameworkColor.svelte";
+import IconEntityFrameworkCoreColor from "$/components/icons/IconEntityFrameworkCoreColor.svelte";
+import IconJavaColor from "$/components/icons/IconJavaColor.svelte";
+import IconMinecraftAlt from "$/components/icons/IconMinecraftAlt.svelte";
+import IconVisualBasicColor from "$/components/icons/IconVisualBasicColor.svelte";
+import IconXamlColor from "$/components/icons/IconXamlColor.svelte";
 
 export interface TechStackData {
   title: string;
-  svg: string;
+  icon: Component | string;
   colorHex: string;
   colorHexOnDark?: string;
 }
@@ -20,171 +21,171 @@ export interface TechStackData {
 const stackData: Record<TechStack, TechStackData> = Object.freeze({
   // Languages
   [TechStack.HTML5]: {
-    title: siHtml5.title,
-    svg: siHtml5.svg,
-    colorHex: siHtml5.hex,
+    title: "HTML5",
+    icon: SiHtml5,
+    colorHex: "E34F26",
   },
   [TechStack.CSS3]: {
-    title: siCss.title,
-    svg: siCss.svg,
-    colorHex: siCss.hex,
+    title: "CSS3",
+    icon: SiCss,
+    colorHex: "663399",
   },
   [TechStack.JAVASCRIPT]: {
-    title: siJavascript.title,
-    svg: siJavascript.svg,
-    colorHex: siJavascript.hex,
+    title: "JavaScript",
+    icon: SiJavascript,
+    colorHex: "F7DF1E",
   },
   [TechStack.TYPESCRIPT]: {
-    title: siTypescript.title,
-    svg: siTypescript.svg,
-    colorHex: siTypescript.hex,
+    title: "TypeScript",
+    icon: SiTypescript,
+    colorHex: "3178C6",
   },
   [TechStack.JAVA]: {
     title: "Java",
-    svg: IconJava,
+    icon: IconJavaColor,
     colorHex: "EA2D2E",
   },
   [TechStack.CSHARP]: {
     title: "C#",
-    svg: IconCSharp,
+    icon: IconCSharpColor,
     colorHex: "9B4F96",
   },
   [TechStack.VISUALBASIC_NET]: {
     title: "Visual Basic .NET",
-    svg: IconVisualBasic,
+    icon: IconVisualBasicColor,
     colorHex: "004E8C",
   },
   [TechStack.PYTHON]: {
-    title: siPython.title,
-    svg: siPython.svg,
-    colorHex: siPython.hex,
+    title: "Python",
+    icon: SiPython,
+    colorHex: "3776AB",
   },
 
   // Platforms
   [TechStack.NODEJS]: {
     title: "Node.js",
-    svg: siNodedotjs.svg,
-    colorHex: siNodedotjs.hex,
+    icon: SiNodedotjs,
+    colorHex: "5FA04E",
   },
   [TechStack.DOTNET_FRAMEWORK]: {
     title: ".NET Framework",
-    svg: IconDotnetFramework,
+    icon: IconDotNetFrameworkColor,
     colorHex: "1384C8",
   },
   [TechStack.DOTNET_CORE]: {
-    title: `${siDotnet.title} Core`,
-    svg: siDotnet.svg,
-    colorHex: siDotnet.hex,
+    title: ".NET Core",
+    icon: SiDotnet,
+    colorHex: "512BD4",
   },
   [TechStack.ANDROID]: {
-    title: siAndroid.title,
-    svg: siAndroid.svg,
-    colorHex: siAndroid.hex,
+    title: "Android",
+    icon: SiAndroid,
+    colorHex: "3DDC84",
   },
   [TechStack.MINECRAFT]: {
     title: "Minecraft",
-    svg: IconMinecraft,
+    icon: IconMinecraftAlt,
     colorHex: "86BC48",
   },
   [TechStack.X]: {
     title: "Twitter / X (API)",
-    svg: siX.svg,
-    colorHex: siX.hex,
+    icon: SiX,
+    colorHex: "000000",
     colorHexOnDark: "FFFFFF",
   },
 
   // DBMS
   [TechStack.MYSQL]: {
-    title: siMysql.title,
-    svg: siMysql.svg,
-    colorHex: siMysql.hex,
+    title: "MySQL",
+    icon: SiMysql,
+    colorHex: "4479A1",
   },
 
   // Backend Libraries & Server Management
   [TechStack.PODMAN]: {
-    title: siPodman.title,
-    svg: siPodman.svg,
-    colorHex: siPodman.hex,
+    title: "Podman",
+    icon: SiPodman,
+    colorHex: "892CA0",
   },
   [TechStack.SEQUELIZE]: {
-    title: siSequelize.title,
-    svg: siSequelize.svg,
-    colorHex: siSequelize.hex,
+    title: "Sequelize",
+    icon: SiSequelize,
+    colorHex: "52B0E7",
   },
   [TechStack.ENTITYFRAMEWORKCORE]: {
     title: "Entity Framework Core",
-    svg: IconEntityFrameworkCore,
+    icon: IconEntityFrameworkCoreColor,
     colorHex: "68217A",
   },
   [TechStack.SELENIUM]: {
-    title: siSelenium.title,
-    svg: siSelenium.svg,
-    colorHex: siSelenium.hex,
+    title: "Selenium",
+    icon: SiSelenium,
+    colorHex: "43B02A",
   },
   [TechStack.NESTJS]: {
-    title: siNestjs.title,
-    svg: siNestjs.svg,
-    colorHex: siNestjs.hex,
+    title: "NestJS",
+    icon: SiNestjs,
+    colorHex: "E0234E",
   },
 
   // Frontend Libraries
   [TechStack.VUEJS]: {
-    title: siVuedotjs.title,
-    svg: siVuedotjs.svg,
-    colorHex: siVuedotjs.hex,
+    title: "Vue.js",
+    icon: SiVuedotjs,
+    colorHex: "4FC08D",
   },
   [TechStack.VUETIFY]: {
-    title: siVuetify.title,
-    svg: siVuetify.svg,
-    colorHex: siVuetify.hex,
+    title: "Vuetify",
+    icon: SiVuetify,
+    colorHex: "1867C0",
   },
   [TechStack.NUXT]: {
-    title: siNuxt.title,
-    svg: siNuxt.svg,
-    colorHex: siNuxt.hex,
+    title: "Nuxt.js",
+    icon: SiNuxt,
+    colorHex: "00DC82",
   },
   [TechStack.SVELTE]: {
-    title: siSvelte.title,
-    svg: siSvelte.svg,
-    colorHex: siSvelte.hex,
+    title: "Svelte",
+    icon: SiSvelte,
+    colorHex: "FF3E00",
   },
   [TechStack.SVELTEKIT]: {
-    title: `${siSvelte.title} (SvelteKit)`,
-    svg: siSvelte.svg,
-    colorHex: siSvelte.hex,
+    title: "SvelteKit (Svelte)",
+    icon: SiSvelte,
+    colorHex: "FF3E00",
   },
   [TechStack.TAILWINDCSS]: {
-    title: siTailwindcss.title,
-    svg: siTailwindcss.svg,
-    colorHex: siTailwindcss.hex,
+    title: "Tailwind CSS",
+    icon: SiTailwindcss,
+    colorHex: "06B6D4",
   },
   [TechStack.SASS]: {
-    title: `SCSS (${siSass.title})`,
-    svg: siSass.svg,
-    colorHex: siSass.hex,
+    title: "SCSS (SASS)",
+    icon: SiSass,
+    colorHex: "CC6699",
   },
   [TechStack.JQUERY]: {
-    title: siJquery.title,
-    svg: siJquery.svg,
-    colorHex: siJquery.hex,
+    title: "jQuery",
+    icon: SiJquery,
+    colorHex: "0769AD",
   },
   [TechStack.WPF]: {
     title: "Windows Presentation Foundation",
-    svg: IconXaml,
+    icon: IconXamlColor,
     colorHex: "6BB3F5",
   },
 
   // Game Engines & Audio Engines
   [TechStack.UNITY]: {
-    title: siUnity.title,
-    svg: siUnity.svg,
-    colorHex: siUnity.hex,
+    title: "Unity",
+    icon: SiUnity,
+    colorHex: "000000",
     colorHexOnDark: "FFFFFF",
   },
   [TechStack.FMOD]: {
-    title: siFmod.title,
-    svg: siFmod.svg,
-    colorHex: siFmod.hex,
+    title: "FMOD",
+    icon: SiFmod,
+    colorHex: "000000",
     colorHexOnDark: "FFFFFF",
   },
 });

@@ -65,8 +65,6 @@ onMount(() => {
 </script>
 
 <style lang="scss">
-@reference "$/styles/app.css";
-
 .work-category-card {
   @apply relative block w-full h-64 bg-background overflow-hidden;
   @apply scale-100 shadow-black/50 rounded-none border-transparent transition-[scale,box-shadow,border-radius,border-color] duration-500 ease-out;

@@ -2,10 +2,10 @@
   <img class="w-full lg:w-md xl:w-lg
               h-64 lg:h-fit lg:aspect-video
               shrink-0 rounded-xl object-cover bg-black"
-        srcset={ generateImageSrcSet(project.headerImageRemoteSrcSet) }
-        src={ transformRemoteAssetPath(project.headerImageRemoteSrcSet?.[0]?.path) ?? BLACK_IMAGE_ENCODED }
-        alt={ project.title }
-        loading="lazy" />
+       srcset={ generateImageSrcSet(project.headerImageRemoteSrcSet) }
+       src={ transformRemoteAssetPath(project.headerImageRemoteSrcSet?.[0]?.path) ?? BLACK_IMAGE_ENCODED }
+       alt={ project.title }
+       loading="lazy" />
 
   <div class="flex flex-col justify-center">
     <p class="text-3xl font-bold">{@html project.title}</p>
@@ -18,16 +18,18 @@
       </span>
     </p>
 
-    <p class="inline-flex items-center flex-wrap my-4">
+    <p class="inline-flex items-center flex-wrap my-4 gap-2"
+       style="line-height: 1">
       {#each project.stacks as stack}
         {@const techStackData = getTechStackData(stack)}
 
-        <span class="icon inline-flex items-center m-1 fill-current"
+        <span class="icon inline-flex items-center"
               style="--color-on-light: #{ techStackData.colorHex };
                      --color-on-dark: #{ techStackData.colorHexOnDark ?? techStackData.colorHex };">
           <SpanWithTip tip={ techStackData.title }
-                       notText={ true }>
-            <span class="w-6">{@html techStackData.svg}</span>
+                       notText>
+            <RenderIcon icon={ techStackData.icon }
+                        size="24px" />
           </SpanWithTip>
         </span>
       {/each}
@@ -53,6 +55,7 @@ import { getTechStackData } from "$/lib/tech-stacks";
 import { BLACK_IMAGE_ENCODED, generateImageSrcSet, transformRemoteAssetPath } from "$/lib/utils";
 import ProjectWorkTagList from "$/components/works/tags/ProjectWorkTagList.svelte";
 import { SquareArrowOutUpRightIcon } from "@lucide/svelte";
+import RenderIcon from "$/components/RenderIcon.svelte";
 
 const { project }: { project: ProjectData } = $props();
 const hasAnyLink = $derived(!!(project.appUrl || project.pageUrl || project.repositoryUrl));
