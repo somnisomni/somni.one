@@ -1,4 +1,4 @@
-<div class="flex flex-col lg:flex-row mb-16 lg:mb-12 gap-6">
+<section class="flex flex-col lg:flex-row mb-16 lg:mb-12 gap-6">
   <img class="w-full lg:w-md xl:w-lg
               h-64 lg:h-fit lg:aspect-video
               shrink-0 rounded-xl object-cover bg-black"
@@ -8,18 +8,19 @@
        loading="lazy" />
 
   <div class="flex flex-col justify-center">
-    <p class="text-3xl font-bold">{@html project.title}</p>
-    <p class="text-sm font-light opacity-70">
+    <h2 class="text-3xl! font-bold mb-4">{@html project.title}</h2>
+
+    <div class="text-sm font-light opacity-70">
       <ProjectWorkTagList { project } />
 
       <span class="ml-1">
         <span>{ project.yearFrom }</span>
         <span>{#if project.association}/ { project.association }{/if}</span>
       </span>
-    </p>
+    </div>
 
-    <p class="inline-flex items-center flex-wrap my-4 gap-2"
-       style="line-height: 1">
+    <div class="inline-flex items-center flex-wrap my-4 gap-2"
+         style="line-height: 1">
       {#each project.stacks as stack}
         {@const techStackData = getTechStackData(stack)}
 
@@ -33,19 +34,19 @@
           </SpanWithTip>
         </span>
       {/each}
-    </p>
+    </div>
 
     <p class="desc text-md font-light">{@html project.desc}</p>
 
     {#if hasAnyLink}
-      <p class="links flex flex-row gap-2 text-md font-light mt-4">
+      <div class="links flex flex-row gap-2 text-md font-light mt-4">
         {#if project.appUrl} <a href={ project.appUrl } target="_blank" class="text-accent">{ $_("works.components.appUrl") } <SquareArrowOutUpRightIcon size="16" /></a> {/if}
         {#if project.pageUrl} <a href={ project.pageUrl } target="_blank">{ $_("works.components.relatedPageUrl") } <SquareArrowOutUpRightIcon size="16" /></a> {/if}
         {#if project.repositoryUrl} <a href={ project.repositoryUrl } target="_blank">{ $_("works.components.repositoryUrl") } <SquareArrowOutUpRightIcon size="16" /></a> {/if}
-      </p>
+      </div>
     {/if}
   </div>
-</div>
+</section>
 
 <script lang="ts">
 import { _ } from "svelte-i18n";
