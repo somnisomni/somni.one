@@ -28,6 +28,7 @@ import { getLatestFeaturedWork, type ProjectData } from "@somni.one/common";
 import { onMount } from "svelte";
 import { _ } from "svelte-i18n";
 import { quartOut } from "svelte/easing";
+import { browser } from "$app/environment";
 
 const openSourceContributionBgImagePath = "/images/works/contribution-20251205-bg.webp";
 
@@ -59,9 +60,13 @@ const categoryDefinitions = {
   },
 };
 
-onMount(() => {
+if(browser) {
+  onMount(() => {
+    categories = categoryDefinitions;
+  });
+} else {
   categories = categoryDefinitions;
-});
+}
 </script>
 
 <style lang="scss">

@@ -21,12 +21,17 @@ import LinkItem from "$/components/LinkItem.svelte";
 import { fly } from "svelte/transition";
 import { quartOut } from "svelte/easing";
 import { onMount } from "svelte";
+import { browser } from "$app/environment";
 
 let linkGroupData: Record<string, LinkGroup> = $state({});
 
-onMount(async () => {
+if(browser) {
+  onMount(async () => {
+    linkGroupData = LinkGroupData as Record<string, LinkGroup>;
+  });
+} else {
   linkGroupData = LinkGroupData as Record<string, LinkGroup>;
-});
+}
 </script>
 
 <style lang="scss" scoped>

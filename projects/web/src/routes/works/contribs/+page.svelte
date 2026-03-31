@@ -30,6 +30,7 @@ import { fly } from "svelte/transition";
 import { quartOut } from "svelte/easing";
 import { onMount } from "svelte";
 import { _ } from "svelte-i18n";
+import { browser } from "$app/environment";
 
 let contributions: ContributionDataBase[] = $state([]);
 const computedContributions: ContributionDataBase[] = [
@@ -37,7 +38,11 @@ const computedContributions: ContributionDataBase[] = [
   ...Translations as ContributionTranslationData[],
 ].sort((a, b) => a.title.localeCompare(b.title));
 
-onMount(() => {
+if(browser) {
+  onMount(() => {
+    contributions = computedContributions;
+  });
+} else {
   contributions = computedContributions;
-});
+}
 </script>
