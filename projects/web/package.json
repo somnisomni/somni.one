@@ -5,7 +5,7 @@
 	"type": "module",
 	"scripts": {
 		"dev": "vite dev",
-		"build": "vite build",
+		"build": "paraglide-js compile --project ./i18n/inlang --outdir ./src/lib/i18n && vite build",
 		"preview": "vite preview",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
@@ -27,7 +27,8 @@
 		"svelte-check": "^4.4.5",
 		"tailwindcss": "^4.2.2",
 		"typescript": "catalog:",
-		"vite": "catalog:"
+		"vite": "catalog:",
+		"@inlang/paraglide-js": "^2.15.1"
 	},
 	"dependencies": {
 		"@lucide/svelte": "^1.7.0",
