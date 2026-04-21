@@ -243,5 +243,15 @@
     "contributions": [
       { "type": "pull-request", "pr": 47 }
     ]
+  },
+  {
+    "id": "noctalia-plugins",
+    "title": "Noctalia Plugins",
+    "repositoryUrl": "https://github.com/noctalia-dev/noctalia-plugins",
+    "langFromTo": [ { "from": "en", "to": "ko" } ],
+    "platform": "github",
+    "contributions": [
+      { "type": "pull-request", "pr": 714 }
+    ]
   }
 ]
