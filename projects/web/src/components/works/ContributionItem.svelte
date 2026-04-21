@@ -39,8 +39,8 @@
 
             {#if data.changes}
               <span style="font-size: smaller">
-                <span class="text-[#008800]">+{ data.changes.additions }</span>
-                <span class="text-[#AA0000]">-{ data.changes.deletions }</span>
+                {#if data.changes.additions > 0} <span class="text-[#008800]">+{ data.changes.additions }</span> {/if}
+                {#if data.changes.deletions > 0} <span class="text-[#AA0000]">-{ data.changes.deletions }</span> {/if}
               </span>
             {/if}
           </a>
