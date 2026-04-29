@@ -20,14 +20,14 @@ const { children, tag, tip, notText }: { children?: Snippet, tag?: string, tip?:
   }
 
   &::after {
-    @apply pointer-events-none absolute left-1/2 -translate-x-1/2 w-max max-w-xs px-4 py-2;
-    @apply text-sm font-light text-background-inverse whitespace-pre-wrap;
+    @apply pointer-events-none absolute left-1/2 -translate-x-1/2 top-[calc(100%+0.5rem)] w-max max-w-xs px-4 py-2;
+    @apply text-sm font-light text-background-inverse whitespace-pre-wrap break-keep;
     @apply rounded-lg shadow-md backdrop-blur-md bg-background/50;
     @apply border border-background-inverse/10;
     @apply opacity-0 -translate-y-2 transition-all duration-300 ease-out;
+    @apply /* < md */ max-md:fixed max-md:mx-auto max-md:top-[initial] max-md:bottom-4 max-md:left-4 max-md:right-4 max-md:translate-x-0 max-w-[calc(100dvw-2rem)];
 
     content: attr(title);
-    top: calc(100% + 0.5rem);
     z-index: 10;
   }
 
