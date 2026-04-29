@@ -83,7 +83,8 @@
       "message": {
         "email-copied": "Email address has been copied to clipboard."
       }
-    }
+    },
+    "loading": "Loading..."
   },
   "works": {
     "category": {

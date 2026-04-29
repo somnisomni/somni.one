@@ -83,7 +83,8 @@
       "message": {
         "email-copied": "이메일 주소가 클립보드로 복사되었습니다."
       }
-    }
+    },
+    "loading": "불러오는 중..."
   },
   "works": {
     "category": {

@@ -55,6 +55,11 @@
   </div>
 </div>
 
+<div id="loading-indicator"
+     class="{ isNavigating ? "show" : "" }">
+  <span>{ $_("main.loading")}</span>
+</div>
+
 <div id="main">
   {@render children?.()}
 </div>
@@ -65,15 +70,17 @@ import "$lib/init";
 import type { LayoutProps } from "./$types";
 import gsap from "gsap";
 import { SplitText } from "gsap/SplitText";
-import { page } from "$app/state";
+import { navigating, page } from "$app/state";
 import { flip } from "svelte/animate";
 import { quartOut } from "svelte/easing";
 import { fade } from "svelte/transition";
 import { onMount } from "svelte";
 import NavColorModeChanger from "$/components/NavColorModeChanger.svelte";
+import { _ } from "svelte-i18n";
 
 const { children }: LayoutProps = $props();
 const routeStack: string[] = $derived(page.route.id === "/" ? [""] : (page.route.id?.split("/") ?? [""]));
+const isNavigating: boolean = $derived(!!navigating.to);
 
 function setUpRouteElement(node: HTMLElement) {
   const split = SplitText.create(node.querySelector("div"), { type: "chars" });
@@ -149,6 +156,15 @@ onMount(() => {
     & > :global(*) {
       @apply w-(--header-size) h-(--header-size);
     }
+  }
+}
+
+#loading-indicator {
+  @apply fixed right-0 bottom-0 px-4 py-2 mr-8 z-100 text-background bg-primary/80 backdrop-blur-md rounded-t-md uppercase font-semibold;
+  @apply transition-transform duration-300 translate-y-full;
+
+  &.show {
+    @apply translate-y-0;
   }
 }
 
