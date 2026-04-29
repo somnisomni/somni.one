@@ -3,7 +3,13 @@
     <li class="work-tag inline-block rounded-full px-1.5 py-px border border-current font-normal"
           style="--color-on-light: #{ tag.color.light };
                  --color-on-dark:  #{ tag.color.dark ?? tag.color.light };">
-      <span>{ $_(tag.labelKey) }</span>
+      {#if tag.descKey}
+        <SpanWithTip notText={ true } tip={ $_(tag.descKey) }>
+            <span>{ $_(tag.labelKey) }</span>
+        </SpanWithTip>
+      {:else}
+        <span>{ $_(tag.labelKey) }</span>
+      {/if}
     </li>
   {/each}
 </ul>
@@ -12,6 +18,7 @@
 export interface WorkItemTagData {
   id: string;
   labelKey: string;
+  descKey?: string;
   color: {
     light: string;
     dark?: string;
@@ -27,6 +34,8 @@ export interface WorkItemTagEvaluator<TData> {
 </script>
 
 <script lang="ts">
+import SpanWithTip from "$/components/SpanWithTip.svelte";
+
 import { _ } from "svelte-i18n";
 
 const { data, evaluators }: {

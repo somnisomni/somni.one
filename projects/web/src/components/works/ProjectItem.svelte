@@ -10,10 +10,10 @@
   <div class="flex flex-col justify-center">
     <h2 class="text-3xl! font-bold mb-4">{@html project.title}</h2>
 
-    <div class="text-sm font-light opacity-70">
+    <div class="text-sm font-light">
       <ProjectWorkTagList { project } />
 
-      <span class="ml-1">
+      <span class="ml-1 opacity-70">
         <span>{ project.yearFrom }</span>
         <span>{#if project.association}/ { project.association }{/if}</span>
       </span>

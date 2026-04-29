@@ -93,13 +93,50 @@
       "contributions": "Contribs / Translations"
     },
     "tags": {
-      "personal": "Personal",
-      "team": "Team",
-      "opensource": "Open Source",
-      "distributingGame": "Public Release",
-      "codeContribution": "Open Source",
-      "translation": "Translation",
-      "nonPublicMethod": "Non-Public Method"
+      "personal": {
+        "label": "Personal",
+        "desc": ""
+      },
+      "team": {
+        "label": "Team",
+        "desc": ""
+      },
+      "opensource": {
+        "label": "Open Source",
+        "desc": ""
+      },
+      "distributingGame": {
+        "label": "Public Release",
+        "desc": ""
+      },
+      "codeContribution": {
+        "label": "Open Source",
+        "desc": ""
+      },
+      "translation": {
+        "label": "Translation",
+        "desc": ""
+      },
+      "nonPublicMethod": {
+        "label": "Non-Public Method",
+        "desc": ""
+      },
+      "status-ongoing": {
+        "label": "Ongoing",
+        "desc": ""
+      },
+      "status-maintaining": {
+        "label": "Maintaining",
+        "desc": ""
+      },
+      "status-discontinued": {
+        "label": "Discontinued",
+        "desc": ""
+      },
+      "status-completed": {
+        "label": "Completed",
+        "desc": ""
+      }
     },
     "components": {
       "relatedPageUrl": "Related Page",

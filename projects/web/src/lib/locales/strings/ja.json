@@ -93,13 +93,50 @@
       "contributions": "寄稿 / 翻訳"
     },
     "tags": {
-      "team": "チーム",
-      "personal": "個人",
-      "opensource": "オープンソース",
-      "distributingGame": "公開リリース",
-      "codeContribution": "オープンソース",
-      "translation": "翻訳",
-      "nonPublicMethod": "非公開で作業"
+      "team": {
+        "label": "チーム",
+        "desc": ""
+      },
+      "personal": {
+        "label": "個人",
+        "desc": ""
+      },
+      "opensource": {
+        "label": "オープンソース",
+        "desc": ""
+      },
+      "distributingGame": {
+        "label": "公開リリース",
+        "desc": ""
+      },
+      "codeContribution": {
+        "label": "オープンソース",
+        "desc": ""
+      },
+      "translation": {
+        "label": "翻訳",
+        "desc": ""
+      },
+      "nonPublicMethod": {
+        "label": "非公開で作業",
+        "desc": ""
+      },
+      "status-ongoing": {
+        "label": "進行中",
+        "desc": ""
+      },
+      "status-maintaining": {
+        "label": "維持中",
+        "desc": ""
+      },
+      "status-discontinued": {
+        "label": "中止",
+        "desc": ""
+      },
+      "status-completed": {
+        "label": "完了",
+        "desc": ""
+      }
     },
     "components": {
       "relatedPageUrl": "関連情報",

@@ -93,13 +93,50 @@
       "contributions": "기여 / 번역"
     },
     "tags": {
-      "personal": "개인",
-      "team": "팀",
-      "opensource": "오픈 소스",
-      "distributingGame": "공개 릴리즈",
-      "codeContribution": "오픈 소스",
-      "translation": "번역",
-      "nonPublicMethod": "비공개 수단으로 작업"
+      "personal": {
+        "label": "개인",
+        "desc": ""
+      },
+      "team": {
+        "label": "팀",
+        "desc": ""
+      },
+      "opensource": {
+        "label": "오픈 소스",
+        "desc": ""
+      },
+      "distributingGame": {
+        "label": "공개 릴리즈",
+        "desc": ""
+      },
+      "codeContribution": {
+        "label": "오픈 소스",
+        "desc": ""
+      },
+      "translation": {
+        "label": "번역",
+        "desc": ""
+      },
+      "nonPublicMethod": {
+        "label": "비공개 수단으로 작업",
+        "desc": ""
+      },
+      "status-ongoing": {
+        "label": "진행 중",
+        "desc": ""
+      },
+      "status-discontinued": {
+        "label": "중단됨",
+        "desc": ""
+      },
+      "status-completed": {
+        "label": "완료됨",
+        "desc": ""
+      },
+      "status-maintaining": {
+        "label": "유지보수 중",
+        "desc": ""
+      }
     },
     "components": {
       "repositoryUrl": "소스 코드 저장소",

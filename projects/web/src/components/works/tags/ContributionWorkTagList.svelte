@@ -18,7 +18,8 @@ const evaluators: WorkItemTagEvaluator<ContributionDataBase> = {
           light: "currentColor",
           dark: "currentColor",
         },
-        labelKey: "works.tags.codeContribution",
+        labelKey: "works.tags.codeContribution.label",
+        descKey: "works.tags.codeContribution.desc",
       },
       evaluate(data: ContributionDataBase) {
         return !(data as ContributionTranslationData).langFromTo;
@@ -31,7 +32,8 @@ const evaluators: WorkItemTagEvaluator<ContributionDataBase> = {
           light: "currentColor",
           dark: "currentColor",
         },
-        labelKey: "works.tags.translation",
+        labelKey: "works.tags.translation.label",
+        descKey: "works.tags.translation.desc",
       },
       evaluate(data: ContributionDataBase) {
         return !!(data as ContributionTranslationData).langFromTo;
@@ -44,7 +46,8 @@ const evaluators: WorkItemTagEvaluator<ContributionDataBase> = {
           light: "currentColor",
           dark: "currentColor",
         },
-        labelKey: "works.tags.nonPublicMethod",
+        labelKey: "works.tags.nonPublicMethod.label",
+        descKey: "works.tags.nonPublicMethod.desc",
       },
       evaluate(data: ContributionDataBase) {
         return !data.repositoryUrl && !data.proofUrl && !(data.contributions && Object.values(data.contributions).length > 0);
