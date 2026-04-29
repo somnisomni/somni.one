@@ -93,49 +93,49 @@
       "contributions": "Contribs / Translations"
     },
     "tags": {
-      "personal": {
-        "label": "Personal",
-        "desc": ""
-      },
       "team": {
         "label": "Team",
-        "desc": ""
+        "desc": "Project made with many coworkers."
       },
       "opensource": {
         "label": "Open Source",
-        "desc": ""
+        "desc": "Source code is publily available and anyone can utilize it while complying the license."
       },
       "distributingGame": {
         "label": "Public Release",
-        "desc": ""
+        "desc": "Publicly released and playable game"
       },
       "codeContribution": {
         "label": "Open Source",
-        "desc": ""
+        "desc": "Contributed to the codebase of this open-source project."
       },
       "translation": {
         "label": "Translation",
-        "desc": ""
+        "desc": "Contributed to this project with translations/localizations as a volunteer."
       },
       "nonPublicMethod": {
         "label": "Non-Public Method",
-        "desc": ""
+        "desc": "Contributed via non-public methods like E-mail."
       },
-      "status-ongoing": {
-        "label": "Ongoing",
-        "desc": ""
-      },
-      "status-maintaining": {
-        "label": "Maintaining",
-        "desc": ""
-      },
-      "status-discontinued": {
-        "label": "Discontinued",
-        "desc": ""
-      },
-      "status-completed": {
+      "statusCompleted": {
         "label": "Completed",
-        "desc": ""
+        "desc": "This project has reached the goal and wrapped up."
+      },
+      "statusDiscontinued": {
+        "label": "Discontinued",
+        "desc": "The project has stopped before it reached its goal."
+      },
+      "statusMaintaining": {
+        "label": "Maintaining",
+        "desc": "This project is in maintenance phase without any further intensive work."
+      },
+      "statusOngoing": {
+        "label": "Ongoing",
+        "desc": "Ongoing project that I'm working on."
+      },
+      "selfInitiated": {
+        "label": "Self-Initiated",
+        "desc": "Project started as an individual and worked alone."
       }
     },
     "components": {

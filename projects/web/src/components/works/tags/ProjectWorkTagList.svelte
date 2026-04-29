@@ -18,8 +18,8 @@ const evaluators: WorkItemTagEvaluator<ProjectData> = {
           light: "2E5EE5",
           dark: "8AA8FF",
         },
-        labelKey: "works.tags.status-ongoing.label",
-        descKey: "works.tags.status-ongoing.desc",
+        labelKey: "works.tags.statusOngoing.label",
+        descKey: "works.tags.statusOngoing.desc",
       },
       evaluate(data: ProjectData) {
         return data.status === "ongoing";
@@ -32,8 +32,8 @@ const evaluators: WorkItemTagEvaluator<ProjectData> = {
           light: "1AA11A",
           dark: "4DD44D",
         },
-        labelKey: "works.tags.status-completed.label",
-        descKey: "works.tags.status-completed.desc",
+        labelKey: "works.tags.statusCompleted.label",
+        descKey: "works.tags.statusCompleted.desc",
       },
       evaluate(data: ProjectData) {
         return data.status === "completed";
@@ -46,8 +46,8 @@ const evaluators: WorkItemTagEvaluator<ProjectData> = {
           light: "2A64F4",
           dark: "4A7CFA",
         },
-        labelKey: "works.tags.status-maintaining.label",
-        descKey: "works.tags.status-maintaining.desc",
+        labelKey: "works.tags.statusMaintaining.label",
+        descKey: "works.tags.statusMaintaining.desc",
       },
       evaluate(data: ProjectData) {
         return data.status === "maintaining";
@@ -60,8 +60,8 @@ const evaluators: WorkItemTagEvaluator<ProjectData> = {
           light: "E95555",
           dark: "C95555",
         },
-        labelKey: "works.tags.status-discontinued.label",
-        descKey: "works.tags.status-discontinued.desc",
+        labelKey: "works.tags.statusDiscontinued.label",
+        descKey: "works.tags.statusDiscontinued.desc",
       },
       evaluate(data: ProjectData) {
         return data.status === "discontinued";
@@ -69,13 +69,13 @@ const evaluators: WorkItemTagEvaluator<ProjectData> = {
     },
     {
       tag: {
-        id: "personal",
+        id: "self-initiated",
         color: {
           light: "419137",
           dark: "58C44A",
         },
-        labelKey: "works.tags.personal.label",
-        descKey: "works.tags.personal.desc",
+        labelKey: "works.tags.selfInitiated.label",
+        descKey: "works.tags.selfInitiated.desc",
       },
       evaluate(data: ProjectData) {
         return !data.teamData;

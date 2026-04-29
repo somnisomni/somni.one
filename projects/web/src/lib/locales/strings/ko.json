@@ -93,49 +93,49 @@
       "contributions": "기여 / 번역"
     },
     "tags": {
-      "personal": {
-        "label": "개인",
-        "desc": ""
-      },
       "team": {
         "label": "팀",
-        "desc": ""
+        "desc": "다수의 동료들과 전념하여 진행한 프로젝트입니다."
       },
       "opensource": {
-        "label": "오픈 소스",
-        "desc": ""
+        "label": "소스 공개",
+        "desc": "소스 코드가 공개되어 누구나 접근할 수 있고 라이선스에 따라 활용할 수 있는 프로젝트입니다."
       },
       "distributingGame": {
         "label": "공개 릴리즈",
-        "desc": ""
+        "desc": "현재 공개적으로 릴리즈되어 플레이할 수 있는 게임입니다."
       },
       "codeContribution": {
         "label": "오픈 소스",
-        "desc": ""
+        "desc": "오픈 소스 프로젝트의 코드베이스에 기여했습니다."
       },
       "translation": {
         "label": "번역",
-        "desc": ""
+        "desc": "프로젝트에 대가 없이 번역/현지화에 기여했습니다."
       },
       "nonPublicMethod": {
         "label": "비공개 수단으로 작업",
-        "desc": ""
+        "desc": "이메일 등의 비공개 수단을 통해 기여했습니다."
       },
-      "status-ongoing": {
-        "label": "진행 중",
-        "desc": ""
-      },
-      "status-discontinued": {
-        "label": "중단됨",
-        "desc": ""
-      },
-      "status-completed": {
+      "statusCompleted": {
         "label": "완료됨",
-        "desc": ""
+        "desc": "목표에 도달하여 진행이 마무리된 프로젝트입니다."
       },
-      "status-maintaining": {
+      "statusDiscontinued": {
+        "label": "중단됨",
+        "desc": "목표에 달성하기 전 진행이 중단된 프로젝트입니다."
+      },
+      "statusMaintaining": {
         "label": "유지보수 중",
-        "desc": ""
+        "desc": "기능 구현 등의 적극적인 진행을 종료하고 유지보수를 하고 있는 프로젝트입니다."
+      },
+      "statusOngoing": {
+        "label": "진행 중",
+        "desc": "현재 진행 중인 프로젝트입니다."
+      },
+      "selfInitiated": {
+        "label": "개인",
+        "desc": "개인으로서 시작하고 혼자서 진행한 프로젝트입니다."
       }
     },
     "components": {

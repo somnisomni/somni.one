@@ -90,28 +90,24 @@
       "games": "ゲーム",
       "softwares": "ソフトウェア",
       "web": "ウェブ",
-      "contributions": "寄稿 / 翻訳"
+      "contributions": "貢献 / 翻訳"
     },
     "tags": {
       "team": {
         "label": "チーム",
-        "desc": ""
-      },
-      "personal": {
-        "label": "個人",
-        "desc": ""
+        "desc": "多数の同僚と力をあわせて進行したプロジェクトです。"
       },
       "opensource": {
-        "label": "オープンソース",
-        "desc": ""
+        "label": "ソース公開",
+        "desc": "ソースコードが公開されていて誰でもアクセスが出来て、ライセンスによって利用が出来るプロジェクトです。"
       },
       "distributingGame": {
         "label": "公開リリース",
-        "desc": ""
+        "desc": "現在、公開リリースされていてプレイが出来るゲームプロジェクトです。"
       },
       "codeContribution": {
         "label": "オープンソース",
-        "desc": ""
+        "desc": "オープンソースプロジェクトのコードベースに貢献しました。"
       },
       "translation": {
         "label": "翻訳",
@@ -121,21 +117,25 @@
         "label": "非公開で作業",
         "desc": ""
       },
-      "status-ongoing": {
-        "label": "進行中",
-        "desc": ""
+      "statusCompleted": {
+        "label": "完了",
+        "desc": "目標に到達して進行を完了したプロジェクトです。"
       },
-      "status-maintaining": {
+      "statusDiscontinued": {
+        "label": "中止",
+        "desc": "目標に到達する前、進行が中止されたプロジェクトです。"
+      },
+      "statusMaintaining": {
         "label": "維持中",
         "desc": ""
       },
-      "status-discontinued": {
-        "label": "中止",
-        "desc": ""
+      "statusOngoing": {
+        "label": "進行中",
+        "desc": "現在進行中のプロジェクトです。"
       },
-      "status-completed": {
-        "label": "完了",
-        "desc": ""
+      "selfInitiated": {
+        "label": "個人",
+        "desc": "個人として開始し、一人で進行したプロジェクトです。"
       }
     },
     "components": {
@@ -144,7 +144,8 @@
       "appUrl": "リリース/配布ページ"
     },
     "contribs": {
-      "externalPlatformMemo": "{platform}で翻訳を貢献"
+      "externalPlatformMemo": "{platform}で翻訳を貢献",
+      "footerGridLanes": "このページは、CSS Grid Lanesが有効になっている場合に良く表示されます。"
     }
   }
 }
