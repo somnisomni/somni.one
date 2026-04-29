@@ -1,13 +1,14 @@
-<span class="span-with-tip { notText ? '' : 'text' }"
-      style="display: { notText ? 'inline-flex' : 'inline' }"
-      title={ tip }>
+<svelte:element this={ tag ?? "span" }
+                class="span-with-tip { notText ? '' : 'text' }"
+                style="display: { notText ? 'inline-flex' : 'inline' }"
+                title={ tip }>
   {@render children?.()}
-</span>
+</svelte:element>
 
 <script lang="ts">
 import type { Snippet } from "svelte";
 
-const { children, tip, notText }: { children?: Snippet, tip?: string, notText?: boolean } = $props();
+const { children, tag, tip, notText }: { children?: Snippet, tag?: string, tip?: string, notText?: boolean } = $props();
 </script>
 
 <style lang="scss" scoped>
