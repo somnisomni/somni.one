@@ -22,6 +22,7 @@
   </div>
 
   {#if !contribData
+       && (contribution as ContributionTranslationData).platform
        && (contribution as ContributionTranslationData).platform !== "github"
        && (contribution as ContributionTranslationData).platform !== "direct"}
     {@const translationData = contribution as ContributionTranslationData}
