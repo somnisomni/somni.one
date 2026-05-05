@@ -20,7 +20,10 @@
       "[추가 예정]"
     ],
     "repositoryUrl": "https://github.com/SWM-TEAM-GOYUKKURI/ToAnyone",
-    "featured": false
+    "featured": false,
+    "headerImageRemoteSrcSet": [
+      { "path": "/images/works/toanyone-header.webp", "scale": 1 }
+    ]
   },
   {
     "id": "swm-mini-sosikmadang",
@@ -75,7 +78,10 @@
     ],
     "repositoryUrl": "https://github.com/osamhack2021/AI_WEB_POOL_YD",
     "pageUrl": "https://github.com/osamhack2021/AI_WEB_POOL_YD/blob/develop/README.md",
-    "featured": false
+    "featured": false,
+    "headerImageRemoteSrcSet": [
+      { "path": "/images/works/pool-header.webp", "scale": 1 }
+    ]
   },
 
   {
