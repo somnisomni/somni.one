@@ -28,6 +28,10 @@
     ]
   }
   </script>
+
+  {#if import.meta.env.VITE_GOOGLE_ADSENSE_ACCOUNT_ID}
+    <meta name="google-adsense-account" content="{ import.meta.env.VITE_GOOGLE_ADSENSE_ACCOUNT_ID }" />
+  {/if}
 </svelte:head>
 
 <div id="name-header">
