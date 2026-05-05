@@ -15,7 +15,7 @@
         <a href={ contribution.repositoryUrl }
           target="_blank"
           class="contribution-item-link">
-          <GitForkIcon />
+          <FolderGitIcon />
         </a>
       {/if}
     </div>
@@ -34,16 +34,27 @@
     <ul>
       {#each contribData as data}
         <li class="font-mono text-sm opacity-50 transition-opacity hover:opacity-80">
-          <a href={ data.url }
+          <a class="inline-flex gap-2 items-center"
+             href={ data.url }
              target="_blank">
-            <span>{ data.title }</span>
+            <span class="shrink-0">
+              {#if "pullRequestNumber" in data}
+                <LucideGitPullRequestArrow size="16" />
+              {:else if "commitHash" in data}
+                <LucideGitCommitVertical size="16" />
+              {/if}
+            </span>
 
-            {#if data.changes}
-              <span style="font-size: smaller">
-                {#if data.changes.additions > 0} <span class="text-[#008800]">+{ data.changes.additions }</span> {/if}
-                {#if data.changes.deletions > 0} <span class="text-[#AA0000]">-{ data.changes.deletions }</span> {/if}
-              </span>
-            {/if}
+            <span>
+              <span>{ data.title }</span>
+
+              {#if data.changes}
+                <span style="font-size: smaller">
+                  {#if data.changes.additions > 0} <span class="text-[#008800]">+{ data.changes.additions }</span> {/if}
+                  {#if data.changes.deletions > 0} <span class="text-[#AA0000]">-{ data.changes.deletions }</span> {/if}
+                </span>
+              {/if}
+            </span>
           </a>
         </li>
       {/each}
@@ -66,7 +77,7 @@ import { generateGitHubCommitId, generateGitHubPullRequestId, sliceGitHubRepoUrl
 import ContributionWorkTagList from "$/components/works/tags/ContributionWorkTagList.svelte";
 import { onMount } from "svelte";
 import { requestGetData } from "$/lib/stores/data-collector.svelte";
-import { GitForkIcon, SquareArrowOutUpRightIcon } from "@lucide/svelte";
+import { FolderGitIcon, LucideGitCommitVertical, LucideGitPullRequestArrow, SquareArrowOutUpRightIcon } from "@lucide/svelte";
 import { _ } from "svelte-i18n";
 
 const { contribution }: { contribution: ContributionDataBase } = $props();
