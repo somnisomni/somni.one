@@ -18,7 +18,7 @@ Thumbs.db
 !.env.test
 
 # Wrangler
-.wrangler
+.wrangler/
 
 # Prisma
 /prisma/*.db
