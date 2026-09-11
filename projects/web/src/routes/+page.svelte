@@ -14,7 +14,7 @@
       <p>&nbsp;<strong>{ $_("main.content.headline.seg1") }<SpanWithTip tip={ $_("main.content.headline.somni.tip") }>somni</SpanWithTip>{ $_("main.content.headline.seg2") }</strong></p>
       <p>&nbsp;도전과 노력을 최고의 가치로 여깁니다. <b>웹</b>을 포함한 다양한 개발 분야를 접해 보았으며, 이제는 <b>게임 개발</b>이라는 확고한 방향을 가지고 나아가고 있습니다.</p>
       <p>&nbsp;게임 내 오브젝트를 기능하게 만들고 다양한 분야의 동료들과 함께 문제를 해결해 나가는 과정에서 큰 즐거움과 희열을 느낍니다. 이 즐거움이 많은 플레이어들에게 전해질 수 있도록 끊임없이 공부하고 있습니다.</p>
-      <p>&nbsp;<a href="https://ck.ac.kr/school-department/game/school">청강문화산업대학교 게임콘텐츠스쿨</a>에서 졸업 작품으로 게임 프로젝트 「<a href="https://store.steampowered.com/app/4327640/__Colorting_CatchRabi/">컬러팅! 캐치 & 라비</a>」를 개발했으며, 현재는 「<a href="https://platinalab.net">PLATiNA :: LAB</a>」의 개발진으로 합류하여 말랑한 리듬 게임을 만들어가고 있습니다.</p>
+      <p>&nbsp;<a href="https://ck.ac.kr/school-department/game/school">청강문화산업대학교 게임콘텐츠스쿨</a>에서 졸업 작품으로 게임 프로젝트 「<a href="https://store.steampowered.com/app/4327640/">컬러팅! 캐치 & 라비</a>」를 개발했으며, 현재는 「<a href="https://platinalab.net">PLATiNA :: LAB</a>」의 개발진으로 합류하여 말랑한 리듬 게임을 만들어가고 있습니다.</p>
       <p class="hidden opacity-70 text-lg!"><a href="/about">자세히 보기 ›</a></p>
     </div>
 

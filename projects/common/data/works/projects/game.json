@@ -10,15 +10,16 @@
     },
     "stacks": [
       "UNITY",
-      "CSHARP"
+      "CSHARP",
+      "FMOD"
     ],
     "yearFrom": 2025,
-    "yearTo": 2025,
-    "status": "ongoing",
+    "yearTo": 2026,
+    "status": "completed",
     "details": [
       "[추가 예정]"
     ],
-    "appUrl": "https://store.onstove.com/games/102900",
+    "appUrl": "https://store.steampowered.com/app/4327640/",
     "pageUrl": "https://ckchronicle.com/chronicle/project/palette/",
     "prizes": [
       "BIC 2025 루키부문 선정작",
