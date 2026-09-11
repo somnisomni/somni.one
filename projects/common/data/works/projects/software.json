@@ -4,21 +4,19 @@
     "title": "Trawler",
     "desc": "<span class='text-zinc-400'>[프로젝트 재작성]</span> 트위터 계정의 프로필 데이터를 주기적으로 크롤링하는 서버 프로그램",
     "stacks": [
-      "DOTNET_CORE",
-      "CSHARP",
+      "NODEJS",
+      "TYPESCRIPT",
       "SELENIUM",
-      "ENTITYFRAMEWORKCORE",
-      "MYSQL",
       "PODMAN"
     ],
-    "yearFrom": 2024,
+    "yearFrom": 2026,
     "yearTo": -1,
     "status": "ongoing",
     "details": [
       "[추가 예정]",
       ""
     ],
-    "repositoryUrl": "https://github.com/somnisomni/trawler-csharp",
+    "repositoryUrl": "https://github.com/somnisomni/trawler",
     "featured": false
   },
   {
